@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Stationpedia Ascended</Name>
+  <Author>FlorpyDorp</Author>
+  <Version>0.8.5</Version>
+  <Description>This is a Plugin Mod. It requires BepInEx to be installed with the StationeersLaunchPad plugin.
+See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
+
+An enhanced Stationpedia experience with comprehensive tooltips, in-game notepad, guides, bug fixes, and quality of life improvements. Stationpedia on a new level.
+
+NEW IN 0.8.5:
+- Station Notepad Fixes: Input locking, Enter key blocking, improved hotload display
+- Species Survival Guide: Lung damage/suffocation, Mood & Hygiene sections added
+- Content Fixes: Corrected gas terminology throughout guides
+- Editor: Drag-and-drop category management, inline headers, Import JSON button
+- Guide Order: Headers and content now display in correct order
+
+Features:
+- Enhanced Tooltips: Hover over logic types, slots, memory, modes, and connections
+- Operational Details: Dedicated section showing advanced device information
+- In-Game Notepad: Take notes that persist across game sessions (F2 to toggle)
+- Comprehensive Guides: Survival, Power, Airlock, AC, and more
+- Bug Fixes: Fixed scrollbar handle and window dragging crashes
+
+All tooltips and descriptions are customizable via descriptions.json.
+
+Discord: https://discord.gg/stationeers</Description>
+
+  <ChangeLog>
+v0.8.5: Content & Notepad Improvements
+- FIX Station Notepad: Input now properly locks keyboard while typing
+- FIX Station Notepad: Enter key no longer opens chat while editing
+- FIX Station Notepad: JSON documents display correctly on hotload
+- NEW Species Survival Guide: Lung damage and suffocation mechanics from game code
+- NEW Species Survival Guide: Mood & Hygiene section with thresholds and effects
+- FIX Content: Corrected gas terminology (no X3/X1, using Volatiles/Pollutant/Hydrogen)
+- NEW Editor: Import JSON button for importing guide files
+- NEW Editor: Drag-and-drop to move content between categories
+- NEW Editor: Inline section headers within categories
+- FIX In-Game: Guides and mechanics display in correct JSON order
+v0.8.0: Major Feature Release - Station Notepad, Guides, Media Support
+- NEW Station Notepad: In-game note-taking with folders, rich text, Stationpedia links
+- NEW Survival Manual: Complete beginner's guide (First 5 Minutes to Advanced)
+- NEW Game Mechanics: Smelting Guide and Species Survival Guide from game code
+- NEW Media Support: Embed videos and images in Stationpedia pages
+- NEW Nested TOC: Multi-level table of contents with smooth scrolling
+- Vanilla/Ascended Mode: Click header to toggle (easter egg)
+- Multiple guides: Power Systems, Airlock, Air Conditioning, Daylight Sensor
+v0.3.0: AIMeE documentation, multi-column TOC, new JSON schema features
+v0.2.2: Search optimizations, property tooltips, IC10 helpers
+v0.2.1: Enhanced search with smart grouping, visual headers, debris filtering
+v0.1.x: Initial releases with tooltips, operational details, bug fixes</ChangeLog>
+  <WorkshopHandle>3634225688</WorkshopHandle>
+  <Tags>
+    <Tag>StationeersLaunchPad</Tag>
+    <Tag>UI</Tag>
+    <Tag>Helper</Tag>
+    <Tag>QualityOfLife</Tag>
+    <Tag>BugFix</Tag>
+  </Tags>
+  <InGameDescription><![CDATA[<size="30"><color=#ffa500>Stationpedia Ascended</color></size>
+<color=#ff0000>This is a Plugin Mod. It requires BepInEx to be installed with the StationeersLaunchPad plugin.</color>
+See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
+
+An enhanced Stationpedia experience with in-game notepad, comprehensive guides, tooltips, and quality of life improvements.
+
+<color=#ffa500>What's New in 0.8.5:</color>
+- Station Notepad: Fixed input locking, Enter key, hotload display
+- Species Survival Guide: Lung damage, suffocation, Mood & Hygiene
+- Content Fixes: Corrected gas terminology throughout guides
+- Editor: Drag-and-drop categories, inline headers, Import JSON
+
+<color=#ffa500>Features:</color>
+- Hover tooltips for logic types, slots, memory, modes
+- In-game notepad with folders and rich text (F2)
+- Comprehensive guides: Survival, Power, Airlock, AC
+- Stationpedia links in notes: {LINK:DeviceKey;Text}
+- Fixes for scrollbar handle and window dragging bugs
+- Click "Stationpedia" header for Ascended mode
+
+All content customizable via descriptions.json.
+]]></InGameDescription>
+</ModMetadata>

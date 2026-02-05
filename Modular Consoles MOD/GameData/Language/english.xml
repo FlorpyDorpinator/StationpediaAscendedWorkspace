@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>English</Name>
+    <Code>EN</Code>
+    <Font>font_english</Font>
+    <Things>
+        <RecordThing>
+            <Key>ItemKitModularConsole</Key>
+            <Value>Kit (Modular Console)</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>ItemKitModularConsoleDisplays</Key>
+            <Value>Kit (Modular Console Displays)</Value>
+        </RecordThing>
+		<RecordThing>
+			<Key>ItemKitModularConsoleInputs</Key>
+			<Value>Kit (Modular Console Inputs)</Value>
+		</RecordThing>
+		<RecordThing>
+			<Key>ItemKitModularConsoleLabelPlates</Key>
+			<Value>Kit (Modular Console Label Plates)</Value>
+		</RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase1</Key>
+            <Value>Console Base 1</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase1Double</Key>
+            <Value>Console Base 1 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase2</Key>
+            <Value>Console Base 2</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase2Double</Key>
+            <Value>Console Base 2 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase3</Key>
+            <Value>Console Base 3</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase3Double</Key>
+            <Value>Console Base 3 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase4</Key>
+            <Value>Console Base 4</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase4Double</Key>
+            <Value>Console Base 4 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase5</Key>
+            <Value>Console Base 5</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase5Double</Key>
+            <Value>Console Base 5 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase6</Key>
+            <Value>Console Base 6</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBase6Double</Key>
+            <Value>Console Base 6 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBaseCorner1</Key>
+            <Value>Console Base Corner 1</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBaseCorner2</Key>
+            <Value>Console Base Corner 2</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBaseCorner3</Key>
+            <Value>Console Base Corner 3</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBaseCorner4</Key>
+            <Value>Console Base Corner 4</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBaseCorner5</Key>
+            <Value>Console Base Corner 5</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleBaseCorner6</Key>
+            <Value>Console Base Corner 6</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleCornerInner1</Key>
+            <Value>Console Corner Inner 1</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleCornerInner1Center</Key>
+            <Value>Console Corner Inner 1 Center</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleCornerInner1Double</Key>
+            <Value>Console Corner Inner 1 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleCornerInner2</Key>
+            <Value>Console Corner Inner 2</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleCornerInner2Center</Key>
+            <Value>Console Corner Inner 2 Center</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleCornerInner2Double</Key>
+            <Value>Console Corner Inner 2 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlat1</Key>
+            <Value>Console Flat 1</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlat1Corner</Key>
+            <Value>Console Flat 1 Corner</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlat1Corner2</Key>
+            <Value>Console Flat 1 Corner 2</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlat1Corner3</Key>
+            <Value>Console Flat 1 Corner 3</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlat1Double</Key>
+            <Value>Console Flat 1 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlat2</Key>
+            <Value>Console Flat 2</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlat2Double</Key>
+            <Value>Console Flat 2 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlat3</Key>
+            <Value>Console Flat 3</Value>
+        </RecordThing>
+		<RecordThing>
+			<Key>StructureConsoleFlat3x2</Key>
+			<Value>Console Flat 3x2</Value>
+		</RecordThing>
+		<RecordThing>
+			<Key>StructureConsoleFlat3x2Double</Key>
+			<Value>Console Flat 3x2 Double</Value>
+		</RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlat3Double</Key>
+            <Value>Console Flat 3 Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlatCornerInner</Key>
+            <Value>Console Flat Corner Inner</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlatCornerInnerDouble</Key>
+            <Value>Console Flat Corner Inner Double</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleFlatCornerInnerDoubleCenter</Key>
+            <Value>Console Flat Corner Inner Center</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleTerminal</Key>
+            <Value>Console Terminal</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleTerminal2</Key>
+            <Value>Console Terminal 2</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleWallMount1</Key>
+            <Value>Console Wall Mount 1</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>StructureConsoleWallMount2</Key>
+            <Value>Console Wall Mount 2</Value>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceBigLever</Key>
+            <Value>Big Lever</Value>
+            <Description>A large lever for important actions. State can be accessed via {LOGICTYPE:Open}. Text can be configured via {THING:ItemLabeller}, add a "*" at the end to hide the text.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceCardReader</Key>
+            <Value>Access Card Reader</Value>
+            <Description>Checks the access card color against the configured {LOGICTYPE:Mode}, with {LOGICTYPE:Setting} set to 1 if it matches, 0 otherwise. Has an adjustable {LOGICTYPE:Color}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceConsole</Key>
+            <Value>Console</Value>
+            <Description>A modular equivalent to the {THING:StructureConsole} for hosting circuitboards.</Description>
+        </RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceComputer</Key>
+			<Value>Computer</Value>
+			<Description>A modular equivalent to the {THING:StructureComputer} for hosting motherboards.</Description>
+		</RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceDial</Key>
+            <Value>Logic Dial</Value>
+            <Description>Allows adjusting {LOGICTYPE:Setting} between 0 and {LOGICTYPE:Mode}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceEmergencyButton3x3</Key>
+            <Value>Emergency Button</Value>
+            <Description>Big Red Button for emergencies.</Description>
+        </RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceUtilityButton2x2</Key>
+			<Value>Utility Button</Value>
+			<Description>Big Button for important tasks. Can be labeled and painted, add a "*" at the end to hide the text.</Description>
+		</RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceFlipCoverSwitch</Key>
+            <Value>Flip Cover Switch</Value>
+            <Description>Switch which can be turned {LOGICTYPE:On}. Has a cover to protect against accidental flipping. </Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceFlipSwitch</Key>
+            <Value>Flip Switch</Value>
+            <Description>Switch which can be turned {LOGICTYPE:On}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceGauge2x2</Key>
+            <Value>Gauge 2x2</Value>
+            <Description>Gauge that displays {LOGICTYPE:Setting} between 0 and 1. Has an adjustable {LOGICTYPE:Color}. Text is changeable via {THING:ItemLabeller}, add a "*" at the end to hide the text.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceGauge3x3</Key>
+            <Value>Gauge 3x3</Value>
+            <Description>Gauge that displays {LOGICTYPE:Setting} between 0 and 1. Has an adjustable {LOGICTYPE:Color}. Text is changeable via {THING:ItemLabeller}, add a "*" at the end to hide the text.</Description>
+        </RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceMeter3x3</Key>
+			<Value>Meter 3x3</Value>
+			<Description>Meter that displays {LOGICTYPE:Setting} within a user defined range. Has an adjustable {LOGICTYPE:Color}. Text is changeable via {THING:ItemLabeller}, add a "*" at the end to hide the text.</Description>
+		</RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate</Key>
+            <Value>Label Plate</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate2</Key>
+            <Value>Label Plate 2</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate2x2</Key>
+            <Value>Label Plate 2x2</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate3</Key>
+            <Value>Label Plate 3</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate3x2</Key>
+            <Value>Label Plate 3x2</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate3x3</Key>
+            <Value>Label Plate 3x3</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate4</Key>
+            <Value>Label Plate 4</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate4x4</Key>
+            <Value>Label Plate 4x4</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate5x5</Key>
+            <Value>Label Plate 5x5</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLabelPlate6x6</Key>
+            <Value>Label Plate 6x6</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+        </RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceLabelPlate5</Key>
+			<Value>Label Plate 5</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceLabelPlate4x2</Key>
+			<Value>Label Plate 4x2</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceLabelPlate6x2</Key>
+			<Value>Label Plate 6x2</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceLabelPlate8x2</Key>
+			<Value>Label Plate 8x2</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceLabelPlate12x2</Key>
+			<Value>Label Plate 12x2</Value>
+			<Description>Text is hidden with the default name and can be changed via {THING:ItemLabeller}.</Description>
+		</RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLEDdisplay2</Key>
+            <Value>LED Display 2</Value>
+            <Description>Displays a {LOGICTYPE:Setting} value. Has an adjustable {LOGICTYPE:Color}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLEDdisplay3</Key>
+            <Value>LED Display 3</Value>
+            <Description>Displays a {LOGICTYPE:Setting} value. Has an adjustable {LOGICTYPE:Color}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceLight</Key>
+            <Value>Light Diode</Value>
+            <Description>Lights up when turned {LOGICTYPE:On}. Has an adjustable {LOGICTYPE:Color}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceNumpad</Key>
+            <Value>Logic Num Pad</Value>
+            <Description>A numeric input device. Sends pulses to {LOGICTYPE:Mode} when pressing digit buttons. Can change the {LOGICTYPE:Setting} to other numbers incl. decimals by clicking the screen. Has an adjustable {LOGICTYPE:Color}</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceRoundButton</Key>
+            <Value>Logic Button Round</Value>
+            <Description>A round button which sets {LOGICTYPE:Activate} to 1 when pressed. Has an adjustable {LOGICTYPE:Color}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceSlider</Key>
+            <Value>Logic Slider</Value>
+            <Description>Drag the slider up and down to adjust the {LOGICTYPE:Setting} between 0 and 1.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceSliderDiode1</Key>
+            <Value>Diode Slide 1</Value>
+            <Description>Displays {LOGICTYPE:Setting} between 0 and 1 on a lit up bar. Has an adjustable {LOGICTYPE:Color}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceSliderDiode2</Key>
+            <Value>Diode Slide 2</Value>
+            <Description>Displays {LOGICTYPE:Setting} between 0 and 1 on a lit up bar. Has an adjustable {LOGICTYPE:Color}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceSquareButton</Key>
+            <Value>Logic Button Square</Value>
+            <Description>A square button which sets {LOGICTYPE:Activate} to 1 when pressed. Has an adjustable {LOGICTYPE:Color}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceSwitch</Key>
+            <Value>Logic Switch</Value>
+            <Description>A switch which can be turned {LOGICTYPE:On}. Has an adjustable {LOGICTYPE:Color}.</Description>
+        </RecordThing>
+        <RecordThing>
+            <Key>ModularDeviceThrottle3x2</Key>
+            <Value>Logic Throttle</Value>
+            <Description>Drag the throttle up and down to adjust the {LOGICTYPE:Setting} between 0 and 1.</Description>
+        </RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceLightSmall</Key>
+			<Value>Light Diode Small</Value>
+			<Description>Lights up when turned {LOGICTYPE:On}. Has an adjustable {LOGICTYPE:Color}.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceLightLarge</Key>
+			<Value>Light Diode Large</Value>
+			<Description>Lights up when turned {LOGICTYPE:On}. Has an adjustable {LOGICTYPE:Color}.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceLabelDiode3</Key>
+			<Value>Label Diode 3</Value>
+			<Description>Emissive text label. Has an adjustable {LOGICTYPE:Color} and a blink {LOGICTYPE:Mode}.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceLabelDiode2</Key>
+			<Value>Label Diode 2</Value>
+			<Description>Emissive text label. Has an adjustable {LOGICTYPE:Color} and a blink {LOGICTYPE:Mode}.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceDialSmall</Key>
+			<Value>Logic Dial Small</Value>
+			<Description>Allows adjusting {LOGICTYPE:Setting} between 0 and {LOGICTYPE:Mode}.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDeviceAlarm</Key>
+			<Value>Logic Alarm</Value>
+			<Description>Sound and light beacon for emergencies.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine</Key>
+			<Value>Diagram Line Left Arrow</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine2</Key>
+			<Value>Diagram Line Straight</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine3</Key>
+			<Value>Diagram Line Tee</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine4</Key>
+			<Value>Diagram Line Cross</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine5</Key>
+			<Value>Diagram Line Corner</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine6</Key>
+			<Value>Diagram Line Straight Arrow</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine7</Key>
+			<Value>Diagram Line Corner Pass</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine8</Key>
+			<Value>Diagram Line Cross 4 Arrows</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine9</Key>
+			<Value>Diagram Line Tee Split Arrows</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine10</Key>
+			<Value>Diagram Line Cross Side Arrows</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine11</Key>
+			<Value>Diagram Line Tee Join Arrow</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine12</Key>
+			<Value>Diagram Line Corner Right Arrow</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine13</Key>
+			<Value>Diagram Line Cross 3 Arrows</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine14</Key>
+			<Value>Diagram Line Corner Pass 2 Arrows</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine15</Key>
+			<Value>Diagram Line Corner Round</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine16</Key>
+			<Value>Diagram Line Corner Pass Arrow Left</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine17</Key>
+			<Value>Diagram Line Corner Pass Arrow Right</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine18</Key>
+			<Value>Diagram Line Dashed Straight</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine19</Key>
+			<Value>Diagram Line Dashed Corner Round</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine20</Key>
+			<Value>Diagram Line Dashed Cross</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine22</Key>
+			<Value>Diagram Line Dashed Corner</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ModularDiagramLine23</Key>
+			<Value>Diagram Line Straight Arrows</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+		<RecordThing>
+			<Key>ItemKitModularDiagramLine</Key>
+			<Value>Kit (Console Diagram Lines)</Value>
+			<Description>Flow diagram parts for your console.</Description>
+		</RecordThing>
+	</Things>
+</Language>

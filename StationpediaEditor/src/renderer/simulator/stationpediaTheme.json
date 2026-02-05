@@ -1,0 +1,68 @@
+{
+  "$comment": "Stationpedia Theme Configuration - Maps UI parts to game assets",
+  "colors": {
+    "background": "#0F1F38",
+    "backgroundSecondary": "#0A1520",
+    "border": "#264D73",
+    "accent": "#FF7A18",
+    "accentHover": "#FF9533",
+    "link": "#008AE6",
+    "linkHover": "#00A8FF",
+    "textPrimary": "#E6EDF3",
+    "textSecondary": "#8B949E",
+    "textMuted": "#6E7681",
+    "success": "#00FF7F",
+    "warning": "#FF7A18",
+    "error": "#FF4444"
+  },
+  "assets": {
+    "windowBackground": "assets/window-bg.png",
+    "dialogBackground": "assets/dialog-bg.png",
+    "buttonNormal": "assets/button-normal.png",
+    "buttonHover": "assets/button-hover.png",
+    "buttonBackground": "assets/button-bg.png",
+    "homeButton": "assets/homebutton.png",
+    "backButton": "assets/backbutton.png",
+    "forwardButton": "assets/forwardbutton.png",
+    "closeButton": "assets/closebutton.png",
+    "expandButton": "assets/expandbutton.png",
+    "shrinkButton": "assets/shrinkbutton.png",
+    "searchIcon": "assets/searchicon.png",
+    "scrollbarBackground": "assets/scrollbar-bg.png",
+    "scrollbarHandle": "assets/scrollbar-handle.png",
+    "iconStationpedia": "assets/icon-stationpedia.png"
+  },
+  "categoryIcons": {
+    "Atmospherics": "assets/categories/atmospherics.png",
+    "Automation": "assets/categories/automation.png",
+    "Clothing": "assets/categories/clothing.png",
+    "Displays": "assets/categories/displays.png",
+    "Fabricators": "assets/categories/fabricators.png",
+    "Food": "assets/categories/food.png",
+    "Furniture": "assets/categories/furniture.png",
+    "Items": "assets/categories/items.png",
+    "Logistics": "assets/categories/logistics.png",
+    "Ores": "assets/categories/ores.png",
+    "Power": "assets/categories/power.png",
+    "Science": "assets/categories/science.png",
+    "Sensors": "assets/categories/sensors.png",
+    "Structures": "assets/categories/structures.png"
+  },
+  "nineSlice": {
+    "buttonBg": { "top": 7, "right": 7, "bottom": 7, "left": 7 },
+    "dialogBg": { "top": 18, "right": 18, "bottom": 18, "left": 18 },
+    "windowBg": { "top": 10, "right": 10, "bottom": 10, "left": 10 }
+  },
+  "sectionTitles": {
+    "Description": "Description",
+    "OperationalDetails": "Operational Details",
+    "logicDescriptions": "Logic Types",
+    "modeDescriptions": "Modes",
+    "slotDescriptions": "Slots",
+    "connections": "Connections",
+    "versionDescriptions": "Printer Tiers",
+    "memoryDescriptions": "Memory / Programmable",
+    "slots": "Slot Configuration"
+  },
+  "debugMode": false
+}

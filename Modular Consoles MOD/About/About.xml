@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>ModularConsoleMod</Name>
+	<Author>tom_is_unlucky, WIKUS</Author>
+	<Version>0.2.23</Version>
+	<Description>
+		This is a Plugin Mod.
+		It requires Bepinex to be installed with the StationeersLaunchPad plugin.
+		See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
+
+		[h1]Modular Console Mod[/h1]
+		[i]Build the Control Center You Always Wanted[/i]
+
+		This mod adds [b]modular console structures[/b] that let you build real, customizable control panels.
+
+		Each console base connects with others and holds [b]device boards[/b]—predefined layouts where you can install a wide range of [b]input and readout devices[/b]. Devices can be freely repositioned with a screwdriver, so you can tweak your setup without rebuilding everything.
+
+		Whether you're organizing a control station, managing access points, or just want a proper home for your buttons and lights—this mod brings [b]structure[/b], [b]clarity[/b], and [b]flexibility[/b] to your logic layouts.
+
+		[i]Perfect for players who love clean builds, immersive stations, or just pressing buttons.[/i]
+
+		[img]https://imgur.com/QLMuOat.gif[/img]
+
+		[hr]
+
+		[h1]📦 Features[/h1]
+
+		[list]
+		[*]🧩 [b]Modular console bases[/b] that snap together to form custom panel layouts
+		[*]🪛 [b]Device boards[/b] with fixed slots for mounting logic devices
+		[*]🔧 [b]Movable devices[/b] – reposition components using a screwdriver
+		[*]🎯 Focused on [b]inputs and readouts[/b], not full logic replacements
+		[/list]
+
+		[hr]
+
+		[h1]🧰 Included Devices[/h1]
+
+		[list]
+		[*]🕹️ [b]Big Lever[/b] – Large, red, and hazard-striped. Can be labeled.
+		[*]🪪 [b]Access Card Reader[/b] – Compares card color to “Mode” value; color-configurable LED
+		[*]🖥️ [b]Console (Device)[/b] – Standard console, now panel-mounted
+		[*]💻 [b]Computer[/b] – Standard computer, now panel-mounted
+		[*]🔘 [b]Logic Dials[/b] – Adjust values directly—no tools needed
+		[*]🚨 [b]Emergency Button[/b] – Big. Red. Dramatic.
+		[*]🚨 [b]Alarm[/b] – Loud, glowy and spinny bits.
+		[*]🛑 [b]Flip Cover Switch[/b] – Toggle switch with protective cover
+		[*]🔄 [b]Flip Switch[/b] – Compact and reliable toggle
+		[*]📈 [b]Logic Gauges[/b] – Displays 0–1 values, configurable LED, and labelable
+		[*]📈 [b]Logic Gauges[/b] – Displays user defined value range, configurable LED, incl. label
+		[*]🔖 [b]Label Plates[/b] – Cosmetic text fillers.
+		[*]🔖 [b]Label Diodes[/b] – Labeled light indicators; logic-controlled color
+		[*]🔖 [b]Diagram Lines[/b] – Lines and arrows for your console layout
+		[*]🔤 [b]LED Displays[/b] – Mountable version of the vanilla LEDs
+		[*]💡 [b]Light Diodes[/b] – Panel Light/Indicators; logic-controlled color
+		[*]🔢 [b]Numpad[/b] – Inputs 0–9 or set a value via screen
+		[*]🔲 [b]Buttons and Switches[/b] – Vanilla-style with glow and logic-set color
+		[*]🎚️ [b]Logic Slider / Throttle[/b] – Smoothly set a 0–1 value
+		[*]📉 [b]Diode Slides[/b] – Adjustable diode sliders, panel-mounted
+		[/list]
+
+		[hr]
+
+		[i]Give your logic builds a [b]clean[/b], [b]functional[/b] home.[/i]
+		[i]Build control panels that [b]look like they belong[/b].[/i]
+
+
+
+	</Description>
+	<ChangeLog>
+		[h3]Version 0.2.23:[/h3]
+		[list]
+		[*]Update Console Display to use screw instead of data disk for configuration
+		[/list]
+	</ChangeLog>
+	<InGameDescription>
+		<![CDATA[<size="30"><color=#ffa500> ModularConsoleMod </color></size>
+This is a Plugin Mod. 
+It requires Bepinex to be installed with the StationeersLaunchPad plugin.
+See: https://github.com/StationeersLaunchPad/StationeersLaunchPad 
+
+Modular Console Mod – Build the Control Center You Always Wanted
+This mod adds modular console structures that let you build real, customizable control panels.
+
+Each console base connects with others and holds device boards—predefined layouts where you can install a wide range of input and readout devices. Devices can be freely repositioned with a screwdriver, so you can tweak your setup without rebuilding everything.
+
+Whether you're organizing a control station, managing access points, or just want a proper home for your buttons and lights—this mod brings structure, clarity, and flexibility to your logic layouts.
+
+Perfect for players who like clean builds, immersive stations, or just pressing buttons.
+ 
+📦 Features:
+
+Modular console bases that snap together to form custom panel layouts
+
+Device boards with fixed slots for mounting logic devices
+
+Movable devices – reposition device components using a screwdriver
+
+Focused on inputs and readouts (not full replacements for core logic components)
+
+
+
+🧰 Included Devices:
+
+Big Lever[/b] – Large, red, and hazard-striped. Can be labeled.
+🪪 [b]Access Card Reader[/b] – Compares card color to “Mode” value; color-configurable LED
+🖥️ [b]Console (Device)[/b] – Standard console, now panel-mounted
+🔘 [b]Logic Dials[/b] – Adjust values directly—no tools needed
+🚨 [b]Emergency Button[/b] – Big. Red. Dramatic.
+🚨 [b]Alarm[/b] – Loud, glowy and spinny bits.
+🛑 [b]Flip Cover Switch[/b] – Toggle switch with protective cover
+🔄 [b]Flip Switch[/b] – Compact and reliable toggle
+📈 [b]Logic Gauges[/b] – Displays 0–1 values, configurable LED, and labelable
+🔖 [b]Label Plates[/b] – Cosmetic text fillers.
+🔖 [b]Label Diodes[/b] – Labeled light indicators; logic-controlled color
+🔖 [b]Diagram Lines[/b] – Lines and arrows for your console layout
+🔤 [b]LED Displays[/b] – Mountable version of the vanilla LEDs
+💡 [b]Light Diodes[/b] – Panel Light/Indicators; logic-controlled color
+🔢 [b]Numpad[/b] – Inputs 0–9 or set a value via screen
+🔲 [b]Buttons and Switches[/b] – Vanilla-style with glow and logic-set color
+🎚️ [b]Logic Slider / Throttle[/b] – Smoothly set a 0–1 value
+📉 [b]Diode Slides[/b] – Adjustable diode sliders, panel-mounted
+
+Give your logic builds a clean, functional home.
+Build control panels that look like they belong. 
+
+
+]]>
+	</InGameDescription>
+	<WorkshopHandle>3505169479</WorkshopHandle>
+	<Tags>
+	   <Tag>StationeersLaunchPad</Tag>
+	</Tags>
+	<Dependencies>
+		<Mod>
+			<Id>3505115682</Id>
+		</Mod>
+	</Dependencies>
+	<LoadBefore>
+		<Mod>
+			<Id>3505115682</Id>
+		</Mod>
+	</LoadBefore>
+</ModMetadata>

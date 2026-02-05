@@ -1,0 +1,507 @@
+================================================================================
+STATIONPEDIA ASCENDED v0.3.0 - LLM INSTRUCTIONS FOR WRITING descriptions.json
+================================================================================
+
+You are helping write device documentation for the Stationeers game mod 
+"Stationpedia Ascended". This mod enhances the in-game encyclopedia with 
+custom tooltips, collapsible sections, table of contents, images, and videos.
+
+================================================================================
+FILE STRUCTURE
+================================================================================
+
+The descriptions.json file has this top-level structure:
+
+{
+  "version": "1.0",
+  "devices": [ ... array of device entries ... ],
+  "genericDescriptions": { ... global fallback descriptions ... }
+}
+
+================================================================================
+DEVICE ENTRY FORMAT (Complete Reference)
+================================================================================
+
+{
+  "deviceKey": "ThingStructureDeviceName",      // REQUIRED - exact prefab name
+  "displayName": "Human Readable Name",          // Optional - for documentation
+
+  // === PAGE DESCRIPTION OPTIONS (pick ONE or combine append/prepend) ===
+  "pageDescription": "Replaces entire description",
+  "pageDescriptionAppend": "Added to end of existing description",
+  "pageDescriptionPrepend": "Added to beginning of existing description",
+
+  // === TABLE OF CONTENTS (TOC) ===
+  "generateToc": true,                           // Enable TOC panel at top
+  "tocTitle": "Quick Navigation",                // Custom TOC title (default: "Contents")
+
+  // === OPERATIONAL DETAILS (MUST BE AN ARRAY) ===
+  "operationalDetails": [ ... ],                 // Main content sections
+  "operationalDetailsTitleColor": "#FF7A18",     // Title color (hex)
+  "operationalDetailsBackgroundColor": "#1A2B3C", // Section background (hex)
+
+  // === TOOLTIP DESCRIPTIONS (Objects with keys) ===
+  "logicDescriptions": { ... },
+  "modeDescriptions": { ... },
+  "slotDescriptions": { ... },
+  "versionDescriptions": { ... },
+  "memoryDescriptions": { ... }
+}
+
+================================================================================
+OPERATIONALDETAILS - ALL SUPPORTED PROPERTIES
+================================================================================
+
+Each item in the operationalDetails array can have these properties:
+
+BASIC CONTENT:
+  "title"           - (string) Section heading
+  "description"     - (string) Main text content with TMP rich text support
+  "items"           - (array of strings) Bullet list (rendered with • prefix)
+  "steps"           - (array of strings) Numbered list (rendered as 1. 2. 3.)
+  "children"        - (array) Nested OperationalDetail objects for sub-sections
+
+COLLAPSIBLE SECTIONS:
+  "collapsible"     - (boolean) If true, renders as expandable/collapsible section
+                      Default: false (renders as inline text)
+
+TABLE OF CONTENTS:
+  "tocId"           - (string) Unique ID for TOC linking. When set:
+                      - Section appears in the Table of Contents
+                      - Clicking TOC link scrolls to this section
+                      - Works on both collapsible and non-collapsible sections
+
+MEDIA:
+  "imageFile"       - (string) Image filename in mod/images/ folder
+                      Supports: PNG, JPG, GIF (first frame only)
+  "videoFile"       - (string) Video filename in mod/images/ folder
+                      Supports: MP4. Renders as embedded video player
+  "youtubeUrl"      - (string) Full YouTube URL (e.g., "https://www.youtube.com/watch?v=...")
+                      Renders as clickable link that opens in system browser
+  "youtubeLabel"    - (string) Custom label for YouTube link
+                      Default: "Watch on YouTube"
+
+STYLING:
+  "backgroundColor" - (string) Custom hex color for this section's background
+                      Format: "#RRGGBB" (e.g., "#1A2B3C")
+
+================================================================================
+COLLAPSIBLE VS INLINE CONTENT
+================================================================================
+
+COLLAPSIBLE (collapsible: true):
+  - Renders as expandable StationpediaCategory with header bar
+  - User can click to expand/collapse
+  - Supports nested children that also render as collapsibles
+  - Best for: Long content, optional reading, nested documentation
+
+INLINE (collapsible: false or not set):
+  - Renders as regular text directly in the parent section
+  - Always visible, cannot be collapsed
+  - Best for: Short content, important notes, simple lists
+
+Example:
+{
+  "title": "This is collapsible",
+  "collapsible": true,
+  "description": "User must click to see this content"
+}
+
+{
+  "title": "This is inline",
+  "description": "This content is always visible"
+}
+
+================================================================================
+TABLE OF CONTENTS (TOC) SYSTEM
+================================================================================
+
+To enable TOC for a device:
+
+1. Set "generateToc": true on the device entry
+2. Add "tocId" to each section you want in the TOC
+
+The TOC panel:
+  - Appears at the top of Operational Details
+  - Shows clickable links to each tocId section
+  - Automatically uses multi-column layout (max 8 rows per column)
+  - Clicking a link scrolls to and expands that section
+
+Example:
+{
+  "deviceKey": "ThingRobot",
+  "generateToc": true,
+  "tocTitle": "AIMeE Guide",
+  "operationalDetails": [
+    {
+      "title": "Overview",
+      "tocId": "overview",
+      "collapsible": true,
+      "description": "Introduction to AIMeE..."
+    },
+    {
+      "title": "Modes",
+      "tocId": "modes",
+      "collapsible": true,
+      "children": [
+        {
+          "title": "Follow Mode",
+          "tocId": "mode-follow",
+          "collapsible": true,
+          "description": "AIMeE follows the player..."
+        }
+      ]
+    }
+  ]
+}
+
+================================================================================
+NESTING EXAMPLE (Deep Structure)
+================================================================================
+
+"operationalDetails": [
+  {
+    "title": "Steel Smelting",
+    "tocId": "steel",
+    "collapsible": true,
+    "description": "The most common furnace recipe.",
+    "children": [
+      {
+        "title": "Requirements",
+        "tocId": "steel-requirements",
+        "collapsible": true,
+        "items": [
+          "Iron Ore + Coal Ore in 3:1 ratio",
+          "Temperature above 900K",
+          "Pressure above 100 kPa"
+        ]
+      },
+      {
+        "title": "Process",
+        "tocId": "steel-process",
+        "collapsible": true,
+        "steps": [
+          "Load iron ore and coal (3:1 ratio)",
+          "Add volatiles ice (fuel) and oxite ice (oxidizer)",
+          "Close the furnace door",
+          "Activate the furnace",
+          "Wait for Mode=1 or temperature 900K+",
+          "Collect ingots from export slot"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Tips",
+    "tocId": "tips",
+    "collapsible": true,
+    "items": [
+      "Furnace handles extreme pressures safely",
+      "On cold planets, use more fuel ice",
+      "Lock furnace via logic to prevent accidents"
+    ]
+  }
+]
+
+================================================================================
+MEDIA EXAMPLES
+================================================================================
+
+IMAGE:
+{
+  "title": "Wiring Diagram",
+  "imageFile": "furnace_wiring.png",
+  "description": "Connect power as shown above."
+}
+
+VIDEO (Embedded MP4):
+{
+  "title": "Video Tutorial",
+  "collapsible": true,
+  "videoFile": "furnace_tutorial.mp4",
+  "description": "Watch the full smelting process."
+}
+
+YOUTUBE LINK:
+{
+  "title": "External Tutorial",
+  "collapsible": true,
+  "youtubeUrl": "https://www.youtube.com/watch?v=ABC123",
+  "youtubeLabel": "Furnace Guide by StationeersGuru",
+  "description": "Watch a complete walkthrough."
+}
+
+================================================================================
+TEXTMESHPRO RICH TEXT FORMATTING
+================================================================================
+
+The mod uses TextMeshPro for rendering. Supported tags:
+
+BASIC:
+  <b>bold</b>
+  <i>italic</i>
+  <u>underline</u>
+  <s>strikethrough</s>
+
+COLORS:
+  <color=#FF0000>hex color</color>
+  <color=red>named color</color>
+
+SIZE:
+  <size=150%>bigger</size>
+  <size=80%>smaller</size>
+  <size=24>24pt</size>
+
+ALIGNMENT:
+  <align=center>centered</align>
+  <align=right>right-aligned</align>
+
+INDENTATION:
+  <indent=10%>indented text</indent>
+
+SUPER/SUBSCRIPT:
+  H<sub>2</sub>O  →  H₂O
+  x<sup>2</sup>   →  x²
+
+OTHER:
+  <nobr>no line break</nobr>
+  <lowercase>LOWERCASE</lowercase>
+  <uppercase>uppercase</uppercase>
+
+LINE BREAKS:
+  Use \n in JSON strings
+
+================================================================================
+TOOLTIP DESCRIPTIONS FORMAT
+================================================================================
+
+LOGIC DESCRIPTIONS:
+"logicDescriptions": {
+  "Temperature": {
+    "dataType": "Float",
+    "range": "0+",
+    "description": "Internal temperature in Kelvin."
+  },
+  "Mode": {
+    "dataType": "Integer",
+    "range": "0-5",
+    "description": "Current operational mode."
+  }
+}
+
+MODE DESCRIPTIONS:
+"modeDescriptions": {
+  "Mode0": {
+    "modeValue": "0",
+    "description": "Device is idle/off."
+  },
+  "Mode1": {
+    "modeValue": "1",
+    "description": "Standard operation."
+  }
+}
+
+SLOT DESCRIPTIONS:
+"slotDescriptions": {
+  "InputSlot": {
+    "slotType": "Ore",
+    "description": "Accepts ore for processing."
+  }
+}
+
+VERSION DESCRIPTIONS:
+"versionDescriptions": {
+  "Tier1": {
+    "description": "Basic model with limited capacity."
+  }
+}
+
+MEMORY DESCRIPTIONS:
+"memoryDescriptions": {
+  "Setting": {
+    "opCode": "s",
+    "parameters": "value",
+    "description": "Stores configuration value.",
+    "byteLayout": "4 bytes"
+  }
+}
+
+================================================================================
+GENERIC DESCRIPTIONS (Fallback)
+================================================================================
+
+"genericDescriptions": {
+  "logic": {
+    "Power": "Device power state (0=off, 1=on)",
+    "Setting": "Configurable parameter value"
+  },
+  "slotTypes": {
+    "Ore": "Accepts raw ore items"
+  },
+  "slots": {
+    "InputSlot": "Primary input for materials"
+  },
+  "modes": {
+    "0": "Idle state",
+    "1": "Active state"
+  },
+  "versions": {
+    "Tier1": "Basic variant"
+  },
+  "connections": {
+    "Power": "Electrical power connection"
+  },
+  "memory": {
+    "Setting": {
+      "opCode": "s",
+      "parameters": "value",
+      "description": "Configuration storage"
+    }
+  },
+  "properties": {
+    "MaxPressure": {
+      "type": "Float",
+      "description": "Maximum pressure tolerance"
+    }
+  }
+}
+
+================================================================================
+COMPLETE DEVICE EXAMPLE
+================================================================================
+
+{
+  "deviceKey": "ThingStructureFurnace",
+  "displayName": "Furnace",
+  "generateToc": true,
+  "tocTitle": "Furnace Guide",
+  "operationalDetailsTitleColor": "#FF7A18",
+  "logicDescriptions": {
+    "Temperature": {
+      "dataType": "Float",
+      "range": "0+",
+      "description": "Internal atmosphere temperature in Kelvin."
+    },
+    "Mode": {
+      "dataType": "Integer",
+      "range": "0-1",
+      "description": "0=Invalid recipe, 1=Ready to smelt."
+    },
+    "Activate": {
+      "dataType": "Boolean",
+      "range": "0-1",
+      "description": "Set to 1 to ignite furnace."
+    }
+  },
+  "modeDescriptions": {
+    "Mode0": {
+      "modeValue": "0",
+      "description": "Invalid recipe or conditions not met."
+    },
+    "Mode1": {
+      "modeValue": "1",
+      "description": "Valid recipe ready to smelt."
+    }
+  },
+  "operationalDetails": [
+    {
+      "title": "Overview",
+      "tocId": "overview",
+      "collapsible": true,
+      "description": "The Furnace smelts ores into ingots using combustion.",
+      "imageFile": "furnace_diagram.png"
+    },
+    {
+      "title": "Steel Smelting",
+      "tocId": "steel",
+      "collapsible": true,
+      "description": "The most common early-game recipe.",
+      "children": [
+        {
+          "title": "Requirements",
+          "tocId": "steel-reqs",
+          "collapsible": true,
+          "items": [
+            "Iron Ore (Fe) + Coal Ore in 3:1 ratio",
+            "Temperature above 900K",
+            "Pressure above 100 kPa"
+          ]
+        },
+        {
+          "title": "Process",
+          "tocId": "steel-steps",
+          "collapsible": true,
+          "steps": [
+            "Load iron ore and coal (3:1)",
+            "Add volatiles + oxite ice",
+            "Close door and activate",
+            "Wait for Mode=1",
+            "Collect from export slot"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Video Tutorial",
+      "tocId": "video",
+      "collapsible": true,
+      "youtubeUrl": "https://www.youtube.com/watch?v=EXAMPLE",
+      "youtubeLabel": "Furnace Tutorial",
+      "description": "Watch a complete walkthrough."
+    },
+    {
+      "title": "Tips",
+      "tocId": "tips",
+      "collapsible": true,
+      "items": [
+        "<b>Won't activate:</b> Ensure door is closed",
+        "<b>Mode=0:</b> Check ore ratios",
+        "Use <color=#FFA500>ExportCount</color> > 0 for automation"
+      ]
+    }
+  ]
+}
+
+================================================================================
+VALIDATION CHECKLIST
+================================================================================
+
+Before submitting your JSON:
+
+[ ] deviceKey matches exact prefab name (e.g., "ThingStructureFurnace")
+[ ] operationalDetails is an ARRAY with square brackets []
+[ ] Each collapsible section has "collapsible": true
+[ ] tocId values are unique within the device
+[ ] generateToc is set to true if using tocId entries
+[ ] Rich text tags are properly closed
+[ ] Image/video files exist in mod/images/ folder
+[ ] YouTube URLs are full URLs (not shortened)
+[ ] JSON is valid (no trailing commas, proper brackets)
+[ ] Nesting depth is reasonable (2-3 levels max recommended)
+
+================================================================================
+COMMON MISTAKES TO AVOID
+================================================================================
+
+WRONG - operationalDetails as object:
+  "operationalDetails": { "title": "..." }
+
+CORRECT - operationalDetails as array:
+  "operationalDetails": [ { "title": "..." } ]
+
+WRONG - Missing collapsible for expandable sections:
+  { "title": "Section", "children": [...] }
+
+CORRECT - Explicit collapsible:
+  { "title": "Section", "collapsible": true, "children": [...] }
+
+WRONG - tocId without generateToc:
+  "operationalDetails": [ { "tocId": "section1" } ]
+
+CORRECT - Enable TOC first:
+  "generateToc": true,
+  "operationalDetails": [ { "tocId": "section1" } ]
+
+================================================================================
+END OF INSTRUCTIONS
+================================================================================

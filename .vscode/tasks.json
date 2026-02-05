@@ -1,0 +1,63 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build StationpediaAscended (Dev)",
+            "type": "shell",
+            "command": "dotnet build -c Debug -o build_dev; Copy-Item -Path 'build_dev\\StationpediaAscended.dll','descriptions.json' -Destination 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stationeers\\BepInEx\\scripts\\' -Force; Copy-Item -Path '..\\About' -Destination 'C:\\Program Files (x86)\\Steam\\steamapps\\common\\Stationeers\\BepInEx\\scripts\\' -Recurse -Force",
+            "options": {
+                "cwd": "${workspaceFolder}/StationpediaAscended/mod"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Package StationpediaAscended (Release)",
+            "type": "shell",
+            "command": "dotnet build -c Release -o build_release; dotnet msbuild -t:Package",
+            "options": {
+                "cwd": "${workspaceFolder}/StationpediaAscended/mod"
+            },
+            "group": "build",
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Publish to Steam Workshop",
+            "type": "shell",
+            "command": "C:\\steamcmd\\steamcmd.exe +login spider7002 +workshop_build_item '${workspaceFolder}\\StationpediaAscended\\workshop_update.vdf' +quit",
+            "options": {
+                "cwd": "${workspaceFolder}/StationpediaAscended"
+            },
+            "group": "build",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Release & Publish StationpediaAscended",
+            "dependsOn": ["Package StationpediaAscended (Release)", "Publish to Steam Workshop"],
+            "dependsOrder": "sequence",
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}

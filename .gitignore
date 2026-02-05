@@ -1,0 +1,17 @@
+# Game source code directories
+Stationeers Orbital Update Live Code/
+Assembly-CSharp/
+AssetRipperFiles/
+Stationeers/
+
+# Unity generated folders
+**/Library/
+**/Temp/
+**/Logs/
+**/UserSettings/
+
+# Build outputs
+**/release/
+**/build/
+**/bin/
+**/obj/

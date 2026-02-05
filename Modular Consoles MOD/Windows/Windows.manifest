@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 3906134155
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: modularconsolemod.assets
+      Dependencies: {}
+    Info_1:
+      Name: modularconsolemod.scenes
+      Dependencies: {}

@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "comment": "Load context files at session start and after auto-compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd.exe /c \"%CLAUDE_PROJECT_DIR%\\.claude\\hooks\\load-context.bat\"",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "auto",
+        "comment": "Warn before auto-compaction when context is critical",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd.exe /c \"%CLAUDE_PROJECT_DIR%\\.claude\\hooks\\pre-compact.bat\"",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allowedCommands": [
+      "cmd.exe",
+      "type",
+      "echo"
+    ]
+  }
+}

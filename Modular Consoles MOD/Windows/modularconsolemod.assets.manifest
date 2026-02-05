@@ -1,0 +1,476 @@
+ManifestFileVersion: 0
+CRC: 445970162
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 81d6471a1b9e9cd30aca5135ced3c2ff
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 322ef6d5765fa697a4d326e72d23924e
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1aefe2d6d7bca3c4090466c4ff52cb4f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5eea5e99d341faa4394de8c7f26a1daa, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 92f85f4e5a5724943b4f9b66b67b934e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 72b0023c6495a2446aa98c5094570ee6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0a60772cf2b128649846e2d0e5044fac, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5068979c6ec77754287d18f2db152aaa, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9804335b0ffd44348987155b952482ad, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 74f0399e2f0cda64f820f901bf3be513, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4e4b67f3db890b94d864602aaadda35c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ba199d12ff04f3c4fa5561f0c5de96e3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df502939be8f71d45919752ca90730e0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8cf4b52eb99225a459244c70bed196e1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ed806d3a656cff6469e34d8aa7966f59, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 69f9401970f738844b69d1da33da5d9c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6a837fd33fd39de47a3cbc634cf8ba62, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e3a2d1bad7a14134ca34a1b955cf630f, type: 3}
+- Class: 114
+  Script: {fileID: 1200417347, guid: a3e77f88251d9ce40bb0fff2fab60b15, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f2dd6b7a71cd25c498a3b5523f1d326a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: afc66a409865c6f42a0ee969c8697fb3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6b50b1c62367f4c40add5cc4269f5545, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1019af4318279b646a03d87d37287b3b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: adfc47dfc14e261468dfefc2eaab187a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9c691f59b5f6c22458a2d9a1fb1143ca, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 41ac14cc9684c364f9294398cb8fb181, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 622cbdde21c2f7e4b8df616cd0a25f06, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f413ac28ae1fc14692bc4e7db687768, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.GridSystem.Grid3
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.BuildState
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.BuildStateManufacturingDat
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.ColorSwatch
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.Connection
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.IndestructableDamageState
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.Interactable
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.Item/DecayMixture
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.Pipes.Dial
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.Pipes.Knob
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.Slot
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.ThingRenderer
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.ToolBasic
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.ToolUse
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Objects.UpgradePrefab
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Sound.GameAudioClipsData
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Sound.GameAudioEvent
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Sound.GameAudioSource
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.Sound.SoundEffectCondition
+- AssemblyName: Assembly-CSharp
+  ClassName: Assets.Scripts.UI.Edge
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Alcohol
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Astroloy
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Biomass
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Carbon
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Cobalt
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Cocoa
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.ColorBlue
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.ColorGreen
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.ColorOrange
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.ColorRed
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.ColorYellow
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Constantan
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Copper
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Corn
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Egg
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Electrum
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Fenoxitone
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Flour
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Gold
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Hastelloy
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Hydrocarbon
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Inconel
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Invar
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Iron
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Lead
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Milk
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Mushroom
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Nickel
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Oil
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Plastic
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Potato
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Pumpkin
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.ReagentMixture
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Rice
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.SalicylicAcid
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Silicon
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Silver
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Solder
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Soy
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Steel
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Stellite
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Sugar
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Tomato
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Uranium
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Waspaloy
+- AssemblyName: Assembly-CSharp
+  ClassName: Reagents.Wheat
+- AssemblyName: Assembly-CSharp
+  ClassName: Rendering.DrawData
+Assets:
+- Assets/Prefabs/StructureConsoleCornerInner2Double.prefab
+- Assets/Prefabs/StructureConsoleWallMount2Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceMeter3x3Blueprint.prefab
+- Assets/Prefabs/StructureConsoleCornerInner1CenterBlueprint.prefab
+- Assets/Prefabs/StructureConsoleBase1Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat3DoubleBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate.prefab
+- Assets/Prefabs/StructureConsoleCornerInner2CenterBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine.prefab
+- Assets/Prefabs/StructureConsoleCornerInner2.prefab
+- Assets/Prefabs/StructureConsoleFlat1Corner3Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine6.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner5.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine7Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine14.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner4.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate4.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate6x6Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSliderDiode2Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine2.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate3x3.prefab
+- Assets/Prefabs/StructureConsoleBase1Double.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine8Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat3Double.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate6x6.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceFlipSwitchBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ItemKitModularDiagramLine.prefab
+- Assets/Prefabs/StructureConsoleBase6Double.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate12x2.prefab
+- Assets/Prefabs/StructureConsoleFlatCornerInnerDoubleCenterBlueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat3.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceGauge2x2Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSwitchBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceEmergencyButton3x3.prefab
+- Assets/Prefabs/StructureConsoleFlat3x2Double.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate2Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat3x2.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner2.prefab
+- Assets/Prefabs/StructureConsoleFlat3Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSliderDiode1.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner3.prefab
+- Assets/Prefabs/StructureConsoleBase3Double.prefab
+- Assets/Prefabs/StructureConsoleFlat1Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceDialSmall.prefab
+- Assets/Prefabs/StructureConsoleBase5Blueprint.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner2Blueprint.prefab
+- Assets/Prefabs/StructureConsoleBase4.prefab
+- Assets/Prefabs/StructureConsoleBase4Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine3.prefab
+- Assets/Prefabs/StructureConsoleBase2.prefab
+- Assets/Prefabs/StructureConsoleBase2Double.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceRoundButton.prefab
+- Assets/StationeersMods/Resources/ExportSettings.asset
+- Assets/Prefabs/ConsoleDevices/ModularDeviceDial.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine17Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ItemKitModularDiagramLineBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine18.prefab
+- Assets/Prefabs/StructureConsoleBase1.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceFlipCoverSwitchBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ItemKitModularConsoleLabelPlatesBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate8x2Blueprint.prefab
+- Assets/Prefabs/StructureConsoleBase5DoubleBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine13Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine4Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat2Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate3.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate4x4Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat1Corner3.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSliderDiode2.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine15.prefab
+- Assets/Prefabs/StructureConsoleCornerInner1Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSliderBlueprint.prefab
+- Assets/Prefabs/StructureConsoleBase4Double.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine2Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceFlipSwitch.prefab
+- Assets/Prefabs/StructureConsoleWallMount1Blueprinz.prefab
+- Assets/Prefabs/StructureConsoleCornerInner2DoubleBlueprint.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner1.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceDialBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine7.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceGauge3x3Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceConsoleBlueprint.prefab
+- Assets/Prefabs/StructureConsoleBase2DoubleBlueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat1Corner.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine11.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceAlarm_Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine23.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceCardReaderBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelDiode3Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceBigLever.prefab
+- Assets/Prefabs/StructureConsoleWallMount1.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceDialSmallBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceUtilityButton2x2.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate2.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlateBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelDiode3.prefab
+- Assets/Prefabs/StructureConsoleBase2Blueprint.prefab
+- Assets/Prefabs/StructureConsoleCornerInner1Double.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSliderDiode1Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceGauge2x2.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine12Blueprint.prefab
+- Assets/Prefabs/StructureConsoleCornerInner1.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceThrottle3x2.prefab
+- Assets/Prefabs/Util/LogicDigit.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate6x2.prefab
+- Assets/Prefabs/ConsoleDevices/ItemKitModularConsoleInputs.prefab
+- Assets/Prefabs/StructureConsoleBase6.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate4Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat2DoubleBlueprint.prefab
+- Assets/Prefabs/StructureConsoleBase6DoubleBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceRoundButtonBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceCardReader.prefab
+- Assets/Prefabs/StructureConsoleBase3Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSwitch.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceComputerBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceComputer.prefab
+- Assets/Prefabs/StructureConsoleFlat1.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine11Blueprint.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner4Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceConsole.prefab
+- Assets/Prefabs/StructureConsoleBase6Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlatCornerInnerDoubleBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate12x2Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ItemKitModularConsoleLabelPlates.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLEDdisplay3Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceUtilityButton2x2Blueprint.prefab
+- Assets/Prefabs/ItemKitModularConsoleBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate3x2Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine20Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ItemKitModularConsoleDisplayssBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine5Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSlider.prefab
+- Assets/Prefabs/StructureConsoleFlat2.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate6x2Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat1Corner2.prefab
+- Assets/Prefabs/StructureConsoleFlat3x2DoubleBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine8.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner6Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate3Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceThrottle3x2Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine18Blueprint.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner1Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLEDdisplay2.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate5x5Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine19Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ItemKitModularConsoleInputsBlueprint.prefab
+- Assets/Prefabs/StructureConsoleFlatCornerInnerDoubleCenter.prefab
+- Assets/Prefabs/StructureConsoleCornerInner1DoubleBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLightLarge.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate8x2.prefab
+- Assets/Prefabs/StructureConsoleCornerInner1Center.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine16Blueprint.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner3Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine20.prefab
+- Assets/Prefabs/ConsoleDevices/ItemKitModularConsoleDisplays.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceBigLeverBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceAlarm.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate4x4.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLight.prefab
+- Assets/Prefabs/ItemKitModularConsole.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate4x2.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine17.prefab
+- Assets/Prefabs/StructureConsoleFlatCornerInnerDouble.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLEDdisplay3.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine23Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlatCornerInnerBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate2x2.prefab
+- Assets/Prefabs/StructureConsoleFlat1DoubleBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLEDdisplay2Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate2x2Blueprint.prefab
+- Assets/Prefabs/StructureConsoleTerminal2.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine14Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine3Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat1Corner2Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine22Blueprint.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner5Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat3x2Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate5Blueprint.prefab
+- Assets/Prefabs/StructureConsoleBase1DoubleBlueprint.prefab
+- Assets/Prefabs/StructureConsoleTerminalBlueprint.prefab
+- Assets/Prefabs/StructureConsoleBaseCorner6.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine10Blueprint.prefab
+- Assets/Prefabs/StructureConsoleWallMount2.prefab
+- Assets/Prefabs/StructureConsoleBase5Double.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine13.prefab
+- Assets/Prefabs/StructureConsoleTerminal.prefab
+- Assets/Prefabs/StructureConsoleTerminal2Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlatCornerInner.prefab
+- Assets/Prefabs/StructureConsoleBase5.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine19.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLightBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine12.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine9.prefab
+- Assets/Prefabs/StructureConsoleCornerInner2Center.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceFlipCoverSwitch.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate3x3Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSquareButton.prefab
+- Assets/Prefabs/StructureConsoleCornerInner2Blueprint.prefab
+- Assets/Prefabs/StructureConsoleBase3DoubleBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelDiode2.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelDiode2Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine6Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceGauge3x3.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLightLargeBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate4x2Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine16.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLineBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLightSmallBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine5.prefab
+- Assets/Prefabs/StructureConsoleBase3.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLightSmall.prefab
+- Assets/Prefabs/StructureConsoleFlat1CornerBlueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceSquareButtonBlueprint.prefab
+- Assets/Prefabs/StructureConsoleBase4DoubleBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine15Blueprint.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate3x2.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceMeter3x3.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate5x5.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine4.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceEmergencyButton3x3Blueprint.prefab
+- Assets/Prefabs/StructureConsoleFlat1Double.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceNumpad.prefab
+- Assets/Prefabs/StructureConsoleFlat2Double.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine22.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceLabelPlate5.prefab
+- Assets/Prefabs/ConsoleDevices/ModularDeviceNumpadBlueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine9Blueprint.prefab
+- Assets/Prefabs/DiagramLine/ModularDiagramLine10.prefab
+Dependencies: []

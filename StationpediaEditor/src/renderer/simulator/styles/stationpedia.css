@@ -1,0 +1,341 @@
+/**
+ * Stationpedia Renderer Styles
+ * Game-accurate dark theme matching in-game Stationpedia appearance
+ * Colors extracted from game code: Background #0F1F38, Border #264D73, Orange #FF7A18, Link #008AE6
+ */
+
+.stationpedia-renderer {
+  background-color: #0F1F38;
+  color: #E6EDF3;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Game-accurate color palette */
+.stationpedia-renderer {
+  --bg-primary: #0F1F38;
+  --bg-secondary: #0A1520;
+  --bg-tertiary: #142844;
+  --text-primary: #E6EDF3;
+  --text-secondary: #8B949E;
+  --text-muted: #6E7681;
+  --accent-primary: #FF7A18;
+  --accent-secondary: #008AE6;
+  --border-color: #264D73;
+}
+
+/* Device header */
+.device-header {
+  border-bottom-color: var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.device-header h1 {
+  color: var(--accent-primary);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.device-header code {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-muted);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+}
+
+/* Page description */
+.page-description {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(10, 21, 32, 0.5);
+  border-radius: 4px;
+  border-left: 3px solid var(--border-color);
+}
+
+.page-description p {
+  margin-bottom: 0.5rem;
+}
+
+.page-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Collapsible sections */
+.collapsible-section {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.collapsible-section[data-depth="0"] {
+  background-color: rgba(10, 21, 32, 0.8);
+}
+
+.collapsible-section[data-depth="1"] {
+  background-color: rgba(15, 31, 56, 0.5);
+}
+
+[data-testid="section-toggle"] {
+  background-color: inherit;
+  color: var(--text-primary);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+}
+
+[data-testid="section-toggle"]:hover {
+  opacity: 0.75;
+  background-color: rgba(255, 122, 24, 0.1);
+}
+
+[data-testid="section-toggle"] span:first-child {
+  transform-origin: center;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+[data-testid="section-toggle"]:hover span:first-child {
+  color: var(--accent-primary);
+}
+
+[data-testid="section-content"] {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+[data-testid="section-content"] [data-testid="section-toggle"] {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-top: -1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 2rem;
+  border-radius: 0;
+}
+
+/* Table of Contents */
+.toc-panel {
+  background-color: rgba(10, 21, 32, 0.5);
+  border-color: var(--border-color);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.toc-panel h3 {
+  color: var(--accent-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.toc-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  space: 0.25rem;
+}
+
+.toc-panel li {
+  margin: 0.25rem 0;
+}
+
+.toc-panel button {
+  background: none;
+  border: none;
+  padding: 0.25rem 0;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.875rem;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.toc-panel button:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+}
+
+/* Rich text content */
+.rich-text-content {
+  color: var(--text-primary);
+}
+
+.rich-text-content p {
+  margin-bottom: 0.5rem;
+}
+
+.rich-text-content strong {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.rich-text-content em {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.rich-text-content u {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-primary);
+}
+
+.rich-text-content s {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Links use game link color - NOT cyan */
+.rich-text-content a {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.rich-text-content a:hover {
+  color: #00A8FF;
+}
+
+.rich-text-content pre {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  overflow-x: auto;
+}
+
+.rich-text-content code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Lists */
+.rich-text-content ul,
+.rich-text-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.rich-text-content li {
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+/* Logic section table */
+.logic-section {
+  overflow-x: auto;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.logic-section table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(15, 31, 56, 0.5);
+}
+
+.logic-section thead {
+  background-color: rgba(10, 21, 32, 0.8);
+}
+
+.logic-section th {
+  color: var(--accent-primary);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logic-section td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.logic-section tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.logic-section tbody tr:hover {
+  background-color: rgba(255, 122, 24, 0.05);
+}
+
+/* Images */
+.stationpedia-renderer img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+}
+
+/* Video embeds */
+.stationpedia-renderer iframe {
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  display: block;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+/* Scrollbar styling */
+.stationpedia-renderer {
+  scrollbar-color: var(--border-color) var(--bg-primary);
+  scrollbar-width: thin;
+}
+
+.stationpedia-renderer::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.stationpedia-renderer::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+.stationpedia-renderer::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.stationpedia-renderer::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .stationpedia-renderer {
+    font-size: 14px;
+  }
+
+  .device-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .logic-section table {
+    font-size: 0.8rem;
+  }
+
+  .logic-section th,
+  .logic-section td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .stationpedia-renderer iframe {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}

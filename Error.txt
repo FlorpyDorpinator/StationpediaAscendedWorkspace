@@ -1,0 +1,178 @@
+== UI ASSET INSPECTOR ==
+Right-click to copy
+------------------------
+TranslucentImageSources: 1
+  -> Main Camera
+------------------------
+Found 7 element(s):
+
+[1] InputText
+  Path: .../Mask/Content/~LineOfCode_2/Text Area/InputText
+  RectTransform:
+    sizeDelta: (0.00, 0.00)
+    anchorMin: (0.00, 0.00) anchorMax: (1.00, 1.00)
+    pivot: (0.00, 0.50)
+    offsetMin: (0.00, 0.00) offsetMax: (0.00, 0.00)
+  Parent: Text Area
+    Grandparent: ~LineOfCode_2
+  Sibling index: 1/2
+  TMP: "​"
+    Font: code
+
+[2] Caret
+  Path: .../Mask/Content/~LineOfCode_2/Text Area/Caret
+  RectTransform:
+    sizeDelta: (0.00, 0.00)
+    anchorMin: (0.00, 0.00) anchorMax: (1.00, 1.00)
+    pivot: (0.00, 0.50)
+    offsetMin: (0.00, 0.00) offsetMax: (0.00, 0.00)
+  Parent: Text Area
+    Grandparent: ~LineOfCode_2
+  Sibling index: 0/2
+  LayoutElement
+
+[3] ~LineOfCode_2
+  Path: .../Image/ScrollRect/Mask/Content/~LineOfCode_2
+  RectTransform:
+    sizeDelta: (1490.00, 40.00)
+    anchorMin: (0.00, 1.00) anchorMax: (0.00, 1.00)
+    pivot: (0.00, 1.00)
+    offsetMin: (0.00, -120.00) offsetMax: (1490.00, -80.00)
+  Image: (no sprite)
+    Color: #FFFFFF80
+    Type: Sliced, RaycastTarget: True
+    Material: Default UI Material
+    maskable: True, preserveAspect: False
+  Children (3):
+    LineNum size:(75.60, 0.00)
+    FormattedText size:(-89.70, 0.00)
+    Text Area size:(-89.70, 0.00)
+  Parent: Content
+    Grandparent: Mask
+    GP Image: button-bg color:#00000068
+  Sibling index: 2/128
+    Sib[0] ~LineOfCode_0: (no sprite) #FFFFFF80
+    Sib[1] ~LineOfCode_1: (no sprite) #FFFFFF80
+    Sib[3] ~LineOfCode_3: (no sprite) #FFFFFF80
+    Sib[4] ~LineOfCode_4: (no sprite) #FFFFFF80
+    Sib[5] ~LineOfCode_5: (no sprite) #FFFFFF80
+  TMP_InputField
+  EditorLineOfCode
+
+[4] Outline
+  Path: PanelInputCode/Image/Outline
+  RectTransform:
+    sizeDelta: (-20.00, -20.00)
+    anchorMin: (0.00, 0.00) anchorMax: (1.00, 1.00)
+    pivot: (0.50, 0.50)
+    offsetMin: (10.00, 10.00) offsetMax: (-10.00, -10.00)
+  Image: dialog-outline
+    Texture: dialog-outline (64x64)
+    TexFormat: DXT5, isReadable: False
+    Border(9-slice): L=18 B=18 R=18 T=18
+    SpriteRect: (x:0.00, y:0.00, width:64.00, height:64.00)
+    Color: #FF6516FF
+    Type: Sliced, RaycastTarget: True
+    Material: Default UI Material
+    maskable: True, preserveAspect: False
+  Parent: Image
+    Parent Image: window-shadow color:#FFFFFF80
+    Grandparent: PanelInputCode
+  Sibling index: 1/16
+    Sib[0] Image: dialog-bg #002A47FF
+    Sib[4] Scrollbar: scrollbar-bg #FFFFFFFF
+    Sib[5] ButtonCancel: button-bg #00000080
+  LayoutElement
+
+[5] Image
+  Path: PanelInputCode/Image/Image
+  RectTransform:
+    sizeDelta: (-24.00, -24.00)
+    anchorMin: (0.00, 0.00) anchorMax: (1.00, 1.00)
+    pivot: (0.50, 0.50)
+    offsetMin: (12.00, 12.00) offsetMax: (-12.00, -12.00)
+  Image: dialog-bg
+    Texture: dialog-bg (64x64)
+    TexFormat: DXT5, isReadable: False
+    Border(9-slice): L=18 B=18 R=18 T=18
+    SpriteRect: (x:0.00, y:0.00, width:64.00, height:64.00)
+    Color: #002A47FF
+    Type: Sliced, RaycastTarget: True
+    Material: Default-Translucent
+    maskable: True, preserveAspect: False
+    == TranslucentImage ==
+    vibrancy: 2.000
+    brightness: -0.257
+    flatten: 0.200
+    spriteBlending: 1.000
+    TI.material: Default-Translucent
+    TI.shader: UI/TranslucentImage
+    TI.materialForRendering: Default-Translucent
+  Parent: Image
+    Parent Image: window-shadow color:#FFFFFF80
+    Grandparent: PanelInputCode
+  Sibling index: 0/16
+    Sib[1] Outline: dialog-outline #FF6516FF
+    Sib[4] Scrollbar: scrollbar-bg #FFFFFFFF
+    Sib[5] ButtonCancel: button-bg #00000080
+  LayoutElement
+
+[6] Image
+  Path: PanelInputCode/Image
+  RectTransform:
+    sizeDelta: (1600.00, 1280.00)
+    anchorMin: (0.50, 0.50) anchorMax: (0.50, 0.50)
+    pivot: (0.50, 0.50)
+    offsetMin: (-800.00, -640.00) offsetMax: (800.00, 640.00)
+  Image: window-shadow
+    Texture: window-shadow (128x128)
+    TexFormat: DXT5, isReadable: False
+    Border(9-slice): L=42 B=42 R=42 T=42
+    SpriteRect: (x:0.00, y:0.00, width:128.00, height:128.00)
+    Color: #FFFFFF80
+    Type: Sliced, RaycastTarget: True
+    Material: Default UI Material
+    maskable: True, preserveAspect: False
+  Children (16):
+    Image -> dialog-bg color:#002A47FF type:Sliced size:(-24.00, -24.00)
+    Outline -> dialog-outline color:#FF6516FF type:Sliced size:(-20.00, -20.00)
+    Title size:(636.98, 23.00)
+    InfoText size:(962.50, 28.00)
+    Scrollbar -> scrollbar-bg color:#FFFFFFFF type:Sliced size:(10.00, -270.43)
+    ButtonCancel -> button-bg color:#00000080 type:Sliced size:(220.00, 40.00)
+    ButtonSubmit -> button-bg color:#00000080 type:Sliced size:(220.00, 40.00)
+    SideButtons size:(837.70, 40.00)
+    ... and 8 more children
+  Parent: PanelInputCode
+    Parent Image: (no sprite) color:#000000BF
+  Sibling index: 4/5
+    Sib[0] HelpFunctions: bigwindowbg #FFFFFFFF
+    Sib[1] HelpVariables: bigwindowbg #FFFFFFFF
+    Sib[2] HelpSlotVariables: bigwindowbg #FFFFFFFF
+    Sib[3] HelpSourceLoad: inv-window-bg #1E1E1EFF
+  UiComponentRenderer
+  DraggableWindow
+  LayoutElement
+  ContentSizeFitter
+
+[7] PanelInputCode
+  Path: PanelInputCode
+  RectTransform:
+    sizeDelta: (2275.56, 1280.00)
+    anchorMin: (0.00, 0.00) anchorMax: (0.00, 0.00)
+    pivot: (0.50, 0.50)
+    offsetMin: (142.22, 80.00) offsetMax: (2417.78, 1360.00)
+  Image: (no sprite)
+    Color: #000000BF
+    Type: Sliced, RaycastTarget: True
+    Material: Default UI Material
+    maskable: True, preserveAspect: False
+  Children (5):
+    HelpFunctions -> bigwindowbg color:#FFFFFFFF type:Sliced size:(990.00, 700.00)
+    HelpVariables -> bigwindowbg color:#FFFFFFFF type:Sliced size:(990.00, 700.00)
+    HelpSlotVariables -> bigwindowbg color:#FFFFFFFF type:Sliced size:(990.00, 700.00)
+    HelpSourceLoad -> inv-window-bg color:#1E1E1EFF type:Sliced size:(648.00, 806.76)
+    Image -> window-shadow color:#FFFFFF80 type:Sliced size:(1600.00, 1280.00)
+  Canvas: sortOrder=0, renderMode=ScreenSpaceOverlay
+  InputSourceCode
+

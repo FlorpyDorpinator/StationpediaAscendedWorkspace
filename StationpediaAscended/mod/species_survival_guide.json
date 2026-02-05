@@ -1,0 +1,638 @@
+{
+"guideKey": "SpeciesSurvivalGuide2",
+  "displayName": "Species Survival Mechanics",
+  "pageDescription": "<b>Complete guide to survival mechanics for all playable species</b>\n\nThis guide covers the biological and mechanical differences between Humans, Zrilians, and Robots. Understanding these differences is critical for survival, especially when playing different species or managing mixed crews.",
+  "generateToc": true,
+  "tocTitle": "Contents",
+  "buttonColor": "orange",
+  "sortOrder": 5,
+  "OperationalDetails": [
+    {
+      "title": "Species Overview",
+      "tocId": "overview",
+      "collapsible": true,
+      "description": "Stationeers features three playable species, each with distinct survival requirements.",
+      "children": [
+        {
+          "title": "Human",
+          "tocId": "overview-human",
+          "collapsible": true,
+          "description": "The baseline organic species. Requires oxygen, food, water, and temperature regulation. Vulnerable to toxins (X3 gas) and pollutants.",
+          "items": [
+            "<b>Breathing Gas:</b> Oxygen (O2)",
+            "<b>Toxic Gases:</b> Toxins (X3), Pollutant (X1)",
+            "<b>Food/Water:</b> Required",
+            "<b>Temperature Sensitive:</b> Yes",
+            "<b>Organs:</b> Brain, Heart, Lungs"
+          ]
+        },
+        {
+          "title": "Zrilian",
+          "tocId": "overview-zrilian",
+          "collapsible": true,
+          "description": "An alien species that breathes Volatiles instead of Oxygen. Has different toxic gas vulnerabilities than humans. Requires the Zrilian Species Pack DLC.",
+          "items": [
+            "<b>Breathing Gas:</b> Volatiles (H2 compound)",
+            "<b>Toxic Gases:</b> Pollutant (X1) - Note: Toxins (X3) affect Zrilians differently",
+            "<b>Food/Water:</b> Required",
+            "<b>Temperature Sensitive:</b> Yes",
+            "<b>Organs:</b> Brain, Heart, Lungs (Zrilian variant)"
+          ]
+        },
+        {
+          "title": "Robot",
+          "tocId": "overview-robot",
+          "collapsible": true,
+          "description": "Artificial beings that do not require biological sustenance. Immune to atmospheric hazards but dependent on power.",
+          "items": [
+            "<b>Breathing Gas:</b> None required",
+            "<b>Toxic Gases:</b> Immune",
+            "<b>Food/Water:</b> Not required",
+            "<b>Temperature Sensitive:</b> Limited (extreme temps can damage components)",
+            "<b>Power:</b> Requires battery power to function"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Human Survival Mechanics",
+      "tocId": "human-mechanics",
+      "collapsible": true,
+      "description": "Detailed breakdown of Human survival requirements and damage thresholds.",
+      "children": [
+        {
+          "title": "Respiration",
+          "tocId": "human-respiration",
+          "collapsible": true,
+          "description": "Humans require Oxygen (O2) to breathe. The critical metric is Oxygen Partial Pressure in the breathing atmosphere.",
+          "children": [
+            {
+              "title": "Oxygen Thresholds",
+              "tocId": "human-o2-thresholds",
+              "collapsible": true,
+              "items": [
+                "<b>Safe:</b> 16+ kPa O2 partial pressure - No warnings, full breathing efficiency",
+                "<b>Warning (Orange):</b> 8-16 kPa O2 - 'Oxygen Low' warning, reduced efficiency but no damage yet",
+                "<b>Critical (Red):</b> Below 8 kPa O2 - 'Oxygen Critical' warning, efficiency drops sharply",
+                "<b>Suffocation:</b> Below ~5 kPa O2 - Suffocation damage begins, unconsciousness follows"
+              ]
+            },
+            {
+              "title": "Breathing Efficiency",
+              "tocId": "human-breathing-eff",
+              "collapsible": true,
+              "description": "Breathing efficiency is calculated as: O2 Partial Pressure / 16 kPa, clamped between 0 and 1.5.\n\n<b>Examples:</b>\n- 20 kPa O2: 125% efficiency (capped at 150%)\n- 16 kPa O2: 100% efficiency\n- 8 kPa O2: 50% efficiency\n- 4 kPa O2: 25% efficiency (critical)"
+            },
+            {
+              "title": "Pressure Limits",
+              "tocId": "human-pressure",
+              "collapsible": true,
+              "items": [
+                "<b>Armstrong Limit:</b> 6.3 kPa total pressure - Below this, blood begins to boil",
+                "<b>No Minimum Safe Pressure:</b> As long as O2 partial pressure is 16+ kPa, any total pressure works",
+                "<b>High Pressure:</b> Generally safe up to several hundred kPa with proper gas mix"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Toxic Gases",
+          "tocId": "human-toxins",
+          "collapsible": true,
+          "description": "Humans are vulnerable to specific gases that cause toxic damage.",
+          "children": [
+            {
+              "title": "Toxin (X3) Exposure",
+              "tocId": "human-x3",
+              "collapsible": true,
+              "items": [
+                "<b>Warning Threshold:</b> 0.5 kPa partial pressure - Yellow 'Toxins' warning",
+                "<b>Damage Threshold:</b> 1.0 kPa partial pressure - Toxic damage begins",
+                "<b>Damage Type:</b> Toxic damage accumulates over time while exposed",
+                "<b>Recovery:</b> Remove from toxic atmosphere; toxic damage heals slowly over time"
+              ]
+            },
+            {
+              "title": "Pollutant (X1) Exposure",
+              "tocId": "human-x1",
+              "collapsible": true,
+              "items": [
+                "<b>Warning Threshold:</b> 0.5 kPa partial pressure",
+                "<b>Damage Threshold:</b> 1.0 kPa partial pressure",
+                "<b>Note:</b> Pollutant affects both Humans and Zrilians but through different warning systems"
+              ]
+            },
+            {
+              "title": "Carbon Dioxide (CO2)",
+              "tocId": "human-co2",
+              "collapsible": true,
+              "description": "CO2 is not directly toxic at normal concentrations but displaces oxygen. High CO2 levels reduce oxygen partial pressure, causing suffocation indirectly."
+            }
+          ]
+        },
+        {
+          "title": "Temperature",
+          "tocId": "human-temperature",
+          "collapsible": true,
+          "description": "Body temperature must be maintained within safe limits.",
+          "children": [
+            {
+              "title": "Temperature Thresholds",
+              "tocId": "human-temp-thresholds",
+              "collapsible": true,
+              "items": [
+                "<b>Comfortable Range:</b> 20-30 C (293-303 K)",
+                "<b>Safe Range:</b> 0-50 C (273-323 K) - No damage",
+                "<b>Cold Warning:</b> Below 0 C - Yellow hypothermia warning",
+                "<b>Cold Damage:</b> Below -10 C (263 K) - Burn damage from frostbite begins",
+                "<b>Heat Warning:</b> Above 40 C - Yellow hyperthermia warning",
+                "<b>Heat Damage:</b> Above 50 C (323 K) - Burn damage from heat begins"
+              ]
+            },
+            {
+              "title": "Damage Escalation",
+              "tocId": "human-temp-damage",
+              "collapsible": true,
+              "description": "Temperature damage scales with how far outside safe range you are:\n\n<b>Cold Damage:</b> Increases as temperature drops below -10 C\n<b>Heat Damage:</b> Increases as temperature rises above 50 C\n\nExtreme temperatures (below -50 C or above 100 C) cause rapid damage that can kill in seconds without a suit."
+            },
+            {
+              "title": "Suit Protection",
+              "tocId": "human-suit-temp",
+              "collapsible": true,
+              "description": "Space suits provide temperature regulation:\n\n- <b>Operating Range:</b> Suits can maintain internal temperature in extreme external conditions\n- <b>A/C System:</b> Uses suit power and oxygen to regulate temperature\n- <b>Limits:</b> Extended exposure to extreme temperatures (lava, deep space) eventually overwhelms suit cooling/heating"
+            }
+          ]
+        },
+        {
+          "title": "Nutrition",
+          "tocId": "human-nutrition",
+          "collapsible": true,
+          "description": "Humans require regular food to avoid starvation.",
+          "children": [
+            {
+              "title": "Starvation Mechanics",
+              "tocId": "human-starvation",
+              "collapsible": true,
+              "items": [
+                "<b>Nutrition Depletes:</b> Nutrition decreases over time from normal activity",
+                "<b>Starvation Damage:</b> When Nutrition reaches 0, starvation damage begins",
+                "<b>Damage Rate (Awake):</b> 0.1 points per game tick",
+                "<b>Damage Rate (Sleeping):</b> 0.033 points per game tick (3x slower)",
+                "<b>Recovery:</b> Eating food restores Nutrition; starvation damage heals when Nutrition > 0"
+              ]
+            },
+            {
+              "title": "Sleep Effects",
+              "tocId": "human-sleep-nutrition",
+              "collapsible": true,
+              "description": "Sleeping in a bed reduces nutrition consumption rate by approximately 3x. This is why sleeping through emergencies (when safe) can extend survival time."
+            }
+          ]
+        },
+        {
+          "title": "Hydration",
+          "tocId": "human-hydration",
+          "collapsible": true,
+          "description": "Humans require water to avoid dehydration.",
+          "children": [
+            {
+              "title": "Dehydration Mechanics",
+              "tocId": "human-dehydration",
+              "collapsible": true,
+              "items": [
+                "<b>Hydration Depletes:</b> Hydration decreases over time from normal activity",
+                "<b>Dehydration Damage:</b> When Hydration reaches 0, dehydration damage begins",
+                "<b>Damage Rate (Awake):</b> 0.1 points per game tick",
+                "<b>Damage Rate (Sleeping):</b> 0.033 points per game tick (3x slower)",
+                "<b>Recovery:</b> Drinking water restores Hydration; dehydration damage heals when Hydration > 0"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Organs",
+          "tocId": "human-organs",
+          "collapsible": true,
+          "description": "Humans have vital organs that can be damaged or destroyed.",
+          "children": [
+            {
+              "title": "Brain",
+              "tocId": "human-brain",
+              "collapsible": true,
+              "description": "The brain controls consciousness and character identity.\n\n<b>Damage Effects:</b> Brain damage causes cognitive impairment and eventual unconsciousness\n<b>Destruction:</b> If the brain is destroyed, the character dies immediately with 100 brute damage applied"
+            },
+            {
+              "title": "Heart",
+              "tocId": "human-heart",
+              "collapsible": true,
+              "description": "The heart pumps blood and is required for life.\n\n<b>Damage Effects:</b> Heart damage reduces overall health regeneration\n<b>Destruction:</b> If the heart is destroyed, the character dies immediately with 100 brute damage applied"
+            },
+            {
+              "title": "Lungs",
+              "tocId": "human-lungs",
+              "collapsible": true,
+              "description": "Lungs process breathable atmosphere and calculate breathing efficiency based on O2 partial pressure.\n\n<b>Damage Effects:</b> Lung damage reduces breathing efficiency\n<b>Destruction:</b> If lungs are destroyed, the character dies immediately with 100 brute damage applied"
+            },
+            {
+              "title": "Organ Damage",
+              "tocId": "human-organ-damage",
+              "collapsible": true,
+              "description": "<b>Critical Rule:</b> When ANY vital organ is destroyed, the entity receives 100 points of brute damage and the entity state is set to Dead.\n\nOrgan damage can occur from:\n- Extreme temperature exposure\n- Toxic gas exposure\n- Physical trauma\n- Explosions\n- Suffocation (prolonged)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Zrilian Survival Mechanics",
+      "tocId": "zrilian-mechanics",
+      "collapsible": true,
+      "description": "Zrilians share many mechanics with humans but have key differences in respiration.",
+      "children": [
+        {
+          "title": "Respiration",
+          "tocId": "zrilian-respiration",
+          "collapsible": true,
+          "description": "Zrilians breathe Volatiles instead of Oxygen. This is their primary biological difference.",
+          "children": [
+            {
+              "title": "Volatiles Thresholds",
+              "tocId": "zrilian-volatiles",
+              "collapsible": true,
+              "items": [
+                "<b>Safe:</b> 16+ kPa Volatiles partial pressure - Full breathing efficiency",
+                "<b>Warning (Orange):</b> 8-16 kPa Volatiles - Reduced efficiency",
+                "<b>Critical (Red):</b> Below 8 kPa Volatiles - Efficiency drops sharply",
+                "<b>Suffocation:</b> Below ~5 kPa Volatiles - Suffocation damage begins"
+              ]
+            },
+            {
+              "title": "Atmosphere Compatibility",
+              "tocId": "zrilian-atmos",
+              "collapsible": true,
+              "description": "Zrilians CANNOT survive in human-breathable atmospheres and vice versa:\n\n<b>Human Atmosphere:</b> O2/N2 mix - Zrilians will suffocate (no Volatiles)\n<b>Zrilian Atmosphere:</b> Volatiles-based - Humans will suffocate (no Oxygen)\n\n<b>Mixed Crew Consideration:</b> Running a mixed Human/Zrilian crew requires separate atmospheric zones or specialized equipment."
+            },
+            {
+              "title": "Nitrous Oxide (N2O) Safety",
+              "tocId": "zrilian-n2o",
+              "collapsible": true,
+              "description": "Zrilians have specific tolerance to N2O:\n\n<b>Safe N2O Partial Pressure:</b> Up to 16 kPa\n<b>Above Safe Level:</b> N2O toxicity effects begin"
+            }
+          ]
+        },
+        {
+          "title": "Toxic Gases",
+          "tocId": "zrilian-toxins",
+          "collapsible": true,
+          "description": "Zrilians have different toxic gas vulnerabilities than humans.",
+          "children": [
+            {
+              "title": "Pollutant (X1) Sensitivity",
+              "tocId": "zrilian-pollutant",
+              "collapsible": true,
+              "items": [
+                "<b>Warning Threshold:</b> 0.5 kPa partial pressure",
+                "<b>Damage Threshold:</b> 1.0 kPa partial pressure",
+                "<b>Note:</b> Pollutant is the primary toxic concern for Zrilians (similar to how Toxins affect Humans)"
+              ]
+            },
+            {
+              "title": "Toxin (X3) Resistance",
+              "tocId": "zrilian-x3",
+              "collapsible": true,
+              "description": "Zrilians process Toxins (X3) differently than humans. While not completely immune, they are more resistant to X3 exposure."
+            }
+          ]
+        },
+        {
+          "title": "Other Mechanics",
+          "tocId": "zrilian-other",
+          "collapsible": true,
+          "description": "All other survival mechanics are identical to humans:",
+          "items": [
+            "<b>Temperature:</b> Same safe range (0-50 C)",
+            "<b>Nutrition:</b> Same starvation mechanics",
+            "<b>Hydration:</b> Same dehydration mechanics",
+            "<b>Organs:</b> Same vital organs (with Zrilian-variant Lungs)",
+            "<b>Physical Damage:</b> Same brute/burn damage handling"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Robot Survival Mechanics",
+      "tocId": "robot-mechanics",
+      "collapsible": true,
+      "description": "Robots are artificial beings with completely different survival requirements.",
+      "children": [
+        {
+          "title": "Atmospheric Immunity",
+          "tocId": "robot-atmos",
+          "collapsible": true,
+          "description": "Robots do not breathe and are immune to atmospheric hazards.",
+          "items": [
+            "<b>No Oxygen Required:</b> Can operate in vacuum indefinitely",
+            "<b>No Toxic Gas Damage:</b> Immune to X1, X3, and all other gases",
+            "<b>No Pressure Concerns:</b> Can operate at any pressure including vacuum",
+            "<b>Advantage:</b> Perfect for EVA work and hostile environment operations"
+          ]
+        },
+        {
+          "title": "No Biological Needs",
+          "tocId": "robot-bio",
+          "collapsible": true,
+          "description": "Robots have no biological requirements:",
+          "items": [
+            "<b>No Food:</b> Nutrition system does not apply",
+            "<b>No Water:</b> Hydration system does not apply",
+            "<b>No Sleep:</b> Can operate continuously",
+            "<b>No Mood:</b> Mood system does not apply (damage does not reduce mood)"
+          ]
+        },
+        {
+          "title": "Power Dependency",
+          "tocId": "robot-power",
+          "collapsible": true,
+          "description": "Instead of biological needs, robots require electrical power.",
+          "items": [
+            "<b>Battery:</b> Robots run on internal batteries",
+            "<b>Charging:</b> Requires battery chargers or droid sleepers to recharge",
+            "<b>Power Depletion:</b> When battery is empty, robot becomes non-functional",
+            "<b>No Death State:</b> Robots can be recharged and restored, unlike biological entities"
+          ]
+        },
+        {
+          "title": "Temperature Tolerance",
+          "tocId": "robot-temp",
+          "collapsible": true,
+          "description": "Robots have much wider temperature tolerance than organic species:",
+          "items": [
+            "<b>Cold Resistance:</b> Can operate in extremely cold environments",
+            "<b>Heat Resistance:</b> Can withstand higher temperatures than organics",
+            "<b>Extreme Limits:</b> Very extreme temperatures (lava, etc.) can still damage robot components",
+            "<b>No Suit Required:</b> Robots do not need environmental suits for temperature regulation"
+          ]
+        },
+        {
+          "title": "Physical Damage",
+          "tocId": "robot-damage",
+          "collapsible": true,
+          "description": "Robots can still be damaged physically:",
+          "items": [
+            "<b>Brute Damage:</b> Applies normally from impacts, explosions, etc.",
+            "<b>Burn Damage:</b> Applies from extreme heat or electrical damage",
+            "<b>Repair:</b> Requires repair tools rather than medical treatment",
+            "<b>No Organs:</b> No vital organ system - damage is distributed"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Physical Damage",
+      "tocId": "physical-damage",
+      "collapsible": true,
+      "description": "All species (including Robots) can receive physical damage from various sources.",
+      "children": [
+        {
+          "title": "Damage Types",
+          "tocId": "damage-types",
+          "collapsible": true,
+          "items": [
+            "<b>Brute:</b> Physical impacts, falls, explosions, crushing",
+            "<b>Burn:</b> Fire, extreme heat, extreme cold (frostbite), electrical",
+            "<b>Oxygen:</b> Suffocation damage from lack of breathing gas",
+            "<b>Toxic:</b> Poison damage from toxic gas exposure",
+            "<b>Starvation:</b> Damage from lack of food",
+            "<b>Hydration:</b> Damage from lack of water",
+            "<b>Radiation:</b> Damage from radiation exposure",
+            "<b>Stun:</b> Temporary incapacitation (from explosions, etc.)"
+          ]
+        },
+        {
+          "title": "Explosion Damage",
+          "tocId": "explosion-damage",
+          "collapsible": true,
+          "description": "Explosions deal damage based on force and distance.",
+          "children": [
+            {
+              "title": "Mechanics",
+              "tocId": "explosion-mechanics",
+              "collapsible": true,
+              "items": [
+                "<b>Damage Types:</b> Explosions deal both Brute AND Stun damage",
+                "<b>Max Damage:</b> Calculated as: min(force x 100, maxDamage)",
+                "<b>Distance Falloff:</b> Damage decreases linearly from center to edge of radius",
+                "<b>At Center:</b> Full damage (force x 100)",
+                "<b>At Radius Edge:</b> Zero damage"
+              ]
+            },
+            {
+              "title": "Common Explosion Sources",
+              "tocId": "explosion-sources",
+              "collapsible": true,
+              "items": [
+                "<b>Gas Canister Rupture:</b> Force scales with pressure, radius scales with pressure",
+                "<b>Furnace Explosion:</b> Force scales with internal pressure vs max pressure",
+                "<b>Grenade:</b> Force = 1600, Radius = 4.3m (very dangerous)",
+                "<b>Advanced Suit Overheat:</b> Force = 200, Radius = 2.3m",
+                "<b>Robot Mining Explosion:</b> Force = 200, Radius = 4m"
+              ]
+            },
+            {
+              "title": "Protection",
+              "tocId": "explosion-protection",
+              "collapsible": true,
+              "description": "Walls and structures can block explosion damage. Distance is your best protection - even a few meters significantly reduces damage."
+            }
+          ]
+        },
+        {
+          "title": "Fall Damage",
+          "tocId": "fall-damage",
+          "collapsible": true,
+          "description": "Falling from height causes brute damage on impact.",
+          "items": [
+            "<b>Safe Fall:</b> Short falls (a few meters) cause no damage",
+            "<b>Damage Threshold:</b> Falls above a certain height begin dealing damage",
+            "<b>Scaling:</b> Damage increases with fall distance",
+            "<b>Fatal Falls:</b> Very long falls can be instantly fatal",
+            "<b>Jetpack:</b> Using jetpack thrust before impact can reduce or negate fall damage"
+          ]
+        },
+        {
+          "title": "Lava Damage",
+          "tocId": "lava-damage",
+          "collapsible": true,
+          "description": "Contact with lava deals continuous burn damage.",
+          "items": [
+            "<b>With Suit:</b> Suit and helmet take damage first",
+            "<b>Held Items:</b> Items in hands also take lava damage",
+            "<b>Without Suit:</b> Direct burn damage to entity - quickly fatal",
+            "<b>Damage Rate:</b> Very high - lava kills rapidly"
+          ]
+        },
+        {
+          "title": "Health and Death",
+          "tocId": "health-death",
+          "collapsible": true,
+          "description": "Health is calculated from total damage across all types.",
+          "children": [
+            {
+              "title": "Health Calculation",
+              "tocId": "health-calc",
+              "collapsible": true,
+              "description": "Total Health = Max Health - (Brute + Burn + Toxic + Oxygen + Starvation + Hydration + Radiation)\n\nAll damage types contribute to overall health loss."
+            },
+            {
+              "title": "Entity States",
+              "tocId": "entity-states",
+              "collapsible": true,
+              "items": [
+                "<b>Alive:</b> Normal operation",
+                "<b>Unconscious:</b> Incapacitated but can potentially be revived",
+                "<b>Dead:</b> Character is dead - respawn required"
+              ]
+            },
+            {
+              "title": "Damage Recovery",
+              "tocId": "damage-recovery",
+              "collapsible": true,
+              "description": "Most damage types heal over time once the source is removed:\n\n<b>Starvation/Hydration:</b> Heals at same rate as damage when food/water is available\n<b>Toxic:</b> Heals slowly over time when not exposed\n<b>Oxygen:</b> Heals when breathing properly\n<b>Brute/Burn:</b> Requires medical treatment or slow natural healing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Survival Tips by Species",
+      "tocId": "survival-tips",
+      "collapsible": true,
+      "description": "Quick reference tips for each species.",
+      "children": [
+        {
+          "title": "Human Tips",
+          "tocId": "human-tips",
+          "collapsible": true,
+          "items": [
+            "Maintain 16+ kPa O2 partial pressure in your breathing atmosphere",
+            "Keep body temperature between 0-50 C (suit A/C helps)",
+            "Monitor suit waste tank - vent before it reaches 4052 kPa",
+            "Sleep to reduce food/water consumption during emergencies",
+            "Avoid Toxins (X3) and Pollutants (X1) - even small amounts cause damage",
+            "Keep spare filters - they deplete over time"
+          ]
+        },
+        {
+          "title": "Zrilian Tips",
+          "tocId": "zrilian-tips",
+          "collapsible": true,
+          "items": [
+            "Maintain 16+ kPa Volatiles partial pressure - NOT Oxygen",
+            "You CANNOT share atmosphere with Humans",
+            "Watch for Pollutant (X1) exposure - your primary toxic threat",
+            "Same temperature limits as Humans (0-50 C)",
+            "Same food/water requirements as Humans",
+            "N2O exposure above 16 kPa causes problems"
+          ]
+        },
+        {
+          "title": "Robot Tips",
+          "tocId": "robot-tips",
+          "collapsible": true,
+          "items": [
+            "Monitor battery power - you stop functioning when depleted",
+            "No atmosphere needed - perfect for vacuum/hostile environment work",
+            "Still vulnerable to physical damage and explosions",
+            "Can operate in extreme temperatures where organics cannot",
+            "Use droid sleepers for recharging",
+            "No healing - requires repair for damage"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Quick Reference Tables",
+      "tocId": "reference-tables",
+      "collapsible": true,
+      "description": "Summary tables for key values.",
+      "children": [
+        {
+          "title": "Breathing Requirements",
+          "tocId": "breathing-table",
+          "collapsible": true,
+          "table": {
+            "headers": ["Species", "Breathing Gas", "Min Safe (kPa)", "Warning (kPa)", "Critical (kPa)"],
+            "rows": [
+              {
+                "cells": ["Human", "Oxygen (O2)", "16", "8-16", "<8"]
+              },
+              {
+                "cells": ["Zrilian", "Volatiles", "16", "8-16", "<8"]
+              },
+              {
+                "cells": ["Robot", "None", "N/A", "N/A", "N/A"]
+              }
+            ]
+          }
+        },
+        {
+          "title": "Temperature Limits",
+          "tocId": "temp-table",
+          "collapsible": true,
+          "table": {
+            "headers": ["Species", "Safe Low", "Safe High", "Damage Low", "Damage High"],
+            "rows": [
+              {
+                "cells": ["Human", "0 C", "50 C", "-10 C", "50+ C"]
+              },
+              {
+                "cells": ["Zrilian", "0 C", "50 C", "-10 C", "50+ C"]
+              },
+              {
+                "cells": ["Robot", "Much lower", "Much higher", "Extreme only", "Extreme only"]
+              }
+            ]
+          }
+        },
+        {
+          "title": "Toxic Gas Thresholds",
+          "tocId": "toxic-table",
+          "collapsible": true,
+          "table": {
+            "headers": ["Gas", "Warning (kPa)", "Damage (kPa)", "Affects"],
+            "rows": [
+              {
+                "cells": ["Toxin (X3)", "0.5", "1.0", "Humans primarily"]
+              },
+              {
+                "cells": ["Pollutant (X1)", "0.5", "1.0", "Both Humans & Zrilians"]
+              },
+              {
+                "cells": ["N2O (for Zrilians)", "-", "16+", "Zrilians only"]
+              }
+            ]
+          }
+        },
+        {
+          "title": "Damage Rates",
+          "tocId": "damage-rates-table",
+          "collapsible": true,
+          "table": {
+            "headers": ["Damage Type", "Rate (Awake)", "Rate (Sleeping)", "Recovery"],
+            "rows": [
+              {
+                "cells": ["Starvation", "0.1/tick", "0.033/tick", "Same rate when fed"]
+              },
+              {
+                "cells": ["Dehydration", "0.1/tick", "0.033/tick", "Same rate when hydrated"]
+              },
+              {
+                "cells": ["Organ Destruction", "100 brute", "Instant death", "Not recoverable"]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

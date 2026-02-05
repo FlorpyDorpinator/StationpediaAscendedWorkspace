@@ -1,0 +1,511 @@
+/**
+ * Editor component styles
+ * Dark theme consistent with Stationpedia simulator
+ */
+
+:root {
+  --stationpedia-bg: #1a1a2e;
+  --stationpedia-surface: #16213e;
+  --stationpedia-border: #0f3460;
+  --stationpedia-accent: #00d4ff;
+  --stationpedia-text: #e0e0e0;
+  --stationpedia-text-muted: #808080;
+}
+
+/* Panel System */
+.mosaic {
+  background-color: var(--stationpedia-bg);
+}
+
+.mosaic-window {
+  background-color: var(--stationpedia-surface);
+  border: 1px solid var(--stationpedia-border);
+  border-radius: 4px;
+}
+
+.mosaic-window-title {
+  background-color: var(--stationpedia-border);
+  color: var(--stationpedia-text);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--stationpedia-border);
+}
+
+.mosaic-window-body {
+  background-color: transparent;
+}
+
+.mosaic-split {
+  background-color: var(--stationpedia-border);
+}
+
+.mosaic-split:hover {
+  background-color: var(--stationpedia-accent);
+}
+
+.mosaic-zero-state {
+  background-color: var(--stationpedia-bg);
+  color: var(--stationpedia-text-muted);
+}
+
+/* Drag and Drop */
+.dnd-context {
+  background-color: transparent;
+}
+
+[data-over-id] {
+  background-color: rgba(0, 212, 255, 0.1);
+}
+
+/* Content Tree */
+.content-tree-item {
+  background-color: transparent;
+  color: var(--stationpedia-text);
+  border: none;
+  padding: 8px 12px;
+  margin: 2px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.content-tree-item:hover {
+  background-color: rgba(0, 212, 255, 0.1);
+  color: var(--stationpedia-accent);
+}
+
+.content-tree-item[data-selected="true"] {
+  background-color: rgba(0, 212, 255, 0.2);
+  color: var(--stationpedia-accent);
+  border-left: 3px solid var(--stationpedia-accent);
+}
+
+/* Tree Structure */
+.tree-node {
+  margin: 2px 0;
+  margin-left: var(--tree-indent, 0);
+}
+
+.tree-node-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tree-node-title:hover {
+  background-color: rgba(0, 212, 255, 0.1);
+}
+
+.tree-expand-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--stationpedia-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tree-expand-button:hover {
+  color: var(--stationpedia-accent);
+}
+
+.tree-expand-button.expanded {
+  transform: rotate(90deg);
+}
+
+/* Rich Text Editor */
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px;
+  background-color: var(--stationpedia-surface);
+  border-bottom: 1px solid var(--stationpedia-border);
+  border-radius: 4px 4px 0 0;
+}
+
+.editor-toolbar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--stationpedia-border);
+  border-radius: 3px;
+  background-color: var(--stationpedia-bg);
+  color: var(--stationpedia-text);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.editor-toolbar-button:hover:not(:disabled) {
+  background-color: var(--stationpedia-border);
+  border-color: var(--stationpedia-accent);
+  color: var(--stationpedia-accent);
+}
+
+.editor-toolbar-button.active {
+  background-color: var(--stationpedia-accent);
+  border-color: var(--stationpedia-accent);
+  color: var(--stationpedia-bg);
+}
+
+.editor-toolbar-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editor-toolbar-separator {
+  width: 1px;
+  height: 24px;
+  background-color: var(--stationpedia-border);
+  margin: 4px 4px;
+}
+
+.editor-content {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  background-color: var(--stationpedia-surface);
+  border-radius: 0 0 4px 4px;
+}
+
+.ProseMirror {
+  outline: none;
+  color: var(--stationpedia-text);
+}
+
+.ProseMirror p {
+  margin: 1rem 0;
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6 {
+  color: var(--stationpedia-accent);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.ProseMirror code {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.ProseMirror pre {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+.ProseMirror pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.ProseMirror strong {
+  font-weight: 700;
+}
+
+.ProseMirror em {
+  font-style: italic;
+}
+
+.ProseMirror u {
+  text-decoration: underline;
+}
+
+.ProseMirror s {
+  text-decoration: line-through;
+}
+
+.ProseMirror a {
+  color: var(--stationpedia-accent);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.ProseMirror a:hover {
+  opacity: 0.8;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.ProseMirror li {
+  margin: 0.25rem 0;
+}
+
+.ProseMirror blockquote {
+  border-left: 3px solid var(--stationpedia-accent);
+  margin: 1rem 0;
+  padding-left: 12px;
+  opacity: 0.8;
+}
+
+/* Property Inspector */
+.property-field {
+  margin-bottom: 16px;
+}
+
+.property-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--stationpedia-text);
+  margin-bottom: 4px;
+}
+
+.property-input,
+.property-textarea,
+.property-select {
+  width: 100%;
+  padding: 8px;
+  background-color: var(--stationpedia-bg);
+  border: 1px solid var(--stationpedia-border);
+  border-radius: 4px;
+  color: var(--stationpedia-text);
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.property-input:hover,
+.property-textarea:hover,
+.property-select:hover {
+  border-color: rgba(0, 212, 255, 0.5);
+}
+
+.property-input:focus,
+.property-textarea:focus,
+.property-select:focus {
+  outline: none;
+  border-color: var(--stationpedia-accent);
+  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+}
+
+.property-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--stationpedia-accent);
+}
+
+/* Operational Details Tree */
+.operational-detail-item {
+  margin-bottom: 8px;
+  padding: 12px;
+  background-color: var(--stationpedia-bg);
+  border: 1px solid var(--stationpedia-border);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.operational-detail-item:hover {
+  border-color: var(--stationpedia-accent);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.1);
+}
+
+.operational-detail-item.dragging {
+  opacity: 0.5;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.3);
+}
+
+.operational-detail-title {
+  font-weight: 600;
+  color: var(--stationpedia-accent);
+  margin-bottom: 4px;
+}
+
+.operational-detail-description {
+  font-size: 12px;
+  color: var(--stationpedia-text-muted);
+}
+
+.drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  cursor: grab;
+  color: var(--stationpedia-text-muted);
+  transition: all 0.2s ease;
+}
+
+.drag-handle:hover {
+  color: var(--stationpedia-accent);
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--stationpedia-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--stationpedia-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--stationpedia-accent);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease;
+}
+
+/* Section Properties Panel */
+.section-properties-panel {
+  margin-top: 8px;
+  padding: 10px 12px;
+  background-color: #0A1F3A; /* Dark blue background */
+  border: 1px solid var(--stationpedia-border);
+  border-radius: 4px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.section-properties-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--stationpedia-accent);
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--stationpedia-border);
+}
+
+.section-properties-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  align-items: center;
+}
+
+.section-property-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.section-property-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--stationpedia-accent);
+  background-color: #0A1F3A;
+}
+
+.section-property-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.section-property-full-width {
+  flex-basis: 100%;
+  min-width: 100%;
+}
+
+.section-property-label {
+  font-size: 12px;
+  color: #ffffff;
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+.section-property-input {
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
+  font-size: 12px;
+  background-color: #0A1F3A; /* Dark blue background */
+  border: 1px solid var(--stationpedia-border);
+  border-radius: 4px;
+  color: #ffffff; /* White text */
+  transition: all 0.2s ease;
+}
+
+.section-property-input::placeholder {
+  color: #6E7681;
+}
+
+.section-property-input:hover {
+  border-color: rgba(255, 122, 24, 0.5);
+}
+
+.section-property-input:focus {
+  outline: none;
+  border-color: var(--stationpedia-accent);
+  box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+}
+
+/* Utilities */
+.truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
