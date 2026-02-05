@@ -287,7 +287,7 @@ export const STATIONPEDIA_CATEGORIES: StationpediaCategory[] = [
 ];
 
 // Path to AssetRipper thumbnails
-export const THUMBNAIL_BASE_PATH = 'c:/Dev/12-17-25 Stationeers Respawn Update Code/AssetRipperFiles/ExportedProject/Assets/Resources/ui/thumbnails';
+export const THUMBNAIL_BASE_PATH = 'c:/Dev/StationpediaAscendedWorkspace/AssetRipperFiles/ExportedProject/Assets/Resources/ui/thumbnails';
 
 /**
  * Get the raw file path for a thumbnail (for IPC file operations)

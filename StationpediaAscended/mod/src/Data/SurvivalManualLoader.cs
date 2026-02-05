@@ -105,7 +105,7 @@ namespace StationpediaAscended.Data
             var possiblePaths = new List<string>();
             
 #if DEBUG
-            possiblePaths.Add(@"C:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\Guides\In Game Already\Stationeers Survival Manual.md");
+            possiblePaths.Add(@"C:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\Guides\In Game Already\Stationeers Survival Manual.md");
 #endif
             // Check multiple locations for the file
             possiblePaths.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "Guides", "In Game Already", "Stationeers Survival Manual.md"));

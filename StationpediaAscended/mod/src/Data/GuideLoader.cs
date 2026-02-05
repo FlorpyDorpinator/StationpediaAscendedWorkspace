@@ -65,7 +65,7 @@ namespace StationpediaAscended.Data
 
             // Debug path
 #if DEBUG
-            possiblePaths.Add($@"C:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\Guides\{filename}");
+            possiblePaths.Add($@"C:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\Guides\{filename}");
 #endif
 
             // Relative to assembly

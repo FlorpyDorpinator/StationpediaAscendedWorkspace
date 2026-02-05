@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Path to the guides folder
-const GUIDES_FOLDER_PATH = 'c:/Dev/12-17-25 Stationeers Respawn Update Code/StationpediaAscended/mod/Guides';
+const GUIDES_FOLDER_PATH = 'c:/Dev/StationpediaAscendedWorkspace/StationpediaAscended/mod/Guides';
 
 interface GuideInfo {
   name: string;

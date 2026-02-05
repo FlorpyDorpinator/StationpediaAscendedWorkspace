@@ -246,7 +246,7 @@ ipcMain.handle('fs:scanImageFolder', async (_, baseFolder?: string) => {
     // Base path to AssetRipperFiles
     const basePaths = [
       baseFolder ? path.join(baseFolder, '..', 'AssetRipperFiles', 'ExportedProject', 'Assets') : null,
-      'C:\\Dev\\12-17-25 Stationeers Respawn Update Code\\AssetRipperFiles\\ExportedProject\\Assets',
+      'C:\\Dev\\StationpediaAscendedWorkspace\\AssetRipperFiles\\ExportedProject\\Assets',
     ].filter(Boolean) as string[];
 
     let assetsPath: string | null = null;
@@ -298,7 +298,7 @@ ipcMain.handle('fs:copyImageToMod', async (_, sourcePath: string, filename: stri
   try {
     // Default mod images folder
     const modImagesFolders = [
-      'C:\\Dev\\12-17-25 Stationeers Respawn Update Code\\StationpediaAscended\\mod\\images',
+      'C:\\Dev\\StationpediaAscendedWorkspace\\StationpediaAscended\\mod\\images',
     ];
 
     let targetFolder: string | null = null;

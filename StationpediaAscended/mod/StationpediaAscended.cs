@@ -685,7 +685,7 @@ namespace StationpediaAscended
                     
 #if DEBUG
                     // Dev folder - only included in Debug builds for hot-reload development
-                    possiblePaths.Add(@"C:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\images\phoenix-icon.png");
+                    possiblePaths.Add(@"C:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\images\phoenix-icon.png");
 #endif
                     // Images subfolder next to the executing assembly
                     possiblePaths.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "images", "phoenix-icon.png"));
@@ -743,7 +743,7 @@ namespace StationpediaAscended
                 var basePaths = new List<string>();
                 
 #if DEBUG
-                basePaths.Add(@"C:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\images");
+                basePaths.Add(@"C:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\images");
 #endif
                 basePaths.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "images"));
                 basePaths.Add(Path.Combine(BepInEx.Paths.BepInExRootPath, "scripts", "images"));
@@ -1064,7 +1064,7 @@ namespace StationpediaAscended
             var basePaths = new List<string>();
             
 #if DEBUG
-            basePaths.Add(@"C:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\images");
+            basePaths.Add(@"C:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\images");
 #endif
             basePaths.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "images"));
             basePaths.Add(Path.Combine(BepInEx.Paths.BepInExRootPath, "scripts", "images"));
@@ -1150,7 +1150,7 @@ namespace StationpediaAscended
             var basePaths = new List<string>();
             
 #if DEBUG
-            basePaths.Add(@"C:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\images");
+            basePaths.Add(@"C:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\images");
 #endif
             basePaths.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "images"));
             basePaths.Add(Path.Combine(BepInEx.Paths.BepInExRootPath, "scripts", "images"));
@@ -1178,7 +1178,7 @@ namespace StationpediaAscended
             var basePaths = new List<string>();
             
 #if DEBUG
-            basePaths.Add(@"C:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\images");
+            basePaths.Add(@"C:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\images");
 #endif
             basePaths.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "images"));
             basePaths.Add(Path.Combine(BepInEx.Paths.BepInExRootPath, "scripts", "images"));
@@ -1231,7 +1231,7 @@ namespace StationpediaAscended
                     
 #if DEBUG
                     // Dev folder - only included in Debug builds for hot-reload development
-                    possiblePaths.Add(@"C:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\descriptions.json");
+                    possiblePaths.Add(@"C:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\descriptions.json");
 #endif
                     // Next to the executing assembly (works for both SLP mods folder and BepInEx scripts)
                     possiblePaths.Add(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "descriptions.json"));
@@ -1791,7 +1791,7 @@ namespace StationpediaAscended
                     
 #if DEBUG
                     // Dev folder - only included in Debug builds for hot-reload development
-                    possiblePaths.Add(@"C:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\descriptions.json");
+                    possiblePaths.Add(@"C:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\descriptions.json");
 #endif
                     // Scripts folder (where we deploy to)
                     possiblePaths.Add(Path.Combine(Application.dataPath, "..", "BepInEx", "scripts", "descriptions.json"));

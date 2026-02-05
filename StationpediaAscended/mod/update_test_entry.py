@@ -4,7 +4,7 @@ Update descriptions.json to add a comprehensive test entry for the new Guide For
 import json
 
 # Read the existing file
-with open(r"c:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\descriptions.json", "r", encoding="utf-8") as f:
+with open(r"c:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\descriptions.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Find and update the SolidFuelGenerator entry with new features
@@ -121,7 +121,7 @@ for i, device in enumerate(data.get("devices", [])):
         break
 
 # Write back
-with open(r"c:\Dev\12-17-25 Stationeers Respawn Update Code\StationpediaAscended\mod\descriptions.json", "w", encoding="utf-8") as f:
+with open(r"c:\Dev\StationpediaAscendedWorkspace\StationpediaAscended\mod\descriptions.json", "w", encoding="utf-8") as f:
     json.dump(data, f, indent=2)
 
 print("Done! descriptions.json updated with new test entry.")

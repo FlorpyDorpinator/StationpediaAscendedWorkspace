@@ -6,7 +6,7 @@
 import React, { useEffect, useState } from 'react';
 
 // Path to the survival manual markdown file
-const SURVIVAL_MANUAL_PATH = 'c:/Dev/12-17-25 Stationeers Respawn Update Code/StationpediaAscended/mod/Guides/Stationeers Survival Manual.md';
+const SURVIVAL_MANUAL_PATH = 'c:/Dev/StationpediaAscendedWorkspace/StationpediaAscended/mod/Guides/Stationeers Survival Manual.md';
 
 export interface SurvivalManualPageProps {
   onBack?: () => void;

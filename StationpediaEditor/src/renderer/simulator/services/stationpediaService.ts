@@ -20,8 +20,8 @@ import type {
 import { getThumbnailPath } from '../types/stationpediaTypes';
 
 // File paths
-const STATIONPEDIA_JSON_PATH = 'c:/Dev/12-17-25 Stationeers Respawn Update Code/Stationeers/Stationpedia/Stationpedia.json';
-const DESCRIPTIONS_JSON_PATH = 'c:/Dev/12-17-25 Stationeers Respawn Update Code/StationpediaAscended/mod/descriptions.json';
+const STATIONPEDIA_JSON_PATH = 'c:/Dev/StationpediaAscendedWorkspace/Stationeers/Stationpedia/Stationpedia.json';
+const DESCRIPTIONS_JSON_PATH = 'c:/Dev/StationpediaAscendedWorkspace/StationpediaAscended/mod/descriptions.json';
 
 /**
  * Cache for loaded data
