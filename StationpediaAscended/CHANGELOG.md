@@ -2,6 +2,65 @@
 
 All notable changes to Stationpedia Ascended will be documented in this file.
 
+## [0.8.5] - 2026-02-05
+
+### 🐛 Bug Fixes
+- **Notepad hotkey changed from F2 to F4** — F2 conflicted with the game's built-in Helper Hints toggle; all references updated
+- **Search results disappearing** — Results would vanish because `ReorganizeSearchResults` hid items when `FindPageByTitle()` couldn't match a page index; unmatched items now stay visible
+- **Notepad showing raw JSON** — Saved files use formatted JSON with newlines but the deserializer only detected compact `{"` format; now checks for `{` AND `"lines"` anywhere
+- **Guide button colors incorrect** — Custom guide buttons used `SetNormal()` (green/dark blue) instead of `SetSpecial()` which matches the vanilla light blue SpecialButton sprite
+- **"Vanilla Guides" font mismatch** — Header text now copies font, fontSharedMaterial, fontSize, and fontStyle from `stationpedia.LoreGuideTitle`
+- **Tooltips frozen when game paused** — `WaitForSeconds(HOVER_DELAY)` uses scaled time so tooltips never appeared at `Time.timeScale = 0`; switched to `WaitForSecondsRealtime()`
+- **Survival Manual appearing on Guides page** — The manual has its own home page button but was also listed in guides; added skip for `guideKey == "SurvivalManual"`
+- **Station Notepad input locking** — Keyboard input now properly locks while typing in the notepad, preventing game actions from firing
+- **Station Notepad Enter key** — Enter key no longer opens the chat window while editing notes
+- **Station Notepad hotload display** — JSON documents display correctly after hot-reloading the mod
+- **JSON deserialization error** — Fixed `Cannot deserialize the current JSON object into type List<TableRow>` at `guides[5].OperationalDetails[6].children[0].table.headers`
+- **Corrected gas terminology** — Removed incorrect X3/X1 gas naming throughout all guides; now uses proper names (Volatiles, Pollutant, Hydrogen)
+- **Guides/mechanics display order** — Guides and game mechanics sections now display in correct JSON order instead of arbitrary order
+
+### 📝 Content Additions
+- **Species Survival Guide: Lung Damage & Suffocation** — New section with mechanics extracted from game code covering lung damage thresholds and suffocation behavior
+- **Species Survival Guide: Mood & Hygiene** — New section covering mood thresholds, hygiene effects, and their impact on character stats
+
+### 🖥️ Stationpedia Ascended IDE (New Desktop Editor)
+A complete Electron + React desktop application for authoring and validating Stationpedia Ascended content, replacing the old WPF/C# editor:
+
+- **Lossless JSON Round-Tripping** — AST-based TMP rich text parsing preserves original formatting through load/edit/save cycles
+- **Game-Accurate Simulator** — HTML renderer matching in-game Stationpedia appearance with clickable TOC, collapsible sections, and mode toggle
+- **Dual-Window Architecture** — Separate editor and simulator windows synced via Electron IPC
+- **Dockable Panel System** — Resizable panels using react-mosaic for content tree, editor, properties, and preview
+- **Drag-and-Drop Editing** — Reorder operational details sections with @dnd-kit; drag content between categories
+- **Rich Text Editor** — TipTap-based editor with formatting toolbar for bold, italic, colors, headers, and lists
+- **Content Tree Browser** — Organized tree view with Devices, Guides, and Mechanics tabs
+- **Import JSON** — Import guide JSON files directly into the editor
+- **Inline Section Headers** — Create non-collapsible header + paragraph blocks between nested sections
+- **Global Tooltip Editor** — Browse and edit all tooltip categories (logic, slots, memory, modes, connections) with inline editing
+- **Comprehensive Validation** — 8+ validation rules with real-time error reporting
+- **Asset Browser** — Track and manage images/videos with usage tracking
+- **Auto-Save with Backup** — Automatic saves with `.backups/` directory
+- **Keyboard Shortcuts** — Ctrl+S save, Ctrl+Z undo, and more
+- **Recent Files Menu** — Quick access to previously opened files
+- **422 Tests Passing** — Full test suite covering parser, serializer, codec, and validation
+
+### 🏗️ New Mod Architecture
+- **ConsoleHelper** — Reflection-based `ConsoleWindow.Print` wrapper that auto-detects 4-param (stable) vs 5-param (beta/orbital) method signatures for cross-version compatibility
+- **UIAssetInspector** — Debug tool showing detailed UI asset info under mouse cursor; toggle via `assetdisplay` console command
+- **HomePageLayoutManager** — Creates "Stationeers Survival Manual" and "Game Mechanics" buttons on the home page with proper layout cloned from vanilla buttons
+- **TocLinkHandler** — Table of Contents link click handling with smooth animated scrolling and parent chain expansion for nested sections
+- **CategoryHeaderHandler** — Makes category header rows fully clickable to toggle visibility with hover effects
+- **VanillaModeManager** — Toggle between Ascended mode (orange/blue) and Vanilla mode (native white); defaults to Vanilla
+- **IconAnimator** — Animated icon transitions for expand/collapse with scale "pop" effect using `Time.unscaledDeltaTime`
+- **SearchPatches** — Search result reorganization with visual category headers and smart grouping
+
+### 🔧 Technical Changes
+- **Removed "Flat Structure" concept** — "Operational Details" is now a normal renameable category
+- **Section title defaults** — New sections use white text by default; orange handled by Ascended mode via `VanillaModeManager`
+- **Embedded resources in Release** — `descriptions.json` and phoenix icon embedded in DLL for release builds
+- **Cross-version console compatibility** — Mod works across both stable and beta/orbital Stationeers versions
+
+---
+
 ## [0.8.0] - 2026-01-18
 
 ### 📝 Station Notepad - In-Game Note Taking

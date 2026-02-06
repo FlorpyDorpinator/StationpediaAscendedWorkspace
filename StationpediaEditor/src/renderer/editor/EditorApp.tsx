@@ -157,7 +157,13 @@ export const EditorApp: React.FC = () => {
 
   // Handle saving
   const handleSave = useCallback(async () => {
-    if (!workspacePath || !workspace) return;
+    if (!workspacePath) return;
+
+    // Read current state directly from store to avoid stale closures.
+    // React's batching may not have re-rendered yet (e.g. blur -> click race),
+    // but Zustand's set() is synchronous so getState() always has the latest data.
+    const currentWorkspace = useEditorStore.getState().workspace;
+    if (!currentWorkspace) return;
 
     try {
       setIsLoading(true);
@@ -165,7 +171,7 @@ export const EditorApp: React.FC = () => {
       // Prepare workspace with updated tooltips
       const tooltipJSON = getTooltipJSON();
       const updatedWorkspace = {
-        ...workspace,
+        ...currentWorkspace,
         genericDescriptions: Object.keys(tooltipJSON).length > 0 ? tooltipJSON : undefined,
       };
       
@@ -184,7 +190,7 @@ export const EditorApp: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [workspacePath, workspace, getTooltipJSON, clearDirty]);
+  }, [workspacePath, getTooltipJSON, clearDirty]);
 
   // Handle closing workspace
   const handleCloseWorkspace = useCallback(() => {

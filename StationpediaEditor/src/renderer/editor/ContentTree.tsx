@@ -46,6 +46,7 @@ export const ContentTree: React.FC<ContentTreeProps> = ({
   selectedDeviceKey,
   onSelectDevice,
 }) => {
+  const requestScrollToSection = useEditorStore((s) => s.requestScrollToSection);
   // Load saved state from localStorage
   const [searchTerm, setSearchTerm] = useState('');
   const [expanded, setExpanded] = useState<ExpandedState>(() => {
@@ -676,6 +677,20 @@ export const ContentTree: React.FC<ContentTreeProps> = ({
                       {item.operationalDetails!.map((detail: any, idx: number) => (
                         <div
                           key={`${itemKey}-detail-${idx}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            // Select the device if not already selected
+                            if (!isSelected) {
+                              handleSelectDevice(itemKey);
+                            }
+                            // Request scroll via store (DeviceSectionsEditor listens)
+                            // Use setTimeout when switching devices so sections render first
+                            if (!isSelected) {
+                              setTimeout(() => requestScrollToSection(idx), 150);
+                            } else {
+                              requestScrollToSection(idx);
+                            }
+                          }}
                           className="px-3 py-1 text-sm text-gray-400 hover:text-stationpedia-accent rounded hover:bg-stationpedia-surface/50 truncate cursor-pointer transition-colors"
                           title={detail.title}
                         >

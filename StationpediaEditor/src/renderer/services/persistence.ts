@@ -78,10 +78,10 @@ class PersistenceServiceImpl implements PersistenceService {
         await callback(workspace);
       }
 
-      // Save descriptions
+      // Save descriptions (pass full workspace so guides/mechanics/genericDescriptions are preserved)
       const result = await fileService.saveDescriptions(
         this.currentWorkspacePath,
-        workspace.devices as any
+        workspace
       );
 
       if (result.success) {

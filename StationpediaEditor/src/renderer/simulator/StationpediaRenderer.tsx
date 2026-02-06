@@ -103,74 +103,83 @@ export const StationpediaRenderer: React.FC<StationpediaRendererProps> = ({
 
       {/* Page Description - always shown if present */}
       {fullPageDescription && (
-        <CollapsibleSection
-          title="Description"
-          defaultOpen={true}
-          depth={0}
-          backgroundColor={device.operationalDetailsBackgroundColor}
-        >
-          <div className="page-description">
-            <RichTextRenderer
-              content={fullPageDescription}
-              onLinkClick={onLinkClick}
-              className="text-sm text-gray-200"
-            />
-          </div>
-        </CollapsibleSection>
+        <div data-preview-section="description">
+          <CollapsibleSection
+            title="Description"
+            defaultOpen={true}
+            depth={0}
+            backgroundColor={device.operationalDetailsBackgroundColor}
+          >
+            <div className="page-description">
+              <RichTextRenderer
+                content={fullPageDescription}
+                onLinkClick={onLinkClick}
+                className="text-sm text-gray-200"
+              />
+            </div>
+          </CollapsibleSection>
+        </div>
       )}
 
       {/* GUIDES: Render sections directly without "Operational Details" wrapper */}
       {isGuide && device.operationalDetails && device.operationalDetails.length > 0 && (
         <div className="space-y-3 mt-3">
           {device.operationalDetails.map((detail, i) => (
-            <OperationalDetailSection
-              key={i}
-              detail={detail}
-              depth={0}
-              onLinkClick={onLinkClick}
-            />
+            <div key={i} data-preview-section={`section-${i}`}>
+              <OperationalDetailSection
+                detail={detail}
+                depth={0}
+                onLinkClick={onLinkClick}
+              />
+            </div>
           ))}
         </div>
       )}
 
       {/* DEVICES: Render sections inside "Operational Details" wrapper for backward compat */}
       {!isGuide && device.operationalDetails && device.operationalDetails.length > 0 && (
-        <CollapsibleSection
-          title="Operational Details"
-          defaultOpen={true}
-          depth={0}
-          titleColor={device.operationalDetailsTitleColor}
-          backgroundColor={device.operationalDetailsBackgroundColor}
-        >
-          <div className="space-y-2">
-            {device.operationalDetails.map((detail, i) => (
-              <OperationalDetailSection
-                key={i}
-                detail={detail}
-                depth={0}
-                onLinkClick={onLinkClick}
-              />
-            ))}
-          </div>
-        </CollapsibleSection>
+        <div data-preview-section="operationalDetails">
+          <CollapsibleSection
+            title="Operational Details"
+            defaultOpen={true}
+            depth={0}
+            titleColor={device.operationalDetailsTitleColor}
+            backgroundColor={device.operationalDetailsBackgroundColor}
+          >
+            <div className="space-y-2">
+              {device.operationalDetails.map((detail, i) => (
+                <div key={i} data-preview-section={`section-${i}`}>
+                  <OperationalDetailSection
+                    detail={detail}
+                    depth={0}
+                    onLinkClick={onLinkClick}
+                  />
+                </div>
+              ))}
+            </div>
+          </CollapsibleSection>
+        </div>
       )}
 
       {(device as any).logicDescriptions && typeof (device as any).logicDescriptions === 'object' && Object.keys((device as any).logicDescriptions).length > 0 && (
-        <CollapsibleSection
-          title="Logic Types"
-          defaultOpen={true}
-          depth={0}
-        >
-          <LogicSection logicDescriptions={(device as any).logicDescriptions} onLinkClick={onLinkClick} />
-        </CollapsibleSection>
+        <div data-preview-section="logic">
+          <CollapsibleSection
+            title="Logic Types"
+            defaultOpen={true}
+            depth={0}
+          >
+            <LogicSection logicDescriptions={(device as any).logicDescriptions} onLinkClick={onLinkClick} />
+          </CollapsibleSection>
+        </div>
       )}
 
       {(device as any).modeDescriptions && Object.keys((device as any).modeDescriptions).length > 0 && (
-        <CollapsibleSection
-          title="Modes"
-          defaultOpen={false}
-          depth={0}
-        >
+        <div data-preview-section="modes">
+          <CollapsibleSection
+            title="Modes"
+            defaultOpen={false}
+            depth={0}
+          >
           <div className="space-y-2">
             {Object.entries((device as any).modeDescriptions).map(([key, mode]: [string, any]) => (
               <div key={key} className="p-2 bg-black/20 rounded text-sm">
@@ -187,33 +196,36 @@ export const StationpediaRenderer: React.FC<StationpediaRendererProps> = ({
             ))}
           </div>
         </CollapsibleSection>
+        </div>
       )}
 
       {(device as any).slotDescriptions && Object.keys((device as any).slotDescriptions).length > 0 && (
-        <CollapsibleSection
-          title="Slots"
-          defaultOpen={false}
-          depth={0}
-        >
-          <div className="space-y-2">
-            {Object.entries((device as any).slotDescriptions).map(([key, slot]: [string, any]) => (
-              <div key={key} className="p-2 bg-black/20 rounded text-sm">
-                <div className="flex justify-between">
-                  <span className="font-semibold text-[#FF7A18]">Slot {slot.slotNumber}</span>
-                  <span className="text-gray-400 text-xs font-mono">{slot.slotType}</span>
-                </div>
-                {slot.description && (
-                  <div className="text-gray-300 text-xs mt-1">
-                    <RichTextRenderer
-                      content={slot.description}
-                      onLinkClick={onLinkClick}
-                    />
+        <div data-preview-section="slots">
+          <CollapsibleSection
+            title="Slots"
+            defaultOpen={false}
+            depth={0}
+          >
+            <div className="space-y-2">
+              {Object.entries((device as any).slotDescriptions).map(([key, slot]: [string, any]) => (
+                <div key={key} className="p-2 bg-black/20 rounded text-sm">
+                  <div className="flex justify-between">
+                    <span className="font-semibold text-[#FF7A18]">Slot {slot.slotNumber}</span>
+                    <span className="text-gray-400 text-xs font-mono">{slot.slotType}</span>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </CollapsibleSection>
+                  {slot.description && (
+                    <div className="text-gray-300 text-xs mt-1">
+                      <RichTextRenderer
+                        content={slot.description}
+                        onLinkClick={onLinkClick}
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </CollapsibleSection>
+        </div>
       )}
 
       {/* Version Descriptions */}

@@ -392,7 +392,8 @@ namespace StationpediaAscended
                                 if (titleText != null)
                                 {
                                     _headerTitleText = titleText;
-                                    UpdateHeaderAppearance(); // Set initial appearance based on mode
+                                    // NOTE: UpdateHeaderAppearance() is called AFTER the icon search loop below
+                                    // so that _headerIconImage is set before we try to update it
                                 }
                                 
                                 // Find and store the icon in the header (for Ascended mode styling)
@@ -417,12 +418,8 @@ namespace StationpediaAscended
                                                     _originalHeaderIconSprite = img.sprite;
                                                 }
                                                 
-                                                // Only replace sprite if in Ascended mode
-                                                if (!UI.VanillaModeManager.IsVanillaMode && _customIconSprite != null)
-                                                {
-                                                    img.sprite = _customIconSprite;
-                                                    img.preserveAspect = true;
-                                                }
+                                                // Icon sprite is now set by UpdateHeaderAppearance() below
+                                                // (which always applies the custom icon with mode-appropriate tint)
                                                 
                                                 // Add LayoutElement if missing to control size
                                                 var layoutElement = child.GetComponent<UnityEngine.UI.LayoutElement>();
@@ -445,6 +442,9 @@ namespace StationpediaAscended
                                                     rt.sizeDelta = new Vector2(32, 32);
                                                     rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 32);
                                                     rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 32);
+                                                    
+                                                    // Offset icon to the right to prevent overlap with title text
+                                                    rt.anchoredPosition = new Vector2(rt.anchoredPosition.x + 8f, rt.anchoredPosition.y);
                                                 }
                                                 
                                                 break; // Found the icon
@@ -452,6 +452,10 @@ namespace StationpediaAscended
                                         }
                                     }
                                 }
+                                
+                                // Apply custom icon and title AFTER _headerIconImage is found
+                                // so UpdateHeaderAppearance() can set the icon sprite
+                                UpdateHeaderAppearance();
                             }
                         }
                         catch (Exception ex) 

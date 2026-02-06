@@ -2,7 +2,7 @@
  * PanelSystem - Dockable panels using react-mosaic-component
  * Layout: ContentTree (left), DeviceSectionsEditor (center), Preview (right)
  */
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   Mosaic,
   MosaicWindow,

@@ -8,6 +8,7 @@
       "tocTitle": "Quick Navigation",
       "operationalDetailsTitleColor": "#FF7A18",
       "operationalDetailsBackgroundColor": "#0A1520",
+      "tocFlat": false,
       "OperationalDetails": [
         {
           "title": "Basic Overview",
@@ -101,8 +102,7 @@
             }
           ]
         }
-      ],
-      "tocFlat": false
+      ]
     },
     {
       "deviceKey": "ThingBattery_Wireless_cell",
@@ -5808,7 +5808,7 @@
         {
           "name": "Battery",
           "type": "BatteryCell",
-          "description": "Powers all robot operations. Drains 5W idle + 10WÃ—MotorPower when moving + 2.5W per IC10 execution cycle."
+          "description": "Powers all robot operations. Drains 5W idle + 10W*MotorPower when moving + 2.5W per IC10 execution cycle."
         },
         {
           "name": "ProgrammableChip",
@@ -5886,6 +5886,8 @@
           "description": "Automatic mode set when all 8 ore slots are occupied. Robot stops operations until storage is cleared. Set Mode to 4 (Unload) to deposit."
         }
       },
+      "generateToc": true,
+      "tocTitle": "AIMeE Guide Contents",
       "OperationalDetails": [
         {
           "title": "Operating Modes",
@@ -6047,7 +6049,7 @@
               "items": [
                 "Base: 5W constant when On=1",
                 "IC10 Execution: 2.5W per tick when program runs",
-                "Motor Power: 10W Ã— CurrentMotorPower when wheels turning",
+                "Motor Power: 10W * CurrentMotorPower when wheels turning",
                 "Total moving: Approximately 15-25W depending on speed"
               ]
             },
@@ -6125,9 +6127,7 @@
             "TargetX/Y/Z persist through mode changes until new chip inserted"
           ]
         }
-      ],
-      "generateToc": true,
-      "tocTitle": "AIMeE Guide Contents"
+      ]
     },
     {
       "deviceKey": "ThingRover_MkI",
@@ -7272,7 +7272,7 @@
       "OperationalDetails": [
         {
           "title": "Heat Pump Operation",
-          "description": "The Air Conditioner is a heat pump that moves thermal energy between its 100L internal volume and the waste output. It heats or cools the internal atmosphere toward the Setting temperature (default 293.15K / 20Â°C)."
+          "description": "The Air Conditioner is a heat pump that moves thermal energy between its 100L internal volume and the waste output. It heats or cools the internal atmosphere toward the Setting temperature (default 293.15K / 20°C)."
         },
         {
           "title": "Idle Power Draw",
@@ -7288,7 +7288,7 @@
         },
         {
           "title": "Heat Exchange",
-          "description": "Energy transferred = (TargetTemp - CurrentTemp) Ã— HeatCapacity Ã— EfficiencyFactors. The waste output receives the opposite thermal load - if cooling input, waste heats up; if heating input, waste cools down."
+          "description": "Energy transferred = (TargetTemp - CurrentTemp) * HeatCapacity * EfficiencyFactors. The waste output receives the opposite thermal load - if cooling input, waste heats up; if heating input, waste cools down."
         }
       ]
     },
@@ -13492,22 +13492,22 @@
         },
         "SolarAngle": {
           "dataType": "Float",
-          "range": "0-360Ã‚Â°",
+          "range": "0-360°",
           "description": "Current angle of the sun in degrees."
         },
         "SolarIrradiance": {
           "dataType": "Float",
-          "range": "0+ W/mÃ‚Â²",
+          "range": "0+ W/m²",
           "description": "Solar irradiance (power per square meter) at sensor location."
         },
         "Horizontal": {
           "dataType": "Float",
-          "range": "-180 to 180Ã‚Â°",
+          "range": "-180 to 180°",
           "description": "Horizontal angle to the sun in degrees."
         },
         "Vertical": {
           "dataType": "Float",
-          "range": "-90 to 90Ã‚Â°",
+          "range": "-90 to 90°",
           "description": "Vertical angle to the sun in degrees."
         }
       },
@@ -13523,11 +13523,11 @@
         },
         {
           "title": "Solar Tracking Data",
-          "description": "Horizontal: Azimuth angle to sun (-180Â° to 180Â°). Vertical: Elevation angle to sun. SolarAngle: Angle between sensor forward and sun direction. Use for solar panel tracking."
+          "description": "Horizontal: Azimuth angle to sun (-180° to 180°). Vertical: Elevation angle to sun. SolarAngle: Angle between sensor forward and sun direction. Use for solar panel tracking."
         },
         {
           "title": "Solar Irradiance",
-          "description": "Returns current solar power (W/mÂ²) accounting for weather events. Weather storms reduce this value via SolarRatio multiplier. Returns 0 when not in sunlight."
+          "description": "Returns current solar power (W/m²) accounting for weather events. Weather storms reduce this value via SolarRatio multiplier. Returns 0 when not in sunlight."
         },
         {
           "title": "Motherboard Integration",
@@ -15630,6 +15630,16 @@
           "description": "Hash of the device's custom name if set."
         }
       },
+      "modeDescriptions": {
+        "Mode0": {
+          "modeValue": "Mode0",
+          "description": "Smelting mode - combines multiple ore types into alloys. Requires correct ratios and temperature."
+        },
+        "Mode1": {
+          "modeValue": "Mode1",
+          "description": "Refining mode - purifies single ore type into pure ingots. Higher temperature yields better purity."
+        }
+      },
       "OperationalDetails": [
         {
           "title": "Overview",
@@ -15637,7 +15647,7 @@
         },
         {
           "title": "Steel Smelting (Most Common Use)",
-          "description": "Ores: Iron Ore (Fe) + Coal Ore in 3:1 ratio. Standard batch: 15 Iron + 5 Coal = 5 Steel ingots. Requires temperature above 900K (627Â°C) and pressure above ~100 kPa (can go very high, 100+ MPa is fine)."
+          "description": "Ores: Iron Ore (Fe) + Coal Ore in 3:1 ratio. Standard batch: 15 Iron + 5 Coal = 5 Steel ingots. Requires temperature above 900K (627°C) and pressure above ~100 kPa (can go very high, 100+ MPa is fine)."
         },
         {
           "title": "Fuel Recipe",
@@ -15659,17 +15669,7 @@
           "title": "Tips",
           "description": "The furnace can handle extreme pressures - don't fear high MPa readings. On cold planets (Europa), you need more fuel ice for heat. On hot planets (Vulcan), ambient temperature helps - use less ice. Smelting releases gases that increase pressure - this is normal. Lock the furnace via logic to prevent accidental opening mid-smelt."
         }
-      ],
-      "modeDescriptions": {
-        "Mode0": {
-          "modeValue": "Mode0",
-          "description": "Smelting mode - combines multiple ore types into alloys. Requires correct ratios and temperature."
-        },
-        "Mode1": {
-          "modeValue": "Mode1",
-          "description": "Refining mode - purifies single ore type into pure ingots. Higher temperature yields better purity."
-        }
-      }
+      ]
     },
     {
       "deviceKey": "ThingStructureGasGenerator",
@@ -18554,7 +18554,7 @@
         },
         {
           "title": "Rotation Range",
-          "description": "360Â° horizontal rotation (-180 to 180Â°), 90Â° vertical range (0 to 90Â°). Write Horizontal and Vertical logic values to aim the dish."
+          "description": "360° horizontal rotation (-180 to 180°), 90° vertical range (0 to 90°). Write Horizontal and Vertical logic values to aim the dish."
         },
         {
           "title": "Power Requirements",
@@ -18562,7 +18562,7 @@
         },
         {
           "title": "Signal Strength vs Angle",
-          "description": "Narrower beam = more power: 2Â° beam = 100% efficiency, 5Â° = 90%, 22.5Â° = 10%, 45Â° = 5%, 90Â° = 1%, 180Â° = 0.1%. Tighter focus dramatically increases effective range."
+          "description": "Narrower beam = more power: 2° beam = 100% efficiency, 5° = 90%, 22.5° = 10%, 45° = 5%, 90° = 1%, 180° = 0.1%. Tighter focus dramatically increases effective range."
         },
         {
           "title": "Contact Acquisition",
@@ -21307,15 +21307,15 @@
         },
         "Multiply": {
           "modeValue": "Multiply",
-          "description": "Multiplication: Output = Input1 Ã— Input2. Basic arithmetic product."
+          "description": "Multiplication: Output = Input1 * Input2. Basic arithmetic product."
         },
         "Divide": {
           "modeValue": "Divide",
-          "description": "Division: Output = Input1 Ã· Input2. Returns 0 if Input2 is 0."
+          "description": "Division: Output = Input1 · Input2. Returns 0 if Input2 is 0."
         },
         "Mod": {
           "modeValue": "Mod",
-          "description": "Modulo: Output = remainder of Input1 Ã· Input2. Useful for cycling values."
+          "description": "Modulo: Output = remainder of Input1 · Input2. Useful for cycling values."
         },
         "Pow": {
           "modeValue": "Pow",
@@ -21398,7 +21398,7 @@
         },
         "Sqrt": {
           "modeValue": "Sqrt",
-          "description": "Square root: Output = âˆšInput. Returns 0 for negative inputs."
+          "description": "Square root: Output = ˆšInput. Returns 0 for negative inputs."
         },
         "Sin": {
           "modeValue": "Sin",
@@ -21434,11 +21434,11 @@
         },
         "Ceil": {
           "modeValue": "Ceil",
-          "description": "Ceiling: Output = smallest integer â‰¥ Input. Rounds up."
+          "description": "Ceiling: Output = smallest integer ‰¥ Input. Rounds up."
         },
         "Floor": {
           "modeValue": "Floor",
-          "description": "Floor: Output = largest integer â‰¤ Input. Rounds down."
+          "description": "Floor: Output = largest integer ‰¤ Input. Rounds down."
         },
         "Round": {
           "modeValue": "Round",
@@ -26320,7 +26320,7 @@
         },
         {
           "title": "Arm States",
-          "description": "ArmState cycles: Up (idle) â†’ AnimatingDown â†’ Down (interacting) â†’ AnimatingUp â†’ Up. Extended returns 1 when arm is Down. Idle returns 1 when arm is Up and not moving."
+          "description": "ArmState cycles: Up (idle) -> AnimatingDown -> Down (interacting) -> AnimatingUp -> Up. Extended returns 1 when arm is Down. Idle returns 1 when arm is Up and not moving."
         },
         {
           "title": "Obstruction Detection",
@@ -27794,11 +27794,11 @@
         },
         {
           "title": "Dish Movement",
-          "description": "360Â° horizontal rotation, 90Â° vertical range. Medium speed dish - faster than Large but slower than Small. Use Horizontal and Vertical logic values to aim."
+          "description": "360° horizontal rotation, 90° vertical range. Medium speed dish - faster than Large but slower than Small. Use Horizontal and Vertical logic values to aim."
         },
         {
           "title": "Signal Strength vs Angle",
-          "description": "Same efficiency curve as all dishes: 2Â° = 100%, 5Â° = 90%, 22.5Â° = 10%, 45Â° = 5%, 90Â° = 1%, 180Â° = 0.1%. Narrower beam = stronger signal."
+          "description": "Same efficiency curve as all dishes: 2° = 100%, 5° = 90%, 22.5° = 10%, 45° = 5%, 90° = 1%, 180° = 0.1%. Narrower beam = stronger signal."
         },
         {
           "title": "Contact Resolution",
@@ -29077,12 +29077,12 @@
         },
         "Horizontal": {
           "dataType": "Float",
-          "range": "0-360Ã‚Â°",
+          "range": "0-360°",
           "description": "Horizontal rotation angle in degrees."
         },
         "Vertical": {
           "dataType": "Float",
-          "range": "0-90Ã‚Â°",
+          "range": "0-90°",
           "description": "Vertical rotation angle in degrees."
         },
         "Idle": {
@@ -29092,7 +29092,7 @@
         },
         "SignalStrength": {
           "dataType": "Float",
-          "range": "-1 or 0-180Ã‚Â°",
+          "range": "-1 or 0-180°",
           "description": "Angle offset to strongest contact in degrees. -1 if no contact or still resolving."
         },
         "SignalID": {
@@ -29168,11 +29168,11 @@
         },
         {
           "title": "Rotation Range",
-          "description": "360Â° horizontal rotation (lerped from -90Â° to 270Â° internal), 90Â° vertical range (0 to 90Â°). Uses DishTransform.up for forward direction."
+          "description": "360° horizontal rotation (lerped from -90° to 270° internal), 90° vertical range (0 to 90°). Uses DishTransform.up for forward direction."
         },
         {
           "title": "Signal Strength vs Angle",
-          "description": "Same efficiency curve: 2Â° = 100%, 5Â° = 90%, 22.5Â° = 10%, 45Â° = 5%, 90Â° = 1%, 180Â° = 0.1%. Setting controls output wattage (50-200W range)."
+          "description": "Same efficiency curve: 2° = 100%, 5° = 90%, 22.5° = 10%, 45° = 5%, 90° = 1%, 180° = 0.1%. Setting controls output wattage (50-200W range)."
         },
         {
           "title": "Contact Resolution",
@@ -29205,12 +29205,12 @@
         },
         "Horizontal": {
           "dataType": "Float",
-          "range": "0-360Ã‚Â°",
+          "range": "0-360°",
           "description": "Read/write horizontal rotation angle in degrees."
         },
         "Vertical": {
           "dataType": "Float",
-          "range": "15-165Ã‚Â°",
+          "range": "15-165°",
           "description": "Read/write vertical tilt angle in degrees."
         },
         "ReferenceId": {
@@ -29292,7 +29292,7 @@
         "Vertical": {
           "dataType": "Float",
           "range": "0-1",
-          "description": "Vertical rotation value as ratio (0-1 maps to -75Ã‚Â° to +75Ã‚Â°)."
+          "description": "Vertical rotation value as ratio (0-1 maps to -75° to +75°)."
         },
         "Ratio": {
           "dataType": "Float",
@@ -29363,12 +29363,12 @@
         },
         "Horizontal": {
           "dataType": "Float",
-          "range": "-180 to 180Ã‚Â°",
+          "range": "-180 to 180°",
           "description": "Horizontal angle setting for solar tracking. Can be set via logic."
         },
         "Vertical": {
           "dataType": "Float",
-          "range": "-90 to 90Ã‚Â°",
+          "range": "-90 to 90°",
           "description": "Vertical angle setting for solar tracking. Can be set via logic."
         }
       },
@@ -29396,12 +29396,12 @@
         },
         "Horizontal": {
           "dataType": "Float",
-          "range": "0-360Ã‚Â°",
+          "range": "0-360°",
           "description": "Read/write horizontal rotation angle in degrees."
         },
         "Vertical": {
           "dataType": "Float",
-          "range": "15-165Ã‚Â°",
+          "range": "15-165°",
           "description": "Read/write vertical tilt angle in degrees."
         },
         "ReferenceId": {
@@ -29442,7 +29442,7 @@
         "Vertical": {
           "dataType": "Float",
           "range": "0-1",
-          "description": "Vertical rotation value as ratio (0-1 maps to -75Ã‚Â° to +75Ã‚Â°)."
+          "description": "Vertical rotation value as ratio (0-1 maps to -75° to +75°)."
         },
         "Ratio": {
           "dataType": "Float",
@@ -29488,12 +29488,12 @@
         },
         "Horizontal": {
           "dataType": "Float",
-          "range": "-180 to 180Ã‚Â°",
+          "range": "-180 to 180°",
           "description": "Horizontal angle to sun in degrees."
         },
         "Vertical": {
           "dataType": "Float",
-          "range": "-180 to 180Ã‚Â°",
+          "range": "-180 to 180°",
           "description": "Vertical angle to sun in degrees."
         },
         "Maximum": {
@@ -34531,7 +34531,7 @@
                     "<b>Filter</b> - Toggle your CO2 filters on/off (leave ON)",
                     "<b>Air</b> - Toggle air supply from your tank (leave ON)",
                     "<b>Pressure</b> - Your target suit pressure (default is fine, but save oxygen by lowering it to target 30 kPa)",
-                    "<b>Temperature</b> - Your target temperature (default is fine but save energy by lowering it down as low as 5Â°C, if there is no freezing warning it saves energy)"
+                    "<b>Temperature</b> - Your target temperature (default is fine but save energy by lowering it down as low as 5°C, if there is no freezing warning it saves energy)"
                   ]
                 },
                 {
@@ -34540,7 +34540,7 @@
                   "collapsible": true,
                   "description": "The system is a cycle:",
                   "steps": [
-                    "Oxygen Tank â†’ Suit Atmosphere â†’ You Breathe â†’ Exhale CO2 â†’ Filters Scrub CO2 â†’ CO2 & some O2 Goes to Waste Tank",
+                    "Oxygen Tank -> Suit Atmosphere -> You Breathe -> Exhale CO2 -> Filters Scrub CO2 -> CO2 & some O2 Goes to Waste Tank",
                     "Your <b>air canister</b> (in your suit) feeds oxygen into your suit's internal atmosphere",
                     "You breathe this atmosphere",
                     "You exhale <b>carbon dioxide</b> (CO2)",
@@ -34767,7 +34767,7 @@
               "items": [
                 "Understand you're already equipped and safe (for now)",
                 "Know the basic controls (especially 1-6 for equipment, Alt+mouse for inventory)",
-                "Understand your suit's breathing system (tank â†’ filters â†’ waste tank)",
+                "Understand your suit's breathing system (tank -> filters -> waste tank)",
                 "Know how to check your status and read warnings",
                 "Know what's in your lander crates"
               ]
@@ -35080,16 +35080,16 @@
                   "tocId": "safe-temp",
                   "collapsible": true,
                   "items": [
-                    "<b>Safe:</b> 0Â°C to 50Â°C (273K to 323K)",
-                    "<b>Yellow Warning:</b> Below 0Â°C or approaching limits",
-                    "<b>Red Warning / Damage:</b> Below -10Â°C or above 50Â°C"
+                    "<b>Safe:</b> 0°C to 50°C (273K to 323K)",
+                    "<b>Yellow Warning:</b> Below 0°C or approaching limits",
+                    "<b>Red Warning / Damage:</b> Below -10°C or above 50°C"
                   ]
                 },
                 {
                   "title": "Portable Air Conditioner (Starter Kit)",
                   "tocId": "portable-ac",
                   "collapsible": true,
-                  "description": "Your starter kit includes a <b>Kit (Portable Air Conditioner)</b>. This is your first temperature control option.\n\n<b>How it works:</b>\n- Cold Mode: Removes heat from the room, stores it internally\n- Hot Mode: Releases stored heat into the room\n\n<b>Power:</b> 200W (uses battery cells)\n- Small Battery: ~1.5 minutes\n- Large Battery: ~12 minutes\n\n<b>Limitations:</b>\n- Cold mode stops working if room exceeds +30Â°C\n- Hot mode stops working if room drops below -10Â°C\n- Internal tank fills up - when it flashes an error, you need to dump the stored heat/cold\n\n<b>For beginners:</b> This is temporary. It will keep a small room habitable while you set up better systems. <b>BE CAREFUL. THE COOLANT TANK IS FILLED WITH N2O AND WILL EXPLODE IF IT GETS TOO HOT KILLING YOU AND DESTROYING YOUR BASE!</b>"
+                  "description": "Your starter kit includes a <b>Kit (Portable Air Conditioner)</b>. This is your first temperature control option.\n\n<b>How it works:</b>\n- Cold Mode: Removes heat from the room, stores it internally\n- Hot Mode: Releases stored heat into the room\n\n<b>Power:</b> 200W (uses battery cells)\n- Small Battery: ~1.5 minutes\n- Large Battery: ~12 minutes\n\n<b>Limitations:</b>\n- Cold mode stops working if room exceeds +30°C\n- Hot mode stops working if room drops below -10°C\n- Internal tank fills up - when it flashes an error, you need to dump the stored heat/cold\n\n<b>For beginners:</b> This is temporary. It will keep a small room habitable while you set up better systems. <b>BE CAREFUL. THE COOLANT TANK IS FILLED WITH N2O AND WILL EXPLODE IF IT GETS TOO HOT KILLING YOU AND DESTROYING YOUR BASE!</b>"
                 }
               ]
             },
@@ -35103,7 +35103,7 @@
                   "title": "What You Need to Breathe",
                   "tocId": "what-to-breathe",
                   "collapsible": true,
-                  "description": "<b>Oxygen Partial Pressure:</b>\n- Minimum safe: ~16 kPa oxygen partial pressure\n- Recommended: ~20 kPa or higher (no warnings)\n- Warning thresholds:\n  - 16-12 kPa: Yellow \"Oxygen Low\" warning (no damage)\n  - 12-5 kPa: Red \"Oxygen Critical\" warning (no damage yet)\n  - Below 5 kPa: You're suffocating\n\n<b>What is Partial Pressure?</b>\nIt's the portion of total pressure from one specific gas.\n\n<b>Example:</b> If your room has 100 kPa total pressure and is 20% oxygen:\n- Oxygen partial pressure = 100 Ã— 0.20 = 20 kPa âœ“ (breathable)\n\n<b>Example:</b> If your room has 50 kPa total and is 20% oxygen:\n- Oxygen partial pressure = 50 Ã— 0.20 = 10 kPa âœ— (critical warning)"
+                  "description": "<b>Oxygen Partial Pressure:</b>\n- Minimum safe: ~16 kPa oxygen partial pressure\n- Recommended: ~20 kPa or higher (no warnings)\n- Warning thresholds:\n  - 16-12 kPa: Yellow \"Oxygen Low\" warning (no damage)\n  - 12-5 kPa: Red \"Oxygen Critical\" warning (no damage yet)\n  - Below 5 kPa: You're suffocating\n\n<b>What is Partial Pressure?</b>\nIt's the portion of total pressure from one specific gas.\n\n<b>Example:</b> If your room has 100 kPa total pressure and is 20% oxygen:\n- Oxygen partial pressure = 100 * 0.20 = 20 kPa œ“ (breathable)\n\n<b>Example:</b> If your room has 50 kPa total and is 20% oxygen:\n- Oxygen partial pressure = 50 * 0.20 = 10 kPa œ— (critical warning)"
                 },
                 {
                   "title": "Filling your Suit Oxygen Tank",
@@ -35121,7 +35121,7 @@
                   "title": "Checking Your Atmosphere",
                   "tocId": "checking-atmosphere",
                   "collapsible": true,
-                  "description": "Use your <b>Tablet with Atmospheric Analyzer Cartridge</b>:\n\n- Shows temperature\n- Shows pressure\n- Shows gas composition (percentages)\n\nCalculate partial pressure: Total Pressure Ã— Gas Percentage = Partial Pressure"
+                  "description": "Use your <b>Tablet with Atmospheric Analyzer Cartridge</b>:\n\n- Shows temperature\n- Shows pressure\n- Shows gas composition (percentages)\n\nCalculate partial pressure: Total Pressure * Gas Percentage = Partial Pressure"
                 }
               ]
             },
@@ -35192,10 +35192,10 @@
                   "tocId": "minimum-viable",
                   "collapsible": true,
                   "items": [
-                    "â˜ Sealed room (walls + door)",
-                    "â˜ Power source connected (solar panel + cables)",
-                    "â˜ Some atmosphere inside (oxygen from portable tank)",
-                    "â˜ Temperature above 0Â°C (use Portable AC if needed)"
+                    "˜ Sealed room (walls + door)",
+                    "˜ Power source connected (solar panel + cables)",
+                    "˜ Some atmosphere inside (oxygen from portable tank)",
+                    "˜ Temperature above 0°C (use Portable AC if needed)"
                   ]
                 },
                 {
@@ -35203,11 +35203,11 @@
                   "tocId": "better-setup",
                   "collapsible": true,
                   "items": [
-                    "â˜ Automated airlock working",
-                    "â˜ Solid Fuel Generator as backup power",
-                    "â˜ Battery Charger keeping your suit batteries full",
-                    "â˜ Portable Scrubber running for CO2",
-                    "â˜ Enough pressure (30+ kPa pure O2, or 100 kPa mixed)"
+                    "˜ Automated airlock working",
+                    "˜ Solid Fuel Generator as backup power",
+                    "˜ Battery Charger keeping your suit batteries full",
+                    "˜ Portable Scrubber running for CO2",
+                    "˜ Enough pressure (30+ kPa pure O2, or 100 kPa mixed)"
                   ]
                 },
                 {
@@ -35215,9 +35215,9 @@
                   "tocId": "before-helmet",
                   "collapsible": true,
                   "items": [
-                    "â˜ Check temperature: Between 0Â°C and 50Â°C",
-                    "â˜ Check oxygen: At least 20 kPa partial pressure",
-                    "â˜ Check pressure: Above 30 kPa total"
+                    "˜ Check temperature: Between 0°C and 50°C",
+                    "˜ Check oxygen: At least 20 kPa partial pressure",
+                    "˜ Check pressure: Above 30 kPa total"
                   ]
                 }
               ]
@@ -35244,7 +35244,7 @@
                   "tocId": "summary-temp",
                   "collapsible": true,
                   "items": [
-                    "Stay between 0Â°C and 50Â°C",
+                    "Stay between 0°C and 50°C",
                     "Use Portable AC for now",
                     "Wall Heater for cold bases (later)"
                   ]
@@ -35307,7 +35307,7 @@
               "collapsible": true,
               "items": [
                 "<b>Mode 0 (Default):</b> Sensor-to-sun angle",
-                "<b>Mode 1 (Horizontal):</b> Sun azimuth (0-360Â°)",
+                "<b>Mode 1 (Horizontal):</b> Sun azimuth (0-360°)",
                 "<b>Mode 2 (Vertical):</b> Sun elevation"
               ]
             },
@@ -35316,7 +35316,7 @@
               "tocId": "logic-variables",
               "collapsible": true,
               "items": [
-                "<b>Horizontal:</b> Sun azimuth (0-360Â°)",
+                "<b>Horizontal:</b> Sun azimuth (0-360°)",
                 "<b>Vertical:</b> Sun elevation (degrees)",
                 "<b>SolarAngle:</b> Mode-dependent angle",
                 "<b>SolarIrradiance:</b> Solar watts (0 if blocked)",
@@ -35329,7 +35329,7 @@
               "collapsible": true,
               "items": [
                 "<b>Horizontal (R/W):</b> Azimuth (degrees)",
-                "<b>Vertical (R/W):</b> Elevation (15-165Â°)",
+                "<b>Vertical (R/W):</b> Elevation (15-165°)",
                 "<b>HorizontalRatio (R/W):</b> Normalized (0-1)",
                 "<b>VerticalRatio (R/W):</b> Normalized (0-1)"
               ]
@@ -35363,7 +35363,7 @@
               "title": "Horizontal Mode (1)",
               "tocId": "horizontal-mode",
               "collapsible": true,
-              "description": "Outputs only the sun's horizontal (azimuth) angle. Range: 0-360Â°. Good for single-axis horizontal tracking."
+              "description": "Outputs only the sun's horizontal (azimuth) angle. Range: 0-360°. Good for single-axis horizontal tracking."
             },
             {
               "title": "Vertical Mode (2)",
@@ -35406,8 +35406,8 @@
               "tocId": "writer-config",
               "collapsible": true,
               "items": [
-                "<b>Writer #1:</b> Input: Sensor Horizontal â†’ Output: Panel Horizontal",
-                "<b>Writer #2:</b> Input: Sensor Vertical â†’ Output: Panel Vertical"
+                "<b>Writer #1:</b> Input: Sensor Horizontal -> Output: Panel Horizontal",
+                "<b>Writer #2:</b> Input: Sensor Vertical -> Output: Panel Vertical"
               ]
             },
             {
@@ -35460,7 +35460,7 @@
           "title": "Troubleshooting",
           "tocId": "troubleshooting",
           "collapsible": true,
-          "description": "Common issues and solutions.",
+          "description": "Common issues and solutions",
           "children": [
             {
               "title": "No Sunlight Detection",
@@ -35482,21 +35482,6 @@
               ]
             }
           ]
-        },
-        {
-          "title": "poop",
-          "description": "",
-          "children": [
-            {
-              "title": "{HEADER:New Sectiontestsetsetse}",
-              "description": "",
-              "collapsible": false
-            }
-          ]
-        },
-        {
-          "title": "New Section",
-          "description": ""
         }
       ]
     },
@@ -35539,7 +35524,7 @@
               "title": "Basic Power Flow",
               "tocId": "basic-flow",
               "collapsible": true,
-              "description": "Generator/Solar â†’ Heavy Cable â†’ Transformer/APC â†’ Normal Cable â†’ Devices\n\nNever connect high-power sources directly to normal cables without protection."
+              "description": "Generator/Solar -> Heavy Cable -> Transformer/APC -> Normal Cable -> Devices\n\nNever connect high-power sources directly to normal cables without protection."
             },
             {
               "title": "Protection Options",
@@ -35711,7 +35696,7 @@
           "title": "Early Game Layout",
           "tocId": "early-layout",
           "collapsible": true,
-          "description": "Recommended power structure:\n\nSolar Panels (Heavy Cable) â†’ Station Battery â†’ APC â†’ Normal Cable â†’ Devices",
+          "description": "Recommended power structure:\n\nSolar Panels (Heavy Cable) -> Station Battery -> APC -> Normal Cable -> Devices",
           "items": [
             "Battery buffers day/night cycle",
             "APC protects critical systems",
@@ -35772,8 +35757,8 @@
           "collapsible": true,
           "description": "Stationeers provides two circuitboard types:",
           "items": [
-            "<b>Basic Airlock:</b> Atmosphere â†” Vacuum (Moon, space)",
-            "<b>Advanced Airlock:</b> Atmosphere â†” Atmosphere (Mars, Europa)"
+            "<b>Basic Airlock:</b> Atmosphere <-> Vacuum (Moon, space)",
+            "<b>Advanced Airlock:</b> Atmosphere <-> Atmosphere (Mars, Europa)"
           ],
           "children": [
             {
@@ -36063,9 +36048,9 @@
               "tocId": "no-matter-what",
               "collapsible": true,
               "items": [
-                "<b>Unwrap and leave sitting:</b> Warms â†’ Explodes",
-                "<b>Insert into Portable AC:</b> Slows warming â†’ Still explodes",
-                "<b>Actually use it for cooling:</b> Phase change â†’ Overpressure â†’ Explodes"
+                "<b>Unwrap and leave sitting:</b> Warms -> Explodes",
+                "<b>Insert into Portable AC:</b> Slows warming -> Still explodes",
+                "<b>Actually use it for cooling:</b> Phase change -> Overpressure -> Explodes"
               ]
             },
             {
@@ -36104,8 +36089,8 @@
               "tocId": "operating-limits",
               "collapsible": true,
               "items": [
-                "<b>Cold Mode:</b> Errors if room exceeds +30Â°C",
-                "<b>Hot Mode:</b> Errors if room drops below -10Â°C"
+                "<b>Cold Mode:</b> Errors if room exceeds +30°C",
+                "<b>Hot Mode:</b> Errors if room drops below -10°C"
               ]
             },
             {
@@ -36177,9 +36162,9 @@
               "collapsible": true,
               "items": [
                 "<b>Pressure:</b> Keep room AND waste loop above 100 kPa",
-                "<b>Temperature Diff:</b> Keep under 50Â°C between Input and Waste",
-                "<b>Operating Temp:</b> Works best between -50Â°C and 100Â°C",
-                "<b>Rule of thumb:</b> One AC per 50Â°C of cooling/heating needed"
+                "<b>Temperature Diff:</b> Keep under 50°C between Input and Waste",
+                "<b>Operating Temp:</b> Works best between -50°C and 100°C",
+                "<b>Rule of thumb:</b> One AC per 50°C of cooling/heating needed"
               ]
             }
           ]
@@ -36206,13 +36191,13 @@
               "title": "Room Air Loop",
               "tocId": "room-loop",
               "collapsible": true,
-              "description": "[Room] â† Passive Vent â† AC Output\n[Room] â†’ Passive Vent â†’ AC Input\n\nRoom air circulates through the AC."
+              "description": "[Room] † Passive Vent † AC Output\n[Room] -> Passive Vent -> AC Input\n\nRoom air circulates through the AC."
             },
             {
               "title": "Waste Loop",
               "tocId": "waste-loop",
               "collapsible": true,
-              "description": "AC Waste â†’ Pipes â†’ Radiators â†’ Pipes â†’ back to AC Waste\n\nClosed loop, place radiators outside. Fill with CO2 or Pollutants (200-500 kPa)."
+              "description": "AC Waste -> Pipes -> Radiators -> Pipes -> back to AC Waste\n\nClosed loop, place radiators outside. Fill with CO2 or Pollutants (200-500 kPa)."
             }
           ]
         },
@@ -36249,7 +36234,7 @@
               "items": [
                 "<b>Canister exploded:</b> Wasn't connected to pipe network",
                 "<b>Error flashing:</b> Internal tank full OR room temp outside operating range",
-                "<b>Not cooling:</b> Room above 30Â°C (cold mode limit)"
+                "<b>Not cooling:</b> Room above 30°C (cold mode limit)"
               ]
             }
           ]
@@ -36262,7 +36247,7 @@
             "<b>Portable AC:</b> Connect to pipes BEFORE using, canister WILL explode otherwise",
             "<b>Wall AC:</b> Three efficiency factors - pressure, temp differential, operating temp",
             "<b>Pressure:</b> Keep above 100 kPa everywhere",
-            "<b>Temp Differential:</b> Under 50Â°C per AC",
+            "<b>Temp Differential:</b> Under 50°C per AC",
             "<b>Coolant:</b> Use CO2 or Pollutants in waste loops"
           ]
         }
@@ -37955,7 +37940,7 @@
           "table": [
             {
               "cells": [
-                "Canister @ 0Â°C",
+                "Canister @ 0°C",
                 "Gases",
                 "Ingredients",
                 "Temp",
@@ -38273,12 +38258,12 @@
     "Growth Time": "How long it takes this plant to grow from freshly planted to fully mature (harvestable). This is under ideal conditions - actual time can be longer if temperature, atmosphere, or light aren't optimal. Use this to plan your farming schedules and calculate crop yields. Growth Rate logic can speed this up.",
     "Specific Heat": "How much energy is needed to change this gas's temperature by 1 Kelvin per mole. Think of it as thermal inertia - gases with high specific heat take more energy to heat up but also take longer to cool down. Water vapor has very high specific heat (72), while most other gases are around 20-30.",
     "Freeze Temperature": "The temperature at which this gas freezes directly into a solid (skipping liquid phase). When gas temperature drops below this and hits a surface, it deposits as ice/frost. This is how you get ice formation on pipes in cold environments. Most gases freeze between 50-90K.",
-    "Boiling Temperature": "The temperature where this liquid boils and turns into gas at normal pressure (101.325 kPa). In the game, this happens when liquids get too hot. Different pressures change the boiling point. Water boils at 373K (100Â°C) at normal pressure but higher in pressure cookers.",
+    "Boiling Temperature": "The temperature where this liquid boils and turns into gas at normal pressure (101.325 kPa). In the game, this happens when liquids get too hot. Different pressures change the boiling point. Water boils at 373K (100°C) at normal pressure but higher in pressure cookers.",
     "Max Liquid Temperature": "The maximum temperature this substance can reach while still being liquid, regardless of pressure. Above this temperature, it MUST be gas. This is the critical point temperature. For most gases in the game, this is well above normal operating temperatures.",
     "Min Liquid Pressure": "The minimum pressure needed to keep this substance in liquid form at a given temperature. Below this pressure, it will instantly boil into gas (flash boiling). This is why liquids boil in vacuum - there's no pressure to keep them liquid. Critical for handling liquid gases.",
-    "Latent Heat": "How much energy is absorbed when this substance melts (iceâ†’liquid) or released when it freezes (liquidâ†’ice). This is why ice keeps things cold - it absorbs energy as it melts without changing temperature. Water's latent heat is very high (6008 J/mol), making ice excellent for cooling.",
+    "Latent Heat": "How much energy is absorbed when this substance melts (ice->liquid) or released when it freezes (liquid->ice). This is why ice keeps things cold - it absorbs energy as it melts without changing temperature. Water's latent heat is very high (6008 J/mol), making ice excellent for cooling.",
     "Moles Per Litre": "How many moles of this gas fit in 1 liter of volume at standard pressure (101.325 kPa) and temperature. This tells you how 'dense' the gas is. All gases have roughly similar values (~44 mol/L) because they follow similar physics. Use this to calculate how much gas fits in tanks.",
-    "Power Storage": "How much energy this battery can store in total, measured in joules. Small Battery: 360,000J, Large Battery: 1,800,000J. To calculate runtime: divide this by the power draw in watts. Example: 360,000J Ã· 1,000W = 360 seconds (6 minutes) of power.",
+    "Power Storage": "How much energy this battery can store in total, measured in joules. Small Battery: 360,000J, Large Battery: 1,800,000J. To calculate runtime: divide this by the power draw in watts. Example: 360,000J · 1,000W = 360 seconds (6 minutes) of power.",
     "Power Generation": "The maximum power this generator can produce per second in watts. Solar panels, gas generators, and other power sources have this rating. Total grid capacity is the sum of all generators. Make sure your total generation exceeds your total consumption or batteries will drain.",
     "Nutrition": "How many nutrition points this food provides when eaten. Your astronaut needs nutrition to survive. Higher values = more filling. Different foods have different nutrition values - meals are typically more nutritious than raw ingredients. Plan food production to match crew consumption rate.",
     "Nutrition Quality": "The quality rating of this food item. Higher quality food improves astronaut mood and may provide bonuses. Fresh, properly prepared meals have higher quality than processed or stale food. Quality can degrade over time if food is stored improperly.",

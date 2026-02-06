@@ -215,14 +215,14 @@ function normalizeOperationalDetailTables(details: OperationalDetail[]): Operati
 export function normalizeDocumentTables<T extends { operationalDetails?: OperationalDetail[]; OperationalDetails?: OperationalDetail[] }>(doc: T): T {
   const normalized = { ...doc };
   
-  // Handle both field name variants
-  const details = (doc as any).OperationalDetails || doc.operationalDetails;
+  // Handle both field name variants — prefer operationalDetails (lowercase)
+  // since that's the field the editor actually mutates at runtime.
+  // Falling back to OperationalDetails only if lowercase doesn't exist.
+  const details = doc.operationalDetails || (doc as any).OperationalDetails;
   if (details && Array.isArray(details)) {
     normalized.operationalDetails = normalizeOperationalDetailTables(details);
-    // Also update OperationalDetails if present
-    if ((doc as any).OperationalDetails) {
-      (normalized as any).OperationalDetails = normalized.operationalDetails;
-    }
+    // Remove the capital-O variant to prevent stale data shadowing edits
+    delete (normalized as any).OperationalDetails;
   }
   
   return normalized;

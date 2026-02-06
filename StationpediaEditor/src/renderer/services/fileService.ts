@@ -140,6 +140,9 @@ class FileService {
                   // Normalize OperationalDetails to operationalDetails
                   operationalDetails: d.OperationalDetails || d.operationalDetails || [],
                 };
+                // Remove the capital-O variant so only operationalDetails exists.
+                // This prevents stale data surviving through edit+save cycles.
+                delete normalized.OperationalDetails;
                 // Normalize table formats from {headers, rows} to [TableRow]
                 return normalizeDocumentTables(normalized);
               });
@@ -155,6 +158,8 @@ class FileService {
                     // Normalize OperationalDetails to operationalDetails
                     operationalDetails: g.OperationalDetails || g.operationalDetails || [],
                   };
+                  // Remove the capital-O variant so only operationalDetails exists.
+                  delete normalized.OperationalDetails;
                   // Normalize table formats from {headers, rows} to [TableRow]
                   return normalizeDocumentTables(normalized);
                 });
@@ -167,6 +172,8 @@ class FileService {
                     // Normalize OperationalDetails to operationalDetails
                     operationalDetails: m.OperationalDetails || m.operationalDetails || [],
                   };
+                  // Remove the capital-O variant so only operationalDetails exists.
+                  delete normalized.OperationalDetails;
                   // Normalize table formats from {headers, rows} to [TableRow]
                   return normalizeDocumentTables(normalized);
                 });

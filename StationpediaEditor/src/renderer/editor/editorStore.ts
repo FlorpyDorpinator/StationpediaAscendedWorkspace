@@ -37,10 +37,16 @@ export interface EditorState {
   navigationHistory: NavigationEntry[];
   navigationIndex: number;
 
+  // Scroll-to-section request (increments counter to trigger even for same index)
+  scrollToSectionIndex: number | null;
+  scrollToSectionCounter: number;
+
   // Computed
   selectedDevice: SelectableItem | null;
 
   // Actions
+  requestScrollToSection: (index: number) => void;
+  clearScrollToSection: () => void;
   setWorkspace: (workspace: WorkspaceModel) => void;
   selectDevice: (deviceKey: string) => void;
   updateDevice: (deviceKey: string, updates: Partial<SelectableItem>) => void;
@@ -77,11 +83,24 @@ export const useEditorStore = create<EditorState>((set, get) => ({
   selectedDevice: null,
   navigationHistory: [],
   navigationIndex: -1,
+  scrollToSectionIndex: null,
+  scrollToSectionCounter: 0,
+
+  requestScrollToSection: (index: number) => {
+    set((state) => ({
+      scrollToSectionIndex: index,
+      scrollToSectionCounter: state.scrollToSectionCounter + 1,
+    }));
+  },
+
+  clearScrollToSection: () => {
+    set({ scrollToSectionIndex: null });
+  },
 
   setWorkspace: (workspace) => {
     set({
       workspace,
-      isDirty: true,
+      isDirty: false,
       selectedDeviceKey: null,
       selectedItemType: null,
       selectedDevice: null,

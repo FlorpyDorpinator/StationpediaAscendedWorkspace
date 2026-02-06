@@ -10,10 +10,11 @@ An enhanced Stationpedia experience with comprehensive tooltips, in-game notepad
 
 NEW IN 0.8.5:
 - Station Notepad Fixes: Input locking, Enter key blocking, improved hotload display
-- Species Survival Guide: Lung damage/suffocation, Mood & Hygiene sections added
+- Species Survival Guide: Lung damage/suffocation, Mood &amp; Hygiene sections added
 - Content Fixes: Corrected gas terminology throughout guides
 - Editor: Drag-and-drop category management, inline headers, Import JSON button
 - Guide Order: Headers and content now display in correct order
+- Guide Schema: The guide schema is largely finalized, making way for a much quicker guide implementation goinf forward
 
 Features:
 - Enhanced Tooltips: Hover over logic types, slots, memory, modes, and connections
@@ -27,12 +28,12 @@ All tooltips and descriptions are customizable via descriptions.json.
 Discord: https://discord.gg/stationeers</Description>
 
   <ChangeLog>
-v0.8.5: Content & Notepad Improvements
+v0.8.5: Content &amp; Notepad Improvements
 - FIX Station Notepad: Input now properly locks keyboard while typing
 - FIX Station Notepad: Enter key no longer opens chat while editing
 - FIX Station Notepad: JSON documents display correctly on hotload
 - NEW Species Survival Guide: Lung damage and suffocation mechanics from game code
-- NEW Species Survival Guide: Mood & Hygiene section with thresholds and effects
+- NEW Species Survival Guide: Mood &amp; Hygiene section with thresholds and effects
 - FIX Content: Corrected gas terminology (no X3/X1, using Volatiles/Pollutant/Hydrogen)
 - NEW Editor: Import JSON button for importing guide files
 - NEW Editor: Drag-and-drop to move content between categories

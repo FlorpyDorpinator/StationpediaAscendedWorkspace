@@ -40,6 +40,20 @@ function renderNode(
   switch (node.type) {
     case 'text': {
       const textNode = node as TextNode;
+      // Preserve newlines by splitting and interleaving <br /> elements
+      if (textNode.text.includes('\n')) {
+        const parts = textNode.text.split('\n');
+        return (
+          <span key={index}>
+            {parts.map((part, i) => (
+              <React.Fragment key={i}>
+                {part}
+                {i < parts.length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </span>
+        );
+      }
       return <span key={index}>{textNode.text}</span>;
     }
 
