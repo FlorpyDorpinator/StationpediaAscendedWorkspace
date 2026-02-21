@@ -153,7 +153,7 @@ namespace StationpediaAscended
             // Start monitoring coroutine
             host.StartCoroutine(MonitorStationpediaCoroutineStatic());
             
-            ConsoleWindow.Print($"[Stationpedia Ascended] v{PluginVersion} initialized via ScriptEngine!");
+            ConsoleHelper.Print($"[Stationpedia Ascended] v{PluginVersion} initialized via ScriptEngine!");
         }
         
         /// <summary>
@@ -233,7 +233,7 @@ namespace StationpediaAscended
             GenericDescriptions = null;
             _scriptEngineHost = null;
             
-            ConsoleWindow.Print("[Stationpedia Ascended] Cleaned up");
+            ConsoleHelper.Print("[Stationpedia Ascended] Cleaned up");
         }
         
         // Static Harmony instance for ScriptEngine path
@@ -308,7 +308,7 @@ namespace StationpediaAscended
                 Log = BepInEx.Logging.Logger.CreateLogSource("Stationpedia Ascended");
                 
                 // Log version on startup
-                ConsoleWindow.Print($"[Stationpedia Ascended] v{PluginVersion} loading...");
+                ConsoleHelper.Print($"[Stationpedia Ascended] v{PluginVersion} loading...");
                 
                 // Clean up any existing tooltip components from previous loads (for ScriptEngine hot-reload)
                 CleanupExistingTooltips();
@@ -322,7 +322,7 @@ namespace StationpediaAscended
             catch (Exception ex)
             {
                 Log?.LogError($"ERROR in Awake: {ex}");
-                ConsoleWindow.Print($"[Stationpedia Ascended] ERROR: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] ERROR: {ex.Message}");
             }
         }
         
@@ -356,7 +356,7 @@ namespace StationpediaAscended
             UIAssetInspector.Initialize();
             
             _initialized = true;
-            ConsoleWindow.Print($"[Stationpedia Ascended] v{PluginVersion} initialized successfully!");
+            ConsoleHelper.Print($"[Stationpedia Ascended] v{PluginVersion} initialized successfully!");
         }
 
         // Coroutine-based monitoring (more reliable than Update() for ModBehaviour)
@@ -2652,7 +2652,7 @@ namespace StationpediaAscended
             DeviceDatabase = null;
             GenericDescriptions = null;
             
-            ConsoleWindow.Print("[Stationpedia Ascended] Cleaned up");
+            ConsoleHelper.Print("[Stationpedia Ascended] Cleaned up");
         }
         
         #endregion

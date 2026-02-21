@@ -138,7 +138,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error registering keybinding: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error registering keybinding: {ex.Message}");
             }
         }
         
@@ -483,14 +483,14 @@ namespace StationpediaAscended.Patches
             var guide = Data.JsonGuideLoader.GetGuide("SurvivalManual");
             if (guide == null)
             {
-                ConsoleWindow.Print("[Stationpedia Ascended] SurvivalManual guide not found in descriptions.json");
+                ConsoleHelper.Print("[Stationpedia Ascended] SurvivalManual guide not found in descriptions.json");
                 return;
             }
             
             var guideData = Data.JsonGuideLoader.ToDeviceDescriptions(guide);
             if (guideData?.operationalDetails == null || guideData.operationalDetails.Count == 0)
             {
-                ConsoleWindow.Print("[Stationpedia Ascended] SurvivalManual has no sections");
+                ConsoleHelper.Print("[Stationpedia Ascended] SurvivalManual has no sections");
                 return;
             }
             
@@ -560,7 +560,7 @@ namespace StationpediaAscended.Patches
                 UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(Stationpedia.Instance.ContentRectTransform);
             }
             
-            ConsoleWindow.Print("[Stationpedia Ascended] Rendered Survival Manual from JSON with per-Part TOCs");
+            ConsoleHelper.Print("[Stationpedia Ascended] Rendered Survival Manual from JSON with per-Part TOCs");
         }
 
         /// <summary>
@@ -581,7 +581,7 @@ namespace StationpediaAscended.Patches
                 var guide = Data.JsonGuideLoader.GetGuide(guideKey);
                 if (guide == null)
                 {
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Guide not found: {guideKey}");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Guide not found: {guideKey}");
                     return;
                 }
 
@@ -590,18 +590,18 @@ namespace StationpediaAscended.Patches
                 if (guideData?.operationalDetails == null || guideData.operationalDetails.Count == 0)
                 {
                     // If no sections, just show the page description
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Guide {guideKey} has no sections");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Guide {guideKey} has no sections");
                     return;
                 }
 
                 // Render sections directly without "Operational Details" wrapper
                 RenderGuideSections(page, contentTransform, guideData, guide.generateToc, guide.tocTitle);
                 
-                ConsoleWindow.Print($"[Stationpedia Ascended] Rendered JSON guide: {guideKey}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Rendered JSON guide: {guideKey}");
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error rendering JSON guide {guideKey}: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error rendering JSON guide {guideKey}: {ex.Message}");
             }
         }
 
@@ -622,7 +622,7 @@ namespace StationpediaAscended.Patches
                 var mechanic = Data.JsonMechanicsLoader.GetMechanic(mechanicKey);
                 if (mechanic == null)
                 {
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Mechanic not found: {mechanicKey}");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Mechanic not found: {mechanicKey}");
                     return;
                 }
 
@@ -631,18 +631,18 @@ namespace StationpediaAscended.Patches
                 if (mechanicData?.operationalDetails == null || mechanicData.operationalDetails.Count == 0)
                 {
                     // If no sections, just show the page description
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Mechanic {mechanicKey} has no sections");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Mechanic {mechanicKey} has no sections");
                     return;
                 }
 
                 // Render sections directly without "Operational Details" wrapper
                 RenderGuideSections(page, contentTransform, mechanicData, mechanic.generateToc, mechanic.tocTitle);
                 
-                ConsoleWindow.Print($"[Stationpedia Ascended] Rendered JSON mechanic: {mechanicKey}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Rendered JSON mechanic: {mechanicKey}");
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error rendering JSON mechanic {mechanicKey}: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error rendering JSON mechanic {mechanicKey}: {ex.Message}");
             }
         }
 
@@ -666,7 +666,7 @@ namespace StationpediaAscended.Patches
                 var guideData = Data.DaylightSensorGuideLoader.GetDaylightSensorGuideDescriptions();
                 if (guideData?.operationalDetails == null || guideData.operationalDetails.Count == 0)
                 {
-                    ConsoleWindow.Print("[Stationpedia Ascended] No Daylight Sensor Guide data found");
+                    ConsoleHelper.Print("[Stationpedia Ascended] No Daylight Sensor Guide data found");
                     return;
                 }
 
@@ -675,7 +675,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error rendering Daylight Sensor Guide: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error rendering Daylight Sensor Guide: {ex.Message}");
             }
         }
 
@@ -790,7 +790,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error rendering guide sections: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error rendering guide sections: {ex.Message}");
             }
         }
 
@@ -804,7 +804,7 @@ namespace StationpediaAscended.Patches
                 var sprite = StationpediaAscendedMod.LoadImageFromModFolder(imageFile);
                 if (sprite == null)
                 {
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Guide image not found: {imageFile}");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Guide image not found: {imageFile}");
                     return;
                 }
                 
@@ -836,7 +836,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating guide top image: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating guide top image: {ex.Message}");
             }
         }
 
@@ -973,7 +973,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating guide section: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating guide section: {ex.Message}");
             }
         }
 
@@ -1237,7 +1237,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating guide TOC: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating guide TOC: {ex.Message}");
             }
         }
 
@@ -1846,7 +1846,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error applying custom icons: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error applying custom icons: {ex.Message}");
             }
         }
 
@@ -1880,7 +1880,7 @@ namespace StationpediaAscended.Patches
                 // Guard against null operationalDetails
                 if (deviceDesc.operationalDetails == null || deviceDesc.operationalDetails.Count == 0)
                 {
-                    ConsoleWindow.Print("[Stationpedia Ascended] TOC: No operational details found");
+                    ConsoleHelper.Print("[Stationpedia Ascended] TOC: No operational details found");
                     return;
                 }
                 
@@ -2047,7 +2047,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating TOC: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating TOC: {ex.Message}");
             }
         }
 
@@ -2258,7 +2258,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating unified TOC: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating unified TOC: {ex.Message}");
             }
         }
 
@@ -2383,7 +2383,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating unified section: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating unified section: {ex.Message}");
             }
         }
 
@@ -2655,7 +2655,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating nested category: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating nested category: {ex.Message}");
             }
         }
 
@@ -2877,7 +2877,7 @@ namespace StationpediaAscended.Patches
                 var sprite = StationpediaAscendedMod.LoadImageFromModFolder(imageFile);
                 if (sprite == null)
                 {
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Image not found: {imageFile}");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Image not found: {imageFile}");
                     return;
                 }
                 
@@ -2909,7 +2909,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating inline image: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating inline image: {ex.Message}");
             }
         }
 
@@ -2983,7 +2983,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating YouTube link: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating YouTube link: {ex.Message}");
             }
         }
 
@@ -2998,7 +2998,7 @@ namespace StationpediaAscended.Patches
                 string videoPath = StationpediaAscendedMod.GetImageFilePath(videoFile);
                 if (string.IsNullOrEmpty(videoPath))
                 {
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Video file not found: {videoFile}");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Video file not found: {videoFile}");
                     return;
                 }
                 
@@ -3185,11 +3185,11 @@ namespace StationpediaAscended.Patches
                     }
                 });
                 
-                ConsoleWindow.Print($"[Stationpedia Ascended] Video player created for: {videoFile}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Video player created for: {videoFile}");
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating inline video: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating inline video: {ex.Message}");
             }
         }
 
@@ -3222,12 +3222,12 @@ namespace StationpediaAscended.Patches
                 
                 if (string.IsNullOrEmpty(bundlePath))
                 {
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Table bundle not found. Searched paths:");
-                    foreach (var p in searchPaths) ConsoleWindow.Print($"  - {p}");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Table bundle not found. Searched paths:");
+                    foreach (var p in searchPaths) ConsoleHelper.Print($"  - {p}");
                     return false;
                 }
                 
-                ConsoleWindow.Print($"[Stationpedia Ascended] Loading table bundle from: {bundlePath}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Loading table bundle from: {bundlePath}");
                 
                 // Check if already loaded
                 if (_tableBundle == null)
@@ -3250,15 +3250,15 @@ namespace StationpediaAscended.Patches
                 
                 if (_tableBundle == null)
                 {
-                    ConsoleWindow.Print("[Stationpedia Ascended] Failed to load table bundle");
+                    ConsoleHelper.Print("[Stationpedia Ascended] Failed to load table bundle");
                     return false;
                 }
                 
                 // Log bundle contents
-                ConsoleWindow.Print("[Stationpedia Ascended] Table bundle contents:");
+                ConsoleHelper.Print("[Stationpedia Ascended] Table bundle contents:");
                 foreach (var name in _tableBundle.GetAllAssetNames())
                 {
-                    ConsoleWindow.Print($"  - {name}");
+                    ConsoleHelper.Print($"  - {name}");
                 }
                 
                 // Load prefabs
@@ -3271,17 +3271,17 @@ namespace StationpediaAscended.Patches
                 bool success = _tableContainerPrefab != null && _tableRowPrefab != null && _tableCellPrefab != null;
                 if (success)
                 {
-                    ConsoleWindow.Print("[Stationpedia Ascended] Table prefabs loaded successfully");
+                    ConsoleHelper.Print("[Stationpedia Ascended] Table prefabs loaded successfully");
                 }
                 else
                 {
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Some prefabs failed to load: Container={_tableContainerPrefab != null}, Row={_tableRowPrefab != null}, Cell={_tableCellPrefab != null}");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Some prefabs failed to load: Container={_tableContainerPrefab != null}, Row={_tableRowPrefab != null}, Cell={_tableCellPrefab != null}");
                 }
                 return success;
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error loading table prefabs: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error loading table prefabs: {ex.Message}");
                 return false;
             }
         }
@@ -3369,7 +3369,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating table: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating table: {ex.Message}");
             }
         }
         
@@ -3760,7 +3760,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Could not add icon to category: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Could not add icon to category: {ex.Message}");
             }
         }
 
@@ -4033,7 +4033,7 @@ namespace StationpediaAscended.Patches
                 }
                 catch (Exception ex)
                 {
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Error in SetPageGameMechanics: {ex.Message}");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Error in SetPageGameMechanics: {ex.Message}");
                 }
             }
             
@@ -4120,7 +4120,7 @@ namespace StationpediaAscended.Patches
             
             if (mechanics == null || mechanics.Count == 0)
             {
-                ConsoleWindow.Print("[Stationpedia Ascended] No game mechanics pages to display");
+                ConsoleHelper.Print("[Stationpedia Ascended] No game mechanics pages to display");
                 return;
             }
             
@@ -4200,7 +4200,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error modifying guide layout: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error modifying guide layout: {ex.Message}");
             }
         }
 
@@ -4270,12 +4270,12 @@ namespace StationpediaAscended.Patches
 
                 if (createdCount > 0)
                 {
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Created {createdCount} JSON guide buttons");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Created {createdCount} JSON guide buttons");
                 }
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating JSON guide buttons: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating JSON guide buttons: {ex.Message}");
             }
         }
 
@@ -4328,7 +4328,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating guide button for {guide?.guideKey}: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating guide button for {guide?.guideKey}: {ex.Message}");
             }
         }
 
@@ -4374,11 +4374,11 @@ namespace StationpediaAscended.Patches
                 
                 // Don't call SetAsFirstSibling - let the item stay at its natural position in the loop order
                 
-                ConsoleWindow.Print($"[Stationpedia Ascended] Created section header: {headerText}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Created section header: {headerText}");
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error creating section header: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error creating section header: {ex.Message}");
             }
         }
 
@@ -4458,12 +4458,12 @@ namespace StationpediaAscended.Patches
                     // Position the header after custom guides
                     headerObj.transform.SetSiblingIndex(customGuideCount);
                     
-                    ConsoleWindow.Print($"[Stationpedia Ascended] Added Vanilla Guides header (Custom: {customGuideCount}, Vanilla: {vanillaCount})");
+                    ConsoleHelper.Print($"[Stationpedia Ascended] Added Vanilla Guides header (Custom: {customGuideCount}, Vanilla: {vanillaCount})");
                 }
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error adding vanilla guides header: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error adding vanilla guides header: {ex.Message}");
             }
         }
 
@@ -4493,7 +4493,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error in SetPageLore prefix: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error in SetPageLore prefix: {ex.Message}");
             }
         }
 
@@ -4508,7 +4508,7 @@ namespace StationpediaAscended.Patches
             }
             catch (Exception ex)
             {
-                ConsoleWindow.Print($"[Stationpedia Ascended] Error modifying lore layout: {ex.Message}");
+                ConsoleHelper.Print($"[Stationpedia Ascended] Error modifying lore layout: {ex.Message}");
             }
         }
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>AIMeE Bug Fixes</Name>
+  <Author>FlorpyDorp</Author>
+  <Version>0.1.0</Version>
+  <Description>This is a Plugin Mod. It requires BepInEx to be installed with the StationeersLaunchPad plugin.
+See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
+
+Fixes three bugs with the AIMeE mining robot:
+
+1. Mine Deadlock: AIMeE stops mining after first ore in multiplayer because _mineCancellation.Initialized is never reset after Mine() completes.
+2. Off-State Teleporting: When turned off but still receiving logic (IC10/transmitter), AIMeE hops into the air and teleports because TryUnstuck/PathToTarget have no OnOff guard.
+3. Wheel Animation Desync: On dedicated servers, wheel animations don't play because AnimateAuthority() is gated by IsOccluded, which can be true on headless servers.
+
+All fixes are server-side Harmony patches.</Description>
+
+  <ChangeLog>
+v0.1.0: Initial release
+- Fix mine deadlock (_mineCancellation reset after Mine completes)
+- Fix off-state teleporting (skip TryUnstuck/PathToTarget when off)
+- Fix wheel animation desync on dedicated server (AnimateAuthority bypasses occlusion)
+  </ChangeLog>
+  <Tags>
+    <Tag>StationeersLaunchPad</Tag>
+    <Tag>BugFix</Tag>
+    <Tag>Server</Tag>
+  </Tags>
+  <InGameDescription><![CDATA[<size="30"><color=#ffa500>AIMeE Bug Fixes</color></size>
+<color=#ff0000>This is a Plugin Mod. It requires BepInEx with StationeersLaunchPad.</color>
+
+Fixes three AIMeE mining robot bugs:
+
+<color=#ffa500>1. Mine Deadlock (Multiplayer)</color>
+AIMeE stops after first ore because the mining cancellation token is never reset.
+
+<color=#ffa500>2. Off-State Teleporting</color>
+When off but receiving logic, AIMeE hops/teleports due to missing power guards.
+
+<color=#ffa500>3. Wheel Animation Desync (Dedicated Server)</color>
+Wheel animations frozen on clients because server skips AnimateAuthority when occluded.
+
+All fixes are server-side Harmony patches.
+]]></InGameDescription>
+</ModMetadata>
