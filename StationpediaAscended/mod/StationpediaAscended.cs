@@ -35,7 +35,7 @@ namespace StationpediaAscended
         // Plugin metadata
         public const string PluginGuid = "com.florpydorp.stationpediaascended";
         public const string PluginName = "Stationpedia Ascended";
-        public const string PluginVersion = "0.3.0";
+        public const string PluginVersion = "0.8.6";
         
         public const string HarmonyId = "com.stationpediaascended.mod";
         
@@ -44,6 +44,12 @@ namespace StationpediaAscended
         
         // Static reference for tooltip component access
         public static StationpediaAscendedMod Instance { get; private set; }
+        
+        /// <summary>
+        /// Returns whichever MonoBehaviour host is available for starting coroutines.
+        /// Works in both SLP path (Instance) and ScriptEngine path (_scriptEngineHost).
+        /// </summary>
+        internal static MonoBehaviour CoroutineHost => Instance != null ? (MonoBehaviour)Instance : _scriptEngineHost;
         
         // Description databases
         public static Dictionary<string, DeviceDescriptions> DeviceDatabase { get; private set; }
@@ -129,9 +135,22 @@ namespace StationpediaAscended
             // Clean up any existing tooltip components from previous loads
             CleanupExistingTooltips();
             
+            // Load custom icons (same as SLP path)
+            LoadCustomIcon();
+            LoadCustomIcons();
+            
             // Load descriptions and apply patches
             LoadDescriptionsStatic();
             ApplyHarmonyPatchesStatic();
+            
+            // Register custom keybinding (SetupKeyBindings already ran before our patch, so call directly)
+            RegisterCustomKeybinding();
+            
+            // Register console commands
+            RegisterConsoleCommands();
+            
+            // Initialize UI Asset Inspector (debug tool)
+            UIAssetInspector.Initialize();
             
             // Reset page tracking so monitor will re-add tooltips after reload
             _lastPageKeyStatic = "";
@@ -428,7 +447,7 @@ namespace StationpediaAscended
                                                     layoutElement = child.gameObject.AddComponent<UnityEngine.UI.LayoutElement>();
                                                 }
                                                 
-                                                // Force size to 32x32 (15% larger than original 28x28)
+                                                // Force size to 32x32 for clear visibility
                                                 layoutElement.preferredWidth = 32;
                                                 layoutElement.preferredHeight = 32;
                                                 layoutElement.minWidth = 32;
@@ -444,7 +463,7 @@ namespace StationpediaAscended
                                                     rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 32);
                                                     
                                                     // Offset icon to the right to prevent overlap with title text
-                                                    rt.anchoredPosition = new Vector2(rt.anchoredPosition.x + 8f, rt.anchoredPosition.y);
+                                                    rt.anchoredPosition = new Vector2(rt.anchoredPosition.x + 14f, rt.anchoredPosition.y);
                                                 }
                                                 
                                                 break; // Found the icon
@@ -539,6 +558,12 @@ namespace StationpediaAscended
                     {
                         _lastPageKey = "";
                         continue;
+                    }
+
+                    // Re-apply header title if the game reset it (e.g. on first open)
+                    if (_headerTitleText != null && !_headerTitleText.text.Contains("Ascended"))
+                    {
+                        UpdateHeaderAppearance();
                     }
 
                     // Get current page key
@@ -663,7 +688,7 @@ namespace StationpediaAscended
         /// <summary>
         /// Load the custom phoenix icon from file or embedded resource
         /// </summary>
-        private void LoadCustomIcon()
+        private static void LoadCustomIcon()
         {
             try
             {
@@ -739,7 +764,7 @@ namespace StationpediaAscended
         /// <summary>
         /// Load custom icons for expand/collapse buttons from images folder
         /// </summary>
-        private void LoadCustomIcons()
+        private static void LoadCustomIcons()
         {
             try
             {
@@ -810,7 +835,7 @@ namespace StationpediaAscended
         /// <summary>
         /// Make the header title/icon clickable to toggle Ascended mode (easter egg)
         /// </summary>
-        private void SetupHeaderToggle()
+        private static void SetupHeaderToggle()
         {
             if (_headerTitleObject == null) return;
             
@@ -857,7 +882,7 @@ namespace StationpediaAscended
         /// <summary>
         /// Handle header click - toggle Ascended mode (easter egg)
         /// </summary>
-        private void OnHeaderClicked()
+        private static void OnHeaderClicked()
         {
             UI.VanillaModeManager.Toggle();
             UpdateHeaderAppearance();
@@ -869,7 +894,7 @@ namespace StationpediaAscended
         /// <summary>
         /// Update header appearance based on current mode
         /// </summary>
-        private void UpdateHeaderAppearance()
+        private static void UpdateHeaderAppearance()
         {
             if (_headerTitleText != null)
             {
@@ -905,7 +930,7 @@ namespace StationpediaAscended
         /// <summary>
         /// Setup the Station Planner button next to the ToggleMouse button
         /// </summary>
-        private void SetupStationPlannerButton()
+        private static void SetupStationPlannerButton()
         {
             var stationpedia = Stationpedia.Instance;
             if (stationpedia == null) return;
@@ -1000,7 +1025,7 @@ namespace StationpediaAscended
         /// <summary>
         /// Force refresh the current Stationpedia page to apply mode changes
         /// </summary>
-        private void RefreshCurrentPage()
+        private static void RefreshCurrentPage()
         {
             try
             {
@@ -1008,11 +1033,18 @@ namespace StationpediaAscended
                 if (Stationpedia.Instance != null && !string.IsNullOrEmpty(Stationpedia.CurrentPageKey))
                 {
                     string currentKey = Stationpedia.CurrentPageKey;
-                    _lastPageKey = "";  // Reset tracking so our patches will re-run
+                    // Reset tracking so our patches will re-run (both paths)
+                    if (Instance != null) Instance._lastPageKey = "";
+                    _lastPageKeyStatic = "";
                     
                     // Navigate to Home briefly then back to force re-render
                     Stationpedia.Instance.SetPage("Home", false);
-                    StartCoroutine(DelayedSetPage(currentKey));
+                    // Use whichever MonoBehaviour host is available for coroutine
+                    MonoBehaviour host = Instance != null ? (MonoBehaviour)Instance : _scriptEngineHost;
+                    if (host != null)
+                    {
+                        host.StartCoroutine(DelayedSetPage(currentKey));
+                    }
                 }
             }
             catch (Exception ex)
@@ -1021,7 +1053,7 @@ namespace StationpediaAscended
             }
         }
         
-        private IEnumerator DelayedSetPage(string pageKey)
+        private static IEnumerator DelayedSetPage(string pageKey)
         {
             yield return null;  // Wait one frame
             if (Stationpedia.Instance != null)
@@ -1526,7 +1558,7 @@ namespace StationpediaAscended
         /// Register custom keybinding for Station Notepad in game's Settings/Controls menu.
         /// Called directly since KeyManager.SetupKeyBindings runs before our Harmony patch is applied.
         /// </summary>
-        private void RegisterCustomKeybinding()
+        private static void RegisterCustomKeybinding()
         {
             try
             {
@@ -1610,7 +1642,7 @@ namespace StationpediaAscended
         /// <summary>
         /// Register custom console commands
         /// </summary>
-        private void RegisterConsoleCommands()
+        private static void RegisterConsoleCommands()
         {
             try
             {
@@ -1858,6 +1890,7 @@ namespace StationpediaAscended
         }
 
         // Static version of ApplyHarmonyPatches for ScriptEngine path
+        // IMPORTANT: Must register ALL the same patches as ApplyHarmonyPatches() for parity
         private static void ApplyHarmonyPatchesStatic()
         {
             try
@@ -1866,6 +1899,7 @@ namespace StationpediaAscended
                 
                 var universalPageType = typeof(Assets.Scripts.UI.UniversalPage);
                 
+                // Patch PopulateLogicSlotInserts to condense slot numbers
                 var populateLogicSlotInserts = universalPageType.GetMethod("PopulateLogicSlotInserts", 
                     BindingFlags.Public | BindingFlags.Instance);
                 if (populateLogicSlotInserts != null)
@@ -1875,6 +1909,7 @@ namespace StationpediaAscended
                     _harmonyStatic.Patch(populateLogicSlotInserts, postfix: new HarmonyMethod(postfix));
                 }
                 
+                // Patch ChangeDisplay to add Operational Details section
                 var changeDisplay = universalPageType.GetMethod("ChangeDisplay", 
                     BindingFlags.Public | BindingFlags.Instance);
                 if (changeDisplay != null)
@@ -1884,8 +1919,29 @@ namespace StationpediaAscended
                     _harmonyStatic.Patch(changeDisplay, postfix: new HarmonyMethod(postfix));
                 }
                 
-                // Patch ClearPreviousSearch for search result reorganization
                 var stationpediaType = typeof(Stationpedia);
+                
+                // Patch OnDrag on Stationpedia to work properly in main menu
+                var onDrag = stationpediaType.GetMethod("OnDrag", 
+                    BindingFlags.Public | BindingFlags.Instance);
+                if (onDrag != null)
+                {
+                    var prefix = typeof(HarmonyPatches).GetMethod("Stationpedia_OnDrag_Prefix", 
+                        BindingFlags.Public | BindingFlags.Static);
+                    _harmonyStatic.Patch(onDrag, prefix: new HarmonyMethod(prefix));
+                }
+                
+                // Also patch OnBeginDrag to capture offset
+                var onBeginDrag = stationpediaType.GetMethod("OnBeginDrag", 
+                    BindingFlags.Public | BindingFlags.Instance);
+                if (onBeginDrag != null)
+                {
+                    var prefix = typeof(HarmonyPatches).GetMethod("Stationpedia_OnBeginDrag_Prefix", 
+                        BindingFlags.Public | BindingFlags.Static);
+                    _harmonyStatic.Patch(onBeginDrag, prefix: new HarmonyMethod(prefix));
+                }
+                
+                // Patch ClearPreviousSearch for search result reorganization
                 var clearPreviousSearch = stationpediaType.GetMethod("ClearPreviousSearch", 
                     BindingFlags.NonPublic | BindingFlags.Instance);
                 if (clearPreviousSearch != null)
@@ -1893,6 +1949,48 @@ namespace StationpediaAscended
                     var postfix = typeof(SearchPatches).GetMethod("ClearPreviousSearch_Postfix", 
                         BindingFlags.Public | BindingFlags.Static);
                     _harmonyStatic.Patch(clearPreviousSearch, postfix: new HarmonyMethod(postfix));
+                }
+                
+                // Patch SetPage to handle Game Mechanics navigation
+                var setPage = stationpediaType.GetMethod("SetPage", 
+                    BindingFlags.Public | BindingFlags.Instance);
+                if (setPage != null)
+                {
+                    var prefix = typeof(HarmonyPatches).GetMethod("Stationpedia_SetPage_Prefix", 
+                        BindingFlags.Public | BindingFlags.Static);
+                    _harmonyStatic.Patch(setPage, prefix: new HarmonyMethod(prefix));
+                }
+                
+                // Patch SetPageGuides to modify button layout
+                var setPageGuides = stationpediaType.GetMethod("SetPageGuides", 
+                    BindingFlags.NonPublic | BindingFlags.Instance);
+                if (setPageGuides != null)
+                {
+                    var postfix = typeof(HarmonyPatches).GetMethod("Stationpedia_SetPageGuides_Postfix", 
+                        BindingFlags.Public | BindingFlags.Static);
+                    _harmonyStatic.Patch(setPageGuides, postfix: new HarmonyMethod(postfix));
+                }
+                
+                // Patch SetPageLore to clear orphaned items and modify button layout
+                var setPageLore = stationpediaType.GetMethod("SetPageLore", 
+                    BindingFlags.Public | BindingFlags.Instance);
+                if (setPageLore != null)
+                {
+                    var prefix = typeof(HarmonyPatches).GetMethod("Stationpedia_SetPageLore_Prefix", 
+                        BindingFlags.Public | BindingFlags.Static);
+                    var postfix = typeof(HarmonyPatches).GetMethod("Stationpedia_SetPageLore_Postfix", 
+                        BindingFlags.Public | BindingFlags.Static);
+                    _harmonyStatic.Patch(setPageLore, prefix: new HarmonyMethod(prefix), postfix: new HarmonyMethod(postfix));
+                }
+                
+                // Patch KeyManager.SetupKeyBindings to add custom keybinding in Settings/Controls
+                var setupKeyBindings = typeof(KeyManager).GetMethod("SetupKeyBindings", 
+                    BindingFlags.Public | BindingFlags.Static);
+                if (setupKeyBindings != null)
+                {
+                    var postfix = typeof(HarmonyPatches).GetMethod("KeyManager_SetupKeyBindings_Postfix", 
+                        BindingFlags.Public | BindingFlags.Static);
+                    _harmonyStatic.Patch(setupKeyBindings, postfix: new HarmonyMethod(postfix));
                 }
                 
                 // Patch KeyManager.GetButtonDown to block Enter key when Station Notepad is open
@@ -1919,10 +2017,11 @@ namespace StationpediaAscended
         {
             while (true)
             {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(CHECK_INTERVAL);
                 
                 try
                 {
+                    // Wait until Stationpedia.Instance exists
                     if (Stationpedia.Instance == null)
                         continue;
 
@@ -1930,14 +2029,118 @@ namespace StationpediaAscended
                     {
                         _stationpediaFoundStatic = true;
                         
-                        // Hide unwanted items from Stationpedia searches
+                        // Hide unwanted items from Stationpedia searches (burnt cables, wreckage, etc.)
                         PopulateHiddenItems();
+                        
+                        // Change the window title to Stationpedia Ascended and make it clickable
+                        try
+                        {
+                            var titleGO = Stationpedia.Instance.StationpediaTitleText;
+                            if (titleGO != null)
+                            {
+                                _headerTitleObject = titleGO;
+                                var titleText = titleGO.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+                                if (titleText != null)
+                                {
+                                    _headerTitleText = titleText;
+                                }
+                                
+                                // Find and store the icon in the header (for Ascended mode styling)
+                                var headerParent = titleGO.transform.parent;
+                                if (headerParent != null)
+                                {
+                                    for (int i = 0; i < headerParent.childCount; i++)
+                                    {
+                                        var child = headerParent.GetChild(i);
+                                        var img = child.GetComponent<UnityEngine.UI.Image>();
+                                        
+                                        if (img != null && child.gameObject != titleGO)
+                                        {
+                                            if (img.sprite != null && !img.sprite.name.ToLower().Contains("background"))
+                                            {
+                                                _headerIconImage = img;
+                                                
+                                                if (_originalHeaderIconSprite == null)
+                                                {
+                                                    _originalHeaderIconSprite = img.sprite;
+                                                }
+                                                
+                                                var layoutElement = child.GetComponent<UnityEngine.UI.LayoutElement>();
+                                                if (layoutElement == null)
+                                                {
+                                                    layoutElement = child.gameObject.AddComponent<UnityEngine.UI.LayoutElement>();
+                                                }
+                                                
+                                                layoutElement.preferredWidth = 32;
+                                                layoutElement.preferredHeight = 32;
+                                                layoutElement.minWidth = 32;
+                                                layoutElement.minHeight = 32;
+                                                layoutElement.flexibleWidth = 0;
+                                                layoutElement.flexibleHeight = 0;
+                                                
+                                                var rt = child.GetComponent<RectTransform>();
+                                                if (rt != null)
+                                                {
+                                                    rt.sizeDelta = new Vector2(32, 32);
+                                                    rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 32);
+                                                    rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 32);
+                                                    rt.anchoredPosition = new Vector2(rt.anchoredPosition.x + 8f, rt.anchoredPosition.y);
+                                                }
+                                                
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                UpdateHeaderAppearance();
+                            }
+                        }
+                        catch (Exception ex) 
+                        { 
+                            Log?.LogWarning($"Error setting title/icon: {ex.Message}");
+                        }
+                        
+                        // Setup header as clickable toggle for Ascended mode
+                        try { SetupHeaderToggle(); }
+                        catch (Exception ex) { Log?.LogWarning($"Error setting up header toggle: {ex.Message}"); }
+                        
+                        // Add Station Planner button to Stationpedia header
+                        try { SetupStationPlannerButton(); }
+                        catch (Exception ex) { Log?.LogWarning($"Error setting up Station Planner button: {ex.Message}"); }
+                        
+                        // Initialize Station Planner
+                        try { StationPlannerWindow.Initialize(); }
+                        catch (Exception ex) { Log?.LogWarning($"Error initializing Station Planner: {ex.Message}"); }
+                        
+                        // Initialize search system early for instant first search
+                        try { Patches.SearchPatches.InitializeSearchSystem(Stationpedia.Instance); }
+                        catch (Exception ex) { Log?.LogWarning($"Error initializing search system: {ex.Message}"); }
+                        
+                        // Initialize home page layout (Survival Manual & Game Mechanics buttons)
+                        try { UI.HomePageLayoutManager.Initialize(); }
+                        catch (Exception ex) { Log?.LogWarning($"Error initializing home page layout: {ex.Message}"); }
+                        
+                        // Register Survival Manual page
+                        try { Data.SurvivalManualLoader.RegisterSurvivalManualPage(); }
+                        catch (Exception ex) { Log?.LogWarning($"Error registering Survival Manual: {ex.Message}"); }
+                        
+                        // Register Daylight Sensor Guide page
+                        try { Data.DaylightSensorGuideLoader.RegisterDaylightSensorGuidePage(); }
+                        catch (Exception ex) { Log?.LogWarning($"Error registering Daylight Sensor Guide: {ex.Message}"); }
                     }
 
+                    // Check if the Stationpedia is visible/active
                     if (!Stationpedia.Instance.gameObject.activeInHierarchy)
                     {
                         _lastPageKeyStatic = "";
                         continue;
+                    }
+
+                    // Re-apply header title if the game reset it (e.g. on first open)
+                    if (_headerTitleText != null && !_headerTitleText.text.Contains("Ascended"))
+                    {
+                        UpdateHeaderAppearance();
                     }
 
                     string currentPageKey = Stationpedia.CurrentPageKey;
@@ -1947,9 +2150,10 @@ namespace StationpediaAscended
                         _lastPageKeyStatic = currentPageKey;
                         
                         // Add tooltips after a short delay
-                        if (_scriptEngineHost != null)
+                        var host = CoroutineHost;
+                        if (host != null)
                         {
-                            _scriptEngineHost.StartCoroutine(AddTooltipsAfterDelayStatic(currentPageKey));
+                            host.StartCoroutine(AddTooltipsAfterDelayStatic(currentPageKey));
                         }
                     }
                 }

@@ -2,19 +2,19 @@
 <ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>Stationpedia Ascended</Name>
   <Author>FlorpyDorp</Author>
-  <Version>0.8.5</Version>
+  <Version>0.8.6</Version>
   <Description>This is a Plugin Mod. It requires BepInEx to be installed with the StationeersLaunchPad plugin.
 See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
 
 An enhanced Stationpedia experience with comprehensive tooltips, in-game notepad, guides, bug fixes, and quality of life improvements. Stationpedia on a new level.
 
-NEW IN 0.8.5:
-- Station Notepad Fixes: Input locking, Enter key blocking, improved hotload display
-- Species Survival Guide: Lung damage/suffocation, Mood &amp; Hygiene sections added
-- Content Fixes: Corrected gas terminology throughout guides
-- Editor: Drag-and-drop category management, inline headers, Import JSON button
-- Guide Order: Headers and content now display in correct order
-- Guide Schema: The guide schema is largely finalized, making way for a much quicker guide implementation goinf forward
+NEW IN 0.8.6:
+- Search Fixes: Cable Coil, Corn, and other items now appear correctly in search
+- Search: "Starts With" category properly shows all matching items
+- Search: Partial word matches properly demoted, performance optimized
+- Code: Consolidated dual init paths eliminating Workshop vs ScriptEngine feature drift
+- Header title reliably shows "Stationpedia Ascended" on first load
+- Debug: Centralized logging system for development builds
 
 Features:
 - Enhanced Tooltips: Hover over logic types, slots, memory, modes, and connections
@@ -28,6 +28,16 @@ All tooltips and descriptions are customizable via descriptions.json.
 Discord: https://discord.gg/stationeers</Description>
 
   <ChangeLog>
+v0.8.6: Search Fixes &amp; Code Consolidation
+- FIX Search: Cable Coil, Corn, and other items now appear correctly in search results
+- FIX Search: Items hidden by HideInStationpedia no longer incorrectly excluded from search
+- FIX Search: "Starts With" category now properly shows all matching items
+- FIX Search: Partial word matches properly demoted in results
+- OPT Search: Single-pass bucketing, caching, pre-allocated lists for faster ordering
+- FIX Code: Consolidated dual init paths (ScriptEngine vs SLP/Workshop)
+- FIX Code: Header title reliably shows "Stationpedia Ascended" on first load
+- FIX Code: Logo icon enlarged and repositioned to avoid text overlap
+- NEW Debug: Centralized debug logging system with SPDA_DEBUG toggle
 v0.8.5: Content &amp; Notepad Improvements
 - FIX Station Notepad: Input now properly locks keyboard while typing
 - FIX Station Notepad: Enter key no longer opens chat while editing
@@ -65,11 +75,11 @@ See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
 
 An enhanced Stationpedia experience with in-game notepad, comprehensive guides, tooltips, and quality of life improvements.
 
-<color=#ffa500>What's New in 0.8.5:</color>
-- Station Notepad: Fixed input locking, Enter key, hotload display
-- Species Survival Guide: Lung damage, suffocation, Mood & Hygiene
-- Content Fixes: Corrected gas terminology throughout guides
-- Editor: Drag-and-drop categories, inline headers, Import JSON
+<color=#ffa500>What's New in 0.8.6:</color>
+- Search Fixes: Cable Coil, Corn, and other items appear correctly
+- Search: Starts With category properly shows all matching items
+- Search performance optimized with caching and single-pass bucketing
+- Code: Consolidated dual init paths, reliable header on first load
 
 <color=#ffa500>Features:</color>
 - Hover tooltips for logic types, slots, memory, modes

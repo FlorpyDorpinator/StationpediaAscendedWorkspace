@@ -1,0 +1,25 @@
+Stationpedia Ascended - Version Number Locations
+==================================================
+Update ALL of these when bumping the version number.
+
+1. StationpediaAscended/mod/StationpediaAscended.cs
+   - Line ~38: public const string PluginVersion = "X.Y.Z";
+   - This is the BepInEx plugin version shown in logs and plugin list
+
+2. StationpediaAscended/About/About.xml
+   - <Version> tag (line ~5)
+   - Description text: "NEW IN X.Y.Z:" section
+   - <ChangeLog> block: Add new version entry at top
+   - <InGameDescription>: "What's New in X.Y.Z:" section
+
+3. StationpediaAscended/workshop_update.vdf
+   - "changenote" field: Update with new version changelog
+
+4. StationpediaAscended/workshop_update ABSOLUTE.vdf
+   - "changenote" field: Same as above (this is the absolute-path variant)
+
+5. StationpediaAscended/CHANGELOG.md
+   - Add new ## [X.Y.Z] - YYYY-MM-DD section at top
+
+Note: The .csproj does NOT have a version property - version comes from
+PluginVersion in StationpediaAscended.cs via the [BepInPlugin] attribute.

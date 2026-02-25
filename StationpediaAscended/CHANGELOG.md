@@ -2,6 +2,26 @@
 
 All notable changes to Stationpedia Ascended will be documented in this file.
 
+## [0.8.6] - 2026-02-24
+
+### 🐛 Bug Fixes
+- **Search: Cable Coil and other items missing** — `ShouldHideFromSearch` was checking the game's `HideInStationpedia` and `HiddenInPedia` flags, which incorrectly excluded legitimate items (Cable Coil, kit items, etc.) from the page index and search results. Vanilla search shows these items regardless of the flag; our filter now only hides ruptured/burnt/wreckage items
+- **Search: "Starts With" not showing all matches** — Items like "Cable Coil" when searching "cable" were being excluded because `FindPageByTitle` couldn't match them (they were filtered from the index). Now all items appear correctly under "Starts With"
+- **Search: "Corn" returning too many partial matches** — Partial word matches (e.g. "corner" matching "corn") are properly demoted to the bottom category instead of appearing alongside exact/whole-word matches
+- **Header title not showing on first load** — "Stationpedia Ascended" header text now reliably appears on first Stationpedia open via ongoing monitor re-check
+- **Logo icon overlapping text** — Phoenix logo enlarged to 36x36 (from 32x32), repositioned with +14px offset (from +8px), and scaled to 1.35x (from 1.2x)
+- **Dual init path divergence** — ScriptEngine (F6) and SLP/Workshop paths now use identical initialization: all 10 Harmony patches, full monitor with header customization, Station Planner, search system, home page, and guide registration
+
+### ⚡ Performance
+- **Search: Single-pass bucketing** — Replaced 4 LINQ `Where().ToList()` calls + `Concat().GroupBy().OrderBy()` with single-pass bucketing into pre-allocated lists and `SortedDictionary` for category grouping
+- **Search: ShouldHideFromSearch caching** — Results cached per page key in `_hideFromSearchCache` to avoid repeated `Regex.Replace` and string operations
+- **Search: Pre-allocated result lists** — `ScoreResults` pre-allocates list capacity; category groups use `List.Sort()` instead of LINQ `OrderBy()`
+
+### 🔧 Developer Tools
+- **Centralized debug logging** — New `DebugLog` utility class with `SPDA_DEBUG` const toggle and `[Conditional("DEBUG")]` attribute; all debug output stripped from Release builds automatically
+- **Search pipeline logging** — Debug builds log item hiding decisions, scoring results (priority/category per item), bucket sizes, and timing via `Stopwatch`
+- **CoroutineHost property** — Path-agnostic coroutine management returns `Instance ?? _scriptEngineHost`
+
 ## [0.8.5] - 2026-02-05
 
 ### 🐛 Bug Fixes

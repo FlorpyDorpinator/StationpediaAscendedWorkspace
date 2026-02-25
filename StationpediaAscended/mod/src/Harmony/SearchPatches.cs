@@ -153,15 +153,16 @@ namespace StationpediaAscended.Patches
         
         private static void OnSearchSubmit(string searchText)
         {
-            if (StationpediaAscendedMod.Instance != null)
+            var host = StationpediaAscendedMod.CoroutineHost;
+            if (host != null)
             {
                 // Stop any pending reorganization
                 if (_reorganizeCoroutine != null)
                 {
-                    StationpediaAscendedMod.Instance.StopCoroutine(_reorganizeCoroutine);
+                    host.StopCoroutine(_reorganizeCoroutine);
                 }
                 // Start new one with short delay for async search to complete
-                _reorganizeCoroutine = StationpediaAscendedMod.Instance.StartCoroutine(
+                _reorganizeCoroutine = host.StartCoroutine(
                     DelayedReorganize(searchText, 0.3f));
             }
         }
@@ -174,15 +175,16 @@ namespace StationpediaAscended.Patches
                 return;
             }
             
-            if (StationpediaAscendedMod.Instance != null && searchText.Length >= 3)
+            var host = StationpediaAscendedMod.CoroutineHost;
+            if (host != null && searchText.Length >= 3)
             {
                 // Stop any pending reorganization
                 if (_reorganizeCoroutine != null)
                 {
-                    StationpediaAscendedMod.Instance.StopCoroutine(_reorganizeCoroutine);
+                    host.StopCoroutine(_reorganizeCoroutine);
                 }
                 // Start new one with longer delay for typing
-                _reorganizeCoroutine = StationpediaAscendedMod.Instance.StartCoroutine(
+                _reorganizeCoroutine = host.StartCoroutine(
                     DelayedReorganize(searchText, 0.8f));
             }
         }
@@ -211,6 +213,9 @@ namespace StationpediaAscended.Patches
             return count;
         }
 
+        // P4: Cache ShouldHideFromSearch results per page key to avoid repeated Prefab.Find calls
+        private static Dictionary<string, bool> _hideFromSearchCache = new Dictionary<string, bool>();
+
         /// <summary>
         /// Main reorganization method - call this after search results are populated.
         /// </summary>
@@ -221,20 +226,29 @@ namespace StationpediaAscended.Patches
                 if (stationpedia == null || string.IsNullOrEmpty(searchText)) return;
                 if (stationpedia.SearchContents == null) return;
                 
-                int currentCount = CountVisibleSearchResults(stationpedia.SearchContents);
-                
-                // Don't re-process the same search with same result count
-                if (searchText == _lastSearchText && currentCount == _lastResultCount) return;
-                _lastSearchText = searchText;
-                _lastResultCount = currentCount;
-                
-                // Clean up previous headers
-                CleanupCategoryHeaders();
-                
-                // Collect all visible SPDAListItem children with their pages
+                // Collect all visible SPDAListItem children with their pages (also counts for dedup check)
                 var items = new List<(SPDAListItem item, StationpediaPage page, Transform transform)>();
                 var existingPageKeys = new HashSet<string>();
                 var itemsToHide = new List<Transform>();
+                int visibleCount = 0;
+                
+                foreach (Transform child in stationpedia.SearchContents)
+                {
+                    if (!child.gameObject.activeSelf) continue;
+                    if (child.GetComponent<SPDAListItem>() == null) continue;
+                    visibleCount++;
+                }
+                
+                // Don't re-process the same search with same result count
+                if (searchText == _lastSearchText && visibleCount == _lastResultCount) return;
+                _lastSearchText = searchText;
+                _lastResultCount = visibleCount;
+                
+                DebugLog.Search($"Reorganizing search: \"{searchText}\" with {visibleCount} visible items");
+                var sw = DebugLog.StartTimer("ReorganizeSearchResults");
+                
+                // Clean up previous headers
+                CleanupCategoryHeaders();
                 
                 foreach (Transform child in stationpedia.SearchContents)
                 {
@@ -249,9 +263,10 @@ namespace StationpediaAscended.Patches
                     
                     if (page != null)
                     {
-                        // Filter out ruptured/burnt items
-                        if (ShouldHideFromSearch(page))
+                        // Filter out ruptured/burnt items (cached lookup)
+                        if (ShouldHideFromSearchCached(page))
                         {
+                            DebugLog.Search($"  HIDING: \"{CleanTitle(title)}\" (page={page.Key})");
                             itemsToHide.Add(child);
                             continue;
                         }
@@ -264,8 +279,9 @@ namespace StationpediaAscended.Patches
                     }
                     else
                     {
-                        // Hide orphan items since they may be debris/junk
-                        itemsToHide.Add(child);
+                        // Page not found in our index - keep item visible but uncategorized
+                        DebugLog.Search($"  NO PAGE: \"{CleanTitle(title)}\" (kept, will score on display title)");
+                        items.Add((listItem, null, child));
                     }
                 }
                 
@@ -289,6 +305,9 @@ namespace StationpediaAscended.Patches
                 
                 // Reorganize the UI
                 ReorderSearchUI(stationpedia, scoredResults);
+                
+                DebugLog.StopTimer("ReorganizeSearchResults", sw);
+                DebugLog.Search($"Results: {items.Count} items, {injectedPages.Count} injected");
             }
             catch (Exception ex)
             {
@@ -481,10 +500,24 @@ namespace StationpediaAscended.Patches
             // Use cached clean title
             string cleanTitle = CleanTitle(title).ToLowerInvariant();
             
-            // O(1) lookup using our cached index
+            // O(1) lookup using our cached index - exact title match
             if (_pageTitleIndex.TryGetValue(cleanTitle, out var pages) && pages.Count > 0)
             {
                 return pages[0];
+            }
+            
+            // Fallback: try matching as a single word in the word index
+            // This handles cases where the display title differs slightly from page title
+            if (_pageWordIndex.TryGetValue(cleanTitle, out var wordPages) && wordPages.Count > 0)
+            {
+                // Prefer the page whose title most closely matches
+                foreach (var page in wordPages)
+                {
+                    string pageTitle = CleanTitle(page.Title).ToLowerInvariant();
+                    if (pageTitle == cleanTitle || pageTitle.StartsWith(cleanTitle + " ") || pageTitle.EndsWith(" " + cleanTitle))
+                        return page;
+                }
+                return wordPages[0];
             }
             
             return null;
@@ -542,9 +575,26 @@ namespace StationpediaAscended.Patches
         }
 
         /// <summary>
+        /// Cached version of ShouldHideFromSearch - avoids repeated Prefab.Find calls.
+        /// </summary>
+        private static bool ShouldHideFromSearchCached(StationpediaPage page)
+        {
+            if (page == null) return false;
+            string key = page.Key ?? "";
+            if (_hideFromSearchCache.TryGetValue(key, out bool cached))
+                return cached;
+            bool result = ShouldHideFromSearch(page);
+            _hideFromSearchCache[key] = result;
+            return result;
+        }
+
+        /// <summary>
         /// Determines if a page should be hidden from search results.
-        /// Filters out ruptured/burnt cables, wreckage, and other debris items.
-        /// Also respects the game's HideInStationpedia flag.
+        /// Only filters genuinely unwanted items: ruptured, burnt, wreckage.
+        /// NOTE: We intentionally do NOT check HideInStationpedia or HiddenInPedia here.
+        /// The vanilla search returns items regardless of that flag, and hiding them
+        /// causes legitimate items (e.g. Cable Coil, kit items) to disappear from
+        /// search results and the page index.
         /// </summary>
         private static bool ShouldHideFromSearch(StationpediaPage page)
         {
@@ -556,24 +606,8 @@ namespace StationpediaAscended.Patches
             string cleanTitle = Regex.Replace(title, "<[^>]+>", "").Trim();
             string cleanTitleLower = cleanTitle.ToLowerInvariant();
             
-            // Check if the prefab has HideInStationpedia set
-            if (key.StartsWith("Thing"))
-            {
-                string prefabName = key.Substring(5);
-                Thing thing = Prefab.Find(prefabName);
-                if (thing != null && thing.HideInStationpedia)
-                    return true;
-                    
-                // Also check HiddenInPedia dictionary
-                bool hiddenInPedia = false;
-                if (Stationpedia.DataHandler?.HiddenInPedia?.TryGetValue(prefabName, out hiddenInPedia) == true && hiddenInPedia)
-                    return true;
-            }
-            
-            // Hide ruptured/burnt cables
+            // Hide ruptured cables and items
             if (key.Contains("Ruptured") || cleanTitleLower.Contains("ruptured"))
-                return true;
-            if (key.Contains("CableRuptured"))
                 return true;
                 
             // Hide burnt items
@@ -661,8 +695,10 @@ namespace StationpediaAscended.Patches
                     priority = MatchPriority.DescriptionContains;
                 }
                 
-                // Get category from page
-                string category = GetPageCategory(page);
+                // Get category from page (or "Other" if page is null)
+                string category = page != null ? GetPageCategory(page) : "Other";
+                
+                DebugLog.Search($"  SCORED: \"{title}\" → {priority} (page={page?.Key ?? "null"}, cat={category})");
                 
                 results.Add(new ScoredResult
                 {
@@ -911,11 +947,24 @@ namespace StationpediaAscended.Patches
             var searchContents = stationpedia.SearchContents;
             if (searchContents == null) return;
             
-            // Group by priority, then by category within lower priorities
-            var exactMatches = scoredResults.Where(r => r.Priority == MatchPriority.ExactTitle).ToList();
-            var startsWithMatches = scoredResults.Where(r => r.Priority == MatchPriority.TitleStartsWith).ToList();
-            var containsMatches = scoredResults.Where(r => r.Priority == MatchPriority.TitleContains).ToList();
-            var descriptionMatches = scoredResults.Where(r => r.Priority == MatchPriority.DescriptionContains).ToList();
+            // Single-pass bucketing instead of 4 LINQ Where().ToList() calls
+            var exactMatches = new List<ScoredResult>();
+            var startsWithMatches = new List<ScoredResult>();
+            var containsMatches = new List<ScoredResult>();
+            var descriptionMatches = new List<ScoredResult>();
+            
+            foreach (var r in scoredResults)
+            {
+                switch (r.Priority)
+                {
+                    case MatchPriority.ExactTitle: exactMatches.Add(r); break;
+                    case MatchPriority.TitleStartsWith: startsWithMatches.Add(r); break;
+                    case MatchPriority.TitleContains: containsMatches.Add(r); break;
+                    case MatchPriority.DescriptionContains: descriptionMatches.Add(r); break;
+                }
+            }
+            
+            DebugLog.Search($"ReorderSearchUI: {exactMatches.Count} exact, {startsWithMatches.Count} startsWith, {containsMatches.Count} contains, {descriptionMatches.Count} description");
             
             int siblingIndex = 0;
             
@@ -924,7 +973,7 @@ namespace StationpediaAscended.Patches
             {
                 siblingIndex = AddCategoryHeader(searchContents, "Exact Matches", siblingIndex, 
                     new Color(0.95f, 0.6f, 0.25f, 1f)); // Muted orange
-                foreach (var result in exactMatches.OrderBy(r => r.Page.Title))
+                foreach (var result in exactMatches.OrderBy(r => r.Page?.Title ?? ""))
                 {
                     result.ItemTransform.SetSiblingIndex(siblingIndex++);
                 }
@@ -935,28 +984,38 @@ namespace StationpediaAscended.Patches
             {
                 siblingIndex = AddCategoryHeader(searchContents, "Starts With", siblingIndex,
                     new Color(0.9f, 0.8f, 0.4f, 1f)); // Muted gold
-                foreach (var result in startsWithMatches.OrderBy(r => r.Page.Title))
+                foreach (var result in startsWithMatches.OrderBy(r => r.Page?.Title ?? ""))
                 {
                     result.ItemTransform.SetSiblingIndex(siblingIndex++);
                 }
             }
             
-            // For "Contains" and "Description" matches, group by category with category-specific icons
-            var remainingMatches = containsMatches.Concat(descriptionMatches).ToList();
-            if (remainingMatches.Count > 0)
+            // For "Contains" and "Description" matches, group by category
+            if (containsMatches.Count > 0 || descriptionMatches.Count > 0)
             {
-                // Group by category
-                var byCategory = remainingMatches
-                    .GroupBy(r => r.Category)
-                    .OrderBy(g => g.Key);
+                // Build category groups in a single pass instead of LINQ GroupBy
+                var categoryGroups = new SortedDictionary<string, List<ScoredResult>>();
                 
-                foreach (var categoryGroup in byCategory)
+                void AddToCategory(ScoredResult r)
                 {
-                    // Just use the category name, no icon prefix
-                    siblingIndex = AddCategoryHeader(searchContents, categoryGroup.Key, siblingIndex,
-                        Color.white); // White
+                    if (!categoryGroups.TryGetValue(r.Category, out var list))
+                    {
+                        list = new List<ScoredResult>();
+                        categoryGroups[r.Category] = list;
+                    }
+                    list.Add(r);
+                }
+                
+                foreach (var r in containsMatches) AddToCategory(r);
+                foreach (var r in descriptionMatches) AddToCategory(r);
+                
+                foreach (var kvp in categoryGroups)
+                {
+                    siblingIndex = AddCategoryHeader(searchContents, kvp.Key, siblingIndex,
+                        Color.white);
                     
-                    foreach (var result in categoryGroup.OrderBy(r => r.Page.Title))
+                    kvp.Value.Sort((a, b) => string.Compare(a.Page?.Title ?? "", b.Page?.Title ?? "", StringComparison.Ordinal));
+                    foreach (var result in kvp.Value)
                     {
                         result.ItemTransform.SetSiblingIndex(siblingIndex++);
                     }
@@ -1129,6 +1188,7 @@ namespace StationpediaAscended.Patches
             _cleanedTitleCache.Clear();
             _categoryCache.Clear();
             _categoryCacheBuilt = false;
+            _hideFromSearchCache.Clear();
             
             // Clear cached template references
             _cachedHeaderSprite = null;
