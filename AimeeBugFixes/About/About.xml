@@ -2,23 +2,57 @@
 <ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>AIMeE Bug Fixes</Name>
   <Author>FlorpyDorp</Author>
-  <Version>0.1.0</Version>
+  <Version>0.4.0</Version>
   <Description>This is a Plugin Mod. It requires BepInEx to be installed with the StationeersLaunchPad plugin.
 See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
 
-Fixes three bugs with the AIMeE mining robot:
+Fixes seven bugs with the AIMeE mining robot:
 
-1. Mine Deadlock: AIMeE stops mining after first ore in multiplayer because _mineCancellation.Initialized is never reset after Mine() completes.
-2. Off-State Teleporting: When turned off but still receiving logic (IC10/transmitter), AIMeE hops into the air and teleports because TryUnstuck/PathToTarget have no OnOff guard.
-3. Wheel Animation Desync: On dedicated servers, wheel animations don't play because AnimateAuthority() is gated by IsOccluded, which can be true on headless servers.
+1. Mine Deadlock: AIMeE stops mining after first ore because _mineCancellation is never reset after Mine() completes.
+2. Off-State Teleporting: When turned off but receiving logic, AIMeE hops/teleports because TryUnstuck/PathToTarget have no OnOff guard.
+3. Tread Animation Desync: On dedicated server clients, tread UV animations are frozen because WheelRpm is never set on non-authority clients.
+4. Roam Regression: AIMeE stops exploring when no ore is in scan range because driving logic is skipped when queue is empty. Also restores MinableSearchArea from 16 to 32.
+5. Pickup Launch: Picking up/dragging AIMeE launches the player because wheel motor torque transfers through the drag joint.
+6. MineablesInQueue Client Sync: MineablesInQueue always reads 0 on multiplayer clients because the queue is a local server-only list.
+7. MineablesInVicinity Overcount: Vicinity count includes ore from entire veins beyond the search area due to missing per-ore bounds check.
 
-All fixes are server-side Harmony patches.</Description>
+Works on both dedicated servers and clients.</Description>
 
   <ChangeLog>
+v0.4.0: Full Roam() overhaul + multi-AIMeE fairness
+- Replace Bug 4 postfix with full Roam() prefix replacement
+- Hybrid old/new flow: queue system + always-drive (never stops on empty queue)
+- Cap queue to 10 per AIMeE to prevent AllAimeeQueuedMinables starvation
+- Use exact game motor/brake formulas (RocketMath.MapToScale)
+- Call original MovingToMineable() for mining state machine
+- Mine at position using game's exact TryMineServer flow with queue dequeue
+
+v0.3.0: Bug 7 enabled, Bug 6 removed, roam fix
+- Enable Bug 7 MineablesInVicinity bounds-check (was incorrectly disabled)
+- Remove Bug 6 fake queue proxy that made MineablesInQueue == MineablesInVicinity
+- Improve Bug 4 roam exploration: longer steering persistence (4-8s) to reduce circling
+- Keep MinableSearchArea restored to 32 (original value when AIMeE worked well)
+
+v0.2.3: Bug 7 fix + Bug 6 ambiguous method fix
+- Fix MineablesInVicinity overcounting ore outside search bounds (Bug 7)
+- Fix GetLogicValue ambiguous match error from two-overload resolution (Bug 6)
+
+v0.2.2: Bug 6 fix
+- Fix MineablesInQueue always 0 on multiplayer clients (Bug 6)
+
+v0.2.1: Bug 5 fix
+- Fix picking up AIMeE launching player into the air (Bug 5)
+- Changed UpdateEachFrame from prefix to postfix to preserve view-following
+
+v0.2.0: Bugs 3 and 4
+- Fix tread UV animation on multiplayer clients via WheelRpm estimation from velocity (Bug 3)
+- Fix server-side AnimateAuthority skipped when occluded (Bug 3)
+- Fix Roam regression: restore driving logic when ore queue is empty (Bug 4)
+- Restore MinableSearchArea from 16 to 32 (Bug 4)
+
 v0.1.0: Initial release
-- Fix mine deadlock (_mineCancellation reset after Mine completes)
-- Fix off-state teleporting (skip TryUnstuck/PathToTarget when off)
-- Fix wheel animation desync on dedicated server (AnimateAuthority bypasses occlusion)
+- Fix mine deadlock: _mineCancellation reset after Mine completes (Bug 1)
+- Fix off-state teleporting: skip TryUnstuck/PathToTarget when off (Bug 2)
   </ChangeLog>
   <Tags>
     <Tag>StationeersLaunchPad</Tag>
@@ -28,17 +62,27 @@ v0.1.0: Initial release
   <InGameDescription><![CDATA[<size="30"><color=#ffa500>AIMeE Bug Fixes</color></size>
 <color=#ff0000>This is a Plugin Mod. It requires BepInEx with StationeersLaunchPad.</color>
 
-Fixes three AIMeE mining robot bugs:
+Fixes seven AIMeE mining robot bugs:
 
-<color=#ffa500>1. Mine Deadlock (Multiplayer)</color>
+<color=#ffa500>1. Mine Deadlock</color>
 AIMeE stops after first ore because the mining cancellation token is never reset.
 
 <color=#ffa500>2. Off-State Teleporting</color>
 When off but receiving logic, AIMeE hops/teleports due to missing power guards.
 
-<color=#ffa500>3. Wheel Animation Desync (Dedicated Server)</color>
-Wheel animations frozen on clients because server skips AnimateAuthority when occluded.
+<color=#ffa500>3. Tread Animation Desync</color>
+Tread animations frozen on multiplayer clients. WheelRpm estimated from synced velocity.
 
-All fixes are server-side Harmony patches.
+<color=#ffa500>4. Roam Regression</color>
+AIMeE stops exploring when no ore nearby. Driving logic restored when queue empty. Scan range restored to 32.
+
+<color=#ffa500>5. Pickup Launch</color>
+Picking up AIMeE launches the player. Motor/brakes zeroed while dragged.
+
+<color=#ffa500>6. MineablesInQueue (Multiplayer)</color>
+Always 0 on clients. Uses terrain query as fallback for non-authority.
+
+<color=#ffa500>7. MineablesInVicinity Overcount</color>
+Counts ore beyond search area. Added per-ore bounds check matching queue logic.
 ]]></InGameDescription>
 </ModMetadata>

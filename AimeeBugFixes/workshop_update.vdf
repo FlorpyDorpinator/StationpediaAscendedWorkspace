@@ -1,0 +1,8 @@
+"workshopitem"
+{
+  "appid" "544550"
+  // "publishedfileid" "REPLACE_WITH_WORKSHOP_ID"
+  "contentfolder" "C:\\Users\\marka\\Documents\\My Games\\Stationeers\\mods\\AimeeBugFixes"
+  "previewfile" "C:\\Users\\marka\\Documents\\My Games\\Stationeers\\mods\\AimeeBugFixes\\About\\Preview.png"
+  "changenote" "v0.4.0: Full Roam() overhaul + multi-AIMeE fairness"
+}

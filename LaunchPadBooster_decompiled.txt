@@ -1,0 +1,1457 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
+using System.Security;
+using System.Security.Permissions;
+using System.Text;
+using Assets.Scripts;
+using Assets.Scripts.Networking;
+using Assets.Scripts.Objects;
+using Assets.Scripts.Objects.Motherboards;
+using Assets.Scripts.Serialization;
+using Assets.Scripts.Util;
+using HarmonyLib;
+using LaunchPadBooster.Networking;
+using LaunchPadBooster.Utils;
+using Steamworks;
+using UI;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Networking;
+
+[assembly: CompilationRelaxations(8)]
+[assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.Default | DebuggableAttribute.DebuggingModes.DisableOptimizations | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints | DebuggableAttribute.DebuggingModes.EnableEditAndContinue)]
+[assembly: AssemblyTitle("LaunchPadBooster")]
+[assembly: AssemblyDescription("LaunchPadBooster")]
+[assembly: AssemblyCompany("LaunchPadBooster")]
+[assembly: AssemblyProduct("LaunchPadBooster")]
+[assembly: AssemblyFileVersion("0.1.8")]
+[assembly: TargetFramework(".NETFramework,Version=v4.8", FrameworkDisplayName = ".NET Framework 4.8")]
+[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
+[assembly: AssemblyVersion("0.1.8.0")]
+[module: UnverifiableCode]
+namespace LaunchPadBooster
+{
+	public static class LaunchPadBooster
+	{
+		public const string NAME = "LaunchPadBooster";
+
+		public const string GUID = "launchpad.booster";
+
+		public const string VERSION = "0.1.8";
+	}
+	public sealed class Mod
+	{
+		private static readonly object allLock = new object();
+
+		public static readonly List<Mod> AllMods = new List<Mod>();
+
+		public readonly ModID ID;
+
+		private Func<string, bool> _versionCheck;
+
+		internal readonly List<Type> NetworkMessageTypes = new List<Type>();
+
+		internal readonly List<Thing> Prefabs = new List<Thing>();
+
+		internal readonly List<IPrefabSetup> Setups = new List<IPrefabSetup>();
+
+		internal readonly List<Type> SaveDataTypes = new List<Type>();
+
+		public bool MultiplayerRequired { get; private set; } = false;
+
+		public Mod(string name, string version)
+		{
+			ID = new ModID(name, version);
+			lock (allLock)
+			{
+				AllMods.Add(this);
+			}
+		}
+
+		public void SetVersionCheck(Func<string, bool> versionCheck)
+		{
+			_versionCheck = versionCheck;
+		}
+
+		public void SetMultiplayerRequired()
+		{
+			MultiplayerRequired = true;
+			ModNetworking.Initialize();
+		}
+
+		internal bool VersionValid(string version)
+		{
+			if (_versionCheck != null)
+			{
+				return _versionCheck(version);
+			}
+			return version == ID.Version;
+		}
+
+		public void AddSaveDataType<T>()
+		{
+			SaveDataPatch.Initialize();
+			SaveDataTypes.Add(typeof(T));
+		}
+
+		public void RegisterNetworkMessage<T>() where T : ModNetworkMessage<T>, new()
+		{
+			SetMultiplayerRequired();
+			NetworkMessageTypes.Add(typeof(T));
+		}
+
+		public void AddPrefabs(IEnumerable<GameObject> prefabs)
+		{
+			SetMultiplayerRequired();
+			PrefabPatch.Initialize();
+			Prefabs.AddRange(from prefab in prefabs
+				select prefab.GetComponent<Thing>() into thing
+				where (Object)(object)thing != (Object)null
+				select thing);
+		}
+
+		public PrefabSetup<T> SetupPrefabs<T>(string name = null)
+		{
+			PrefabSetup<T> prefabSetup = new PrefabSetup<T>(name);
+			Setups.Add(prefabSetup);
+			return prefabSetup;
+		}
+
+		public PrefabSetup<Thing> SetupPrefabs(string name = null)
+		{
+			return SetupPrefabs<Thing>(name);
+		}
+	}
+	public readonly struct ModID
+	{
+		public readonly string Name;
+
+		public readonly string Version;
+
+		public ModID(string name, string version)
+		{
+			Name = name;
+			Version = version;
+		}
+	}
+	internal static class PrefabPatch
+	{
+		private static object _initLock = new object();
+
+		private static bool _initialized = false;
+
+		public static void Initialize()
+		{
+			//IL_0026: Unknown result type (might be due to invalid IL or missing references)
+			//IL_002c: Expected O, but got Unknown
+			//IL_007f: Unknown result type (might be due to invalid IL or missing references)
+			//IL_008d: Expected O, but got Unknown
+			lock (_initLock)
+			{
+				if (!_initialized)
+				{
+					Harmony val = new Harmony("LaunchPadBooster.PrefabPatch");
+					val.Patch((MethodBase)ReflectionUtils.Method(() => Prefab.LoadAll()), new HarmonyMethod(ReflectionUtils.Method(Expression.Lambda<Action>(Expression.Call(null, (MethodInfo)MethodBase.GetMethodFromHandle((RuntimeMethodHandle)/*OpCode not supported: LdMemberToken*/), Array.Empty<Expression>()), Array.Empty<ParameterExpression>()))), (HarmonyMethod)null, (HarmonyMethod)null, (HarmonyMethod)null, (HarmonyMethod)null);
+					_initialized = true;
+				}
+			}
+		}
+
+		[HarmonyPrefix]
+		private static void PatchPrefabs()
+		{
+			foreach (Mod allMod in Mod.AllMods)
+			{
+				foreach (Thing prefab in allMod.Prefabs)
+				{
+					if (!WorldManager.Instance.SourcePrefabs.Contains(prefab))
+					{
+						WorldManager.Instance.SourcePrefabs.Add(prefab);
+						Debug.Log((object)("Add prefab to WorldManager: " + ((Object)prefab).name));
+					}
+					else
+					{
+						Debug.Log((object)("Already contains prefab: " + ((Object)prefab).name));
+					}
+				}
+			}
+			foreach (Mod allMod2 in Mod.AllMods)
+			{
+				foreach (IPrefabSetup setup in allMod2.Setups)
+				{
+					setup.Run(allMod2.Prefabs);
+				}
+			}
+		}
+	}
+	public interface IPrefabSetup
+	{
+		internal void Run(IEnumerable<Thing> things);
+	}
+	public class PrefabSetup<T> : IPrefabSetup
+	{
+		public readonly string PrefabName;
+
+		private readonly List<Action<T>> _setup = new List<Action<T>>();
+
+		private readonly string _constructStack;
+
+		private bool _ignoreEmpty = false;
+
+		internal PrefabSetup(string prefabName)
+		{
+			PrefabName = prefabName;
+			_constructStack = Environment.StackTrace;
+		}
+
+		void IPrefabSetup.Run(IEnumerable<Thing> things)
+		{
+			bool flag = false;
+			foreach (Thing thing in things)
+			{
+				if (!(thing is T obj) || 1 == 0 || (PrefabName != null && PrefabName != thing.PrefabName))
+				{
+					continue;
+				}
+				flag = true;
+				foreach (Action<T> item in _setup)
+				{
+					try
+					{
+						item(obj);
+					}
+					catch (Exception ex)
+					{
+						Debug.LogError((object)("Error setting up prefab " + thing.PrefabName));
+						Debug.LogException(ex);
+					}
+				}
+			}
+			if (!flag && !_ignoreEmpty)
+			{
+				Debug.LogWarning((object)$"No prefabs matching {typeof(T)} {PrefabName} for setup at\n{_constructStack}");
+			}
+		}
+
+		public PrefabSetup<T> IgnoreEmpty()
+		{
+			_ignoreEmpty = true;
+			return this;
+		}
+
+		public PrefabSetup<T> RunFunc(Action<T> action)
+		{
+			_setup.Add(action);
+			return this;
+		}
+
+		public PrefabSetup<T> SetBlueprintMaterials()
+		{
+			return RunFunc(_SetBlueprintMaterials);
+		}
+
+		private static void _SetBlueprintMaterials(T prefab)
+		{
+			object obj = prefab;
+			Thing val = (Thing)((obj is Thing) ? obj : null);
+			if ((Object)(object)val.Blueprint == (Object)null)
+			{
+				return;
+			}
+			Material blueprintMaterial = PrefabUtils.GetBlueprintMaterial();
+			MeshRenderer[] componentsInChildren = val.Blueprint.GetComponentsInChildren<MeshRenderer>(true);
+			foreach (MeshRenderer val2 in componentsInChildren)
+			{
+				Material[] sharedMaterials = ((Renderer)val2).sharedMaterials;
+				for (int j = 0; j < sharedMaterials.Length; j++)
+				{
+					sharedMaterials[j] = blueprintMaterial;
+				}
+				((Renderer)val2).sharedMaterials = sharedMaterials;
+			}
+		}
+
+		public PrefabSetup<T> SetPaintableColor(ColorType color, bool emissive = false)
+		{
+			//IL_0007: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0008: Unknown result type (might be due to invalid IL or missing references)
+			return RunFunc(delegate(T prefab)
+			{
+				//IL_0002: Unknown result type (might be due to invalid IL or missing references)
+				_SetPaintableColor(prefab, color, emissive);
+			});
+		}
+
+		private static void _SetPaintableColor(T prefab, ColorType color, bool emissive)
+		{
+			//IL_0042: Unknown result type (might be due to invalid IL or missing references)
+			object obj = prefab;
+			Thing val = (Thing)((obj is Thing) ? obj : null);
+			if ((Object)(object)val.PaintableMaterial == (Object)null)
+			{
+				Debug.LogWarning((object)("Prefab " + val.PrefabName + " does not have PaintableMaterial set"));
+			}
+			else
+			{
+				val.ReplaceMaterialWithColor(val.PaintableMaterial, color, emissive);
+			}
+		}
+
+		public PrefabSetup<T> SetEntryTool(string toolName, int index = 0)
+		{
+			return RunFunc(delegate(T prefab)
+			{
+				_SetEntryTool(prefab, toolName, index);
+			});
+		}
+
+		private static void _SetEntryTool(T prefab, string toolName, int index)
+		{
+			object obj = prefab;
+			if (PrefabUtils.CanSetBuildTool((Thing)((obj is Thing) ? obj : null), toolName, index, out var structure, out var tool))
+			{
+				((ToolBasic)structure.BuildStates[index].Tool).ToolEntry = tool;
+			}
+		}
+
+		public PrefabSetup<T> SetEntry2Tool(string toolName, int index = 0)
+		{
+			return RunFunc(delegate(T prefab)
+			{
+				_SetEntry2Tool(prefab, toolName, index);
+			});
+		}
+
+		private static void _SetEntry2Tool(T prefab, string toolName, int index)
+		{
+			object obj = prefab;
+			if (PrefabUtils.CanSetBuildTool((Thing)((obj is Thing) ? obj : null), toolName, index, out var structure, out var tool))
+			{
+				((ToolBasic)structure.BuildStates[index].Tool).ToolEntry2 = tool;
+			}
+		}
+
+		public PrefabSetup<T> SetExitTool(string toolName, int index = 0)
+		{
+			return RunFunc(delegate(T prefab)
+			{
+				_SetExitTool(prefab, toolName, index);
+			});
+		}
+
+		private static void _SetExitTool(T prefab, string toolName, int index)
+		{
+			object obj = prefab;
+			if (PrefabUtils.CanSetBuildTool((Thing)((obj is Thing) ? obj : null), toolName, index, out var structure, out var tool))
+			{
+				structure.BuildStates[index].Tool.ToolExit = tool;
+			}
+		}
+
+		public PrefabSetup<T> AddToMultiConstructorKit(string kitName, int order = -1)
+		{
+			return RunFunc(delegate(T prefab)
+			{
+				_AddToMultiConstructorKit(prefab, kitName, order);
+			});
+		}
+
+		private static void _AddToMultiConstructorKit(T prefab, string kitName, int order = -1)
+		{
+			object obj = prefab;
+			((Structure)((obj is Structure) ? obj : null)).AddToMultiConstructorKit(kitName, order);
+		}
+	}
+	internal static class SaveDataPatch
+	{
+		private static object _initLock = new object();
+
+		private static bool _initialized = false;
+
+		public static void Initialize()
+		{
+			//IL_002e: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0034: Expected O, but got Unknown
+			//IL_00d4: Unknown result type (might be due to invalid IL or missing references)
+			//IL_00e2: Expected O, but got Unknown
+			lock (_initLock)
+			{
+				if (!_initialized)
+				{
+					Harmony val = new Harmony("LaunchPadBooster.SaveDataPatch");
+					List<Type> dummyParam = null;
+					val.Patch((MethodBase)ReflectionUtils.Method(() => XmlSaveLoad.AddExtraTypes(ref dummyParam)), new HarmonyMethod(ReflectionUtils.Method(() => PatchSaveData(ref dummyParam))), (HarmonyMethod)null, (HarmonyMethod)null, (HarmonyMethod)null, (HarmonyMethod)null);
+				}
+			}
+		}
+
+		[HarmonyPrefix]
+		private static void PatchSaveData(ref List<Type> extraTypes)
+		{
+			foreach (Mod allMod in Mod.AllMods)
+			{
+				extraTypes.AddRange(allMod.SaveDataTypes);
+			}
+		}
+	}
+}
+namespace LaunchPadBooster.Utils
+{
+	public static class PrefabNames
+	{
+		public const string Crowbar = "ItemCrowbar";
+
+		public const string Screwdriver = "ItemScrewdriver";
+
+		public const string WireCutters = "ItemWireCutters";
+
+		public const string Wrench = "ItemWrench";
+
+		public const string DuctTape = "ItemDuctTape";
+
+		public const string AngleGrinder = "ItemAngleGrinder";
+
+		public const string Drill = "ItemDrill";
+
+		public const string Welder = "ItemWeldingTorch";
+
+		public const string IronSheets = "ItemIronSheets";
+
+		public const string GlassSheets = "ItemGlassSheets";
+
+		public const string PlasticSheets = "ItemPlasticSheets";
+
+		public const string SteelSheets = "ItemSteelSheets";
+
+		public const string Pipe = "ItemKitPipe";
+
+		public const string LiquidPipe = "ItemKitPipeLiquid";
+
+		public const string CableCoil = "ItemCableCoil";
+
+		public const string ElectronicParts = "ItemElectronicParts";
+	}
+	public static class PrefabUtils
+	{
+		private static Material _blueprintMaterial;
+
+		public static Material GetColorMaterial(ColorType color, bool emissive = false)
+		{
+			//IL_0001: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0007: Expected I4, but got Unknown
+			ColorSwatch colorSwatch = GameManager.GetColorSwatch((int)color);
+			return emissive ? colorSwatch.Emissive : colorSwatch.Normal;
+		}
+
+		public static void ReplaceMaterialWithColor(this Thing thing, Material material, ColorType color, bool emissive = false)
+		{
+			//IL_0001: Unknown result type (might be due to invalid IL or missing references)
+			Material colorMaterial = GetColorMaterial(color, emissive);
+			if ((Object)(object)thing.PaintableMaterial == (Object)(object)material)
+			{
+				thing.PaintableMaterial = colorMaterial;
+			}
+			MeshRenderer[] componentsInChildren = ((Component)thing).GetComponentsInChildren<MeshRenderer>(true);
+			foreach (MeshRenderer val in componentsInChildren)
+			{
+				Material[] sharedMaterials = ((Renderer)val).sharedMaterials;
+				for (int j = 0; j < sharedMaterials.Length; j++)
+				{
+					if ((Object)(object)sharedMaterials[j] == (Object)(object)material)
+					{
+						sharedMaterials[j] = colorMaterial;
+					}
+				}
+				((Renderer)val).sharedMaterials = sharedMaterials;
+			}
+		}
+
+		public static bool CanSetBuildTool(Thing thing, string toolName, int index, out Structure structure, out Item tool)
+		{
+			structure = (Structure)(object)((thing is Structure) ? thing : null);
+			if ((Object)(object)structure == (Object)null)
+			{
+				tool = null;
+				Debug.LogWarning((object)("Cannot set build tool on non-structure prefab " + thing.PrefabName));
+				return false;
+			}
+			if (index < 0 || index >= structure.BuildStates.Count)
+			{
+				Debug.LogWarning((object)$"Invalid build state index {index} for prefab {((Thing)structure).PrefabName}");
+				tool = null;
+				return false;
+			}
+			tool = PrefabUtils.FindPrefab<Item>(toolName);
+			if ((Object)(object)tool == (Object)null)
+			{
+				Debug.LogWarning((object)("Could not find build tool " + toolName + " for prefab " + ((Thing)structure).PrefabName));
+				return false;
+			}
+			return true;
+		}
+
+		public static void SetEntryTool(this Structure structure, string toolName, int index = 0)
+		{
+			if (CanSetBuildTool((Thing)(object)structure, toolName, index, out var _, out var tool))
+			{
+				((ToolBasic)structure.BuildStates[index].Tool).ToolEntry = tool;
+			}
+		}
+
+		public static void SetEntry2Tool(this Structure structure, string toolName, int index = 0)
+		{
+			if (CanSetBuildTool((Thing)(object)structure, toolName, index, out var _, out var tool))
+			{
+				((ToolBasic)structure.BuildStates[index].Tool).ToolEntry2 = tool;
+			}
+		}
+
+		public static void SetExitTool(this Structure structure, string toolName, int index = 0)
+		{
+			if (CanSetBuildTool((Thing)(object)structure, toolName, index, out var _, out var tool))
+			{
+				structure.BuildStates[index].Tool.ToolExit = tool;
+			}
+		}
+
+		public static void AddToMultiConstructorKit(this Structure structure, string kitName, int order = -1)
+		{
+			if (!CanSetBuildTool((Thing)(object)structure, kitName, 0, out var _, out var tool))
+			{
+				return;
+			}
+			MultiConstructor val = (MultiConstructor)(object)((tool is MultiConstructor) ? tool : null);
+			if (val != null && !((Object)(object)val == (Object)null))
+			{
+				if (!val.Constructables.Contains(structure))
+				{
+					int index = ((order < 0 || order > val.Constructables.Count) ? val.Constructables.Count : order);
+					val.Constructables.Insert(index, structure);
+				}
+				structure.BuildStates[0].Tool.ToolExit = tool;
+			}
+		}
+
+		public static T FindPrefab<T>(string prefabName) where T : Thing
+		{
+			return FindPrefab<T>(Animator.StringToHash(prefabName));
+		}
+
+		public static Thing FindPrefab(string prefabName)
+		{
+			return PrefabUtils.FindPrefab<Thing>(prefabName);
+		}
+
+		public static T FindPrefab<T>(int prefabHash) where T : Thing
+		{
+			Thing val = WorldManager.Instance.SourcePrefabs.Find((Thing prefab) => (Object)(object)prefab != (Object)null && prefab.PrefabHash == prefabHash);
+			return (T)(object)((val is T) ? val : null);
+		}
+
+		public static Thing FindPrefab(int prefabHash)
+		{
+			return PrefabUtils.FindPrefab<Thing>(prefabHash);
+		}
+
+		public static Material GetBlueprintMaterial()
+		{
+			if ((Object)(object)_blueprintMaterial == (Object)null)
+			{
+				MeshRenderer val = default(MeshRenderer);
+				foreach (Thing sourcePrefab in WorldManager.Instance.SourcePrefabs)
+				{
+					if ((Object)(object)sourcePrefab.Blueprint == (Object)null || !sourcePrefab.Blueprint.TryGetComponent<MeshRenderer>(ref val))
+					{
+						continue;
+					}
+					_blueprintMaterial = ((Renderer)val).sharedMaterials[0];
+					break;
+				}
+			}
+			return _blueprintMaterial;
+		}
+	}
+	public static class ReflectionUtils
+	{
+		public static MethodInfo Method<T>(Expression<Func<T>> expr)
+		{
+			return Method(expr.Body as MethodCallExpression);
+		}
+
+		public static MethodInfo Method(Expression<Action> expr)
+		{
+			return Method(expr.Body as MethodCallExpression);
+		}
+
+		public static MethodInfo Method(MethodCallExpression call)
+		{
+			return VirtualMethodIn(call.Method, call.Object?.Type);
+		}
+
+		public static MethodInfo AsyncMethod<T>(Expression<Func<T>> expr)
+		{
+			MethodInfo element = Method(expr);
+			AsyncStateMachineAttribute customAttribute = element.GetCustomAttribute<AsyncStateMachineAttribute>();
+			InterfaceMapping interfaceMap = customAttribute.StateMachineType.GetInterfaceMap(typeof(IAsyncStateMachine));
+			MethodInfo methodInfo = Method(() => ((IAsyncStateMachine)null).MoveNext());
+			for (int num = 0; num < interfaceMap.InterfaceMethods.Length; num++)
+			{
+				if (interfaceMap.InterfaceMethods[num] == methodInfo)
+				{
+					return interfaceMap.TargetMethods[num];
+				}
+			}
+			throw new Exception("Could not find async method implementation");
+		}
+
+		public static MethodInfo PropertyGetter<T>(Expression<Func<T>> expr)
+		{
+			MemberExpression memberExpression = expr.Body as MemberExpression;
+			PropertyInfo propertyInfo = memberExpression.Member as PropertyInfo;
+			return VirtualMethodIn(propertyInfo.GetGetMethod(), memberExpression.Expression.Type);
+		}
+
+		public static MethodInfo PropertySetter(Expression<Action> expr)
+		{
+			MemberExpression memberExpression = expr.Body as MemberExpression;
+			PropertyInfo propertyInfo = memberExpression.Member as PropertyInfo;
+			return VirtualMethodIn(propertyInfo.GetSetMethod(), memberExpression.Expression.Type);
+		}
+
+		public static FieldInfo Field<T>(Expression<Func<T>> expr)
+		{
+			return (expr.Body as MemberExpression).Member as FieldInfo;
+		}
+
+		public static ConstructorInfo Constructor<T>(Expression<Func<T>> expr)
+		{
+			return (expr.Body as NewExpression).Constructor;
+		}
+
+		public static MethodInfo Operator<T>(Expression<Func<T>> expr)
+		{
+			Expression body = expr.Body;
+			if (1 == 0)
+			{
+			}
+			MethodInfo method;
+			if (!(body is UnaryExpression unaryExpression))
+			{
+				if (!(body is BinaryExpression binaryExpression))
+				{
+					throw new Exception($"invalid operator expression type {expr.Body.GetType()}");
+				}
+				method = binaryExpression.Method;
+			}
+			else
+			{
+				method = unaryExpression.Method;
+			}
+			if (1 == 0)
+			{
+			}
+			return method;
+		}
+
+		public static T CreateDelegate<T>(this MethodInfo method) where T : Delegate
+		{
+			return (T)method.CreateDelegate(typeof(T));
+		}
+
+		public static MethodInfo VirtualMethodIn(MethodInfo method, Type type)
+		{
+			if (!method.IsVirtual)
+			{
+				return method;
+			}
+			MethodInfo[] methods = type.GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+			return methods.First((MethodInfo m) => m.GetBaseDefinition() == method.GetBaseDefinition()) ?? method;
+		}
+	}
+}
+namespace LaunchPadBooster.Patching
+{
+	internal class HarmonyConditionalClassProcessor : PatchClassProcessor
+	{
+		public HarmonyConditionalClassProcessor(Harmony instance, Type type, bool allowUnannotatedType = false)
+			: base(instance, type, allowUnannotatedType)
+		{
+			//IL_009d: Unknown result type (might be due to invalid IL or missing references)
+			//IL_00a4: Expected O, but got Unknown
+			IList list = (IList)(typeof(PatchClassProcessor).GetField("patchMethods", BindingFlags.Instance | BindingFlags.NonPublic)?.GetValue(this));
+			if (list == null || list.Count == 0)
+			{
+				return;
+			}
+			FieldInfo field = list[0].GetType().GetField("info", BindingFlags.Instance | BindingFlags.NonPublic);
+			List<object> list2 = new List<object>();
+			if (field == null)
+			{
+				return;
+			}
+			foreach (object item in list)
+			{
+				HarmonyMethod val = (HarmonyMethod)field.GetValue(item);
+				List<HarmonyConditionalPatch> source = val.method.GetCustomAttributes().OfType<HarmonyConditionalPatch>().ToList();
+				foreach (HarmonyConditionalPatch item2 in source.Where((HarmonyConditionalPatch patch) => !patch.CanPatch))
+				{
+					if (val.debug == true)
+					{
+						Debug.Log((object)("Patch in " + type.FullName + "." + val.method.Name + " for " + val.declaringType.Name + "." + val.methodName + " ignored because specified condition is false!"));
+						Debug.Log((object)item2.Description);
+					}
+					list2.Add(item);
+				}
+			}
+			foreach (object item3 in list2)
+			{
+				list.Remove(item3);
+			}
+		}
+	}
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+	public class HarmonyConditionalPatch : Attribute
+	{
+		public virtual bool CanPatch => true;
+
+		public virtual string Description => "HarmonyConditionalPatch()";
+	}
+	public static class HarmonyExtensions
+	{
+		public static void ConditionalPatchAll(this Harmony harmony)
+		{
+			CollectionExtensions.Do<Type>((IEnumerable<Type>)AccessTools.GetTypesFromAssembly(new StackTrace().GetFrame(1).GetMethod().ReflectedType?.Assembly), (Action<Type>)delegate(Type type)
+			{
+				harmony.ConditionalPatch(type);
+			});
+		}
+
+		public static void ConditionalPatchAll(this Harmony harmony, Type type)
+		{
+			CollectionExtensions.Do<Type>((IEnumerable<Type>)type.GetNestedTypes(), (Action<Type>)delegate(Type nType)
+			{
+				harmony.ConditionalPatchAll(nType);
+			});
+			harmony.ConditionalPatch(type);
+		}
+
+		public static void ConditionalPatch(this Harmony harmony, Type type)
+		{
+			List<HarmonyConditionalPatch> source = type.GetCustomAttributes(inherit: true).OfType<HarmonyConditionalPatch>().ToList();
+			bool flag = type.GetCustomAttributes(inherit: true).OfType<HarmonyAttribute>().Any((HarmonyAttribute att) => att.info.debug == true);
+			using (IEnumerator<HarmonyConditionalPatch> enumerator = source.Where((HarmonyConditionalPatch patch) => !patch.CanPatch).GetEnumerator())
+			{
+				if (enumerator.MoveNext())
+				{
+					HarmonyConditionalPatch current = enumerator.Current;
+					if (flag)
+					{
+						Debug.Log((object)("Patch class " + type.FullName + " ignored because specified condition is false!"));
+						Debug.Log((object)current.Description);
+					}
+					return;
+				}
+			}
+			((PatchClassProcessor)new HarmonyConditionalClassProcessor(harmony, type)).Patch();
+		}
+	}
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+	public class HarmonyGameBranchPatch : HarmonyConditionalPatch
+	{
+		public readonly string[] Branches;
+
+		private static string _currentBranch;
+
+		public static string CurrentBranch
+		{
+			get
+			{
+				object obj = _currentBranch;
+				if (obj == null)
+				{
+					obj = GetBetaBranchFromAcf() ?? SteamApps.CurrentBetaName ?? "public";
+					_currentBranch = (string)obj;
+				}
+				return (string)obj;
+			}
+		}
+
+		public override bool CanPatch => Branches.Contains(CurrentBranch);
+
+		public override string Description => "Current: " + CurrentBranch + " Branches: [" + string.Join(",", Branches) + "]";
+
+		private static string GetBetaBranchFromAcf()
+		{
+			string path = Path.Combine(StationSaveUtils.ExeDirectory.FullName, "steamapps", "appmanifest_544550.acf");
+			if (!File.Exists(path))
+			{
+				return null;
+			}
+			string text = string.Join("\n", File.ReadAllLines(path));
+			int num = text.IndexOf("\"UserConfig\"", StringComparison.Ordinal);
+			int num2 = text.IndexOf("}", num, StringComparison.Ordinal);
+			string text2 = text.Substring(num, num2 - num);
+			if (num == -1 || num2 == -1)
+			{
+				return null;
+			}
+			num = text2.IndexOf("\"BetaKey\"", StringComparison.Ordinal) + 9;
+			num2 = text2.IndexOf("\n", num, StringComparison.Ordinal);
+			if (num == -1 || num2 == -1)
+			{
+				return null;
+			}
+			return text2.Substring(num, num2 - num).Replace("\"", "").Trim();
+		}
+
+		public HarmonyGameBranchPatch(params string[] branches)
+		{
+			Branches = branches;
+		}
+	}
+	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+	public class HarmonyGameVersionPatch : HarmonyConditionalPatch
+	{
+		public readonly Version MinVersion;
+
+		public readonly Version MaxVersion;
+
+		public static readonly Version CurrentVersion = typeof(GameManager).Assembly.GetName().Version;
+
+		public override bool CanPatch => CurrentVersion >= MinVersion && CurrentVersion <= MaxVersion;
+
+		public override string Description => $"Current: {CurrentVersion} Min: {MinVersion} Max: {MaxVersion}";
+
+		public HarmonyGameVersionPatch(string minVersion, string maxVersion)
+		{
+			MinVersion = new Version(minVersion);
+			MaxVersion = new Version(maxVersion);
+		}
+	}
+}
+namespace LaunchPadBooster.Networking
+{
+	public static class ModNetworking
+	{
+		private delegate void ConfirmationPanelDelegate(ConfirmationPanel instance, string title, string message, string button1Text, UnityAction button1Click, string button2Text = null, UnityAction button2Click = null, string button3Text = null, UnityAction button3Click = null, bool closeOnEscape = true);
+
+		private static readonly object initLock = new object();
+
+		private static bool initialized;
+
+		private const byte NETWORK_VERSION = 1;
+
+		private static readonly object assignLock = new object();
+
+		private static List<Type> MessageTypes;
+
+		private static Dictionary<Type, ushort> MessageTypeToIndex;
+
+		private static ConfirmationPanelDelegate ShowConfirmationPanel;
+
+		private static List<ModInfoFromServer> modsFromServer;
+
+		private static byte serverNetVersion;
+
+		private static List<ModID> modsFromClient;
+
+		private static byte clientNetVersion;
+
+		internal static void Initialize()
+		{
+			//IL_002d: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0037: Expected O, but got Unknown
+			lock (initLock)
+			{
+				if (initialized)
+				{
+					return;
+				}
+				Harmony harmony = new Harmony("LaunchPadBooster.Networking");
+				harmony.CreateClassProcessor(typeof(ModNetworkPatches), true).Patch();
+				Prefab.OnPrefabsLoaded += delegate
+				{
+					ModNetworkCompatibilityPatch.RunPatch(harmony);
+				};
+				try
+				{
+					Type typeFromHandle = typeof(ConfirmationPanel);
+					Type[] types = new Type[9]
+					{
+						typeof(string),
+						typeof(string),
+						typeof(string),
+						typeof(UnityAction),
+						typeof(string),
+						typeof(UnityAction),
+						typeof(string),
+						typeof(UnityAction),
+						typeof(bool)
+					};
+					MethodInfo method = typeFromHandle.GetMethod("SetUpPanel", types);
+					MethodInfo method2 = typeFromHandle.GetMethod("ShowRaw", types);
+					if (method != null)
+					{
+						ShowConfirmationPanel = method.CreateDelegate<ConfirmationPanelDelegate>();
+					}
+					else if (method2 != null)
+					{
+						ConfirmationPanelDelegate m2d = method2.CreateDelegate<ConfirmationPanelDelegate>();
+						ShowConfirmationPanel = delegate(ConfirmationPanel instance, string title, string message, string b1text, UnityAction b1click, string _, UnityAction _, string _, UnityAction _, bool _)
+						{
+							m2d(instance, title, message, Localization.GetInterface(b1text, false), b1click);
+						};
+					}
+				}
+				catch (Exception ex)
+				{
+					Debug.LogException(ex);
+				}
+				if (ShowConfirmationPanel == null)
+				{
+					ShowConfirmationPanel = delegate(ConfirmationPanel _, string title, string message, string _, UnityAction click, string _, UnityAction _, string _, UnityAction _, bool _)
+					{
+						ConsoleWindow.PrintError(title + ": " + message, true);
+					};
+				}
+				initialized = true;
+			}
+		}
+
+		internal static void EnsureAssignment()
+		{
+			lock (assignLock)
+			{
+				if (MessageTypes != null)
+				{
+					return;
+				}
+				MessageTypes = new List<Type>();
+				MessageTypeToIndex = new Dictionary<Type, ushort>();
+				foreach (Mod allMod in Mod.AllMods)
+				{
+					if (!allMod.MultiplayerRequired)
+					{
+						continue;
+					}
+					foreach (Type networkMessageType in allMod.NetworkMessageTypes)
+					{
+						ushort value = (ushort)MessageTypes.Count;
+						MessageTypes.Add(networkMessageType);
+						MessageTypeToIndex[networkMessageType] = value;
+					}
+				}
+			}
+		}
+
+		internal static void SerializeServerModInfo(RocketBinaryWriter writer)
+		{
+			EnsureAssignment();
+			writer.WriteByte((byte)1);
+			List<ModInfoFromServer> list = new List<ModInfoFromServer>();
+			foreach (Mod allMod in Mod.AllMods)
+			{
+				if (!allMod.MultiplayerRequired)
+				{
+					continue;
+				}
+				ModInfoFromServer item = new ModInfoFromServer
+				{
+					ID = allMod.ID,
+					Messages = new List<ModNetworkMessageMapping>()
+				};
+				foreach (Type networkMessageType in allMod.NetworkMessageTypes)
+				{
+					item.Messages.Add(new ModNetworkMessageMapping
+					{
+						Index = MessageTypeToIndex[networkMessageType],
+						TypeName = networkMessageType.FullName
+					});
+				}
+				list.Add(item);
+			}
+			writer.WriteUInt16((ushort)list.Count);
+			foreach (ModInfoFromServer item2 in list)
+			{
+				item2.Serialize(writer);
+			}
+		}
+
+		internal static void DeserializeServerModInfo(RocketBinaryReader reader)
+		{
+			modsFromServer = new List<ModInfoFromServer>();
+			serverNetVersion = 0;
+			try
+			{
+				serverNetVersion = reader.ReadByte();
+				if (serverNetVersion == 1)
+				{
+					ushort num = reader.ReadUInt16();
+					for (int i = 0; i < num; i++)
+					{
+						ModInfoFromServer item = default(ModInfoFromServer);
+						item.Deserialize(reader);
+						modsFromServer.Add(item);
+					}
+				}
+			}
+			catch (EndOfStreamException)
+			{
+			}
+		}
+
+		internal static bool ValidateModInfoClient()
+		{
+			if (serverNetVersion != 0 && serverNetVersion != 1)
+			{
+				FailClientJoin("Incompatible LaunchPadBooster version");
+				return false;
+			}
+			Dictionary<string, Mod> dictionary = new Dictionary<string, Mod>();
+			foreach (Mod allMod in Mod.AllMods)
+			{
+				dictionary[allMod.ID.Name] = allMod;
+			}
+			Dictionary<ushort, Type> dictionary2 = new Dictionary<ushort, Type>();
+			foreach (ModInfoFromServer item in modsFromServer)
+			{
+				if (!dictionary.TryGetValue(item.ID.Name, out var value))
+				{
+					FailClientJoin("Missing mod required by server: " + item.ID.Name + "@" + item.ID.Version);
+					return false;
+				}
+				dictionary.Remove(item.ID.Name);
+				if (!value.VersionValid(item.ID.Version))
+				{
+					FailClientJoin("Incompatible mod version: " + item.ID.Name + " @ " + value.ID.Version + "(local) <> " + item.ID.Version + "(server)");
+					return false;
+				}
+				Dictionary<string, Type> dictionary3 = new Dictionary<string, Type>();
+				foreach (Type networkMessageType in value.NetworkMessageTypes)
+				{
+					dictionary3[networkMessageType.FullName] = networkMessageType;
+				}
+				foreach (ModNetworkMessageMapping message in item.Messages)
+				{
+					if (!dictionary3.TryGetValue(message.TypeName, out var value2))
+					{
+						FailClientJoin("Missing network message type: " + value.ID.Name + " " + message.TypeName);
+						return false;
+					}
+					dictionary3.Remove(message.TypeName);
+					dictionary2[message.Index] = value2;
+				}
+				using Dictionary<string, Type>.KeyCollection.Enumerator enumerator5 = dictionary3.Keys.GetEnumerator();
+				if (enumerator5.MoveNext())
+				{
+					string current5 = enumerator5.Current;
+					FailClientJoin("Server missing network message type: " + value.ID.Name + " " + current5);
+					return false;
+				}
+			}
+			if (dictionary.Count > 0)
+			{
+				StringBuilder stringBuilder = new StringBuilder();
+				stringBuilder.AppendLine("Server missing required mods:");
+				foreach (Mod value4 in dictionary.Values)
+				{
+					stringBuilder.Append(" " + value4.ID.Name + "@" + value4.ID.Version);
+				}
+				FailClientJoin(stringBuilder.ToString());
+				return false;
+			}
+			Type[] array = new Type[dictionary2.Count];
+			Dictionary<Type, ushort> dictionary4 = new Dictionary<Type, ushort>();
+			foreach (KeyValuePair<ushort, Type> item2 in dictionary2)
+			{
+				ushort key = item2.Key;
+				Type value3 = item2.Value;
+				ushort num = key;
+				if (num >= array.Length)
+				{
+					FailClientJoin("Internal error: invalid message assignment received from server");
+					return false;
+				}
+				array[num] = value3;
+				dictionary4[value3] = num;
+			}
+			MessageTypes = new List<Type>(array);
+			MessageTypeToIndex = dictionary4;
+			return true;
+		}
+
+		private static void FailClientJoin(string message)
+		{
+			//IL_0031: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0040: Expected O, but got Unknown
+			ConsoleWindow.PrintError(message, true);
+			NetworkClient.StopConnectionTimer();
+			NetworkManager.EndConnection();
+			ShowConfirmationPanel(Singleton<ConfirmationPanel>.Instance, "Incompatible mods", message, "ButtonOk", new UnityAction(NetworkClient.Cancel));
+		}
+
+		internal static void SerializeClientModInfo(RocketBinaryWriter writer)
+		{
+			EnsureAssignment();
+			writer.WriteByte((byte)1);
+			List<ModID> list = new List<ModID>();
+			foreach (Mod allMod in Mod.AllMods)
+			{
+				if (allMod.MultiplayerRequired)
+				{
+					list.Add(allMod.ID);
+				}
+			}
+			writer.WriteUInt16((ushort)list.Count);
+			foreach (ModID item in list)
+			{
+				writer.WriteModID(item);
+			}
+		}
+
+		internal static void DeserializeClientModInfo(RocketBinaryReader reader)
+		{
+			modsFromClient = new List<ModID>();
+			clientNetVersion = 0;
+			try
+			{
+				clientNetVersion = reader.ReadByte();
+				if (clientNetVersion == 1)
+				{
+					ushort num = reader.ReadUInt16();
+					for (int i = 0; i < num; i++)
+					{
+						ModID item = reader.ReadModID();
+						modsFromClient.Add(item);
+					}
+				}
+			}
+			catch (EndOfStreamException)
+			{
+			}
+		}
+
+		internal static bool ValidateModInfoServer(long hostId, VerifyPlayer msg)
+		{
+			if (clientNetVersion != 0 && clientNetVersion != 1)
+			{
+				RejectClientJoin(hostId, msg, "Incompatible LaunchPadBooster version");
+				return false;
+			}
+			Dictionary<string, Mod> dictionary = new Dictionary<string, Mod>();
+			foreach (Mod allMod in Mod.AllMods)
+			{
+				dictionary[allMod.ID.Name] = allMod;
+			}
+			foreach (ModID item in modsFromClient)
+			{
+				if (!dictionary.TryGetValue(item.Name, out var value))
+				{
+					RejectClientJoin(hostId, msg, "Server missing required mod: " + item.Name + "@" + item.Version);
+					return false;
+				}
+				dictionary.Remove(item.Name);
+				if (!value.VersionValid(item.Version))
+				{
+					RejectClientJoin(hostId, msg, "Incompatible mod version: " + item.Name + " @ " + value.ID.Version + "(server) <> " + item.Version + "(client)");
+					return false;
+				}
+			}
+			if (dictionary.Count > 0)
+			{
+				StringBuilder stringBuilder = new StringBuilder();
+				stringBuilder.AppendLine("Client missing required mods:");
+				foreach (Mod value2 in dictionary.Values)
+				{
+					stringBuilder.Append(" " + value2.ID.Name + "@" + value2.ID.Version);
+				}
+				RejectClientJoin(hostId, msg, stringBuilder.ToString());
+				return false;
+			}
+			return true;
+		}
+
+		private static void RejectClientJoin(long hostId, VerifyPlayer msg, string message)
+		{
+			//IL_0015: Unknown result type (might be due to invalid IL or missing references)
+			//IL_001a: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0020: Expected O, but got Unknown
+			//IL_003d: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0042: Unknown result type (might be due to invalid IL or missing references)
+			//IL_004a: Unknown result type (might be due to invalid IL or missing references)
+			//IL_005d: Expected O, but got Unknown
+			Client val = new Client(hostId, msg.OwnerConnectionId, msg.ClientId, msg.Name, msg.ClientConnectionMethod);
+			ConsoleWindow.PrintError("Rejecting client " + msg.Name + ": " + message, true);
+			NetworkServer.SendToClient<Handshake>((MessageBase<Handshake>)new Handshake
+			{
+				HandshakeState = (HandshakeType)3,
+				Message = message
+			}, (NetworkChannel)134, val);
+			NetworkManager.CloseP2PConnectionServer(val);
+		}
+
+		public static void WriteMessageType(RocketBinaryWriter writer, Type type)
+		{
+			if (typeof(IModNetworkMessage).IsAssignableFrom(type))
+			{
+				writer.WriteByte(byte.MaxValue);
+				writer.WriteUInt16(MessageTypeToIndex[type]);
+			}
+			else
+			{
+				writer.WriteByte(MessageFactory.GetIndexFromType(type));
+			}
+		}
+
+		public static Type ReadMessageType(RocketBinaryReader reader)
+		{
+			byte b = reader.ReadByte();
+			if (b == byte.MaxValue)
+			{
+				ushort index = reader.ReadUInt16();
+				return MessageTypes[index];
+			}
+			return MessageFactory.GetTypeFromIndex(b);
+		}
+
+		internal static void WriteModID(this RocketBinaryWriter writer, ModID id)
+		{
+			writer.WriteString(id.Name);
+			writer.WriteString(id.Version);
+		}
+
+		internal static ModID ReadModID(this RocketBinaryReader reader)
+		{
+			string name = reader.ReadString();
+			string version = reader.ReadString();
+			return new ModID(name, version);
+		}
+	}
+	public struct ModNetworkMessageMapping
+	{
+		public ushort Index;
+
+		public string TypeName;
+
+		public void Serialize(RocketBinaryWriter writer)
+		{
+			writer.WriteUInt16(Index);
+			writer.WriteString(TypeName);
+		}
+
+		public void Deserialize(RocketBinaryReader reader)
+		{
+			Index = reader.ReadUInt16();
+			TypeName = reader.ReadString();
+		}
+	}
+	public struct ModInfoFromServer
+	{
+		public ModID ID;
+
+		public List<ModNetworkMessageMapping> Messages;
+
+		public void Serialize(RocketBinaryWriter writer)
+		{
+			writer.WriteModID(ID);
+			ushort num = (ushort)Messages.Count;
+			writer.WriteUInt16(num);
+			for (int i = 0; i < num; i++)
+			{
+				Messages[i].Serialize(writer);
+			}
+		}
+
+		public void Deserialize(RocketBinaryReader reader)
+		{
+			ID = reader.ReadModID();
+			ushort num = reader.ReadUInt16();
+			Messages = new List<ModNetworkMessageMapping>(num);
+			for (int i = 0; i < num; i++)
+			{
+				ModNetworkMessageMapping item = default(ModNetworkMessageMapping);
+				item.Deserialize(reader);
+				Messages.Add(item);
+			}
+		}
+	}
+	public interface IModNetworkMessage
+	{
+	}
+	public abstract class ModNetworkMessage<T> : ProcessedMessage<T>, IModNetworkMessage where T : ModNetworkMessage<T>, new()
+	{
+	}
+	internal static class ModNetworkPatches
+	{
+		[HarmonyPatch(typeof(VerifyPlayerRequest), "Serialize")]
+		[HarmonyPostfix]
+		private static void VerifyPlayerRequest_Serialize(RocketBinaryWriter writer)
+		{
+			ModNetworking.SerializeServerModInfo(writer);
+		}
+
+		[HarmonyPatch(typeof(VerifyPlayerRequest), "Deserialize")]
+		[HarmonyPostfix]
+		private static void VerifyPlayerRequest_Deserialize(RocketBinaryReader reader)
+		{
+			ModNetworking.DeserializeServerModInfo(reader);
+		}
+
+		[HarmonyPatch(typeof(VerifyPlayerRequest), "Process")]
+		[HarmonyPrefix]
+		private static bool VerifyPlayerRequest_Process(long hostId)
+		{
+			return !NetworkManager.IsClient || ModNetworking.ValidateModInfoClient();
+		}
+
+		[HarmonyPatch(typeof(VerifyPlayer), "Serialize")]
+		[HarmonyPostfix]
+		private static void VerifyPlayer_Serialize(RocketBinaryWriter writer)
+		{
+			ModNetworking.SerializeClientModInfo(writer);
+		}
+
+		[HarmonyPatch(typeof(VerifyPlayer), "Deserialize")]
+		[HarmonyPostfix]
+		private static void VerifyPlayer_Deserialize(RocketBinaryReader reader)
+		{
+			ModNetworking.DeserializeClientModInfo(reader);
+		}
+
+		[HarmonyPatch(typeof(VerifyPlayer), "Process")]
+		[HarmonyPrefix]
+		private static bool VerifyPlayer_Process(long hostId, VerifyPlayer __instance)
+		{
+			return !NetworkManager.IsServer || ModNetworking.ValidateModInfoServer(hostId, __instance);
+		}
+
+		[HarmonyPatch(typeof(Localization), "GetFallbackInterface", new Type[] { typeof(int) })]
+		[HarmonyPrefix]
+		private static bool Localization_GetFallbackInterface(int hash, ref string __result)
+		{
+			//IL_0001: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0008: Invalid comparison between Unknown and I4
+			if ((int)Localization.CurrentLanguage == 45 && !Localization.InterfaceExists(hash))
+			{
+				__result = string.Empty;
+				return false;
+			}
+			return true;
+		}
+
+		[HarmonyPatch(typeof(RocketBinaryReader), "ReadMessageType")]
+		[HarmonyPrefix]
+		private static bool RocketBinaryReader_ReadMessageType(RocketBinaryReader __instance, ref Type __result)
+		{
+			__result = ModNetworking.ReadMessageType(__instance);
+			return false;
+		}
+
+		[HarmonyPatch(typeof(RocketBinaryWriter), "WriteMessageType")]
+		[HarmonyPrefix]
+		private static bool RocketBinaryWriter_WriteMessageType(RocketBinaryWriter __instance, Type value)
+		{
+			ModNetworking.WriteMessageType(__instance, value);
+			return false;
+		}
+
+		[HarmonyPatch(typeof(NetworkBase), "DeserializeReceivedData")]
+		[HarmonyTranspiler]
+		private static IEnumerable<CodeInstruction> NetworkBase_DeserializeReceivedData(IEnumerable<CodeInstruction> instructions)
+		{
+			//IL_0003: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0009: Expected O, but got Unknown
+			//IL_0027: Unknown result type (might be due to invalid IL or missing references)
+			//IL_002d: Expected O, but got Unknown
+			//IL_006f: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0075: Expected O, but got Unknown
+			//IL_0093: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0099: Expected O, but got Unknown
+			//IL_00a9: Unknown result type (might be due to invalid IL or missing references)
+			//IL_00af: Expected O, but got Unknown
+			CodeMatcher val = new CodeMatcher(instructions, (ILGenerator)null);
+			val.MatchStartForward((CodeMatch[])(object)new CodeMatch[1]
+			{
+				new CodeMatch((OpCode?)OpCodes.Isinst, (object)typeof(Handshake), (string)null)
+			});
+			val.ThrowIfInvalid("Could not find insertion point for NetworkBase.DeserializeReceivedData");
+			val.Advance(-1);
+			CodeInstruction instruction = val.Instruction;
+			val.Advance(2);
+			CodeInstruction instruction2 = val.Instruction;
+			val.Advance(1);
+			val.InsertAndAdvance((CodeInstruction[])(object)new CodeInstruction[1]
+			{
+				new CodeInstruction(instruction)
+			});
+			val.InsertAndAdvance((CodeInstruction[])(object)new CodeInstruction[1]
+			{
+				new CodeInstruction(OpCodes.Isinst, (object)typeof(IModNetworkMessage))
+			});
+			val.InsertAndAdvance((CodeInstruction[])(object)new CodeInstruction[1]
+			{
+				new CodeInstruction(instruction2)
+			});
+			return val.Instructions();
+		}
+	}
+	internal static class ModNetworkCompatibilityPatch
+	{
+		public static void RunPatch(Harmony harmony)
+		{
+			//IL_00a9: Unknown result type (might be due to invalid IL or missing references)
+			//IL_00af: Expected O, but got Unknown
+			MethodInfo methodInfo = ReflectionUtils.Method(() => NetworkBase.DeserializeReceivedData(0L, (RocketBinaryReader)null));
+			Patches patchInfo = Harmony.GetPatchInfo((MethodBase)methodInfo);
+			if (patchInfo == null)
+			{
+				return;
+			}
+			HarmonyMethod val = new HarmonyMethod(ReflectionUtils.Method(() => Patch(null)));
+			foreach (Patch prefix in patchInfo.Prefixes)
+			{
+				harmony.Patch((MethodBase)prefix.PatchMethod, (HarmonyMethod)null, (HarmonyMethod)null, val, (HarmonyMethod)null, (HarmonyMethod)null);
+			}
+		}
+
+		private static IEnumerable<CodeInstruction> Patch(IEnumerable<CodeInstruction> instructions)
+		{
+			//IL_0003: Unknown result type (might be due to invalid IL or missing references)
+			//IL_0009: Expected O, but got Unknown
+			//IL_0035: Unknown result type (might be due to invalid IL or missing references)
+			//IL_003f: Expected O, but got Unknown
+			//IL_0068: Unknown result type (might be due to invalid IL or missing references)
+			//IL_006e: Expected O, but got Unknown
+			CodeMatcher val = new CodeMatcher(instructions, (ILGenerator)null);
+			val.MatchStartForward((CodeMatch[])(object)new CodeMatch[1] { CodeMatch.op_Implicit(new CodeInstruction(OpCodes.Newobj, (object)ReflectionUtils.Constructor(() => new HashSet<Type>()))) });
+			if (val.IsValid)
+			{
+				val.Advance(1);
+				val.InsertAndAdvance((CodeInstruction[])(object)new CodeInstruction[2]
+				{
+					new CodeInstruction(OpCodes.Dup, (object)null),
+					CodeInstruction.Call((Expression<Action>)(() => AddModMessageTypes(null)))
+				});
+			}
+			return val.Instructions();
+		}
+
+		private static void AddModMessageTypes(HashSet<Type> types)
+		{
+			foreach (Mod allMod in Mod.AllMods)
+			{
+				ExtensionMethods.AddRange<Type>((ICollection<Type>)types, (ICollection<Type>)allMod.NetworkMessageTypes);
+			}
+		}
+	}
+}

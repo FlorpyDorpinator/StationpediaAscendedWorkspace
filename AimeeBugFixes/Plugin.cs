@@ -5,6 +5,7 @@ using Assets.Scripts;
 using Assets.Scripts.Networking;
 using Assets.Scripts.Objects;
 using Assets.Scripts.Objects.Electrical;
+using Assets.Scripts.Objects.Items;
 using Assets.Scripts.Objects.Motherboards;
 using Assets.Scripts.Vehicles;
 using BepInEx;
@@ -13,10 +14,11 @@ using HarmonyLib;
 using TerrainSystem;
 using UnityEngine;
 using Util;
+using Assets.Scripts.Util;
 
 namespace AimeeBugFixes
 {
-    [BepInPlugin("com.florpydorp.aimeebugfixes", "AIMeE Bug Fixes", "0.2.3")]
+    [BepInPlugin("com.florpydorp.aimeebugfixes", "AIMeE Bug Fixes", "0.4.0")]
     public class Plugin : BaseUnityPlugin
     {
         internal static ManualLogSource Log;
@@ -37,7 +39,7 @@ namespace AimeeBugFixes
         void Awake()
         {
             Log = Logger;
-            Log.LogInfo("AIMeE Bug Fixes v0.2.3 loading...");
+            Log.LogInfo("AIMeE Bug Fixes v0.4.0 loading...");
             Log.LogInfo(string.Format("  IsBatchMode={0}, RunSimulation={1}", GameManager.IsBatchMode, GameManager.RunSimulation));
 
             _harmony = new Harmony("com.florpydorp.aimeebugfixes");
@@ -80,15 +82,21 @@ namespace AimeeBugFixes
                 AccessTools.Method(typeof(WheeledBase), "PhysicsUpdate"),
                 postfix: new HarmonyMethod(typeof(Bug3_WheelAnimationSyncFix), nameof(Bug3_WheelAnimationSyncFix.PhysicsUpdate_Postfix)));
 
-            // Bug 4: Roam regression (no driving when queue empty)
+            // Bug 4: Roam overhaul — replaces Roam() entirely with hybrid old/new flow
+            // Old code: search+move+mine+drive all in one flow, AIMeE always drives
+            // New code: queue-based with early-return on empty queue (AIMeE stops dead)
+            // Fix: keep queue system + always-drive + cap queue for multi-AIMeE fairness
             TryPatch(ref success, ref fail, "Bug4-Roam",
                 AccessTools.Method(typeof(RobotMining), "Roam"),
-                postfix: new HarmonyMethod(typeof(Bug4_RoamNoOreFix), nameof(Bug4_RoamNoOreFix.Roam_Postfix)));
+                prefix: new HarmonyMethod(typeof(Bug4_RoamFix), nameof(Bug4_RoamFix.Roam_Prefix)));
 
             // Bug 6: MineablesInQueue always 0 on client (not synced)
-            TryPatch(ref success, ref fail, "Bug6-QueueSync",
-                AccessTools.Method(typeof(RobotMining), "GetLogicValue"),
-                postfix: new HarmonyMethod(typeof(Bug6_QueueClientSync), nameof(Bug6_QueueClientSync.GetLogicValue_Postfix)));
+            // REMOVED in v0.3.0 — returning terrain count as queue proxy made queue==vicinity,
+            // which is wrong and confusing. IC10 on server gets real queue value. Client can't know.
+            // TryPatch(ref success, ref fail, "Bug6-QueueSync",
+            //     AccessTools.Method(typeof(RobotMining), "GetLogicValue", new Type[] { typeof(LogicType) }),
+            //     postfix: new HarmonyMethod(typeof(Bug6_QueueClientSync), nameof(Bug6_QueueClientSync.GetLogicValue_Postfix)));
+            Log.LogInfo("  [Bug6] REMOVED — fake queue proxy was harmful");
 
             // Bug 7: MineablesInVicinity overcounts (no per-ore bounds check)
             TryPatch(ref success, ref fail, "Bug7-VicinityBounds",
@@ -382,15 +390,21 @@ namespace AimeeBugFixes
     }
 
     // =========================================================================
-    // BUG 4: Roam() regression - no driving when ore queue is empty
+    // BUG 4: Roam() overhaul — hybrid old/new flow
     //
-    // After GetAimeeMinableQueue, if _minableDataQueue.Count <= 0 the method
-    // returns immediately, skipping ALL driving logic. This postfix restores
-    // the vanilla driving behavior (obstacle avoidance, random steering, motor).
+    // Problem: Current game Roam() has a queue system that hard-returns when
+    // the queue is empty, so AIMeE stops dead instead of exploring.
+    // Also: AllAimeeQueuedMinables causes multi-AIMeE starvation (first to
+    // fill claims ALL ore, others get nothing).
     //
-    // Also logs ore queue diagnostics every 10s for debugging.
+    // Fix: Full Roam() replacement prefix that:
+    //  1. Keeps the queue system for efficient multi-target mining
+    //  2. NEVER early-returns on empty queue — always drives (like old code)
+    //  3. Caps queue to 10 per AIMeE so multiple bots share ore fairly
+    //  4. Uses exact game motor/brake formulas (RocketMath.MapToScale)
+    //  5. Calls original MovingToMineable() for mining state machine
     // =========================================================================
-    public static class Bug4_RoamNoOreFix
+    public static class Bug4_RoamFix
     {
         private static readonly FieldInfo QueueField =
             AccessTools.Field(typeof(RobotMining), "_minableDataQueue");
@@ -400,103 +414,169 @@ namespace AimeeBugFixes
             AccessTools.Field(typeof(RobotMining), "_roamTimeout");
         private static readonly FieldInfo DeltaField =
             AccessTools.Field(typeof(RobotMining), "Delta");
+        private static readonly FieldInfo ScanTimeoutField =
+            AccessTools.Field(typeof(RobotMining), "_minableScanTimeout");
+        private static readonly FieldInfo TargetMinableField =
+            AccessTools.Field(typeof(RobotMining), "TargetMinable");
+        private static readonly FieldInfo SearchAreaField =
+            AccessTools.Field(typeof(RobotMining), "MinableSearchArea");
+        private static readonly FieldInfo MaxDepthField =
+            AccessTools.Field(typeof(RobotMining), "maxMiningDepth");
+        private static readonly MethodInfo MovingToMineableMethod =
+            AccessTools.Method(typeof(RobotMining), "MovingToMineable");
 
-        public static void Roam_Postfix(RobotMining __instance)
+        // Cap per-AIMeE queue to prevent one bot monopolizing all ore
+        private const int MaxQueuePerAimee = 10;
+
+        public static bool Roam_Prefix(RobotMining __instance)
         {
+            // Let original handle StorageFull (needs protected InteractMode)
+            if (__instance.IsStorageFull)
+                return true;
+
             try
             {
-                // Always log diagnostics when Roam runs (throttled)
-                int queueLen = -1;
-                int globalHashes = -1;
-                try
+                // --- Queue management ---
+                var queue = (List<TargetMinableData>)QueueField.GetValue(__instance);
+                int searchArea = (int)SearchAreaField.GetValue(null);
+                int maxDepth = (int)MaxDepthField.GetValue(null);
+
+                if (queue.Count <= 0)
                 {
-                    if (QueueField != null)
+                    __instance.ClearMinableQueue();
+                    VoxelTerrain.GetAimeeMinableQueue(
+                        __instance.ThingTransformPosition,
+                        (float)searchArea,
+                        queue,
+                        maxDepth);
+
+                    // Cap queue: remove excess from front (keep tail = closest)
+                    while (queue.Count > MaxQueuePerAimee)
                     {
-                        var queue = QueueField.GetValue(__instance) as System.Collections.IList;
-                        queueLen = queue != null ? queue.Count : -1;
+                        var excess = queue[0];
+                        excess.Vein.RemoveAimeeMinableHash(excess.MinableIndex);
+                        queue.RemoveAt(0);
                     }
-                    globalHashes = Vein.AllAimeeQueuedMinables.Count;
                 }
-                catch { }
 
-                if (Plugin.ShouldLog(string.Format("Bug4-Diag-{0}", __instance.GetInstanceID()), 10f))
+                bool hasTarget = queue.Count > 0;
+
+                // Set target from queue tail (or clear if empty)
+                if (hasTarget)
                 {
-                    Plugin.Log.LogInfo(string.Format(
-                        "[Bug4] Roam diag: queue={0}, globalHashes={1}, vel={2:F2}, mode={3}, storageFull={4}, pos=({5:F0},{6:F0},{7:F0})",
-                        queueLen, globalHashes, __instance.VelocityMagnitude, __instance.Mode,
-                        __instance.IsStorageFull,
-                        __instance.ThingTransformPosition.x, __instance.ThingTransformPosition.y, __instance.ThingTransformPosition.z));
+                    TargetMinableField.SetValue(__instance,
+                        new TargetMinableData?(queue[queue.Count - 1]));
+                }
+                // If queue empty: DON'T return — fall through to driving code
+
+                // --- Mining state machine (only when we have ore to mine) ---
+                if (hasTarget)
+                {
+                    bool movingOrMining = (bool)MovingToMineableMethod.Invoke(__instance, null);
+                    if (movingOrMining)
+                        return false;
+
+                    // Scan timeout countdown
+                    if (ScanTimeoutField != null)
+                    {
+                        float scanTimeout = (float)ScanTimeoutField.GetValue(__instance);
+                        if (scanTimeout > 0f)
+                        {
+                            scanTimeout -= Time.deltaTime;
+                            ScanTimeoutField.SetValue(__instance, scanTimeout);
+                        }
+                    }
+
+                    // Direct mine attempt at current position
+                    var targetVal = (TargetMinableData?)TargetMinableField.GetValue(__instance);
+                    if (targetVal != null)
+                    {
+                        Vector3 minePos = targetVal.Value.Vein.GetMinableWorldPosition(
+                            targetVal.Value.MinableIndex);
+                        Vector3Int minePosInt = new Vector3Int(
+                            Mathf.FloorToInt(minePos.x),
+                            Mathf.FloorToInt(minePos.y),
+                            Mathf.FloorToInt(minePos.z));
+
+                        Ore oreMined;
+                        if (targetVal.Value.Vein.TryMineServer(
+                            minePosInt, out oreMined, __instance.ThingTransformPosition))
+                        {
+                            __instance.OnMinedOre(oreMined);
+                            targetVal.Value.Vein.RemoveAimeeMinableHash(
+                                targetVal.Value.MinableIndex);
+                            queue.RemoveAt(queue.Count - 1);
+                            TargetMinableField.SetValue(__instance, null);
+                            return false; // mined — come back next frame
+                        }
+                    }
                 }
 
-                // Only apply driving fix if queue is empty and not storage full
-                if (queueLen != 0) return; // queue has items or field not found (-1), vanilla handled it
-                if (__instance.IsStorageFull) return;
-                if (!__instance.OnOff || !__instance.Powered) return;
-
+                // --- ALWAYS drive (exact game formulas from Roam) ---
                 float power = __instance.Power;
                 float velocity = __instance.VelocityMagnitude;
-                float maxSpeed = __instance.MaxSpeed;
-
-                float reversing = 0f;
-                if (ReversingField != null)
-                    reversing = (float)ReversingField.GetValue(__instance);
-
-                // Obstacle detection
                 Vector3 worldCoM = __instance.RigidBody.worldCenterOfMass;
+
+                float reversing = (float)ReversingField.GetValue(__instance);
                 if (reversing <= 0f)
                 {
-                    int mask = ~0;
-                    try { if (CursorManager.Instance != null) mask = CursorManager.Instance.TerrainHitMask; } catch { }
                     RaycastHit hit;
-                    if (Physics.Raycast(worldCoM, __instance.ThingTransform.forward, out hit, 0.2f, mask))
+                    int mask = ~0;
+                    try { mask = CursorManager.Instance.TerrainHitMask; } catch { }
+                    if (Physics.Raycast(worldCoM, __instance.ThingTransform.forward,
+                        out hit, 0.2f, mask))
                     {
                         reversing = 5f;
                     }
                 }
 
-                // Reversing
                 if (reversing > 0f)
                 {
-                    float speedRatio = Mathf.Clamp01(velocity / maxSpeed);
-                    __instance.TargetMotorPower = -(power * (1f - speedRatio));
+                    __instance.TargetMotorPower = -RocketMath.MapToScale(
+                        0f, __instance.MaxSpeed, power, 0f, velocity);
                     reversing -= Time.deltaTime;
-                    if (ReversingField != null) ReversingField.SetValue(__instance, reversing);
-                    return;
+                    ReversingField.SetValue(__instance, reversing);
+                    return false;
                 }
-                if (ReversingField != null) ReversingField.SetValue(__instance, reversing);
+                ReversingField.SetValue(__instance, reversing);
 
-                // Random steering
-                float roamTimeout = 0f;
-                if (RoamTimeoutField != null)
-                    roamTimeout = (float)RoamTimeoutField.GetValue(__instance);
+                float roamTimeout = (float)RoamTimeoutField.GetValue(__instance);
                 if (roamTimeout <= 0f)
                 {
                     roamTimeout = UnityEngine.Random.Range(1f, 3f);
                     float delta = UnityEngine.Random.Range(-15f, 15f);
-                    if (DeltaField != null) DeltaField.SetValue(__instance, delta);
+                    DeltaField.SetValue(__instance, delta);
                     __instance.TargetSteeringAngle = delta;
                 }
                 roamTimeout -= Time.deltaTime;
-                if (RoamTimeoutField != null) RoamTimeoutField.SetValue(__instance, roamTimeout);
+                RoamTimeoutField.SetValue(__instance, roamTimeout);
 
-                // Forward motor
-                float speedRatio2 = Mathf.Clamp01(velocity / maxSpeed);
-                __instance.TargetMotorPower = power * (1f - speedRatio2);
-                __instance.TargetBrakePower = velocity > maxSpeed
-                    ? power * Mathf.InverseLerp(maxSpeed, maxSpeed * 1.3f, velocity)
+                __instance.TargetMotorPower = RocketMath.MapToScale(
+                    0f, __instance.MaxSpeed, power, 0f, velocity);
+                __instance.TargetBrakePower = velocity > __instance.MaxSpeed
+                    ? RocketMath.MapToScale(
+                        __instance.MaxSpeed, __instance.MaxSpeed * 1.3f,
+                        0f, __instance.Power, velocity)
                     : 0f;
 
-                if (Plugin.ShouldLog(string.Format("Bug4-Drive-{0}", __instance.GetInstanceID()), 10f))
+                // Diagnostics
+                if (Plugin.ShouldLog(string.Format("Bug4-Diag-{0}", __instance.GetInstanceID()), 10f))
                 {
                     Plugin.Log.LogInfo(string.Format(
-                        "[Bug4] Roam no-ore drive: vel={0:F2}, motor={1:F4}, steer={2:F1}",
-                        velocity, __instance.TargetMotorPower, __instance.TargetSteeringAngle));
+                        "[Bug4] Roam: queue={0}, globalHash={1}, vel={2:F2}, motor={3:F4}, steer={4:F1}, pos=({5:F0},{6:F0},{7:F0})",
+                        queue.Count, Vein.AllAimeeQueuedMinables.Count,
+                        velocity, __instance.TargetMotorPower, __instance.TargetSteeringAngle,
+                        __instance.ThingTransformPosition.x, __instance.ThingTransformPosition.y,
+                        __instance.ThingTransformPosition.z));
                 }
+
+                return false; // skip original
             }
             catch (Exception ex)
             {
                 if (Plugin.ShouldLog("Bug4-err", 30f))
-                    Plugin.Log.LogError(string.Format("[Bug4] Roam postfix error: {0}", ex.Message));
+                    Plugin.Log.LogError(string.Format("[Bug4] Roam error: {0}", ex.Message));
+                return true; // fall through to original on error
             }
         }
     }
@@ -588,21 +668,27 @@ namespace AimeeBugFixes
                 Vein.GetVeinsInBounds(searchBounds, ref veins);
 
                 int count = 0;
+                int totalMinables = 0;
+                int activeCount = 0;
+                int inBoundsCount = 0;
                 for (int v = 0; v < veins.Count; v++)
                 {
                     Vein vein = veins[v];
                     Minable[] minables = (Minable[])MinablesField.GetValue(vein);
                     if (minables == null) continue;
 
+                    totalMinables += minables.Length;
                     Vector3Int veinPos = vein.VeinWorldPosition;
                     for (int i = 0; i < minables.Length; i++)
                     {
                         if (!minables[i].IsActive) continue;
+                        activeCount++;
 
                         Vector3Int worldPos = minables[i].WorldPositionInt(veinPos);
 
                         // Bounds check — this is what the original is missing
                         if (!searchBounds.Contains(worldPos)) continue;
+                        inBoundsCount++;
 
                         // Near-surface check — same as IsNearSurface
                         if (VoxelTerrain.GetDensityWorldSpace(worldPos + Vector3Int.up * maxDepthFromSurface) < DensityThreshold)
@@ -610,6 +696,15 @@ namespace AimeeBugFixes
                             count++;
                         }
                     }
+                }
+
+                if (Plugin.ShouldLog("Bug7-Diag", 10f))
+                {
+                    Plugin.Log.LogInfo(string.Format(
+                        "[Bug7] Vicinity diag: veins={0}, totalMinables={1}, active={2}, inBounds={3}, nearSurface={4}, pos=({5:F0},{6:F0},{7:F0}), bounds={8}, depth={9}",
+                        veins.Count, totalMinables, activeCount, inBoundsCount, count,
+                        position.x, position.y, position.z,
+                        boundsSize, maxDepthFromSurface));
                 }
 
                 __result = count;

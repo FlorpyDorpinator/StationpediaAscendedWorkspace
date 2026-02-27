@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetadata>
+  <Name>Mod Mismatch Detector</Name>
+  <Author>florpydorp</Author>
+  <Version>2.0.0</Version>
+  <Description>Detects mod mismatches between client and server when connecting to multiplayer. Shows exactly which mods you're missing or have extra compared to the server. Requires Stationeers Launchpad (SLP) on both client and server. Install on both sides for exact comparison.</Description>
+</ModMetadata>
