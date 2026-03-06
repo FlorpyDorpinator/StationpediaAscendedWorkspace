@@ -46,6 +46,18 @@
       <HintPath>$(StationeersManagedPath)\UnityEngine.VehiclesModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(StationeersManagedPath)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(StationeersManagedPath)\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(StationeersManagedPath)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
 
     <!-- Game -->
     <Reference Include="Assembly-CSharp">
@@ -87,10 +99,12 @@
     <!-- Copy mod files to Documents mods folder -->
     <Copy SourceFiles="$(BuildOutputFolder)\AimeeBugFixes.dll" DestinationFolder="$(ModsFolder)" />
     <Copy SourceFiles="$(ProjectDir)About\About.xml" DestinationFolder="$(ModsFolder)\About" />
+    <Copy SourceFiles="$(ProjectDir)About\Preview.png" DestinationFolder="$(ModsFolder)\About" Condition="Exists('$(ProjectDir)About\Preview.png')" />
     
     <!-- Also copy to Stationeers local mods folder -->
     <Copy SourceFiles="$(BuildOutputFolder)\AimeeBugFixes.dll" DestinationFolder="$(LocalModsFolder)" />
     <Copy SourceFiles="$(ProjectDir)About\About.xml" DestinationFolder="$(LocalModsFolder)\About" />
+    <Copy SourceFiles="$(ProjectDir)About\Preview.png" DestinationFolder="$(LocalModsFolder)\About" Condition="Exists('$(ProjectDir)About\Preview.png')" />
     
     <Message Text="============================================" Importance="high" />
     <Message Text="Mod packaged to: $(ModsFolder)" Importance="high" />

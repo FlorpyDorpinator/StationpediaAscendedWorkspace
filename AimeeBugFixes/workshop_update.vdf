@@ -1,8 +1,8 @@
 "workshopitem"
 {
   "appid" "544550"
-  // "publishedfileid" "REPLACE_WITH_WORKSHOP_ID"
+  "publishedfileid" "3674960841"
   "contentfolder" "C:\\Users\\marka\\Documents\\My Games\\Stationeers\\mods\\AimeeBugFixes"
   "previewfile" "C:\\Users\\marka\\Documents\\My Games\\Stationeers\\mods\\AimeeBugFixes\\About\\Preview.png"
-  "changenote" "v0.4.0: Full Roam() overhaul + multi-AIMeE fairness"
+  "changenote" "v0.15.3: Bug 12 improved — two-event approach (no terrain holes)\n- Previous fix carved visible holes in client terrain when AIMeE mined subsurface ore\n- Now sends two VoxelChangeEvents: event 1 (density 0) removes ore model, event 2 (original density) restores terrain\n- Ore properly removed on clients, terrain stays intact\n- Server terrain still completely unmodified"
 }
