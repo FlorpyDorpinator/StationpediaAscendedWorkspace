@@ -19,3 +19,9 @@ StationeersGameVersions/
 **/build/
 **/bin/
 **/obj/
+
+# Other Stuff
+_TRASH_REVIEW/
+.spectstory/
+Unity Projects/
+.claude/
