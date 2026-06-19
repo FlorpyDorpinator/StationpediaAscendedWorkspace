@@ -1,3 +1,0 @@
-1. The Stationpedia Ascended Logo should still replace the vanilla game logo whether in our secret stationpedia scended color mode or the current color mode. It should say stationpedia ascended in the asme way either way just the logo becomes orange in the mode that hcanges all the colors.
-2. When you pause the game while using our mod the tooltips etc. stop showing. Everything should still work whether the game is paused or not
-3. Can you make the Station Planner Title have a bit more padding at the top between the top of the editor and the title. 

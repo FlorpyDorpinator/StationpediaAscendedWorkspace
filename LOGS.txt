@@ -1,0 +1,2793 @@
+Mono path[0] = 'C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/Managed'
+Mono config path = 'C:/Program Files (x86)/Steam/steamapps/common/Stationeers/MonoBleedingEdge/etc'
+Fallback handler could not load library C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/MonoBleedingEdge/data-000001D8888A08D0.dll
+Fallback handler could not load library C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/MonoBleedingEdge/data-000001D88E9BF040.dll
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Initialize engine version: 2022.3.62f3 (96770f904ca7)
+[Subsystems] Discovering subsystems at path C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1; jobified=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4070 Ti SUPER (ID=0x2705)
+    Vendor:   NVIDIA
+    VRAM:     16061 MB
+    Driver:   32.0.15.9186
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.107 seconds
+- Finished resetting the current domain, in  0.001 seconds
+[Message:   BepInEx] BepInEx 5.4.23.3 - rocketstation (1/25/2026 6:08:49 PM)
+[Info   :   BepInEx] Running under Unity v2022.3.62.9860879
+[Info   :   BepInEx] CLR runtime version: 4.0.30319.42000
+[Info   :   BepInEx] Supports SRE: True
+[Info   :   BepInEx] System platform: Bits64, Windows
+[Message:   BepInEx] Preloader started
+[Info   :   BepInEx] Loaded 1 patcher method from [BepInEx.Preloader 5.4.23.3]
+[Info   :   BepInEx] 1 patcher plugin loaded
+[Info   :   BepInEx] Patching [UnityEngine.CoreModule] with [BepInEx.Chainloader]
+[Message:   BepInEx] Preloader finished
+[Message:   BepInEx] Chainloader ready
+[Message:   BepInEx] Chainloader started
+[Info   :   BepInEx] 4 plugins to load
+[Info   :   BepInEx] Loading [Script Engine 11.0]
+[Message:Script Engine] No plugins to reload
+[Info   :   BepInEx] Loading [UnityExplorer 4.9.0]
+[Message:UnityExplorer] UnityExplorer 4.9.0 initializing...
+[Message:UnityExplorer] [UniverseLib] UniverseLib 1.5.1 initializing...
+[Message:UnityExplorer] [UniverseLib] Finished UniverseLib initial setup.
+Fallback handler could not load library C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/MonoBleedingEdge/data-000001D97B7F00A0.dll
+[Message:UnityExplorer] Initialized UnityCrashPrevention for: Canvas.get_renderingDisplaySize
+[Info   :   BepInEx] Loading [Stationpedia Extractor 1.0.0]
+[Info   :Stationpedia Extractor] Plugin Stationpedia Extractor is loaded!
+[Info   :   BepInEx] Loading [StationeersLaunchPad 0.2.25]
+[Message:   BepInEx] Chainloader startup complete
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+UnloadTime: 0.509100 ms
+[Global]: Checking Version
+[Global]: Fetching https://api.github.com/repos/StationeersLaunchPad/StationeersLaunchPad/releases/latest
+[Debug  :   BepInEx] [UnityInput] Using LegacyInputSystem
+[Global]: StationeersLaunchPad is up-to-date.
+[Global]: Listing Mods
+[Global]: Loading Mod Config
+[Global]: new mod added at C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3672138641
+[Global]: Mod Config Initialized
+[Message:UnityExplorer] [UniverseLib] Initialized Legacy Input support
+Fallback handler could not load library C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/MonoBleedingEdge/data-000001D97B7ED060.dll
+Fallback handler could not load library C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/MonoBleedingEdge/data-000001D97B7F0CB0.dll
+Fallback handler could not load library C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/MonoBleedingEdge/data-000001D97B7EDC70.dll
+[Message:UnityExplorer] [UniverseLib] Loaded modern bundle for Unity 2022.3.62f3
+[Message:UnityExplorer] [UniverseLib] UniverseLib 1.5.1 initialized.
+[Message:UnityExplorer] Creating UI...
+Fallback handler could not load library C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/MonoBleedingEdge/data-000001D97B7F18C0.dll
+[Message:UnityExplorer] UnityExplorer 4.9.0 (Mono) initialized.
+[Global]: Assemblies loading...
+[LettersMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3216721104\LettersMod.dll
+[LettersMod]: Loaded Assembly
+[ChessMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3323200151\ChessMod.dll
+[ChessMod]: Loaded Assembly
+[Compass Mod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3586857584\CompassMod.dll
+[Compass Mod]: Loaded Assembly
+[LaunchSiloMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3348479241\LaunchSiloMod.dll
+[LaunchSiloMod]: Loaded Assembly
+[Cardboard Box Tooltips]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3582043479\CardboardBoxToolTipMod.dll
+[Cardboard Box Tooltips]: Loaded Assembly
+[Beef's Room Defogger]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3575541917\BeefsRoomDefogger.dll
+[Beef's Room Defogger]: Loaded Assembly
+[Fixing The Controls]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3298346999\FixingTheControls.dll
+[Fixing The Controls]: Loaded Assembly
+[Beef's SEGI Plus]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3573780489\SEGIPlus.dll
+[Beef's SEGI Plus]: Loaded Assembly
+[Wall Direction Indicator]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3553424009\WallIndicator.dll
+[Wall Direction Indicator]: Loaded Assembly
+[QuietPipesMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3402741739\QuietPipesMod.dll
+[QuietPipesMod]: Loaded Assembly
+[SaveTransformerMod [StationeersLaunchPad]]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3538492515\SaveTransformerMod.dll
+[SaveTransformerMod [StationeersLaunchPad]]: Loaded Assembly
+[LibConstruct]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3505115682\LibConstruct.dll
+[LibConstruct]: Loaded Assembly
+[BaseLegsMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3140312772\BaseLegsMod.dll
+[BaseLegsMod]: Loaded Assembly
+[ModularConsoleMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3505169479\ModularConsoleMod.dll
+[ModularConsoleMod]: Loaded Assembly
+[SpotlightsMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3467018190\SpotlightsMod.dll
+[SpotlightsMod]: Loaded Assembly
+[VeryImportantButtonMod [StationeersMods]]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3435393295\VeryImportantButtonMod.dll
+[VeryImportantButtonMod [StationeersMods]]: Loaded Assembly
+[T.U.B.E.]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3143388055\MoreWindowsMod.dll
+[T.U.B.E.]: Loaded Assembly
+[LargeConsoleMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3408132778\LargeConsoleMod.dll
+[LargeConsoleMod]: Loaded Assembly
+[CCTV]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3404482913\CCTV.dll
+[CCTV]: Loaded Assembly
+[FloodLightMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3271740459\FloodLightMod.dll
+[FloodLightMod]: Loaded Assembly
+[MoreCladdingMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3140312559\MoreCladdingMod.dll
+[MoreCladdingMod]: Loaded Assembly
+[Better Advanced Tablet]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3134483503\betteradvancedtablet.dll
+[Better Advanced Tablet]: Loaded Assembly
+[SimpleHatsMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3104400225\SimpleHatsMod.dll
+[SimpleHatsMod]: Loaded Assembly
+[RubberDuckMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3095189237\RubberDuckMod.dll
+[RubberDuckMod]: Loaded Assembly
+[ToyCosmoMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3082299281\ToyCosmoMod.dll
+[ToyCosmoMod]: Loaded Assembly
+[Player Communications]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3481457290\StationeersPlayerCommunications.dll
+[Player Communications]: Loaded Assembly
+[Stationpedia Ascended]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3634225688\StationpediaAscended.dll
+[Stationpedia Ascended]: Loaded Assembly
+[AIMeE Bug Fixes]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3674960841\AimeeBugFixes.dll
+[AIMeE Bug Fixes]: Loaded Assembly
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: Loading Assembly C:\Users\FLORPYDORP\Documents\My Games\Stationeers\mods\IC10Inspector\IC10Inspector.dll
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: Loaded Assembly
+[BlueprintMod]: Loading Assembly C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3672138641\BlueprintMod.dll
+[BlueprintMod]: Loaded Assembly
+[Global]: Assembly loading took 0:00.495
+[Global]: Assets loading...
+[LettersMod]: Loading AssetBundle lettersmod.assets
+[LettersMod]: Loading AssetBundle lettersmod.assets Prefabs
+[LettersMod]: - Asset ItemKitLettersLarge
+[LettersMod]: - Asset ItemKitLettersLarge_Blueprint
+[LettersMod]: - Asset ItemKitLettersMedium
+[LettersMod]: - Asset ItemKitLettersMedium_Blueprint
+[LettersMod]: - Asset ItemKitLettersSmall
+[LettersMod]: - Asset ItemKitLettersSmall_Blueprint
+[LettersMod]: - Asset LText_0 1
+[LettersMod]: - Asset LText_0
+[LettersMod]: - Asset LText_1 1
+[LettersMod]: - Asset LText_1
+[LettersMod]: - Asset LText_2 1
+[LettersMod]: - Asset LText_2
+[LettersMod]: - Asset LText_3 1
+[LettersMod]: - Asset LText_3
+[LettersMod]: - Asset LText_4 1
+[LettersMod]: - Asset LText_4
+[LettersMod]: - Asset LText_5 1
+[LettersMod]: - Asset LText_5
+[LettersMod]: - Asset LText_6 1
+[LettersMod]: - Asset LText_6
+[LettersMod]: - Asset LText_7 1
+[LettersMod]: - Asset LText_7
+[LettersMod]: - Asset LText_8 1
+[LettersMod]: - Asset LText_8
+[LettersMod]: - Asset LText_9 1
+[LettersMod]: - Asset LText_9
+[LettersMod]: - Asset LText_A 1
+[LettersMod]: - Asset LText_A
+[LettersMod]: - Asset LText_B 1
+[LettersMod]: - Asset LText_B
+[LettersMod]: - Asset LText_C 1
+[LettersMod]: - Asset LText_C
+[LettersMod]: - Asset LText_D 1
+[LettersMod]: - Asset LText_D
+[LettersMod]: - Asset LText_E 1
+[LettersMod]: - Asset LText_E
+[LettersMod]: - Asset LText_F 1
+[LettersMod]: - Asset LText_F
+[LettersMod]: - Asset LText_G 1
+[LettersMod]: - Asset LText_G
+[LettersMod]: - Asset LText_H 1
+[LettersMod]: - Asset LText_H
+[LettersMod]: - Asset LText_I 1
+[LettersMod]: - Asset LText_I
+[LettersMod]: - Asset LText_J 1
+[LettersMod]: - Asset LText_J
+[LettersMod]: - Asset LText_K 1
+[LettersMod]: - Asset LText_K
+[LettersMod]: - Asset LText_L 1
+[LettersMod]: - Asset LText_L
+[LettersMod]: - Asset LText_M 1
+[LettersMod]: - Asset LText_M
+[LettersMod]: - Asset LText_N 1
+[LettersMod]: - Asset LText_N
+[LettersMod]: - Asset LText_O 1
+[LettersMod]: - Asset LText_O
+[LettersMod]: - Asset LText_P 1
+[LettersMod]: - Asset LText_P
+[LettersMod]: - Asset LText_Q 1
+[LettersMod]: - Asset LText_Q
+[LettersMod]: - Asset LText_R 1
+[LettersMod]: - Asset LText_R
+[LettersMod]: - Asset LText_S 1
+[LettersMod]: - Asset LText_S
+[LettersMod]: - Asset LText_T 1
+[LettersMod]: - Asset LText_T
+[LettersMod]: - Asset LText_U 1
+[LettersMod]: - Asset LText_U
+[LettersMod]: - Asset LText_V 1
+[LettersMod]: - Asset LText_V
+[LettersMod]: - Asset LText_W 1
+[LettersMod]: - Asset LText_W
+[LettersMod]: - Asset LText_X 1
+[LettersMod]: - Asset LText_X
+[LettersMod]: - Asset LText_Y 1
+[LettersMod]: - Asset LText_Y
+[LettersMod]: - Asset LText_Z 1
+[LettersMod]: - Asset LText_Z
+[LettersMod]: - Asset MText_0 1
+[LettersMod]: - Asset MText_0
+[LettersMod]: - Asset MText_1 1
+[LettersMod]: - Asset MText_1
+[LettersMod]: - Asset MText_2 1
+[LettersMod]: - Asset MText_2
+[LettersMod]: - Asset MText_3 1
+[LettersMod]: - Asset MText_3
+[LettersMod]: - Asset MText_4 1
+[LettersMod]: - Asset MText_4
+[LettersMod]: - Asset MText_5 1
+[LettersMod]: - Asset MText_5
+[LettersMod]: - Asset MText_6 1
+[LettersMod]: - Asset MText_6
+[LettersMod]: - Asset MText_7 1
+[LettersMod]: - Asset MText_7
+[LettersMod]: - Asset MText_8 1
+[LettersMod]: - Asset MText_8
+[LettersMod]: - Asset MText_9 1
+[LettersMod]: - Asset MText_9
+[LettersMod]: - Asset MText_A 1
+[LettersMod]: - Asset MText_A
+[LettersMod]: - Asset MText_B 1
+[LettersMod]: - Asset MText_B
+[LettersMod]: - Asset MText_C 1
+[LettersMod]: - Asset MText_C
+[LettersMod]: - Asset MText_D 1
+[LettersMod]: - Asset MText_D
+[LettersMod]: - Asset MText_E 1
+[LettersMod]: - Asset MText_E
+[LettersMod]: - Asset MText_F 1
+[LettersMod]: - Asset MText_F
+[LettersMod]: - Asset MText_G 1
+[LettersMod]: - Asset MText_G
+[LettersMod]: - Asset MText_H 1
+[LettersMod]: - Asset MText_H
+[LettersMod]: - Asset MText_I 1
+[LettersMod]: - Asset MText_I
+[LettersMod]: - Asset MText_J 1
+[LettersMod]: - Asset MText_J
+[LettersMod]: - Asset MText_K 1
+[LettersMod]: - Asset MText_K
+[LettersMod]: - Asset MText_L 1
+[LettersMod]: - Asset MText_L
+[LettersMod]: - Asset MText_M 1
+[LettersMod]: - Asset MText_M
+[LettersMod]: - Asset MText_N 1
+[LettersMod]: - Asset MText_N
+[LettersMod]: - Asset MText_O 1
+[LettersMod]: - Asset MText_O
+[LettersMod]: - Asset MText_P 1
+[LettersMod]: - Asset MText_P
+[LettersMod]: - Asset MText_Q 1
+[LettersMod]: - Asset MText_Q
+[LettersMod]: - Asset MText_R 1
+[LettersMod]: - Asset MText_R
+[LettersMod]: - Asset MText_S 1
+[LettersMod]: - Asset MText_S
+[LettersMod]: - Asset MText_T 1
+[LettersMod]: - Asset MText_T
+[LettersMod]: - Asset MText_U 1
+[LettersMod]: - Asset MText_U
+[LettersMod]: - Asset MText_V 1
+[LettersMod]: - Asset MText_V
+[LettersMod]: - Asset MText_W 1
+[LettersMod]: - Asset MText_W
+[LettersMod]: - Asset MText_X 1
+[LettersMod]: - Asset MText_X
+[LettersMod]: - Asset MText_Y 1
+[LettersMod]: - Asset MText_Y
+[LettersMod]: - Asset MText_Z 1
+[LettersMod]: - Asset MText_Z
+[LettersMod]: - Asset Text_0 1
+[LettersMod]: - Asset Text_0
+[LettersMod]: - Asset Text_1 1
+[LettersMod]: - Asset Text_1
+[LettersMod]: - Asset Text_2 1
+[LettersMod]: - Asset Text_2
+[LettersMod]: - Asset Text_3 1
+[LettersMod]: - Asset Text_3
+[LettersMod]: - Asset Text_4 1
+[LettersMod]: - Asset Text_4
+[LettersMod]: - Asset Text_5 1
+[LettersMod]: - Asset Text_5
+[LettersMod]: - Asset Text_6 1
+[LettersMod]: - Asset Text_6
+[LettersMod]: - Asset Text_7 1
+[LettersMod]: - Asset Text_7
+[LettersMod]: - Asset Text_8 1
+[LettersMod]: - Asset Text_8
+[LettersMod]: - Asset Text_9 1
+[LettersMod]: - Asset Text_9
+[LettersMod]: - Asset Text_A 1
+[LettersMod]: - Asset Text_A
+[LettersMod]: - Asset Text_B 1
+[LettersMod]: - Asset Text_B
+[LettersMod]: - Asset Text_C 1
+[LettersMod]: - Asset Text_C
+[LettersMod]: - Asset Text_D 1
+[LettersMod]: - Asset Text_D
+[LettersMod]: - Asset Text_E 1
+[LettersMod]: - Asset Text_E
+[LettersMod]: - Asset Text_F 1
+[LettersMod]: - Asset Text_F
+[LettersMod]: - Asset Text_G 1
+[LettersMod]: - Asset Text_G
+[LettersMod]: - Asset Text_H 1
+[LettersMod]: - Asset Text_H
+[LettersMod]: - Asset Text_I 1
+[LettersMod]: - Asset Text_I
+[LettersMod]: - Asset Text_J 1
+[LettersMod]: - Asset Text_J
+[LettersMod]: - Asset Text_K 1
+[LettersMod]: - Asset Text_K
+[LettersMod]: - Asset Text_L 1
+[LettersMod]: - Asset Text_L
+[LettersMod]: - Asset Text_M 1
+[LettersMod]: - Asset Text_M
+[LettersMod]: - Asset Text_N 1
+[LettersMod]: - Asset Text_N
+[LettersMod]: - Asset Text_O 1
+[LettersMod]: - Asset Text_O
+[LettersMod]: - Asset Text_P 1
+[LettersMod]: - Asset Text_P
+[LettersMod]: - Asset Text_Q 1
+[LettersMod]: - Asset Text_Q
+[LettersMod]: - Asset Text_R 1
+[LettersMod]: - Asset Text_R
+[LettersMod]: - Asset Text_S 1
+[LettersMod]: - Asset Text_S
+[LettersMod]: - Asset Text_T 1
+[LettersMod]: - Asset Text_T
+[LettersMod]: - Asset Text_U 1
+[LettersMod]: - Asset Text_U
+[LettersMod]: - Asset Text_V 1
+[LettersMod]: - Asset Text_V
+[LettersMod]: - Asset Text_W 1
+[LettersMod]: - Asset Text_W
+[LettersMod]: - Asset Text_X 1
+[LettersMod]: - Asset Text_X
+[LettersMod]: - Asset Text_Y 1
+[LettersMod]: - Asset Text_Y
+[LettersMod]: - Asset Text_Z 1
+[LettersMod]: - Asset Text_Z
+[LettersMod]: Loading AssetBundle lettersmod.assets ExportSettings
+[ChessMod]: Loading AssetBundle chessmod.assets
+[ChessMod]: Loading AssetBundle chessmod.assets Prefabs
+[ChessMod]: - Asset BlackBishop 1
+[ChessMod]: - Asset BlackBishop
+[ChessMod]: - Asset BlackKing 1
+[ChessMod]: - Asset BlackKing
+[ChessMod]: - Asset BlackKnight 1
+[ChessMod]: - Asset BlackKnight
+[ChessMod]: - Asset BlackPawn 1
+[ChessMod]: - Asset BlackPawn
+[ChessMod]: - Asset BlackQueen 1
+[ChessMod]: - Asset BlackQueen
+[ChessMod]: - Asset BlackRook 1
+[ChessMod]: - Asset BlackRook
+[ChessMod]: - Asset Item_ChessBoard
+[ChessMod]: - Asset Item_ChessBoardBlueprint
+[ChessMod]: - Asset WhiteBishop 1
+[ChessMod]: - Asset WhiteBishop
+[ChessMod]: - Asset WhiteKing 1
+[ChessMod]: - Asset WhiteKing
+[ChessMod]: - Asset WhiteKnight 1
+[ChessMod]: - Asset WhiteKnight
+[ChessMod]: - Asset WhitePawn 1
+[ChessMod]: - Asset WhitePawn
+[ChessMod]: - Asset WhiteQueen 1
+[ChessMod]: - Asset WhiteQueen
+[ChessMod]: - Asset WhiteRook 1
+[ChessMod]: - Asset WhiteRook
+[ChessMod]: Loading AssetBundle chessmod.assets ExportSettings
+[Compass Mod]: Loading AssetBundle compassmod.assets
+[Compass Mod]: Loading AssetBundle compassmod.assets Prefabs
+[Compass Mod]: - Asset Compass
+[Compass Mod]: Loading AssetBundle compassmod.assets ExportSettings
+[LaunchSiloMod]: Loading AssetBundle launchsilomod.assets
+[LaunchSiloMod]: Loading AssetBundle launchsilomod.assets Prefabs
+[LaunchSiloMod]: - Asset ItemKitLaunchSilo
+[LaunchSiloMod]: - Asset ItemKitLaunchSiloBlueprint
+[LaunchSiloMod]: - Asset LaunchSilo
+[LaunchSiloMod]: - Asset LaunchSiloBlueprint
+[LaunchSiloMod]: - Asset Thumbnailer
+[LaunchSiloMod]: Loading AssetBundle launchsilomod.assets ExportSettings
+[Cardboard Box Tooltips]: Loading AssetBundle cardboardboxpatch.assets
+[Cardboard Box Tooltips]: Loading AssetBundle cardboardboxpatch.assets Prefabs
+[Cardboard Box Tooltips]: Loading AssetBundle cardboardboxpatch.assets ExportSettings
+[QuietPipesMod]: Loading AssetBundle quietpipesmod.assets
+[QuietPipesMod]: Loading AssetBundle quietpipesmod.assets Prefabs
+[QuietPipesMod]: - Asset ItemKitQuietInsulatedPipe
+[QuietPipesMod]: - Asset ItemKitQuietInsulatedPipeBlueprint
+[QuietPipesMod]: - Asset ItemKitQuietInsulatedLiquidPipe
+[QuietPipesMod]: - Asset ItemKitQuietInsulatedLiquidPipeBlueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidCrossJunction3
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidCrossJunction3Blueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCorner
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCornerBlueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCrossJunction
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCrossJunction4
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCrossJunction4Blueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCrossJunction5
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCrossJunction5Blueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCrossJunction6
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCrossJunction6Blueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeCrossJunctionBlueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeStraight
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeStraightBlueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeTJunction
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyLiquidPipeTJunctionBlueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyCrossJunction3
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyCrossJunction3Blueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCorner
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCornerBlueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCrossJunction
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCrossJunction4
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCrossJunction4Blueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCrossJunction5
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCrossJunction5Blueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCrossJunction6
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCrossJunction6Blueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeCrossJunctionBlueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeStraight
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeStraightBlueprint
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeTJunction
+[QuietPipesMod]: - Asset StructureInsulatedHeavyDutyPipeTJunctionBlueprint
+[QuietPipesMod]: - Asset Thumbnailer
+[QuietPipesMod]: Loading AssetBundle quietpipesmod.assets ExportSettings
+[SaveTransformerMod [StationeersLaunchPad]]: Loading AssetBundle savetransformermod.assets
+[SaveTransformerMod [StationeersLaunchPad]]: Loading AssetBundle savetransformermod.assets Prefabs
+[SaveTransformerMod [StationeersLaunchPad]]: - Asset SaveTransformerUI
+[SaveTransformerMod [StationeersLaunchPad]]: Loading AssetBundle savetransformermod.assets ExportSettings
+[BaseLegsMod]: Loading AssetBundle baselegsmod.assets
+[BaseLegsMod]: Loading AssetBundle baselegsmod.assets Prefabs
+[BaseLegsMod]: - Asset ItemKitBaseLegs
+[BaseLegsMod]: - Asset ItemKitBaseLegs_Blueprint
+[BaseLegsMod]: - Asset StructureBaseLegRound
+[BaseLegsMod]: - Asset StructureBaseLegRound_Blueprint
+[BaseLegsMod]: - Asset StructureBaseLegSquare
+[BaseLegsMod]: - Asset StructureBaseLegSquare_Blueprint
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltBaseHorizontal
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltBaseHorizontal_Blueprint
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltBaseSmall
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltBaseSmall_Blueprint
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltBaseVertical
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltBaseVertical_Blueprint
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltBeam
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltBeam_Blueprint
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltFoot
+[BaseLegsMod]: - Asset StructureHeavyDutyStiltFoot_Blueprint
+[BaseLegsMod]: - Asset StructureTankTracks
+[BaseLegsMod]: - Asset StructureTankTracks_Blueprint
+[BaseLegsMod]: Loading AssetBundle baselegsmod.assets ExportSettings
+[ModularConsoleMod]: Loading AssetBundle modularconsolemod.assets
+[ModularConsoleMod]: Loading AssetBundle modularconsolemod.assets Prefabs
+[ModularConsoleMod]: - Asset ItemKitModularConsoleDisplays
+[ModularConsoleMod]: - Asset ItemKitModularConsoleDisplayssBlueprint
+[ModularConsoleMod]: - Asset ItemKitModularConsoleInputs
+[ModularConsoleMod]: - Asset ItemKitModularConsoleInputsBlueprint
+[ModularConsoleMod]: - Asset ItemKitModularConsoleLabelPlates
+[ModularConsoleMod]: - Asset ItemKitModularConsoleLabelPlatesBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceAlarm
+[ModularConsoleMod]: - Asset ModularDeviceAlarm_Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceBigLever
+[ModularConsoleMod]: - Asset ModularDeviceBigLeverBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceCardReader
+[ModularConsoleMod]: - Asset ModularDeviceCardReaderBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceComputer
+[ModularConsoleMod]: - Asset ModularDeviceComputerBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceConsole
+[ModularConsoleMod]: - Asset ModularDeviceConsoleBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceDial
+[ModularConsoleMod]: - Asset ModularDeviceDialBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceDialSmall
+[ModularConsoleMod]: - Asset ModularDeviceDialSmallBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceEmergencyButton3x3
+[ModularConsoleMod]: - Asset ModularDeviceEmergencyButton3x3Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceFlipCoverSwitch
+[ModularConsoleMod]: - Asset ModularDeviceFlipCoverSwitchBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceFlipSwitch
+[ModularConsoleMod]: - Asset ModularDeviceFlipSwitchBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceGauge2x2
+[ModularConsoleMod]: - Asset ModularDeviceGauge2x2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceGauge3x3
+[ModularConsoleMod]: - Asset ModularDeviceGauge3x3Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelDiode2
+[ModularConsoleMod]: - Asset ModularDeviceLabelDiode2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelDiode3
+[ModularConsoleMod]: - Asset ModularDeviceLabelDiode3Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate12x2
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate12x2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate2
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate2x2
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate2x2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate3
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate3Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate3x2
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate3x2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate3x3
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate3x3Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate4
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate4Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate4x2
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate4x2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate4x4
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate4x4Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate5
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate5Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate5x5
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate5x5Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate6x2
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate6x2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate6x6
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate6x6Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate8x2
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlate8x2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLabelPlateBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceLEDdisplay2
+[ModularConsoleMod]: - Asset ModularDeviceLEDdisplay2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLEDdisplay3
+[ModularConsoleMod]: - Asset ModularDeviceLEDdisplay3Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceLight
+[ModularConsoleMod]: - Asset ModularDeviceLightBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceLightLarge
+[ModularConsoleMod]: - Asset ModularDeviceLightLargeBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceLightSmall
+[ModularConsoleMod]: - Asset ModularDeviceLightSmallBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceMeter3x3
+[ModularConsoleMod]: - Asset ModularDeviceMeter3x3Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceNumpad
+[ModularConsoleMod]: - Asset ModularDeviceNumpadBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceRoundButton
+[ModularConsoleMod]: - Asset ModularDeviceRoundButtonBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceSlider
+[ModularConsoleMod]: - Asset ModularDeviceSliderBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceSliderDiode1
+[ModularConsoleMod]: - Asset ModularDeviceSliderDiode1Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceSliderDiode2
+[ModularConsoleMod]: - Asset ModularDeviceSliderDiode2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceSquareButton
+[ModularConsoleMod]: - Asset ModularDeviceSquareButtonBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceSwitch
+[ModularConsoleMod]: - Asset ModularDeviceSwitchBlueprint
+[ModularConsoleMod]: - Asset ModularDeviceThrottle3x2
+[ModularConsoleMod]: - Asset ModularDeviceThrottle3x2Blueprint
+[ModularConsoleMod]: - Asset ModularDeviceUtilityButton2x2
+[ModularConsoleMod]: - Asset ModularDeviceUtilityButton2x2Blueprint
+[ModularConsoleMod]: - Asset ItemKitModularDiagramLine
+[ModularConsoleMod]: - Asset ItemKitModularDiagramLineBlueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine
+[ModularConsoleMod]: - Asset ModularDiagramLine10
+[ModularConsoleMod]: - Asset ModularDiagramLine10Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine11
+[ModularConsoleMod]: - Asset ModularDiagramLine11Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine12
+[ModularConsoleMod]: - Asset ModularDiagramLine12Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine13
+[ModularConsoleMod]: - Asset ModularDiagramLine13Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine14
+[ModularConsoleMod]: - Asset ModularDiagramLine14Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine15
+[ModularConsoleMod]: - Asset ModularDiagramLine15Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine16
+[ModularConsoleMod]: - Asset ModularDiagramLine16Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine17
+[ModularConsoleMod]: - Asset ModularDiagramLine17Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine18
+[ModularConsoleMod]: - Asset ModularDiagramLine18Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine19
+[ModularConsoleMod]: - Asset ModularDiagramLine19Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine2
+[ModularConsoleMod]: - Asset ModularDiagramLine20
+[ModularConsoleMod]: - Asset ModularDiagramLine20Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine22
+[ModularConsoleMod]: - Asset ModularDiagramLine22Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine23
+[ModularConsoleMod]: - Asset ModularDiagramLine23Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine2Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine3
+[ModularConsoleMod]: - Asset ModularDiagramLine3Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine4
+[ModularConsoleMod]: - Asset ModularDiagramLine4Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine5
+[ModularConsoleMod]: - Asset ModularDiagramLine5Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine6
+[ModularConsoleMod]: - Asset ModularDiagramLine6Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine7
+[ModularConsoleMod]: - Asset ModularDiagramLine7Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine8
+[ModularConsoleMod]: - Asset ModularDiagramLine8Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLine9
+[ModularConsoleMod]: - Asset ModularDiagramLine9Blueprint
+[ModularConsoleMod]: - Asset ModularDiagramLineBlueprint
+[ModularConsoleMod]: - Asset ItemKitModularConsole
+[ModularConsoleMod]: - Asset ItemKitModularConsoleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase1
+[ModularConsoleMod]: - Asset StructureConsoleBase1Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase1Double
+[ModularConsoleMod]: - Asset StructureConsoleBase1DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase2
+[ModularConsoleMod]: - Asset StructureConsoleBase2Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase2Double
+[ModularConsoleMod]: - Asset StructureConsoleBase2DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase3
+[ModularConsoleMod]: - Asset StructureConsoleBase3Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase3Double
+[ModularConsoleMod]: - Asset StructureConsoleBase3DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase4
+[ModularConsoleMod]: - Asset StructureConsoleBase4Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase4Double
+[ModularConsoleMod]: - Asset StructureConsoleBase4DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase5
+[ModularConsoleMod]: - Asset StructureConsoleBase5Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase5Double
+[ModularConsoleMod]: - Asset StructureConsoleBase5DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase6
+[ModularConsoleMod]: - Asset StructureConsoleBase6Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBase6Double
+[ModularConsoleMod]: - Asset StructureConsoleBase6DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner1
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner1Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner2
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner2Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner3
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner3Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner4
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner4Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner5
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner5Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner6
+[ModularConsoleMod]: - Asset StructureConsoleBaseCorner6Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner1
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner1Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner1Center
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner1CenterBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner1Double
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner1DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner2
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner2Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner2Center
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner2CenterBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner2Double
+[ModularConsoleMod]: - Asset StructureConsoleCornerInner2DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat1
+[ModularConsoleMod]: - Asset StructureConsoleFlat1Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat1Corner
+[ModularConsoleMod]: - Asset StructureConsoleFlat1Corner2
+[ModularConsoleMod]: - Asset StructureConsoleFlat1Corner2Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat1Corner3
+[ModularConsoleMod]: - Asset StructureConsoleFlat1Corner3Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat1CornerBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat1Double
+[ModularConsoleMod]: - Asset StructureConsoleFlat1DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat2
+[ModularConsoleMod]: - Asset StructureConsoleFlat2Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat2Double
+[ModularConsoleMod]: - Asset StructureConsoleFlat2DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat3
+[ModularConsoleMod]: - Asset StructureConsoleFlat3Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat3Double
+[ModularConsoleMod]: - Asset StructureConsoleFlat3DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat3x2
+[ModularConsoleMod]: - Asset StructureConsoleFlat3x2Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlat3x2Double
+[ModularConsoleMod]: - Asset StructureConsoleFlat3x2DoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlatCornerInner
+[ModularConsoleMod]: - Asset StructureConsoleFlatCornerInnerBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlatCornerInnerDouble
+[ModularConsoleMod]: - Asset StructureConsoleFlatCornerInnerDoubleBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleFlatCornerInnerDoubleCenter
+[ModularConsoleMod]: - Asset StructureConsoleFlatCornerInnerDoubleCenterBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleTerminal
+[ModularConsoleMod]: - Asset StructureConsoleTerminal2
+[ModularConsoleMod]: - Asset StructureConsoleTerminal2Blueprint
+[ModularConsoleMod]: - Asset StructureConsoleTerminalBlueprint
+[ModularConsoleMod]: - Asset StructureConsoleWallMount1
+[ModularConsoleMod]: - Asset StructureConsoleWallMount1Blueprinz
+[ModularConsoleMod]: - Asset StructureConsoleWallMount2
+[ModularConsoleMod]: - Asset StructureConsoleWallMount2Blueprint
+[ModularConsoleMod]: - Asset LogicDigit
+[ModularConsoleMod]: Loading AssetBundle modularconsolemod.assets ExportSettings
+[SpotlightsMod]: Loading AssetBundle spotlightsmod.assets
+[SpotlightsMod]: Loading AssetBundle spotlightsmod.assets Prefabs
+[SpotlightsMod]: - Asset ItemKitSpotlight
+[SpotlightsMod]: - Asset ItemKitSpotlightBlueprint
+[SpotlightsMod]: - Asset StructureSpotlight
+[SpotlightsMod]: - Asset StructureSpotlightBlueprint
+[SpotlightsMod]: - Asset Thumbnailer
+[SpotlightsMod]: Loading AssetBundle spotlightsmod.assets ExportSettings
+[VeryImportantButtonMod [StationeersMods]]: Loading AssetBundle veryimportantbuttonmod.assets
+[VeryImportantButtonMod [StationeersMods]]: Loading AssetBundle veryimportantbuttonmod.assets Prefabs
+The referenced script on this Behaviour (Game Object '') is missing!
+[VeryImportantButtonMod [StationeersMods]]: - Asset ButtonDevice
+[VeryImportantButtonMod [StationeersMods]]: - Asset ItemKitVeryImportantButton
+[VeryImportantButtonMod [StationeersMods]]: - Asset ItemKitVeryImportantButtonBlueprint
+[VeryImportantButtonMod [StationeersMods]]: - Asset StructureVeryImportantButton
+[VeryImportantButtonMod [StationeersMods]]: - Asset StructureVeryImportantButtonBlueprint
+[VeryImportantButtonMod [StationeersMods]]: - Asset Thumbnailer
+[VeryImportantButtonMod [StationeersMods]]: Loading AssetBundle veryimportantbuttonmod.assets ExportSettings
+[T.U.B.E.]: Loading AssetBundle morewindowsmod.assets
+[T.U.B.E.]: Loading AssetBundle morewindowsmod.assets Prefabs
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel1
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel1_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel2
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel2_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel3
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel3_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel4
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel4_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel6
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel6_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel7
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel7_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel8
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel8_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel9
+[T.U.B.E.]: - Asset CompositeWallRoundedCornerPanel9_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedTubeWallPanel1
+[T.U.B.E.]: - Asset CompositeWallRoundedTubeWallPanel1_Blueprint
+[T.U.B.E.]: - Asset ItemKitSmallTUBE
+[T.U.B.E.]: - Asset ItemKitSmallTUBE_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeRing
+[T.U.B.E.]: - Asset StructureCompositeTubeRing_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeRingWindow
+[T.U.B.E.]: - Asset StructureCompositeTubeRingWindow_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2Inner
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2Inner_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2InnerToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2InnerToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2Outer
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2Outer_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterConnector
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterConnector_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToFlat1
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToFlat1_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToFlat2
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToFlat2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToOuter1
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToOuter1_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToOuter2
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToOuter2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToOuterCap
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2OuterToOuterCap_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2ToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2ToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2ToFlatConnector
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2ToFlatConnector2
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2ToFlatConnector2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2ToFlatConnector_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2ToFlatConnectorRight
+[T.U.B.E.]: - Asset StructureCompositeTubeWall2ToFlatConnectorRight_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall3
+[T.U.B.E.]: - Asset StructureCompositeTubeWall3_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall3ToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWall3ToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall4
+[T.U.B.E.]: - Asset StructureCompositeTubeWall4_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWall_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallConnector
+[T.U.B.E.]: - Asset StructureCompositeTubeWallConnector2
+[T.U.B.E.]: - Asset StructureCompositeTubeWallConnector2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallConnector_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2Inner
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2Inner_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2ToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2ToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2ToFlatConnector
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2ToFlatConnector2
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2ToFlatConnector2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2ToFlatConnector_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2ToFlatConnectorRight
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat2ToFlatConnectorRight_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat3
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat3_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat3ToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat3ToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat4
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat4_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlatConnector
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlatConnector2
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlatConnector2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlatConnector_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlatToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWallFlatToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallPanelRound
+[T.U.B.E.]: - Asset StructureCompositeTubeWallPanelRound_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWallToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallWindow1
+[T.U.B.E.]: - Asset StructureCompositeTubeWallWindow1_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWallWindow2
+[T.U.B.E.]: - Asset StructureCompositeTubeWallWindow2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow2Inner
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow2Inner_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow2InnerToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow2InnerToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow2Outer
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow2Outer_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow2OuterConnector
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow2OuterConnector_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow3
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow3_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow3ToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow3ToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow4
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow4_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindow_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowConnector
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowConnector2
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowConnector2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowConnector_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowFlat2Inner
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowFlat2Inner_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowFlat3
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowFlat3_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowFlat3ToFlat
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowFlat3ToFlat_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowFlat4
+[T.U.B.E.]: - Asset StructureCompositeTubeWindowFlat4_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRounded
+[T.U.B.E.]: - Asset CompositeWallRounded_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedBase
+[T.U.B.E.]: - Asset CompositeWallRoundedBase_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedBaseCap1
+[T.U.B.E.]: - Asset CompositeWallRoundedBaseCap1_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedBaseCap2
+[T.U.B.E.]: - Asset CompositeWallRoundedBaseCap2_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCorner1
+[T.U.B.E.]: - Asset CompositeWallRoundedCorner1_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCorner2
+[T.U.B.E.]: - Asset CompositeWallRoundedCorner2_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedCupola
+[T.U.B.E.]: - Asset CompositeWallRoundedCupola_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedPanel
+[T.U.B.E.]: - Asset CompositeWallRoundedPanel2
+[T.U.B.E.]: - Asset CompositeWallRoundedPanel2_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedPanel_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedPlate
+[T.U.B.E.]: - Asset CompositeWallRoundedPlate_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedRing
+[T.U.B.E.]: - Asset CompositeWallRoundedRing_Blueprint
+[T.U.B.E.]: - Asset CompositeWallRoundedRingWall
+[T.U.B.E.]: - Asset CompositeWallRoundedRingWall_Blueprint
+[T.U.B.E.]: - Asset CompositeWallTubeCap1
+[T.U.B.E.]: - Asset CompositeWallTubeCap1_Blueprint
+[T.U.B.E.]: - Asset CompositeWallTubeCap2
+[T.U.B.E.]: - Asset CompositeWallTubeCap2_Blueprint
+[T.U.B.E.]: - Asset CompositeWindow2RoundedBase
+[T.U.B.E.]: - Asset CompositeWindow2RoundedBase_Blueprint
+[T.U.B.E.]: - Asset ItemKitTUBE
+[T.U.B.E.]: - Asset ItemKitTUBE_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWallRounded
+[T.U.B.E.]: - Asset StructureCompositeWallRounded_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWallRoundedCorner
+[T.U.B.E.]: - Asset StructureCompositeWallRoundedCorner2
+[T.U.B.E.]: - Asset StructureCompositeWallRoundedCorner2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWallRoundedCorner_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWallRoundedCupola2
+[T.U.B.E.]: - Asset StructureCompositeWallRoundedCupola2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWindowRoundedCorner
+[T.U.B.E.]: - Asset StructureCompositeWindowRoundedCorner2
+[T.U.B.E.]: - Asset StructureCompositeWindowRoundedCorner2_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWindowRoundedCorner_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWindowRoundedCupola
+[T.U.B.E.]: - Asset StructureCompositeWindowRoundedCupola_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWindowRoundedPanel1
+[T.U.B.E.]: - Asset StructureCompositeWindowRoundedPanel_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWindowTubeCap1
+[T.U.B.E.]: - Asset StructureCompositeWindowTubeCap1_Blueprint
+[T.U.B.E.]: - Asset StructureCompositeWindowTubeCap2
+[T.U.B.E.]: - Asset StructureCompositeWindowTubeCap2_Blueprint
+[T.U.B.E.]: - Asset StuctureCompositeWindowRound
+[T.U.B.E.]: - Asset StuctureCompositeWindowRounded_Blueprint
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundedBase
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundedBase_Blueprint
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundedBaseCap1
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundedBaseCap1_Blueprint
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundedBaseCap2
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundedBaseCap2_Blueprint
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundedBaseLogic
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundedBaseLogic_Blueprint
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundPanel
+[T.U.B.E.]: - Asset StuctureCompositeWindowRoundPanel_Blueprint
+[T.U.B.E.]: Loading AssetBundle morewindowsmod.assets ExportSettings
+[LargeConsoleMod]: Loading AssetBundle largeconsolemod.assets
+[LargeConsoleMod]: Loading AssetBundle largeconsolemod.assets Prefabs
+[LargeConsoleMod]: - Asset ButtonDevice
+[LargeConsoleMod]: - Asset ItemKitLargeConsole
+[LargeConsoleMod]: - Asset ItemKitLargeConsoleBlueprint
+[LargeConsoleMod]: - Asset StructureConsole2x2
+[LargeConsoleMod]: - Asset StructureConsole2x2Blueprint
+[LargeConsoleMod]: - Asset StructureConsole3x3
+[LargeConsoleMod]: - Asset StructureConsole3x3Blueprint
+[LargeConsoleMod]: - Asset SwitchOnOff
+[LargeConsoleMod]: - Asset Thumbnailer
+[LargeConsoleMod]: Loading AssetBundle largeconsolemod.assets ExportSettings
+[CCTV]: Loading AssetBundle cctv.assets
+[CCTV]: Loading AssetBundle cctv.assets Prefabs
+The class named 'UnityStandardAssets.Cameras.TargetFieldOfView' is not derived from MonoBehaviour or ScriptableObject!
+The class named 'UnityStandardAssets.Cameras.LookatTarget' is not derived from MonoBehaviour or ScriptableObject!
+[CCTV]: - Asset ButtonDevice
+[CCTV]: - Asset CartridgeCCTV
+[CCTV]: - Asset CartridgeCCTVBlueprint
+[CCTV]: - Asset CctvCamera
+[CCTV]: - Asset CircuitboardCameraDisplayModHD
+[CCTV]: - Asset CircuitboardCameraDisplayModHDBlueprint
+[CCTV]: - Asset CircuitboardCameraDisplayModLD
+[CCTV]: - Asset CircuitboardCameraDisplayModLDBlueprint
+[CCTV]: - Asset CircuitboardCameraDisplayModSCAN
+[CCTV]: - Asset CircuitboardCameraDisplayModSCANBlueprint
+[CCTV]: - Asset CircuitboardCameraDisplayModSD
+[CCTV]: - Asset CircuitboardCameraDisplayModSDBlueprint
+[CCTV]: - Asset ItemKitCCTV
+[CCTV]: - Asset ItemKitCCTVBlueprint
+[CCTV]: - Asset StructureSecurityCameraFishEye
+[CCTV]: - Asset StructureSecurityCameraFishEyeBlueprint
+[CCTV]: - Asset StructureSecurityCameraLeft
+[CCTV]: - Asset StructureSecurityCameraLeftBlueprint
+[CCTV]: - Asset StructureSecurityCameraPanning
+[CCTV]: - Asset StructureSecurityCameraPanningBlueprint
+[CCTV]: - Asset StructureSecurityCameraRight
+[CCTV]: - Asset StructureSecurityCameraRightBlueprint
+[CCTV]: - Asset StructureSecurityCameraStraight
+[CCTV]: - Asset StructureSecurityCameraStraightBlueprint
+[CCTV]: - Asset Thumbnailer
+[CCTV]: Loading AssetBundle cctv.assets ExportSettings
+[FloodLightMod]: Loading AssetBundle floodlightmod.assets
+[FloodLightMod]: Loading AssetBundle floodlightmod.assets Prefabs
+[FloodLightMod]: - Asset ItemKitFloodLight
+[FloodLightMod]: - Asset ItemKitFloodLightBlueprint
+[FloodLightMod]: - Asset StructureGlowLight
+[FloodLightMod]: - Asset StructureGlowLight2
+[FloodLightMod]: - Asset StructureGlowLight3Blueprint
+[FloodLightMod]: - Asset StructureGlowLightBlueprint
+[FloodLightMod]: - Asset StructureGlowLightSmall
+[FloodLightMod]: - Asset StructureGlowLightSmallBlueprint
+[FloodLightMod]: - Asset StructureGrowlightLarge
+[FloodLightMod]: - Asset StructureGrowlightLargeBlueprint
+[FloodLightMod]: Loading AssetBundle floodlightmod.assets ExportSettings
+[MoreCladdingMod]: Loading AssetBundle morecladdingmod.assets
+[MoreCladdingMod]: Loading AssetBundle morecladdingmod.assets Prefabs
+[MoreCladdingMod]: - Asset ItemKitMoreCladding
+[MoreCladdingMod]: - Asset ItemKitMoreCladding_Blueprint
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled2
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled2_Blueprint
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled2Long
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled2Long_Blueprint
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled3Long
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled3Long_Blueprint
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled4Long
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled4Long_Blueprint
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled5
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled5_Blueprint
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled5Long
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled5Long_Blueprint
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled6Long
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled6Long_Blueprint
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled7Long
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled7Long_Blueprint
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled8Long
+[MoreCladdingMod]: - Asset StructureCompositeCladdingAngled8Long_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingAngledPanel
+[MoreCladdingMod]: - Asset StructureMoreCladdingAngledPanel_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingAngledToPanel
+[MoreCladdingMod]: - Asset StructureMoreCladdingAngledToPanel_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingCornerRoundedInnerToPanel
+[MoreCladdingMod]: - Asset StructureMoreCladdingCornerRoundedInnerToPanel_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingCornerRoundedInnerToRounded
+[MoreCladdingMod]: - Asset StructureMoreCladdingCornerRoundedInnerToRounded_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalInner
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalInner_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalInnerToPanel
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalInnerToPanel_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalPanelInner
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalPanelInner_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalPanelInnerPorthole
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalPanelInnerPorthole2
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalPanelInnerPorthole2_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingCylindricalPanelInnerPorthole_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingPanelPorthole
+[MoreCladdingMod]: - Asset StructureMoreCladdingPanelPorthole2
+[MoreCladdingMod]: - Asset StructureMoreCladdingPanelPorthole2_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingPanelPorthole_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingPanelRoundedInner
+[MoreCladdingMod]: - Asset StructureMoreCladdingPanelRoundedInner_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedInner
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedInner_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedInnerToPanel
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedInnerToPanel_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedPanel
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedPanel_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedToPanel
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedToPanel_Blueprint
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedToPanels
+[MoreCladdingMod]: - Asset StructureMoreCladdingRoundedToPanels_Blueprint
+[MoreCladdingMod]: Loading AssetBundle morecladdingmod.assets ExportSettings
+[SimpleHatsMod]: Loading AssetBundle simplehatsmod.assets
+[SimpleHatsMod]: Loading AssetBundle simplehatsmod.assets Prefabs
+Couldn't create a Convex Mesh from source mesh "EarMuffs" within the maximum polygons limit (256). The partial hull will be used. Consider simplifying your mesh.
+[SimpleHatsMod]: - Asset BrainiacHat
+[SimpleHatsMod]: - Asset BrainiacHat_Blueprint
+[SimpleHatsMod]: - Asset CowboyHat
+[SimpleHatsMod]: - Asset CowboyHat_Blueprint
+[SimpleHatsMod]: - Asset EarMuffs
+[SimpleHatsMod]: - Asset EarMuffs_Blueprint
+[SimpleHatsMod]: - Asset GasMask
+[SimpleHatsMod]: - Asset GasMask_Blueprint
+[SimpleHatsMod]: - Asset HardHat
+[SimpleHatsMod]: - Asset HardHat_Blueprint
+[SimpleHatsMod]: - Asset KnitHat
+[SimpleHatsMod]: - Asset KnitHat_Blueprint
+[SimpleHatsMod]: - Asset PilotGlasses
+[SimpleHatsMod]: - Asset PilotGlasses_Blueprint
+[SimpleHatsMod]: - Asset SafetyGlasses
+[SimpleHatsMod]: - Asset SafetyGlasses_Blueprint
+[SimpleHatsMod]: - Asset SantaHat
+[SimpleHatsMod]: - Asset SantaHat_Blueprint
+[SimpleHatsMod]: - Asset VenjentGlasses
+[SimpleHatsMod]: - Asset VenjentGlasses_Blueprint
+[SimpleHatsMod]: - Asset Visor
+[SimpleHatsMod]: - Asset Visor_Blueprint
+[SimpleHatsMod]: - Asset WeldingGoggles
+[SimpleHatsMod]: - Asset WeldingGoggles_Blueprint
+[SimpleHatsMod]: - Asset WeldingHelmet
+[SimpleHatsMod]: - Asset WeldingHelmet_Blueprint
+[SimpleHatsMod]: Loading AssetBundle simplehatsmod.assets ExportSettings
+[RubberDuckMod]: Loading AssetBundle rubberduckmod.assets
+[RubberDuckMod]: Loading AssetBundle rubberduckmod.assets Prefabs
+[RubberDuckMod]: - Asset RubberDuck
+[RubberDuckMod]: - Asset RubberDuck_Blueprint
+[RubberDuckMod]: Loading AssetBundle rubberduckmod.assets ExportSettings
+[ToyCosmoMod]: Loading AssetBundle toycosmomod.assets
+[ToyCosmoMod]: Loading AssetBundle toycosmomod.assets Prefabs
+[ToyCosmoMod]: - Asset ToyCosmo
+[ToyCosmoMod]: - Asset ToyCosmo_Blueprint
+[ToyCosmoMod]: Loading AssetBundle toycosmomod.assets ExportSettings
+[Player Communications]: Loading AssetBundle stationeersplayercommunications.assets
+[Player Communications]: Loading AssetBundle stationeersplayercommunications.assets Prefabs
+Shader 'Custom/Hologram': fallback shader 'Transparent' not found
+[Player Communications]: - Asset ItemKitRadioTower
+[Player Communications]: - Asset ItemKitRadioTowerBlueprint
+[Player Communications]: - Asset ItemHandHeldRadio
+[Player Communications]: - Asset RadioBlueprint
+[Player Communications]: - Asset StructureRadioStorage
+[Player Communications]: - Asset StructureRadioStorageBlueprint
+[Player Communications]: - Asset StructureRadioTower
+[Player Communications]: - Asset StructureRadioTowerBlueprint
+[Player Communications]: - Asset CryoSurgeFaction
+[Player Communications]: - Asset HumanAudioSourcePrefab
+[Player Communications]: - Asset PlayerCommunicationsManagerPrefab
+[Player Communications]: Loading AssetBundle stationeersplayercommunications.assets ExportSettings
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: Loading AssetBundle ic10inspector.assets
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: Loading AssetBundle ic10inspector.assets Prefabs
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: - Asset CartridgeDebugAnalyzer
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: - Asset MotherboardDebugAnalyzer
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: Loading AssetBundle ic10inspector.assets ExportSettings
+[BlueprintMod]: Loading AssetBundle blueprintmod.assets
+[BlueprintMod]: Loading AssetBundle blueprintmod.assets Prefabs
+[BlueprintMod]: - Asset AnimatedDeanamicMatter
+[BlueprintMod]: - Asset DeanamicMatterBlueprint
+[BlueprintMod]: - Asset ItemDeanamicCoreKitBlueprint
+[BlueprintMod]: - Asset MotherboardBlueprint
+[BlueprintMod]: - Asset StructureDeanamicCoreBlueprint
+[BlueprintMod]: - Asset DBCUMotherboardUI
+[BlueprintMod]: - Asset DBPUMotherboardUI
+[BlueprintMod]: - Asset AlienMessagePlayer
+[BlueprintMod]: - Asset ItemDeanamicCoreKit
+[BlueprintMod]: - Asset StructureDeanamicCore
+[BlueprintMod]: - Asset ItemDeanamicMatter
+[BlueprintMod]: - Asset MotherboardDBCU
+[BlueprintMod]: - Asset MotherboardDBPU
+[BlueprintMod]: - Asset BlueprintOverlayUI
+[BlueprintMod]: Loading AssetBundle blueprintmod.assets ExportSettings
+[Global]: Asset loading took 0:03.322
+[Global]: Loading entrypoints...
+[LettersMod]: Finding Entrypoints
+[LettersMod]: Found 1 Entrypoints
+[LettersMod]: - StationeersMods Entry LettersMod
+[LettersMod]: Loading Entrypoints
+LettersMod Mod Loaded with 222 prefab(s)
+[LettersMod]: Loaded Entrypoints
+[ChessMod]: Finding Entrypoints
+[ChessMod]: Found 1 Entrypoints
+[ChessMod]: - StationeersMods Entry ChessMod
+[ChessMod]: Loading Entrypoints
+ChessMod Mod Loaded with 26 prefab(s)
+[ChessMod]: Loaded Entrypoints
+[Compass Mod]: Finding Entrypoints
+[Compass Mod]: Found 1 Entrypoints
+[Compass Mod]: - StationeersMods Entry CompassMod
+[Compass Mod]: Loading Entrypoints
+CompassMod says: Hello World!
+CompassMod Loaded with 1 prefab(s)
+[Compass Mod]: Loaded Entrypoints
+[LaunchSiloMod]: Finding Entrypoints
+[LaunchSiloMod]: Found 1 Entrypoints
+[LaunchSiloMod]: - StationeersMods Entry LaunchSiloMod
+[LaunchSiloMod]: Loading Entrypoints
+Hello World!
+LaunchSiloMod Loaded with 5 prefab(s)
+[LaunchSiloMod]: Loaded Entrypoints
+[Cardboard Box Tooltips]: Finding Entrypoints
+[Cardboard Box Tooltips]: Found 1 Entrypoints
+[Cardboard Box Tooltips]: - StationeersMods Entry CardboardBoxToolTipMod
+[Cardboard Box Tooltips]: Loading Entrypoints
+CardboardBoxToolTipMod says: Cardboard Boxes should have tooltips!
+CardboardBoxToolTipMod Loaded with 0 prefab(s)
+[Cardboard Box Tooltips]: Loaded Entrypoints
+[Beef's Room Defogger]: Finding Entrypoints
+[Beef's Room Defogger]: Found 1 Entrypoints
+[Beef's Room Defogger]: - BepInEx Entry BeefsRoomDefogger.BeefsRoomDefoggerPlugin
+[Beef's Room Defogger]: Loading Entrypoints
+[Info   :Beef's Room Defogger] Plugin Beef's Room Defogger is loaded!
+[Info   :Beef's Room Defogger] Patched
+[Beef's Room Defogger]: Loaded Entrypoints
+[Fixing The Controls]: Finding Entrypoints
+[Fixing The Controls]: Found 1 Entrypoints
+[Fixing The Controls]: - BepInEx Entry FixingTheControls.Plugin
+[Fixing The Controls]: Loading Entrypoints
+[Info   :Fixing The Controls] Fixing The Controls [2.14] is loaded!
+[Info   :Fixing The Controls] Key Build/repair [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Unbuild [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Configure [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Clear hands [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Tablet [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Glasses [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Mode switch [ftc] is assigned to None with modifiers []
+[Fixing The Controls]: Loaded Entrypoints
+[Beef's SEGI Plus]: Finding Entrypoints
+[Beef's SEGI Plus]: Found 1 Entrypoints
+[Beef's SEGI Plus]: - BepInEx Entry BeefsSEGIPlus.SEGIPlugin
+[Beef's SEGI Plus]: Loading Entrypoints
+[Info   :Beef's SEGI Plus] Plugin Beef's SEGI Plus is loaded!
+[Beef's SEGI Plus]: Loaded Entrypoints
+[Wall Direction Indicator]: Finding Entrypoints
+[Wall Direction Indicator]: Found 1 Entrypoints
+[Wall Direction Indicator]: - BepInEx Entry WallIndicator.Main
+[Wall Direction Indicator]: Loading Entrypoints
+[Info   :WallIndicator] WallIndicator v1.1.0 is loading...
+[Info   :WallIndicator] WallIndicator patches applied successfully.
+[Info   :WallIndicator] WallIndicator v1.1.0 has loaded.
+[Wall Direction Indicator]: Loaded Entrypoints
+[QuietPipesMod]: Finding Entrypoints
+[QuietPipesMod]: Found 1 Entrypoints
+[QuietPipesMod]: - StationeersMods Entry QuietPipesMod
+[QuietPipesMod]: Loading Entrypoints
+Hello World!
+QuietPipesMod Loaded with 37 prefab(s)
+[QuietPipesMod]: Loaded Entrypoints
+[SaveTransformerMod [StationeersLaunchPad]]: Finding Entrypoints
+[SaveTransformerMod [StationeersLaunchPad]]: Found 1 Entrypoints
+[SaveTransformerMod [StationeersLaunchPad]]: - StationeersMods Entry SaveTransformerMod
+[SaveTransformerMod [StationeersLaunchPad]]: Loading Entrypoints
+SaveTransformerMod says: Hello World!
+SaveTransformerMod Loaded with 1 prefab(s)
+SaveTransformerMod: UI prefab loaded successfully
+[SaveTransformerMod [StationeersLaunchPad]]: Loaded Entrypoints
+[LibConstruct]: Finding Entrypoints
+[LibConstruct]: Found 2 Entrypoints
+SaveTransformerMod: UI components hooked up
+[LibConstruct]: - BepInEx Entry LibConstruct.LibConstructMod
+[LibConstruct]: - Default Entry LibConstruct.LibConstructMod
+[LibConstruct]: Loading Entrypoints
+[LibConstruct]: Loaded Entrypoints
+[BaseLegsMod]: Finding Entrypoints
+[BaseLegsMod]: Found 1 Entrypoints
+[BaseLegsMod]: - StationeersMods Entry BaseLegsMod
+[BaseLegsMod]: Loading Entrypoints
+BaseLegsMod Mod Loaded with 18 prefab(s)
+[BaseLegsMod]: Loaded Entrypoints
+[ModularConsoleMod]: Finding Entrypoints
+[ModularConsoleMod]: Found 1 Entrypoints
+[ModularConsoleMod]: - StationeersMods Entry ModularConsoleMod
+[ModularConsoleMod]: Loading Entrypoints
+Hello World!
+Disabled SEGI emission for custom_color_red
+Disabled SEGI emission for Glass
+Disabled SEGI emission for BlueprintMesh
+Disabled SEGI emission for HazardStripes
+Disabled SEGI emission for ColorRedEmssive_1
+Disabled SEGI emission for spaceships_dif
+Disabled SEGI emission for SignMat4x1
+Disabled SEGI emission for ColorGreenEmissive
+Disabled SEGI emission for MetalExterior 1
+Disabled SEGI emission for custom_color_white
+Disabled SEGI emission for ColorGreen
+Disabled SEGI emission for ConsoleGridMaterial
+Disabled SEGI emission for Default-Material
+ModularConsoleMod Loaded with 227 prefab(s)
+[ModularConsoleMod]: Loaded Entrypoints
+[SpotlightsMod]: Finding Entrypoints
+[SpotlightsMod]: Found 1 Entrypoints
+[SpotlightsMod]: - StationeersMods Entry SpotlightsMod
+[SpotlightsMod]: Loading Entrypoints
+Hello World!
+SpotLightsMod Loaded with 5 prefab(s)
+[SpotlightsMod]: Loaded Entrypoints
+[Automated Oven - Extended]: Finding Entrypoints
+[Automated Oven - Extended]: Found 0 Entrypoints
+[Automated Oven - Extended]: Loading Entrypoints
+[Automated Oven - Extended]: Loaded Entrypoints
+[VeryImportantButtonMod [StationeersMods]]: Finding Entrypoints
+[VeryImportantButtonMod [StationeersMods]]: Found 1 Entrypoints
+[VeryImportantButtonMod [StationeersMods]]: - StationeersMods Entry VeryImportantButtonMod
+[VeryImportantButtonMod [StationeersMods]]: Loading Entrypoints
+Hello World!
+VeryImportantButtonMod Loaded with 6 prefab(s)
+[VeryImportantButtonMod [StationeersMods]]: Loaded Entrypoints
+[T.U.B.E.]: Finding Entrypoints
+[T.U.B.E.]: Found 1 Entrypoints
+[T.U.B.E.]: - StationeersMods Entry MoreWindowsMod
+[T.U.B.E.]: Loading Entrypoints
+MoreWindowsMod Mod Loaded with 186 prefab(s)
+[T.U.B.E.]: Loaded Entrypoints
+[LargeConsoleMod]: Finding Entrypoints
+[LargeConsoleMod]: Found 1 Entrypoints
+[LargeConsoleMod]: - StationeersMods Entry LargeConsoleMod
+[LargeConsoleMod]: Loading Entrypoints
+Hello World!
+LargeConsoleMod Loaded with 9 prefab(s)
+[LargeConsoleMod]: Loaded Entrypoints
+[CCTV]: Finding Entrypoints
+[CCTV]: Found 1 Entrypoints
+[CCTV]: - StationeersMods Entry CCTV
+[CCTV]: Loading Entrypoints
+Hello World!
+CCTV Loaded with 25 prefab(s)
+[CCTV]: Loaded Entrypoints
+[FloodLightMod]: Finding Entrypoints
+[FloodLightMod]: Found 1 Entrypoints
+[FloodLightMod]: - StationeersMods Entry FloodLightMod
+[FloodLightMod]: Loading Entrypoints
+Hello World!
+FloodLightMod Loaded with 10 prefab(s)
+[FloodLightMod]: Loaded Entrypoints
+[MoreCladdingMod]: Finding Entrypoints
+[MoreCladdingMod]: Found 1 Entrypoints
+[MoreCladdingMod]: - StationeersMods Entry MoreCladdingMod
+[MoreCladdingMod]: Loading Entrypoints
+MoreCladdingMod Mod Loaded with 54 prefab(s)
+[MoreCladdingMod]: Loaded Entrypoints
+[Better Advanced Tablet]: Finding Entrypoints
+[Better Advanced Tablet]: Found 1 Entrypoints
+[Better Advanced Tablet]: - BepInEx Entry BetterAdvancedTablet.BetterAdvancedTabletPlugin
+[Better Advanced Tablet]: Loading Entrypoints
+######## BAT DEVELOPMENT BUILD ########
+Plugin Better Advanced Tablet 2.3.2 is loaded!
+Patching BetterAdvancedTablet.BetterAdvancedTabletPlugin
+Patching BetterAdvancedTablet.Patches
+Patching BetterAdvancedTablet.PluginInfo
+Patching BetterAdvancedTablet.BetterAdvancedTabletPlugin+<>c__DisplayClass8_0
+Patching BetterAdvancedTablet.Patches+AdvancedTabletPatches
+Patching BetterAdvancedTablet.Patches+StartNewWorldPatches
+Patching BetterAdvancedTablet.Patches+LoadWorldPatches
+Patching BetterAdvancedTablet.Patches+NetworkClientProcessJoinDataPatches
+Patching BetterAdvancedTablet.Patches+AsyncMethods
+Patching BetterAdvancedTablet.Patches+OnUsePrimaryPatch
+Patching BetterAdvancedTablet.Patches+AsyncMethods+<NextCartridge>d__1
+Better Advanced Tablet Patching complete!
+[Better Advanced Tablet]: Loaded Entrypoints
+[SimpleHatsMod]: Finding Entrypoints
+[SimpleHatsMod]: Found 1 Entrypoints
+[SimpleHatsMod]: - StationeersMods Entry SimpleHatsMod
+[SimpleHatsMod]: Loading Entrypoints
+SimpleHatsMod Loaded with 26 prefab(s)
+[SimpleHatsMod]: Loaded Entrypoints
+[RubberDuckMod]: Finding Entrypoints
+[RubberDuckMod]: Found 1 Entrypoints
+[RubberDuckMod]: - StationeersMods Entry RubberDuckMod
+[RubberDuckMod]: Loading Entrypoints
+RubberDuck Loaded with 2 prefab(s)
+[RubberDuckMod]: Loaded Entrypoints
+[ToyCosmoMod]: Finding Entrypoints
+[ToyCosmoMod]: Found 1 Entrypoints
+[ToyCosmoMod]: - StationeersMods Entry ToyCosmoMod
+[ToyCosmoMod]: Loading Entrypoints
+ToyCosmoMod Loaded with 2 prefab(s)
+[ToyCosmoMod]: Loaded Entrypoints
+[Player Communications]: Finding Entrypoints
+[Player Communications]: Found 1 Entrypoints
+[Player Communications]: - StationeersMods Entry StationeersPlayerCommunications
+[Player Communications]: Loading Entrypoints
+[Player Communications]: Loaded Entrypoints
+[Stationpedia Ascended]: Finding Entrypoints
+[Stationpedia Ascended]: Found 1 Entrypoints
+[Stationpedia Ascended]: - BepInEx Entry StationpediaAscended.StationpediaAscendedMod
+[Stationpedia Ascended]: Loading Entrypoints
+[Stationpedia Ascended] Detected new ConsoleWindow.Print (5 params - beta/orbital)
+[Warning:  HarmonyX] com.stationpediaascended.mod: You should only patch implemented methods/constructors to avoid issues. Patch the declared method virtual void Assets.Scripts.UI.DraggableWindow::OnDrag(UnityEngine.EventSystems.PointerEventData eventData) instead of virtual void Assets.Scripts.UI.DraggableWindow::OnDrag(UnityEngine.EventSystems.PointerEventData eventData).
+[Warning:  HarmonyX] com.stationpediaascended.mod: You should only patch implemented methods/constructors to avoid issues. Patch the declared method virtual void Assets.Scripts.UI.DraggableWindow::OnBeginDrag(UnityEngine.EventSystems.PointerEventData eventData) instead of virtual void Assets.Scripts.UI.DraggableWindow::OnBeginDrag(UnityEngine.EventSystems.PointerEventData eventData).
+[Info   :Stationpedia Ascended] Registering custom keybinding...
+[Info   :Stationpedia Ascended] Created ControlsGroup 'Stationpedia Ascended' (total groups: 3)
+[Info   :Stationpedia Ascended] Created new KeyItem for ToggleStationpedia (F8)
+[Info   :Stationpedia Ascended] Added KeyItem to group (group now has 1 keys)
+[Info   :Stationpedia Ascended] Updated _controlsGroupLookup mapping
+[Info   :Stationpedia Ascended] Custom keybinding registration complete
+[UIAssetInspector] DISABLED
+[UIAssetInspector] Initialized. Use 'assetdisplay' command to toggle.
+[Stationpedia Ascended]: Loaded Entrypoints
+[AIMeE Bug Fixes]: Finding Entrypoints
+[AIMeE Bug Fixes]: Found 1 Entrypoints
+[AIMeE Bug Fixes]: - BepInEx Entry AimeeBugFixes.Plugin
+[AIMeE Bug Fixes]: Loading Entrypoints
+[Info   :AIMeE Bug Fixes] AIMeE Bug Fixes v0.6.1 loading...
+[Info   :AIMeE Bug Fixes]   IsBatchMode=False, RunSimulation=True
+[Info   :AIMeE Bug Fixes]   [Debug] Registered 'aimeedebug' console command
+[Info   :AIMeE Bug Fixes]   [Bug1-OnMinedOre] OK - patched RobotMining.OnMinedOre
+[Info   :AIMeE Bug Fixes]   [Bug1-OnChildEnterInventory] OK - patched RobotMining.OnChildEnterInventory
+[Info   :AIMeE Bug Fixes]   [Bug1-MovingToMineable] OK - patched RobotMining.MovingToMineable
+[Info   :AIMeE Bug Fixes]   [Bug2-TryUnstuck] OK - patched RobotMining.TryUnstuck
+[Info   :AIMeE Bug Fixes]   [Bug2-PathToTarget] OK - patched RobotMining.PathToTarget
+[Info   :AIMeE Bug Fixes]   [Bug2+5-UpdateEachFrame] OK - patched RobotMining.UpdateEachFrame
+[Info   :AIMeE Bug Fixes]   [Bug3-TreadUV] OK - patched WheeledBase.PhysicsUpdate
+[Info   :AIMeE Bug Fixes]   [Bug3-ServerOccluded] OK - patched WheeledBase.PhysicsUpdate
+[Info   :AIMeE Bug Fixes]   [Bug4-Roam] OK - patched RobotMining.Roam
+[Info   :AIMeE Bug Fixes]   [Bug6-QueueSync] OK - patched RobotMining.GetLogicValue
+[Info   :AIMeE Bug Fixes]   [Bug6] ENABLED — non-authority queue estimate with cap
+[Info   :AIMeE Bug Fixes]   [Bug7-VicinityBounds] OK - patched VoxelTerrain.GetNumberOfMinablesNearSurface
+[Info   :AIMeE Bug Fixes]   [Diag-GetLogicValue] OK - patched RobotMining.GetLogicValue
+[Info   :AIMeE Bug Fixes]   MinableSearchArea current=16
+[Info   :AIMeE Bug Fixes]   MinableSearchArea restored to 32
+[Info   :AIMeE Bug Fixes] AIMeE Bug Fixes: 12 patches applied, 0 failed
+[AIMeE Bug Fixes]: Loaded Entrypoints
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: Finding Entrypoints
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: Found 1 Entrypoints
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: - StationeersMods Entry ridorana.IC10Inspector.IC10Inspector
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: Loading Entrypoints
+Looking for IC10Extender in loaded assemblies: 
+    Assembly mscorlib
+    Assembly BepInEx.Preloader
+    Assembly BepInEx
+    Assembly System.Core
+    Assembly MonoMod.Utils
+    Assembly Mono.Cecil
+    Assembly Mono.Cecil.Mdb
+    Assembly Mono.Cecil.Pdb
+    Assembly Mono.Cecil.Rocks
+    Assembly MonoMod.RuntimeDetour
+    Assembly 0Harmony
+    Assembly System
+    Assembly HarmonyXInterop
+    Assembly Mono.Security
+    Assembly System.Configuration
+    Assembly System.Xml
+    Assembly UnityEngine.CoreModule
+    Assembly UnityEngine
+    Assembly UnityEngine.AIModule
+    Assembly UnityEngine.ARModule
+    Assembly UnityEngine.AccessibilityModule
+    Assembly UnityEngine.AndroidJNIModule
+    Assembly UnityEngine.AnimationModule
+    Assembly UnityEngine.AssetBundleModule
+    Assembly UnityEngine.AudioModule
+    Assembly UnityEngine.ClothModule
+    Assembly UnityEngine.ClusterInputModule
+    Assembly UnityEngine.ClusterRendererModule
+    Assembly UnityEngine.ContentLoadModule
+    Assembly UnityEngine.CrashReportingModule
+    Assembly UnityEngine.DSPGraphModule
+    Assembly UnityEngine.DirectorModule
+    Assembly UnityEngine.GIModule
+    Assembly UnityEngine.GameCenterModule
+    Assembly UnityEngine.GridModule
+    Assembly UnityEngine.HotReloadModule
+    Assembly UnityEngine.IMGUIModule
+    Assembly UnityEngine.ImageConversionModule
+    Assembly UnityEngine.InputModule
+    Assembly UnityEngine.InputLegacyModule
+    Assembly UnityEngine.JSONSerializeModule
+    Assembly UnityEngine.LocalizationModule
+    Assembly UnityEngine.NVIDIAModule
+    Assembly UnityEngine.ParticleSystemModule
+    Assembly UnityEngine.PerformanceReportingModule
+    Assembly UnityEngine.PhysicsModule
+    Assembly UnityEngine.Physics2DModule
+    Assembly UnityEngine.ProfilerModule
+    Assembly UnityEngine.PropertiesModule
+    Assembly UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule
+    Assembly UnityEngine.ScreenCaptureModule
+    Assembly UnityEngine.SharedInternalsModule
+    Assembly UnityEngine.SpriteMaskModule
+    Assembly UnityEngine.SpriteShapeModule
+    Assembly UnityEngine.StreamingModule
+    Assembly UnityEngine.SubstanceModule
+    Assembly UnityEngine.SubsystemsModule
+    Assembly UnityEngine.TLSModule
+    Assembly UnityEngine.TerrainModule
+    Assembly UnityEngine.TerrainPhysicsModule
+    Assembly UnityEngine.TextCoreFontEngineModule
+    Assembly UnityEngine.TextCoreTextEngineModule
+    Assembly UnityEngine.TextRenderingModule
+    Assembly UnityEngine.TilemapModule
+    Assembly UnityEngine.UIModule
+    Assembly UnityEngine.UIElementsModule
+    Assembly UnityEngine.UmbraModule
+    Assembly UnityEngine.UnityAnalyticsModule
+    Assembly UnityEngine.UnityAnalyticsCommonModule
+    Assembly UnityEngine.UnityConnectModule
+    Assembly UnityEngine.UnityCurlModule
+    Assembly UnityEngine.UnityTestProtocolModule
+    Assembly UnityEngine.UnityWebRequestModule
+    Assembly UnityEngine.UnityWebRequestAssetBundleModule
+    Assembly UnityEngine.UnityWebRequestAudioModule
+    Assembly UnityEngine.UnityWebRequestTextureModule
+    Assembly UnityEngine.UnityWebRequestWWWModule
+    Assembly UnityEngine.VFXModule
+    Assembly UnityEngine.VRModule
+    Assembly UnityEngine.VehiclesModule
+    Assembly UnityEngine.VideoModule
+    Assembly UnityEngine.VirtualTexturingModule
+    Assembly UnityEngine.WindModule
+    Assembly UnityEngine.XRModule
+    Assembly netstandard
+    Assembly Assembly-CSharp-firstpass
+    Assembly Assembly-CSharp
+    Assembly UniTask.Addressables
+    Assembly io.sentry.unity.runtime
+    Assembly UniTask.Linq
+    Assembly Unity.Burst
+    Assembly Swing.Core.Runtime
+    Assembly UnityEngine.UI
+    Assembly Unity.Collections
+    Assembly UniTask
+    Assembly RG.ImGui
+    Assembly UniTask.TextMeshPro
+    Assembly Unity.Mathematics
+    Assembly Unity.TextMeshPro
+    Assembly UniTask.DOTween
+    Assembly RG.ImGui.Unity
+    Assembly Sentry
+    Assembly DOTween
+    Assembly Unity.Collections.LowLevel.ILSupport
+    Assembly Sentry.Unity
+    Assembly Facepunch.Steamworks.Win64
+    Assembly ch.sycoforge.Unity.Runtime
+    Assembly Sentry.System.Runtime.CompilerServices.Unsafe
+    Assembly Sentry.System.Reflection.Metadata
+    Assembly Ookii.Dialogs
+    Assembly ch.sycoforge.Flares
+    Assembly Sentry.System.Threading.Tasks.Extensions
+    Assembly Sentry.System.Memory
+    Assembly ICSharpCode.SharpZipLib
+    Assembly LZ4
+    Assembly Unity.Burst.Unsafe
+    Assembly Sentry.Microsoft.Bcl.AsyncInterfaces
+    Assembly ch.sycoforge.Logging
+    Assembly Sentry.Unity.Native
+    Assembly Mono.Posix
+    Assembly Sentry.System.Text.Json
+    Assembly Newtonsoft.Json
+    Assembly Sentry.System.Numerics.Vectors
+    Assembly System.Windows.Forms
+    Assembly Sentry.System.Buffers
+    Assembly Mono.WebBrowser
+    Assembly System.Runtime.CompilerServices.Unsafe
+    Assembly Brutal.RakNet
+    Assembly Sentry.System.Collections.Immutable
+    Assembly Sentry.System.Text.Encodings.Web
+    Assembly ScriptEngine
+    Assembly UnityExplorer.BIE5.Mono
+    Assembly UniverseLib.Mono
+    Assembly Accessibility
+    Assembly Mono.Data.Sqlite
+    Assembly System.Data
+    Assembly System.Transactions
+    Assembly Novell.Directory.Ldap
+    Assembly System.Design
+    Assembly System.Net.Http
+    Assembly System.ComponentModel.Composition
+    Assembly System.ComponentModel.DataAnnotations
+    Assembly System.Data.DataSetExtensions
+    Assembly System.Drawing
+    Assembly System.Web
+    Assembly System.Drawing.Design
+    Assembly System.DirectoryServices
+    Assembly System.EnterpriseServices
+    Assembly System.IO.Compression
+    Assembly System.IO.Compression.FileSystem
+    Assembly System.Numerics
+    Assembly System.Runtime
+    Assembly System.Runtime.Serialization
+    Assembly System.ServiceModel.Internals
+    Assembly System.Runtime.Serialization.Formatters.Soap
+    Assembly System.Security
+    Assembly System.Web.ApplicationServices
+    Assembly System.Web.Services
+    Assembly System.Xml.Linq
+    Assembly UnityEngine.CoreModule
+    Assembly MonoMod.Utils.GetManagedSizeHelper
+    Assembly StationpediaExtractor
+    Assembly StationeersLaunchPad
+    Assembly StationeersMods.Interface
+    Assembly StationeersMods.Shared
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly Microsoft.GeneratedCode
+    Assembly HarmonyDTFAssembly1
+    Assembly HarmonyDTFAssembly2
+    Assembly HarmonyDTFAssembly3
+    Assembly HarmonyDTFAssembly4
+    Assembly LettersMod
+    Assembly ChessMod
+    Assembly CompassMod
+    Assembly LaunchSiloMod
+    Assembly CardboardBoxToolTipMod
+    Assembly BeefsRoomDefogger
+    Assembly FixingTheControls
+    Assembly SEGIPlus
+    Assembly WallIndicator
+    Assembly QuietPipesMod
+    Assembly SaveTransformerMod
+    Assembly LibConstruct
+    Assembly LaunchPadBooster
+    Assembly BaseLegsMod
+    Assembly ModularConsoleMod
+    Assembly SpotlightsMod
+    Assembly VeryImportantButtonMod
+    Assembly MoreWindowsMod
+    Assembly LargeConsoleMod
+    Assembly CCTV
+    Assembly FloodLightMod
+    Assembly MoreCladdingMod
+    Assembly betteradvancedtablet
+    Assembly SimpleHatsMod
+    Assembly RubberDuckMod
+    Assembly ToyCosmoMod
+    Assembly StationeersPlayerCommunications
+    Assembly StationpediaAscended
+    Assembly AimeeBugFixes
+    Assembly IC10Inspector
+    Assembly BlueprintMod
+    Assembly eval-0
+    Assembly eval-1
+    Assembly eval-2
+    Assembly eval-3
+    Assembly eval-4
+    Assembly eval-5
+    Assembly eval-6
+    Assembly eval-7
+    Assembly eval-8
+Setting IC10Extender to False
+IC10Inspector says: Hello World!
+IC10Inspector Loaded
+[IC10 Inspector/Debugger [StationeersLaunchPad]]: Loaded Entrypoints
+[BlueprintMod]: Finding Entrypoints
+[BlueprintMod]: Found 1 Entrypoints
+[BlueprintMod]: - Default Entry BlueprintMod.BlueprintMod
+[BlueprintMod]: Loading Entrypoints
+[BlueprintMod] Config bound — preview=True, collision=True, maxPreview=512, maxUndo=20
+[BlueprintMod] Harmony patches applied.
+[BlueprintMod] v1.5.1 loaded. Blueprints folder: C:/Users/FLORPYDORP/AppData/LocalLow/Rocketwerkz/rocketstation\Blueprints
+[BlueprintMod] LibConstruct compatibility: enabled
+[BlueprintMod] UI prefab instantiated.
+[BlueprintMod] Commands registered: pos1, pos2, bpcopy, bppaste, bpsave, bpload, bplist, bpdelete, bpundo, bpguidelines, copyguidelines, bpworkshop, bpworkshoplist, bpworkshopload, bppreview
+[BlueprintMod]: Loaded Entrypoints
+[Global]: Loading entrypoints took 0:01.370
+[Global]: Took 0:05.196 to load mods.
+[BlueprintMod] UI wired up successfully.
+Unloading 6 Unused Serialized files (Serialized files now loaded: 23)
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+UnloadTime: 8.420800 ms
+There can be only one active Event System.
+[Info   :Beef's Room Defogger] Defogger added to GameManager
+Compass instantiated at top-center.
+[Info   :Beef's SEGI Plus] Scene loaded: 'Base' (mode: Single)
+[Info   :Beef's SEGI Plus] Entered world
+[Info   :Beef's SEGI Plus] : 'Base' (mode: Single)
+[Info   :Fixing The Controls] Controls changed event
+[Info   :Fixing The Controls] Key Build/repair [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Unbuild [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Configure [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Clear hands [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Tablet [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Glasses [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Mode switch [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Controls changed event
+[Info   :Fixing The Controls] Key Build/repair [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Unbuild [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Configure [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Clear hands [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Tablet [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Glasses [ftc] is assigned to None with modifiers []
+[Info   :Fixing The Controls] Key Mode switch [ftc] is assigned to None with modifiers []
+Unloading 4856 unused Assets to reduce memory usage. Loaded Objects now: 156605.
+Total: 175.476600 ms (FindLiveObjects: 7.157700 ms CreateObjectMapping: 4.131900 ms MarkObjects: 160.310900 ms  DeleteObjects: 3.875800 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 23)
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 156605.
+Total: 161.832200 ms (FindLiveObjects: 7.790400 ms CreateObjectMapping: 2.526200 ms MarkObjects: 151.397600 ms  DeleteObjects: 0.117400 ms)
+
+Letter Prefab Patch Performing Profusely
+patch ItemKitLettersLarge
+ItemKitLettersLarge added to WorldManager
+patch ItemKitLettersMedium
+ItemKitLettersMedium added to WorldManager
+patch ItemKitLettersSmall
+ItemKitLettersSmall added to WorldManager
+patch StructureMoreCladding
+LText_0 added to WorldManager
+patch StructureMoreCladding
+LText_1 added to WorldManager
+patch StructureMoreCladding
+LText_2 added to WorldManager
+patch StructureMoreCladding
+LText_3 added to WorldManager
+patch StructureMoreCladding
+LText_4 added to WorldManager
+patch StructureMoreCladding
+LText_5 added to WorldManager
+patch StructureMoreCladding
+LText_6 added to WorldManager
+patch StructureMoreCladding
+LText_7 added to WorldManager
+patch StructureMoreCladding
+LText_8 added to WorldManager
+patch StructureMoreCladding
+LText_9 added to WorldManager
+patch StructureMoreCladding
+LText_A added to WorldManager
+patch StructureMoreCladding
+LText_B added to WorldManager
+patch StructureMoreCladding
+LText_C added to WorldManager
+patch StructureMoreCladding
+LText_D added to WorldManager
+patch StructureMoreCladding
+LText_E added to WorldManager
+patch StructureMoreCladding
+LText_F added to WorldManager
+patch StructureMoreCladding
+LText_G added to WorldManager
+patch StructureMoreCladding
+LText_H added to WorldManager
+patch StructureMoreCladding
+LText_I added to WorldManager
+patch StructureMoreCladding
+LText_J added to WorldManager
+patch StructureMoreCladding
+LText_K added to WorldManager
+patch StructureMoreCladding
+LText_L added to WorldManager
+patch StructureMoreCladding
+LText_M added to WorldManager
+patch StructureMoreCladding
+LText_N added to WorldManager
+patch StructureMoreCladding
+LText_O added to WorldManager
+patch StructureMoreCladding
+LText_P added to WorldManager
+patch StructureMoreCladding
+LText_Q added to WorldManager
+patch StructureMoreCladding
+LText_R added to WorldManager
+patch StructureMoreCladding
+LText_S added to WorldManager
+patch StructureMoreCladding
+LText_T added to WorldManager
+patch StructureMoreCladding
+LText_U added to WorldManager
+patch StructureMoreCladding
+LText_V added to WorldManager
+patch StructureMoreCladding
+LText_W added to WorldManager
+patch StructureMoreCladding
+LText_X added to WorldManager
+patch StructureMoreCladding
+LText_Y added to WorldManager
+patch StructureMoreCladding
+LText_Z added to WorldManager
+patch StructureMoreCladding
+MText_0 added to WorldManager
+patch StructureMoreCladding
+MText_1 added to WorldManager
+patch StructureMoreCladding
+MText_2 added to WorldManager
+patch StructureMoreCladding
+MText_3 added to WorldManager
+patch StructureMoreCladding
+MText_4 added to WorldManager
+patch StructureMoreCladding
+MText_5 added to WorldManager
+patch StructureMoreCladding
+MText_6 added to WorldManager
+patch StructureMoreCladding
+MText_7 added to WorldManager
+patch StructureMoreCladding
+MText_8 added to WorldManager
+patch StructureMoreCladding
+MText_9 added to WorldManager
+patch StructureMoreCladding
+MText_A added to WorldManager
+patch StructureMoreCladding
+MText_B added to WorldManager
+patch StructureMoreCladding
+MText_C added to WorldManager
+patch StructureMoreCladding
+MText_D added to WorldManager
+patch StructureMoreCladding
+MText_E added to WorldManager
+patch StructureMoreCladding
+MText_F added to WorldManager
+patch StructureMoreCladding
+MText_G added to WorldManager
+patch StructureMoreCladding
+MText_H added to WorldManager
+patch StructureMoreCladding
+MText_I added to WorldManager
+patch StructureMoreCladding
+MText_J added to WorldManager
+patch StructureMoreCladding
+MText_K added to WorldManager
+patch StructureMoreCladding
+MText_L added to WorldManager
+patch StructureMoreCladding
+MText_M added to WorldManager
+patch StructureMoreCladding
+MText_N added to WorldManager
+patch StructureMoreCladding
+MText_O added to WorldManager
+patch StructureMoreCladding
+MText_P added to WorldManager
+patch StructureMoreCladding
+MText_Q added to WorldManager
+patch StructureMoreCladding
+MText_R added to WorldManager
+patch StructureMoreCladding
+MText_S added to WorldManager
+patch StructureMoreCladding
+MText_T added to WorldManager
+patch StructureMoreCladding
+MText_U added to WorldManager
+patch StructureMoreCladding
+MText_V added to WorldManager
+patch StructureMoreCladding
+MText_W added to WorldManager
+patch StructureMoreCladding
+MText_X added to WorldManager
+patch StructureMoreCladding
+MText_Y added to WorldManager
+patch StructureMoreCladding
+MText_Z added to WorldManager
+patch StructureMoreCladding
+Text_0 added to WorldManager
+patch StructureMoreCladding
+Text_1 added to WorldManager
+patch StructureMoreCladding
+Text_2 added to WorldManager
+patch StructureMoreCladding
+Text_3 added to WorldManager
+patch StructureMoreCladding
+Text_4 added to WorldManager
+patch StructureMoreCladding
+Text_5 added to WorldManager
+patch StructureMoreCladding
+Text_6 added to WorldManager
+patch StructureMoreCladding
+Text_7 added to WorldManager
+patch StructureMoreCladding
+Text_8 added to WorldManager
+patch StructureMoreCladding
+Text_9 added to WorldManager
+patch StructureMoreCladding
+Text_A added to WorldManager
+patch StructureMoreCladding
+Text_B added to WorldManager
+patch StructureMoreCladding
+Text_C added to WorldManager
+patch StructureMoreCladding
+Text_D added to WorldManager
+patch StructureMoreCladding
+Text_E added to WorldManager
+patch StructureMoreCladding
+Text_F added to WorldManager
+patch StructureMoreCladding
+Text_G added to WorldManager
+patch StructureMoreCladding
+Text_H added to WorldManager
+patch StructureMoreCladding
+Text_I added to WorldManager
+patch StructureMoreCladding
+Text_J added to WorldManager
+patch StructureMoreCladding
+Text_K added to WorldManager
+patch StructureMoreCladding
+Text_L added to WorldManager
+patch StructureMoreCladding
+Text_M added to WorldManager
+patch StructureMoreCladding
+Text_N added to WorldManager
+patch StructureMoreCladding
+Text_O added to WorldManager
+patch StructureMoreCladding
+Text_P added to WorldManager
+patch StructureMoreCladding
+Text_Q added to WorldManager
+patch StructureMoreCladding
+Text_R added to WorldManager
+patch StructureMoreCladding
+Text_S added to WorldManager
+patch StructureMoreCladding
+Text_T added to WorldManager
+patch StructureMoreCladding
+Text_U added to WorldManager
+patch StructureMoreCladding
+Text_V added to WorldManager
+patch StructureMoreCladding
+Text_W added to WorldManager
+patch StructureMoreCladding
+Text_X added to WorldManager
+patch StructureMoreCladding
+Text_Y added to WorldManager
+patch StructureMoreCladding
+Text_Z added to WorldManager
+Chess Prefab Patch Performing Profusely
+BlackBishop added to WorldManager
+BlackKing added to WorldManager
+BlackKnight added to WorldManager
+BlackPawn added to WorldManager
+BlackQueen added to WorldManager
+BlackRook added to WorldManager
+Item_ChessBoard added to WorldManager
+WhiteBishop added to WorldManager
+WhiteKing added to WorldManager
+WhiteKnight added to WorldManager
+WhitePawn added to WorldManager
+WhiteQueen added to WorldManager
+WhiteRook added to WorldManager
+Prefab Patch started
+Prefab Patch started
+patch MultiConstructor
+ItemKitLaunchSilo added to WorldManager
+patch LaunchSilo
+LaunchSilo added to WorldManager
+Prefab Patch started
+Prefab Patch started
+patch MultiConstructor
+ItemKitQuietInsulatedPipe added to WorldManager
+patch MultiConstructor
+ItemKitQuietInsulatedLiquidPipe added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyLiquidCrossJunction3 added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyLiquidPipeCorner added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyLiquidPipeCrossJunction added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyLiquidPipeCrossJunction4 added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyLiquidPipeCrossJunction5 added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyLiquidPipeCrossJunction6 added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyLiquidPipeStraight added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyLiquidPipeTJunction added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyCrossJunction3 added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyPipeCorner added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyPipeCrossJunction added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyPipeCrossJunction4 added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyPipeCrossJunction5 added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyPipeCrossJunction6 added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyPipeStraight added to WorldManager
+patch StructureQuietPipe
+StructureInsulatedHeavyDutyPipeTJunction added to WorldManager
+Prefab Patch started
+Base Legs Prefab Patch Performing Profusely
+patch ItemKitBaseLegs
+ItemKitBaseLegs added to WorldManager
+patch StructureMoreCladding
+StructureBaseLegRound added to WorldManager
+patch StructureMoreCladding
+StructureBaseLegSquare added to WorldManager
+patch StructureMoreCladding
+StructureHeavyDutyStiltBaseHorizontal added to WorldManager
+patch StructureMoreCladding
+StructureHeavyDutyStiltBaseSmall added to WorldManager
+patch StructureMoreCladding
+StructureHeavyDutyStiltBaseVertical added to WorldManager
+patch StructureMoreCladding
+StructureHeavyDutyStiltBeam added to WorldManager
+patch StructureMoreCladding
+StructureHeavyDutyStiltFoot added to WorldManager
+patch StructureMoreCladding
+StructureTankTracks added to WorldManager
+Prefab Patch started
+PatchOnLoad ItemKitModularConsoleDisplays
+ItemKitModularConsoleDisplays added to WorldManager
+PatchOnLoad ItemKitModularConsoleInputs
+ItemKitModularConsoleInputs added to WorldManager
+PatchOnLoad ItemKitModularConsoleLabelPlates
+ItemKitModularConsoleLabelPlates added to WorldManager
+PatchOnLoad ModularDeviceAlarm
+Bulb child not found in ModularDeviceAlarm. Skipping fallback
+ModularDeviceAlarm added to WorldManager
+PatchOnLoad ModularDeviceBigLever
+ModularDeviceBigLever added to WorldManager
+PatchOnLoad ModularDeviceCardReader
+ModularDeviceCardReader added to WorldManager
+PatchOnLoad ModularDeviceComputer
+ModularDeviceComputer added to WorldManager
+PatchOnLoad ModularDeviceConsole
+ModularDeviceConsole added to WorldManager
+PatchOnLoad ModularDeviceDial
+ModularDeviceDial added to WorldManager
+PatchOnLoad ModularDeviceDialSmall
+ModularDeviceDialSmall added to WorldManager
+PatchOnLoad ModularDeviceEmergencyButton3x3
+Button child not found in ModularDeviceEmergencyButton3x3. Skipping fallback
+ModularDeviceEmergencyButton3x3 added to WorldManager
+PatchOnLoad ModularDeviceFlipCoverSwitch
+Button child not found in ModularDeviceFlipCoverSwitch. Skipping fallback
+ModularDeviceFlipCoverSwitch added to WorldManager
+PatchOnLoad ModularDeviceFlipSwitch
+Button child not found in ModularDeviceFlipSwitch. Skipping fallback
+ModularDeviceFlipSwitch added to WorldManager
+PatchOnLoad ModularDeviceGauge2x2
+ModularDeviceGauge2x2 added to WorldManager
+PatchOnLoad ModularDeviceGauge3x3
+ModularDeviceGauge3x3 added to WorldManager
+PatchOnLoad ModularDeviceLabelDiode2
+ModularDeviceLabelDiode2 added to WorldManager
+PatchOnLoad ModularDeviceLabelDiode3
+ModularDeviceLabelDiode3 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate
+ModularDeviceLabelPlate added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate12x2
+ModularDeviceLabelPlate12x2 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate2
+ModularDeviceLabelPlate2 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate2x2
+ModularDeviceLabelPlate2x2 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate3
+ModularDeviceLabelPlate3 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate3x2
+ModularDeviceLabelPlate3x2 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate3x3
+ModularDeviceLabelPlate3x3 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate4
+ModularDeviceLabelPlate4 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate4x2
+ModularDeviceLabelPlate4x2 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate4x4
+ModularDeviceLabelPlate4x4 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate5
+ModularDeviceLabelPlate5 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate5x5
+ModularDeviceLabelPlate5x5 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate6x2
+ModularDeviceLabelPlate6x2 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate6x6
+ModularDeviceLabelPlate6x6 added to WorldManager
+PatchOnLoad ModularDeviceLabelPlate8x2
+ModularDeviceLabelPlate8x2 added to WorldManager
+PatchOnLoad ModularDeviceLEDdisplay2
+ModularDeviceLEDdisplay2 added to WorldManager
+PatchOnLoad ModularDeviceLEDdisplay3
+ModularDeviceLEDdisplay3 added to WorldManager
+PatchOnLoad ModularDeviceLight
+ModularDeviceLight added to WorldManager
+PatchOnLoad ModularDeviceLightLarge
+ModularDeviceLightLarge added to WorldManager
+PatchOnLoad ModularDeviceLightSmall
+ModularDeviceLightSmall added to WorldManager
+PatchOnLoad ModularDeviceMeter3x3
+ModularDeviceMeter3x3 added to WorldManager
+PatchOnLoad ModularDeviceNumpad
+ModularDeviceNumpad added to WorldManager
+PatchOnLoad ModularDeviceRoundButton
+ModularDeviceRoundButton added to WorldManager
+PatchOnLoad ModularDeviceSlider
+ModularDeviceSlider added to WorldManager
+PatchOnLoad ModularDeviceSliderDiode1
+ModularDeviceSliderDiode1 added to WorldManager
+PatchOnLoad ModularDeviceSliderDiode2
+ModularDeviceSliderDiode2 added to WorldManager
+PatchOnLoad ModularDeviceSquareButton
+ModularDeviceSquareButton added to WorldManager
+PatchOnLoad ModularDeviceSwitch
+ModularDeviceSwitch added to WorldManager
+PatchOnLoad ModularDeviceThrottle3x2
+ModularDeviceThrottle3x2 added to WorldManager
+PatchOnLoad ModularDeviceUtilityButton2x2
+ModularDeviceUtilityButton2x2 added to WorldManager
+PatchOnLoad ItemKitModularDiagramLine
+ItemKitModularDiagramLine added to WorldManager
+PatchOnLoad ModularDiagramLine
+ModularDiagramLine added to WorldManager
+PatchOnLoad ModularDiagramLine10
+ModularDiagramLine10 added to WorldManager
+PatchOnLoad ModularDiagramLine11
+ModularDiagramLine11 added to WorldManager
+PatchOnLoad ModularDiagramLine12
+ModularDiagramLine12 added to WorldManager
+PatchOnLoad ModularDiagramLine13
+ModularDiagramLine13 added to WorldManager
+PatchOnLoad ModularDiagramLine14
+ModularDiagramLine14 added to WorldManager
+PatchOnLoad ModularDiagramLine15
+ModularDiagramLine15 added to WorldManager
+PatchOnLoad ModularDiagramLine16
+ModularDiagramLine16 added to WorldManager
+PatchOnLoad ModularDiagramLine17
+ModularDiagramLine17 added to WorldManager
+PatchOnLoad ModularDiagramLine18
+ModularDiagramLine18 added to WorldManager
+PatchOnLoad ModularDiagramLine19
+ModularDiagramLine19 added to WorldManager
+PatchOnLoad ModularDiagramLine2
+ModularDiagramLine2 added to WorldManager
+PatchOnLoad ModularDiagramLine20
+ModularDiagramLine20 added to WorldManager
+PatchOnLoad ModularDiagramLine22
+ModularDiagramLine22 added to WorldManager
+PatchOnLoad ModularDiagramLine23
+ModularDiagramLine23 added to WorldManager
+PatchOnLoad ModularDiagramLine3
+ModularDiagramLine3 added to WorldManager
+PatchOnLoad ModularDiagramLine4
+ModularDiagramLine4 added to WorldManager
+PatchOnLoad ModularDiagramLine5
+ModularDiagramLine5 added to WorldManager
+PatchOnLoad ModularDiagramLine6
+ModularDiagramLine6 added to WorldManager
+PatchOnLoad ModularDiagramLine7
+ModularDiagramLine7 added to WorldManager
+PatchOnLoad ModularDiagramLine8
+ModularDiagramLine8 added to WorldManager
+PatchOnLoad ModularDiagramLine9
+ModularDiagramLine9 added to WorldManager
+PatchOnLoad ItemKitModularConsole
+ItemKitModularConsole added to WorldManager
+PatchOnLoad StructureConsoleBase1
+StructureConsoleBase1 added to WorldManager
+PatchOnLoad StructureConsoleBase1Double
+StructureConsoleBase1Double added to WorldManager
+PatchOnLoad StructureConsoleBase2
+StructureConsoleBase2 added to WorldManager
+PatchOnLoad StructureConsoleBase2Double
+StructureConsoleBase2Double added to WorldManager
+PatchOnLoad StructureConsoleBase3
+StructureConsoleBase3 added to WorldManager
+PatchOnLoad StructureConsoleBase3Double
+StructureConsoleBase3Double added to WorldManager
+PatchOnLoad StructureConsoleBase4
+StructureConsoleBase4 added to WorldManager
+PatchOnLoad StructureConsoleBase4Double
+StructureConsoleBase4Double added to WorldManager
+PatchOnLoad StructureConsoleBase5
+StructureConsoleBase5 added to WorldManager
+PatchOnLoad StructureConsoleBase5Double
+StructureConsoleBase5Double added to WorldManager
+PatchOnLoad StructureConsoleBase6
+StructureConsoleBase6 added to WorldManager
+PatchOnLoad StructureConsoleBase6Double
+StructureConsoleBase6Double added to WorldManager
+PatchOnLoad StructureConsoleBaseCorner1
+StructureConsoleBaseCorner1 added to WorldManager
+PatchOnLoad StructureConsoleBaseCorner2
+StructureConsoleBaseCorner2 added to WorldManager
+PatchOnLoad StructureConsoleBaseCorner3
+StructureConsoleBaseCorner3 added to WorldManager
+PatchOnLoad StructureConsoleBaseCorner4
+StructureConsoleBaseCorner4 added to WorldManager
+PatchOnLoad StructureConsoleBaseCorner5
+StructureConsoleBaseCorner5 added to WorldManager
+PatchOnLoad StructureConsoleBaseCorner6
+StructureConsoleBaseCorner6 added to WorldManager
+PatchOnLoad StructureConsoleCornerInner1
+StructureConsoleCornerInner1 added to WorldManager
+PatchOnLoad StructureConsoleCornerInner1Center
+StructureConsoleCornerInner1Center added to WorldManager
+PatchOnLoad StructureConsoleCornerInner1Double
+StructureConsoleCornerInner1Double added to WorldManager
+PatchOnLoad StructureConsoleCornerInner2
+StructureConsoleCornerInner2 added to WorldManager
+PatchOnLoad StructureConsoleCornerInner2Center
+StructureConsoleCornerInner2Center added to WorldManager
+PatchOnLoad StructureConsoleCornerInner2Double
+StructureConsoleCornerInner2Double added to WorldManager
+PatchOnLoad StructureConsoleFlat1
+StructureConsoleFlat1 added to WorldManager
+PatchOnLoad StructureConsoleFlat1Corner
+StructureConsoleFlat1Corner added to WorldManager
+PatchOnLoad StructureConsoleFlat1Corner2
+StructureConsoleFlat1Corner2 added to WorldManager
+PatchOnLoad StructureConsoleFlat1Corner3
+StructureConsoleFlat1Corner3 added to WorldManager
+PatchOnLoad StructureConsoleFlat1Double
+StructureConsoleFlat1Double added to WorldManager
+PatchOnLoad StructureConsoleFlat2
+StructureConsoleFlat2 added to WorldManager
+PatchOnLoad StructureConsoleFlat2Double
+StructureConsoleFlat2Double added to WorldManager
+PatchOnLoad StructureConsoleFlat3
+StructureConsoleFlat3 added to WorldManager
+PatchOnLoad StructureConsoleFlat3Double
+StructureConsoleFlat3Double added to WorldManager
+PatchOnLoad StructureConsoleFlat3x2
+StructureConsoleFlat3x2 added to WorldManager
+PatchOnLoad StructureConsoleFlat3x2Double
+StructureConsoleFlat3x2Double added to WorldManager
+PatchOnLoad StructureConsoleFlatCornerInner
+StructureConsoleFlatCornerInner added to WorldManager
+PatchOnLoad StructureConsoleFlatCornerInnerDouble
+StructureConsoleFlatCornerInnerDouble added to WorldManager
+PatchOnLoad StructureConsoleFlatCornerInnerDoubleCenter
+StructureConsoleFlatCornerInnerDoubleCenter added to WorldManager
+PatchOnLoad StructureConsoleTerminal
+StructureConsoleTerminal added to WorldManager
+PatchOnLoad StructureConsoleTerminal2
+StructureConsoleTerminal2 added to WorldManager
+PatchOnLoad StructureConsoleWallMount1
+StructureConsoleWallMount1 added to WorldManager
+PatchOnLoad StructureConsoleWallMount2
+StructureConsoleWallMount2 added to WorldManager
+Prefab Patch started
+patch MultiConstructor
+ItemKitSpotlight added to WorldManager
+patch StructureFilterCleaner
+StructureSpotlight added to WorldManager
+Prefab Patch started
+MultiConstructor2
+ItemKitVeryImportantButton added to WorldManager
+LogicButton
+StructureVeryImportantButton added to WorldManager
+More Windows Prefab Patch Performing Profusely
+patch StructureSmallWalls
+CompositeWallRoundedCornerPanel1 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCornerPanel2 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCornerPanel3 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCornerPanel4 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCornerPanel6 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCornerPanel7 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCornerPanel8 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCornerPanel9 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedTubeWallPanel1 added to WorldManager
+patch ItemKitTUBE
+ItemKitSmallTUBE added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeRing added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeRingWindow added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2Inner added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2InnerToFlat added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2Outer added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2OuterConnector added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2OuterToFlat1 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2OuterToFlat2 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2OuterToOuter1 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2OuterToOuter2 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2OuterToOuterCap added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2ToFlat added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2ToFlatConnector added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2ToFlatConnector2 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall2ToFlatConnectorRight added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall3 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall3ToFlat added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWall4 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallConnector added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallConnector2 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlat added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlat2Inner added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlat2ToFlat added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlat2ToFlatConnector added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlat2ToFlatConnector2 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlat2ToFlatConnectorRight added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlat3 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlat3ToFlat added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlat4 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlatConnector added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlatConnector2 added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallFlatToFlat added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallPanelRound added to WorldManager
+patch StructureSmallWalls
+StructureCompositeTubeWallToFlat added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWallWindow1 added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWallWindow2 added to WorldManager
+patch StructureSmallWindows
+StructureCompositeTubeWindow added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindow2Inner added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindow2InnerToFlat added to WorldManager
+patch StructureSmallWindows
+StructureCompositeTubeWindow2Outer added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindow2OuterConnector added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindow3 added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindow3ToFlat added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindow4 added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindowConnector added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindowConnector2 added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindowFlat2Inner added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindowFlat3 added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindowFlat3ToFlat added to WorldManager
+patch StructureMoreWindows
+StructureCompositeTubeWindowFlat4 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRounded added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedBase added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedBaseCap1 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedBaseCap2 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCorner1 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCorner2 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedCupola added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedPanel added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedPanel2 added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedPlate added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedRing added to WorldManager
+patch StructureSmallWalls
+CompositeWallRoundedRingWall added to WorldManager
+patch StructureSmallWalls
+CompositeWallTubeCap1 added to WorldManager
+patch StructureSmallWalls
+CompositeWallTubeCap2 added to WorldManager
+patch StructureMoreWindows
+CompositeWindow2RoundedBase added to WorldManager
+patch ItemKitTUBE
+ItemKitTUBE added to WorldManager
+patch StructureMoreWalls
+StructureCompositeWallRounded added to WorldManager
+patch StructureMoreWalls
+StructureCompositeWallRoundedCorner added to WorldManager
+patch StructureMoreWalls
+StructureCompositeWallRoundedCorner2 added to WorldManager
+patch StructureMoreWalls
+StructureCompositeWallRoundedCupola2 added to WorldManager
+patch StructureMoreWindows
+StructureCompositeWindowRoundedCorner added to WorldManager
+patch StructureMoreWindows
+StructureCompositeWindowRoundedCorner2 added to WorldManager
+patch StructureMoreWindows
+StructureCompositeWindowRoundedCupola added to WorldManager
+patch StructureMoreWindows
+StructureCompositeWindowRoundedPanel1 added to WorldManager
+patch StructureMoreWindows
+StructureCompositeWindowTubeCap1 added to WorldManager
+patch StructureMoreWindows
+StructureCompositeWindowTubeCap2 added to WorldManager
+patch StructureMoreWindows
+StuctureCompositeWindowRound added to WorldManager
+patch StructureMoreWindows
+StuctureCompositeWindowRoundedBase added to WorldManager
+patch StructureMoreWindows
+StuctureCompositeWindowRoundedBaseCap1 added to WorldManager
+patch StructureMoreWindows
+StuctureCompositeWindowRoundedBaseCap2 added to WorldManager
+patch StructureMoreWindows
+StuctureCompositeWindowRoundedBaseLogic added to WorldManager
+patch StructureSmallWalls
+StuctureCompositeWindowRoundPanel added to WorldManager
+Prefab Patch started
+MultiConstructor2
+ItemKitLargeConsole added to WorldManager
+Console
+StructureConsole2x2 added to WorldManager
+Console
+StructureConsole3x3 added to WorldManager
+Prefab Patch started
+CartridgeCCTV
+CartridgeCCTV added to WorldManager
+CircuitboardCameraDisplayModHD
+CircuitboardCameraDisplayModHD added to WorldManager
+CircuitboardCameraDisplayModLD
+CircuitboardCameraDisplayModLD added to WorldManager
+CircuitboardCameraDisplayModSCAN
+CircuitboardCameraDisplayModSCAN added to WorldManager
+CircuitboardCameraDisplayModSD
+CircuitboardCameraDisplayModSD added to WorldManager
+MultiConstructor
+ItemKitCCTV added to WorldManager
+StructureSecurityCamera
+StructureSecurityCameraFishEye added to WorldManager
+StructureSecurityCamera
+StructureSecurityCameraLeft added to WorldManager
+StructureSecurityCamera
+StructureSecurityCameraPanning added to WorldManager
+StructureSecurityCamera
+StructureSecurityCameraRight added to WorldManager
+StructureSecurityCamera
+StructureSecurityCameraStraight added to WorldManager
+Prefab Patch started
+ItemKitFloodLight added to WorldManager
+patch Floodlight
+StructureGlowLight added to WorldManager
+patch Floodlight2
+StructureGlowLight2 added to WorldManager
+patch Floodlight
+StructureGlowLightSmall added to WorldManager
+patch GrowlightLarge
+StructureGrowlightLarge added to WorldManager
+Prefab Patch started
+PatchOnLoad ItemKitMoreCladding
+ItemKitMoreCladding added to WorldManager
+PatchOnLoad StructureCompositeCladdingAngled2
+StructureCompositeCladdingAngled2 added to WorldManager
+PatchOnLoad StructureCompositeCladdingAngled2Long
+StructureCompositeCladdingAngled2Long added to WorldManager
+PatchOnLoad StructureCompositeCladdingAngled3Long
+StructureCompositeCladdingAngled3Long added to WorldManager
+PatchOnLoad StructureCompositeCladdingAngled4Long
+StructureCompositeCladdingAngled4Long added to WorldManager
+PatchOnLoad StructureCompositeCladdingAngled5
+StructureCompositeCladdingAngled5 added to WorldManager
+PatchOnLoad StructureCompositeCladdingAngled5Long
+StructureCompositeCladdingAngled5Long added to WorldManager
+PatchOnLoad StructureCompositeCladdingAngled6Long
+StructureCompositeCladdingAngled6Long added to WorldManager
+PatchOnLoad StructureCompositeCladdingAngled7Long
+StructureCompositeCladdingAngled7Long added to WorldManager
+PatchOnLoad StructureCompositeCladdingAngled8Long
+StructureCompositeCladdingAngled8Long added to WorldManager
+PatchOnLoad StructureMoreCladdingAngledPanel
+StructureMoreCladdingAngledPanel added to WorldManager
+PatchOnLoad StructureMoreCladdingAngledToPanel
+StructureMoreCladdingAngledToPanel added to WorldManager
+PatchOnLoad StructureMoreCladdingCornerRoundedInnerToPanel
+StructureMoreCladdingCornerRoundedInnerToPanel added to WorldManager
+PatchOnLoad StructureMoreCladdingCornerRoundedInnerToRounded
+StructureMoreCladdingCornerRoundedInnerToRounded added to WorldManager
+PatchOnLoad StructureMoreCladdingCylindricalInner
+StructureMoreCladdingCylindricalInner added to WorldManager
+PatchOnLoad StructureMoreCladdingCylindricalInnerToPanel
+StructureMoreCladdingCylindricalInnerToPanel added to WorldManager
+PatchOnLoad StructureMoreCladdingCylindricalPanelInner
+StructureMoreCladdingCylindricalPanelInner added to WorldManager
+PatchOnLoad StructureMoreCladdingCylindricalPanelInnerPorthole
+StructureMoreCladdingCylindricalPanelInnerPorthole added to WorldManager
+PatchOnLoad StructureMoreCladdingCylindricalPanelInnerPorthole2
+StructureMoreCladdingCylindricalPanelInnerPorthole2 added to WorldManager
+PatchOnLoad StructureMoreCladdingPanelPorthole
+StructureMoreCladdingPanelPorthole added to WorldManager
+PatchOnLoad StructureMoreCladdingPanelPorthole2
+StructureMoreCladdingPanelPorthole2 added to WorldManager
+PatchOnLoad StructureMoreCladdingPanelRoundedInner
+StructureMoreCladdingPanelRoundedInner added to WorldManager
+PatchOnLoad StructureMoreCladdingRoundedInner
+StructureMoreCladdingRoundedInner added to WorldManager
+PatchOnLoad StructureMoreCladdingRoundedInnerToPanel
+StructureMoreCladdingRoundedInnerToPanel added to WorldManager
+PatchOnLoad StructureMoreCladdingRoundedPanel
+StructureMoreCladdingRoundedPanel added to WorldManager
+PatchOnLoad StructureMoreCladdingRoundedToPanel
+StructureMoreCladdingRoundedToPanel added to WorldManager
+PatchOnLoad StructureMoreCladdingRoundedToPanels
+StructureMoreCladdingRoundedToPanels added to WorldManager
+SimpleHats Prefab Patch Performing Profusely
+BrainiacHat added to WorldManager
+CowboyHat added to WorldManager
+EarMuffs added to WorldManager
+GasMask added to WorldManager
+HardHat added to WorldManager
+KnitHat added to WorldManager
+PilotGlasses added to WorldManager
+SafetyGlasses added to WorldManager
+SantaHat added to WorldManager
+VenjentGlasses added to WorldManager
+Visor added to WorldManager
+WeldingGoggles added to WorldManager
+WeldingHelmet added to WorldManager
+Rubber Duck Prefab Patch Performing Profusely
+RubberDuck added to WorldManager
+Toy Cosmo Prefab Patch Performing Profusely
+ToyCosmo added to WorldManager
+Prefab Patch started
+CartridgeDebugAnalyzer added to WorldManager
+MotherboardDebugAnalyzer added to WorldManager
+Add prefab to WorldManager: ItemDeanamicCoreKit
+Add prefab to WorldManager: StructureDeanamicCore
+Add prefab to WorldManager: ItemDeanamicMatter
+Add prefab to WorldManager: MotherboardDBCU
+Add prefab to WorldManager: MotherboardDBPU
+[Info   :Beef's Room Defogger] Beefs Room Defogger loaded
+DontDestroyOnLoad only works for root GameObjects or components on root GameObjects.
+[Info   :Beef's SEGI Plus] SEGI Plus initialized
+[Info   :Beef's Room Defogger] Reset
+[Info   :Stationpedia Ascended] Station Planner button: mouseIndex=4, set to 5
+[Info   :Stationpedia Ascended] Station Planner button added to Stationpedia header (to LEFT of mouse toggle)
+[Info   :Stationpedia Ascended] [StationPlanner] Cached font: LiberationSans SDF
+[Info   :Stationpedia Ascended] [BlockEditor] Found bundle at: C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3634225688\stationpediaascended_ui
+[Info   :Stationpedia Ascended] [BlockEditor] Loading AssetBundle from: C:\Program Files (x86)\Steam\steamapps\workshop\content\544550\3634225688\stationpediaascended_ui
+[Info   :Stationpedia Ascended] [BlockEditor] Bundle loaded. Contents:
+[Info   :Stationpedia Ascended]   - assets/prefabs/ui/sa_tmpinputfield_base.prefab
+[Info   :Stationpedia Ascended] [BlockEditor] Successfully loaded prefab: SA_TMPInputField_Base
+[Info   :Stationpedia Ascended] [BlockEditor] Successfully initialized from prefab
+[Info   :Stationpedia Ascended] [StationPlanner] BlockEditor initialized successfully
+[Station Notepad] Save path: C:\Program Files (x86)\Steam\steamapps\common\Stationeers\BepInEx\scripts\StationNotepadData
+[Station Notepad] Loaded file system from C:\Program Files (x86)\Steam\steamapps\common\Stationeers\BepInEx\scripts\StationNotepadData\notepad_files.json
+[Info   :Stationpedia Ascended] Container template size: (894.00, 108.00), Button height: 108
+[Info   :Stationpedia Ascended] Container LE created: preferredHeight=108
+[Info   :Stationpedia Ascended] Added LayoutElement with preferredHeight=108 from RectTransform
+[Info   :Stationpedia Ascended] Added LayoutElement with preferredHeight=108 from RectTransform
+[Info   :Stationpedia Ascended] Guide button size: (447.00, 108.00), Survival button size: (447.00, 108.00)
+[Info   :Stationpedia Ascended] Survival LE: pref=-1x108, flex=1x-1
+[Info   :Stationpedia Ascended] Home page custom buttons created successfully
+[Warning:Stationpedia Ascended] [GuideLoader] Failed to load guide file: daylight-sensor-guide.md
+[Warning:Stationpedia Ascended] [DaylightSensorGuideLoader] Failed to load daylight sensor guide
+[Info   :Stationpedia Ascended] SetPage called: key=Home, newPage=True, CurrentPageKey=Home
+Unloading 4 Unused Serialized files (Serialized files now loaded: 26)
+[SPC] Registering SPC command...
+Unloading 277 unused Assets to reduce memory usage. Loaded Objects now: 376870.
+Total: 252.196300 ms (FindLiveObjects: 27.556100 ms CreateObjectMapping: 9.221500 ms MarkObjects: 208.659500 ms  DeleteObjects: 6.758100 ms)
+
+[Warning:Beef's SEGI Plus] SEGI Plus running
+Connected to 76.95.228.30 on port 27016
+[BlueprintMod] Sent PING 1/3 to server.
+[Info   :Beef's Room Defogger] BeefsRoomController initialized with temp range: 298.0K
+[Info   :Beef's Room Defogger] Beefs Room Defogger initialized
+[Info   :Beef's SEGI Plus] SEGI Plus sun light: Sun
+Crash!!!
+SymInit: Symbol-SearchPath: '.;C:\Program Files (x86)\Steam\steamapps\common\Stationeers;C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/Plugins\x86_64;C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/Plugins;C:\Program Files (x86)\Steam\steamapps\common\Stationeers;C:\WINDOWS;C:\WINDOWS\system32;', symOptions: 534, UserName: 'FLORPYDORP'
+OS-Version: 10.0.0
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation.exe:rocketstation.exe (00007FF750300000), size: 688128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2022.3.62.30479
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (00007FFA8D9C0000), size: 2523136 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7824
+C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFA8C3B0000), size: 823296 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFA8A8C0000), size: 4132864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7824
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\UnityPlayer.dll:UnityPlayer.dll (00007FF928630000), size: 31965184 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2022.3.62.30479
+C:\WINDOWS\System32\USER32.dll:USER32.dll (00007FFA8B870000), size: 1859584 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\win32u.dll:win32u.dll (00007FFA8A890000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\GDI32.dll:GDI32.dll (00007FFA8B760000), size: 176128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (00007FFA8A760000), size: 1224704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\msvcp_win.dll:msvcp_win.dll (00007FFA8A420000), size: 667648 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7623
+C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (00007FFA8A610000), size: 1355776 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7623
+C:\WINDOWS\System32\ole32.dll:ole32.dll (00007FFA8C990000), size: 1667072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7824
+C:\WINDOWS\System32\combase.dll:combase.dll (00007FFA8D3D0000), size: 3694592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (00007FFA8BA40000), size: 1146880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (00007FFA83200000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFA8C740000), size: 421888 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7824
+C:\WINDOWS\System32\msvcrt.dll:msvcrt.dll (00007FFA8D7C0000), size: 692224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.26100.7623
+C:\WINDOWS\System32\Windows.Storage.dll:Windows.Storage.dll (00007FFA8AEF0000), size: 8794112 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7840
+C:\WINDOWS\System32\advapi32.dll:advapi32.dll (00007FFA8D870000), size: 737280 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\sechost.dll:sechost.dll (00007FFA8C7D0000), size: 679936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7623
+C:\WINDOWS\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFA8BC60000), size: 4755456 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\SHELL32.dll:SHELL32.dll (00007FFA8CC70000), size: 7675904 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7840
+C:\WINDOWS\System32\wintypes.dll:wintypes.dll (00007FFA8ACC0000), size: 1482752 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFA8C660000), size: 880640 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\IMM32.dll:IMM32.dll (00007FFA8C260000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\WINDOWS\System32\CRYPT32.dll:CRYPT32.dll (00007FFA8A2A0000), size: 1536000 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (00007FFA7A550000), size: 217088 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\WINDOWS\System32\WS2_32.dll:WS2_32.dll (00007FFA8C910000), size: 475136 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7623
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FF9DDAC0000), size: 1114112 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\WINHTTP.dll:WINHTTP.dll (0000000180000000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 4.4.0.0
+C:\WINDOWS\SYSTEM32\bcrypt.dll:bcrypt.dll (00007FFA8A190000), size: 172032 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7623
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (00007FFA886F0000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\dwmapi.dll:dwmapi.dll (00007FFA87B20000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (00007FF9EE5F0000), size: 184320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\dxcore.dll:dxcore.dll (00007FFA87970000), size: 278528 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\system32\WINHTTP.dll:WINHTTP.dll (00007FFA82980000), size: 1208320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\shcore.dll:shcore.dll (00007FFA8C2A0000), size: 1007616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7824
+C:\Program Files (x86)\Steam\gameoverlayrenderer64.dll:gameoverlayrenderer64.dll (00007FFA121D0000), size: 1753088 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.38.46.31
+C:\WINDOWS\System32\PSAPI.DLL:PSAPI.DLL (00007FFA8C900000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
+C:\WINDOWS\SYSTEM32\CFGMGR32.dll:CFGMGR32.dll (00007FFA89F30000), size: 356352 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFA89000000), size: 110592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (000001D7C7150000), size: 675840 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7623
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (00007FFA87E00000), size: 700416 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7824
+C:\WINDOWS\SYSTEM32\profapi.dll:profapi.dll (00007FFA8A1C0000), size: 167936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FF9312A0000), size: 10825728 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\iphlpapi.dll:iphlpapi.dll (00007FFA88A50000), size: 212992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\cimgui.dll:cimgui.dll (00007FFA097F0000), size: 872448 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFA6E6E0000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.44.35211.0
+C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFA6E6C0000), size: 122880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.44.35211.0
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\cimgui-freetype.dll:cimgui-freetype.dll (00007FF9EE730000), size: 872448 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\MSCTF.dll:MSCTF.dll (00007FFA8C0F0000), size: 1437696 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\d3d11.dll:d3d11.dll (00007FFA86F60000), size: 2498560 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\dxgi.dll:dxgi.dll (00007FFA879C0000), size: 1294336 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\powrprof.dll:powrprof.dll (00007FFA89B90000), size: 385024 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.3912
+C:\WINDOWS\SYSTEM32\UMPDC.dll:UMPDC.dll (00007FFA89B70000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7019
+C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll:directxdatabasehelper.dll (00007FFA852C0000), size: 405504 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7824
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvldumdx.dll:nvldumdx.dll (00007FFA82AB0000), size: 802816 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.15.9186
+C:\WINDOWS\SYSTEM32\msasn1.dll:msasn1.dll (00007FFA899A0000), size: 77824 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7623
+C:\WINDOWS\SYSTEM32\cryptnet.dll:cryptnet.dll (00007FFA82690000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\cryptbase.dll:cryptbase.dll (00007FFA897A0000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7623
+C:\WINDOWS\SYSTEM32\wldp.dll:wldp.dll (00007FFA89840000), size: 430080 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\drvstore.dll:drvstore.dll (00007FFA824C0000), size: 1548288 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\devobj.dll:devobj.dll (00007FFA89F00000), size: 184320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\System32\wintrust.dll:wintrust.dll (00007FFA8A580000), size: 532480 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\imagehlp.dll:imagehlp.dll (00007FFA8D930000), size: 131072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.4202
+C:\WINDOWS\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFA89940000), size: 110592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\system32\rsaenh.dll:rsaenh.dll (00007FFA88F60000), size: 233472 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvgpucomp64.dll:nvgpucomp64.dll (00007FFA7C6B0000), size: 80736256 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.15.9186
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\NvMemMapStoragex.dll:NvMemMapStoragex.dll (00007FFA7A3B0000), size: 1245184 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvwgf2umx.dll:nvwgf2umx.dll (00007FFA74780000), size: 84860928 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.15.9186
+C:\WINDOWS\system32\nvspcap64.dll:nvspcap64.dll (00007FFA386E0000), size: 1339392 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 11.0.6.383
+C:\WINDOWS\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFA89120000), size: 221184 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7019
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvppex.dll:nvppex.dll (00007FFA38520000), size: 1798144 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 32.0.15.9186
+C:\WINDOWS\System32\clbcatq.dll:clbcatq.dll (00007FFA8CB30000), size: 720896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2001.12.10941.16384
+C:\WINDOWS\System32\MMDevApi.dll:MMDevApi.dll (00007FFA82850000), size: 622592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\AUDIOSES.DLL:AUDIOSES.DLL (00007FFA71C60000), size: 1785856 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\resourcepolicyclient.dll:resourcepolicyclient.dll (00007FFA883C0000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\lib_burst_generated.dll:lib_burst_generated.dll (00007FFA82B80000), size: 53248 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\xinput1_3.dll:xinput1_3.dll (0000000000400000), size: 122880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 9.18.944.0
+C:\WINDOWS\SYSTEM32\dcomp.dll:dcomp.dll (00007FFA871D0000), size: 2236416 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\Microsoft.Internal.WarpPal.dll:Microsoft.Internal.WarpPal.dll (00007FFA87DE0000), size: 102400 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\textinputframework.dll:textinputframework.dll (00007FFA65050000), size: 1347584 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\steam_api64.dll:steam_api64.dll (00007FFA41560000), size: 278528 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 5.69.73.98
+C:\Program Files (x86)\Steam\steamclient64.dll:steamclient64.dll (00007FF9BEE40000), size: 25927680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.38.46.31
+C:\WINDOWS\SYSTEM32\MSWSOCK.dll:MSWSOCK.dll (00007FFA89550000), size: 438272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\Program Files (x86)\Steam\vstdlib_s64.dll:vstdlib_s64.dll (00007FF9E15A0000), size: 790528 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.38.46.31
+C:\Program Files (x86)\Steam\tier0_s64.dll:tier0_s64.dll (00007FF9D8A10000), size: 1687552 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.38.46.31
+C:\WINDOWS\SYSTEM32\Secur32.dll:Secur32.dll (00007FFA88340000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFA892A0000), size: 299008 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\WINDOWS\System32\NSI.dll:NSI.dll (00007FFA8C3A0000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFA831B0000), size: 122880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFA830E0000), size: 143360 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFA88AF0000), size: 1228800 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\Program Files\Bonjour\mdnsNSP.dll:mdnsNSP.dll (000000005A4B0000), size: 155648 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.1.0.1
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFA832B0000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFA81590000), size: 548864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\Windows\System32\Windows.UI.dll:Windows.UI.dll (00007FFA6AD60000), size: 1400832 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7840
+C:\WINDOWS\SYSTEM32\gpapi.dll:gpapi.dll (00007FFA895C0000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\WINNSI.DLL:WINNSI.DLL (00007FFA85C20000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7705
+C:\WINDOWS\system32\napinsp.dll:napinsp.dll (00007FFA58060000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1150
+C:\WINDOWS\System32\winrnr.dll:winrnr.dll (00007FFA58040000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1882
+C:\WINDOWS\system32\nlansp_c.dll:nlansp_c.dll (00007FFA58010000), size: 139264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\WINDOWS\system32\wshbth.dll:wshbth.dll (00007FFA82040000), size: 90112 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\discord_game_sdk.dll:discord_game_sdk.dll (00007FF98C2B0000), size: 3493888 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\ktmw32.dll:ktmw32.dll (00007FFA44140000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.1
+C:\WINDOWS\SYSTEM32\CoreMessaging.dll:CoreMessaging.dll (00007FFA87840000), size: 1208320 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\CoreUIComponents.dll:CoreUIComponents.dll (00007FFA83B10000), size: 3022848 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.7627
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\RakNetDLL.dll:RakNetDLL.dll (00007FFA12390000), size: 1335296 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFA6E6F0000), size: 561152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.44.35211.0
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\MonoBleedingEdge\EmbedRuntime\MonoPosixHelper.dll:MonoPosixHelper.dll (00007FFA0A7F0000), size: 626688 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFA7B870000), size: 2367488 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.26100.5074
+
+========== OUTPUTTING STACK TRACE ==================
+
+0x00007FFA09815116 (cimgui) igWindowRectRelToAbs
+0x000001D9A430680A (Mono JIT Code) (wrapper managed-to-native) ImGuiNET.ImGuiNative:igPopStyleVar (int)
+0x000001D9A430673B (Mono JIT Code) ImGuiNET.ImGui:PopStyleVar ()
+0x000001D9A43030C3 (Mono JIT Code) Assets.Scripts.ConsoleWindow:Draw (bool)
+0x000001D9A427DEE3 (Mono JIT Code) Assets.Scripts.UI.ImGuiManager:RenderOverlay ()
+0x000001D9A4279AB3 (Mono JIT Code) Assets.Scripts.UI.ImGuiManager:LateUpdate ()
+0x000001D97E745108 (Mono JIT Code) (wrapper runtime-invoke) object:runtime_invoke_void__this__ (object,intptr,intptr,intptr)
+0x00007FF931534B7E (mono-2.0-bdwgc) mono_jit_set_domain
+0x00007FF93146D204 (mono-2.0-bdwgc) mono_object_get_virtual_method
+0x00007FF93146D37C (mono-2.0-bdwgc) mono_runtime_invoke
+SymInit: Symbol-SearchPath: '.;C:\Program Files (x86)\Steam\steamapps\common\Stationeers;C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/Plugins\x86_64;C:/Program Files (x86)/Steam/steamapps/common/Stationeers/rocketstation_Data/Plugins;C:\Program Files (x86)\Steam\steamapps\common\Stationeers;C:\WINDOWS;C:\WINDOWS\system32;', symOptions: 534, UserName: 'FLORPYDORP'
+OS-Version: 10.0.0
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation.exe:rocketstation.exe (00007FF750300000), size: 688128 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation.exe', fileVersion: 2022.3.62.30479
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (00007FFA8D9C0000), size: 2523136 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ntdll.dll', fileVersion: 10.0.26100.7824
+C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFA8C3B0000), size: 823296 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\KERNEL32.DLL', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFA8A8C0000), size: 4132864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\KERNELBASE.dll', fileVersion: 10.0.26100.7824
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\UnityPlayer.dll:UnityPlayer.dll (00007FF928630000), size: 31965184 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\UnityPlayer.dll', fileVersion: 2022.3.62.30479
+C:\WINDOWS\System32\USER32.dll:USER32.dll (00007FFA8B870000), size: 1859584 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\USER32.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\win32u.dll:win32u.dll (00007FFA8A890000), size: 159744 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\win32u.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\GDI32.dll:GDI32.dll (00007FFA8B760000), size: 176128 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\GDI32.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (00007FFA8A760000), size: 1224704 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\gdi32full.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\msvcp_win.dll:msvcp_win.dll (00007FFA8A420000), size: 667648 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\msvcp_win.dll', fileVersion: 10.0.26100.7623
+C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (00007FFA8A610000), size: 1355776 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ucrtbase.dll', fileVersion: 10.0.26100.7623
+C:\WINDOWS\System32\ole32.dll:ole32.dll (00007FFA8C990000), size: 1667072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\ole32.dll', fileVersion: 10.0.26100.7824
+C:\WINDOWS\System32\combase.dll:combase.dll (00007FFA8D3D0000), size: 3694592 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\combase.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (00007FFA8BA40000), size: 1146880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\RPCRT4.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (00007FFA83200000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\VERSION.dll', fileVersion: 10.0.26100.1150
+C:\WINDOWS\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFA8C740000), size: 421888 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SHLWAPI.dll', fileVersion: 10.0.26100.7824
+C:\WINDOWS\System32\msvcrt.dll:msvcrt.dll (00007FFA8D7C0000), size: 692224 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\msvcrt.dll', fileVersion: 7.0.26100.7623
+C:\WINDOWS\System32\Windows.Storage.dll:Windows.Storage.dll (00007FFA8AEF0000), size: 8794112 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\Windows.Storage.dll', fileVersion: 10.0.26100.7840
+C:\WINDOWS\System32\advapi32.dll:advapi32.dll (00007FFA8D870000), size: 737280 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\advapi32.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\sechost.dll:sechost.dll (00007FFA8C7D0000), size: 679936 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\sechost.dll', fileVersion: 10.0.26100.7623
+C:\WINDOWS\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFA8BC60000), size: 4755456 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SETUPAPI.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\SHELL32.dll:SHELL32.dll (00007FFA8CC70000), size: 7675904 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\SHELL32.dll', fileVersion: 10.0.26100.7840
+C:\WINDOWS\System32\wintypes.dll:wintypes.dll (00007FFA8ACC0000), size: 1482752 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\wintypes.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFA8C660000), size: 880640 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\OLEAUT32.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\IMM32.dll:IMM32.dll (00007FFA8C260000), size: 200704 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\IMM32.dll', fileVersion: 10.0.26100.7309
+C:\WINDOWS\System32\CRYPT32.dll:CRYPT32.dll (00007FFA8A2A0000), size: 1536000 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\CRYPT32.dll', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (00007FFA7A550000), size: 217088 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINMM.dll', fileVersion: 10.0.26100.7309
+C:\WINDOWS\System32\WS2_32.dll:WS2_32.dll (00007FFA8C910000), size: 475136 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\WS2_32.dll', fileVersion: 10.0.26100.7623
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FF9DDAC0000), size: 1114112 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\OPENGL32.dll', fileVersion: 10.0.26100.7705
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\WINHTTP.dll:WINHTTP.dll (0000000180000000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\WINHTTP.dll', fileVersion: 4.4.0.0
+C:\WINDOWS\SYSTEM32\bcrypt.dll:bcrypt.dll (00007FFA8A190000), size: 172032 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\bcrypt.dll', fileVersion: 10.0.26100.7623
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (00007FFA886F0000), size: 61440 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\HID.DLL', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\dwmapi.dll:dwmapi.dll (00007FFA87B20000), size: 200704 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dwmapi.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (00007FF9EE5F0000), size: 184320 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\GLU32.dll', fileVersion: 10.0.26100.1150
+C:\WINDOWS\SYSTEM32\dxcore.dll:dxcore.dll (00007FFA87970000), size: 278528 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dxcore.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\system32\WINHTTP.dll:WINHTTP.dll (00007FFA82980000), size: 1208320 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\WINHTTP.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\shcore.dll:shcore.dll (00007FFA8C2A0000), size: 1007616 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\shcore.dll', fileVersion: 10.0.26100.7824
+C:\Program Files (x86)\Steam\gameoverlayrenderer64.dll:gameoverlayrenderer64.dll (00007FFA121D0000), size: 1753088 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\gameoverlayrenderer64.dll', fileVersion: 10.38.46.31
+C:\WINDOWS\System32\PSAPI.DLL:PSAPI.DLL (00007FFA8C900000), size: 32768 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\PSAPI.DLL', fileVersion: 10.0.26100.1
+C:\WINDOWS\SYSTEM32\CFGMGR32.dll:CFGMGR32.dll (00007FFA89F30000), size: 356352 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CFGMGR32.dll', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFA89000000), size: 110592 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\kernel.appcore.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (000001D7C7150000), size: 675840 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\bcryptPrimitives.dll', fileVersion: 10.0.26100.7623
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (00007FFA87E00000), size: 700416 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\uxtheme.dll', fileVersion: 10.0.26100.7824
+C:\WINDOWS\SYSTEM32\profapi.dll:profapi.dll (00007FFA8A1C0000), size: 167936 (result: 0), SymType: '-nosymbols-', PDB: 'C:\WINDOWS\SYSTEM32\profapi.dll', fileVersion: 10.0.26100.7309
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FF9312A0000), size: 10825728 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll'
+C:\WINDOWS\SYSTEM32\iphlpapi.dll:iphlpapi.dll (00007FFA88A50000), size: 212992 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\iphlpapi.dll', fileVersion: 10.0.26100.7705
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\cimgui.dll:cimgui.dll (00007FFA097F0000), size: 872448 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\cimgui.dll'
+C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFA6E6E0000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll', fileVersion: 14.44.35211.0
+C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFA6E6C0000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll', fileVersion: 14.44.35211.0
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\cimgui-freetype.dll:cimgui-freetype.dll (00007FF9EE730000), size: 872448 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\cimgui-freetype.dll'
+C:\WINDOWS\System32\MSCTF.dll:MSCTF.dll (00007FFA8C0F0000), size: 1437696 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\MSCTF.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\d3d11.dll:d3d11.dll (00007FFA86F60000), size: 2498560 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\d3d11.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\dxgi.dll:dxgi.dll (00007FFA879C0000), size: 1294336 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dxgi.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\powrprof.dll:powrprof.dll (00007FFA89B90000), size: 385024 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\powrprof.dll', fileVersion: 10.0.26100.3912
+C:\WINDOWS\SYSTEM32\UMPDC.dll:UMPDC.dll (00007FFA89B70000), size: 81920 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\UMPDC.dll', fileVersion: 10.0.26100.7019
+C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll:directxdatabasehelper.dll (00007FFA852C0000), size: 405504 (result: 0), SymType: '-nosymbols-', PDB: 'C:\WINDOWS\SYSTEM32\directxdatabasehelper.dll', fileVersion: 10.0.26100.7824
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvldumdx.dll:nvldumdx.dll (00007FFA82AB0000), size: 802816 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvldumdx.dll', fileVersion: 32.0.15.9186
+C:\WINDOWS\SYSTEM32\msasn1.dll:msasn1.dll (00007FFA899A0000), size: 77824 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\msasn1.dll', fileVersion: 10.0.26100.7623
+C:\WINDOWS\SYSTEM32\cryptnet.dll:cryptnet.dll (00007FFA82690000), size: 241664 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\cryptnet.dll', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\cryptbase.dll:cryptbase.dll (00007FFA897A0000), size: 49152 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\cryptbase.dll', fileVersion: 10.0.26100.7623
+C:\WINDOWS\SYSTEM32\wldp.dll:wldp.dll (00007FFA89840000), size: 430080 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\wldp.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\drvstore.dll:drvstore.dll (00007FFA824C0000), size: 1548288 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\drvstore.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\devobj.dll:devobj.dll (00007FFA89F00000), size: 184320 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\devobj.dll', fileVersion: 10.0.26100.1150
+C:\WINDOWS\System32\wintrust.dll:wintrust.dll (00007FFA8A580000), size: 532480 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\wintrust.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\imagehlp.dll:imagehlp.dll (00007FFA8D930000), size: 131072 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\imagehlp.dll', fileVersion: 10.0.26100.4202
+C:\WINDOWS\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFA89940000), size: 110592 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CRYPTSP.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\system32\rsaenh.dll:rsaenh.dll (00007FFA88F60000), size: 233472 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\rsaenh.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvgpucomp64.dll:nvgpucomp64.dll (00007FFA7C6B0000), size: 80736256 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvgpucomp64.dll', fileVersion: 32.0.15.9186
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\NvMemMapStoragex.dll:NvMemMapStoragex.dll (00007FFA7A3B0000), size: 1245184 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\NvMemMapStoragex.dll'
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvwgf2umx.dll:nvwgf2umx.dll (00007FFA74780000), size: 84860928 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvwgf2umx.dll', fileVersion: 32.0.15.9186
+C:\WINDOWS\system32\nvspcap64.dll:nvspcap64.dll (00007FFA386E0000), size: 1339392 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\nvspcap64.dll', fileVersion: 11.0.6.383
+C:\WINDOWS\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFA89120000), size: 221184 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ntmarta.dll', fileVersion: 10.0.26100.7019
+C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvppex.dll:nvppex.dll (00007FFA38520000), size: 1798144 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_adc55ecfca814224\nvppex.dll', fileVersion: 32.0.15.9186
+C:\WINDOWS\System32\clbcatq.dll:clbcatq.dll (00007FFA8CB30000), size: 720896 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\clbcatq.dll', fileVersion: 2001.12.10941.16384
+C:\WINDOWS\System32\MMDevApi.dll:MMDevApi.dll (00007FFA82850000), size: 622592 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\MMDevApi.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\AUDIOSES.DLL:AUDIOSES.DLL (00007FFA71C60000), size: 1785856 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\AUDIOSES.DLL', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\resourcepolicyclient.dll:resourcepolicyclient.dll (00007FFA883C0000), size: 81920 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\resourcepolicyclient.dll', fileVersion: 10.0.26100.7309
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\lib_burst_generated.dll:lib_burst_generated.dll (00007FFA82B80000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\lib_burst_generated.dll'
+C:\WINDOWS\SYSTEM32\xinput1_3.dll:xinput1_3.dll (0000000000400000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\xinput1_3.dll', fileVersion: 9.18.944.0
+C:\WINDOWS\SYSTEM32\dcomp.dll:dcomp.dll (00007FFA871D0000), size: 2236416 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dcomp.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\Microsoft.Internal.WarpPal.dll:Microsoft.Internal.WarpPal.dll (00007FFA87DE0000), size: 102400 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\Microsoft.Internal.WarpPal.dll'
+C:\WINDOWS\SYSTEM32\textinputframework.dll:textinputframework.dll (00007FFA65050000), size: 1347584 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\textinputframework.dll', fileVersion: 10.0.26100.7705
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\steam_api64.dll:steam_api64.dll (00007FFA41560000), size: 278528 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\steam_api64.dll', fileVersion: 5.69.73.98
+C:\Program Files (x86)\Steam\steamclient64.dll:steamclient64.dll (00007FF9BEE40000), size: 25927680 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamclient64.dll', fileVersion: 10.38.46.31
+C:\WINDOWS\SYSTEM32\MSWSOCK.dll:MSWSOCK.dll (00007FFA89550000), size: 438272 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSWSOCK.dll', fileVersion: 10.0.26100.7705
+C:\Program Files (x86)\Steam\vstdlib_s64.dll:vstdlib_s64.dll (00007FF9E15A0000), size: 790528 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\vstdlib_s64.dll', fileVersion: 10.38.46.31
+C:\Program Files (x86)\Steam\tier0_s64.dll:tier0_s64.dll (00007FF9D8A10000), size: 1687552 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\tier0_s64.dll', fileVersion: 10.38.46.31
+C:\WINDOWS\SYSTEM32\Secur32.dll:Secur32.dll (00007FFA88340000), size: 53248 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\Secur32.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFA892A0000), size: 299008 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\SSPICLI.DLL', fileVersion: 10.0.26100.7309
+C:\WINDOWS\System32\NSI.dll:NSI.dll (00007FFA8C3A0000), size: 40960 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\NSI.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFA831B0000), size: 122880 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFA830E0000), size: 143360 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFA88AF0000), size: 1228800 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\DNSAPI.dll', fileVersion: 10.0.26100.7705
+C:\Program Files\Bonjour\mdnsNSP.dll:mdnsNSP.dll (000000005A4B0000), size: 155648 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files\Bonjour\mdnsNSP.dll', fileVersion: 3.1.0.1
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFA832B0000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\rasadhlp.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFA81590000), size: 548864 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\fwpuclnt.dll', fileVersion: 10.0.26100.7705
+C:\Windows\System32\Windows.UI.dll:Windows.UI.dll (00007FFA6AD60000), size: 1400832 (result: 0), SymType: '-exported-', PDB: 'C:\Windows\System32\Windows.UI.dll', fileVersion: 10.0.26100.7840
+C:\WINDOWS\SYSTEM32\gpapi.dll:gpapi.dll (00007FFA895C0000), size: 200704 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\gpapi.dll', fileVersion: 10.0.26100.7705
+C:\WINDOWS\SYSTEM32\WINNSI.DLL:WINNSI.DLL (00007FFA85C20000), size: 61440 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\WINNSI.DLL', fileVersion: 10.0.26100.7705
+C:\WINDOWS\system32\napinsp.dll:napinsp.dll (00007FFA58060000), size: 98304 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\napinsp.dll', fileVersion: 10.0.26100.1150
+C:\WINDOWS\System32\winrnr.dll:winrnr.dll (00007FFA58040000), size: 73728 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\System32\winrnr.dll', fileVersion: 10.0.26100.1882
+C:\WINDOWS\system32\nlansp_c.dll:nlansp_c.dll (00007FFA58010000), size: 139264 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\nlansp_c.dll', fileVersion: 10.0.26100.7309
+C:\WINDOWS\system32\wshbth.dll:wshbth.dll (00007FFA82040000), size: 90112 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\system32\wshbth.dll', fileVersion: 10.0.26100.5074
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\discord_game_sdk.dll:discord_game_sdk.dll (00007FF98C2B0000), size: 3493888 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\discord_game_sdk.dll'
+C:\WINDOWS\SYSTEM32\ktmw32.dll:ktmw32.dll (00007FFA44140000), size: 45056 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\ktmw32.dll', fileVersion: 10.0.26100.1
+C:\WINDOWS\SYSTEM32\CoreMessaging.dll:CoreMessaging.dll (00007FFA87840000), size: 1208320 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CoreMessaging.dll', fileVersion: 10.0.26100.7309
+C:\WINDOWS\SYSTEM32\CoreUIComponents.dll:CoreUIComponents.dll (00007FFA83B10000), size: 3022848 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\CoreUIComponents.dll', fileVersion: 10.0.26100.7627
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\RakNetDLL.dll:RakNetDLL.dll (00007FFA12390000), size: 1335296 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\rocketstation_Data\Plugins\x86_64\RakNetDLL.dll'
+C:\WINDOWS\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFA6E6F0000), size: 561152 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\MSVCP140.dll', fileVersion: 14.44.35211.0
+C:\Program Files (x86)\Steam\steamapps\common\Stationeers\MonoBleedingEdge\EmbedRuntime\MonoPosixHelper.dll:MonoPosixHelper.dll (00007FFA0A7F0000), size: 626688 (result: 0), SymType: '-exported-', PDB: 'C:\Program Files (x86)\Steam\steamapps\common\Stationeers\MonoBleedingEdge\EmbedRuntime\MonoPosixHelper.dll'
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFA7B870000), size: 2367488 (result: 0), SymType: '-exported-', PDB: 'C:\WINDOWS\SYSTEM32\dbghelp.dll', fileVersion: 10.0.26100.5074
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF928DAFE96)
+0x00007FF928DAFE96 (UnityPlayer) (function-name not available)
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF928DAFFD1)
+0x00007FF928DAFFD1 (UnityPlayer) (function-name not available)
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF928A81240)
+0x00007FF928A81240 (UnityPlayer) (function-name not available)
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF928BEF778)
+0x00007FF928BEF778 (UnityPlayer) (function-name not available)
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF928BEF964)
+0x00007FF928BEF964 (UnityPlayer) (function-name not available)
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF928BEFE82)
+0x00007FF928BEFE82 (UnityPlayer) (function-name not available)
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF928E433DB)
+0x00007FF928E433DB (UnityPlayer) (function-name not available)
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF928E45DAB)
+0x00007FF928E45DAB (UnityPlayer) (function-name not available)
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF928E4910B)
+0x00007FF928E4910B (UnityPlayer) (function-name not available)
+0x00007FF928E493AB (UnityPlayer) UnityMain
+  ERROR: SymGetSymFromAddr64, GetLastError: 'Attempt to access invalid address.' (Address: 00007FF7503011F6)
+0x00007FF7503011F6 (rocketstation) (function-name not available)
+0x00007FFA8C3DE8D7 (KERNEL32) BaseThreadInitThunk
+0x00007FFA8DA4C40C (ntdll) RtlUserThreadStart
+
+========== END OF STACKTRACE ===========
+
+A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
+ * C:/Users/FLORPYDORP/AppData/Local/Temp/Rocketwerkz/rocketstation/Crashes
