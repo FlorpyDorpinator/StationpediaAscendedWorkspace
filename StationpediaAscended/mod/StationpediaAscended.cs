@@ -35,7 +35,7 @@ namespace StationpediaAscended
         // Plugin metadata
         public const string PluginGuid = "com.florpydorp.stationpediaascended";
         public const string PluginName = "Stationpedia Ascended";
-        public const string PluginVersion = "0.8.6";
+        public const string PluginVersion = "0.8.7";
         
         public const string HarmonyId = "com.stationpediaascended.mod";
         

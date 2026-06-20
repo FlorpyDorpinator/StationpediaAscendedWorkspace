@@ -2,11 +2,14 @@
 <ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>Stationpedia Ascended</Name>
   <Author>FlorpyDorp</Author>
-  <Version>0.8.6</Version>
+  <Version>0.8.7</Version>
   <Description>This is a Plugin Mod. It requires BepInEx to be installed with the StationeersLaunchPad plugin.
 See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
 
 An enhanced Stationpedia experience with comprehensive tooltips, in-game notepad, guides, bug fixes, and quality of life improvements. Stationpedia on a new level.
+
+NEW IN 0.8.7:
+- Fix: Closing the Station Notepad no longer removes your mouse cursor when another window (Stationpedia, in-game menu) is still open
 
 NEW IN 0.8.6:
 - Search Fixes: Cable Coil, Corn, and other items now appear correctly in search
@@ -28,6 +31,8 @@ All tooltips and descriptions are customizable via descriptions.json.
 Discord: https://discord.gg/stationeers</Description>
 
   <ChangeLog>
+v0.8.7: Hotfix - Notepad cursor
+- FIX Station Notepad: closing the notepad no longer removes your mouse cursor when another window (Stationpedia, in-game menu) is still open. The notepad now registers as a proper game modal so the cursor is managed by the game.
 v0.8.6: Search Fixes &amp; Code Consolidation
 - FIX Search: Cable Coil, Corn, and other items now appear correctly in search results
 - FIX Search: Items hidden by HideInStationpedia no longer incorrectly excluded from search
@@ -75,7 +80,10 @@ See: https://github.com/StationeersLaunchPad/StationeersLaunchPad
 
 An enhanced Stationpedia experience with in-game notepad, comprehensive guides, tooltips, and quality of life improvements.
 
-<color=#ffa500>What's New in 0.8.6:</color>
+<color=#ffa500>What's New in 0.8.7:</color>
+- Fix: Closing the Station Notepad no longer removes your mouse cursor when another window is still open
+
+<color=#ffa500>0.8.6:</color>
 - Search Fixes: Cable Coil, Corn, and other items appear correctly
 - Search: Starts With category properly shows all matching items
 - Search performance optimized with caching and single-pass bucketing

@@ -4,14 +4,7 @@
   "publishedfileid" "3634225688"
   "contentfolder" "C:\\Users\\marka\\Documents\\My Games\\Stationeers\\mods\\StationpediaAscended"
   "previewfile" "C:\\Users\\marka\\Documents\\My Games\\Stationeers\\mods\\StationpediaAscended\\About\\Preview.png"
-  "changenote" "v0.8.6: Search Fixes &amp; Code Consolidation
-- FIX Search: Cable Coil, Corn, and other items now appear correctly in search results
-- FIX Search: Items hidden by HideInStationpedia no longer incorrectly excluded
-- FIX Search: Starts With category now properly shows all matching items
-- FIX Search: Partial word matches properly demoted in results
-- OPT Search: Single-pass bucketing, caching, pre-allocated lists for faster ordering
-- FIX Code: Consolidated dual init paths (ScriptEngine vs SLP/Workshop)
-- FIX Code: Header title reliably shows Stationpedia Ascended on first load
-- FIX Code: Logo icon enlarged and repositioned
-- NEW Debug: Centralized debug logging system"
+  "changenote" "v0.8.7: Hotfix - Notepad cursor
+- FIX Station Notepad: closing the notepad no longer removes your mouse cursor when another window (Stationpedia, in-game menu) is still open
+- The notepad now registers as a proper game modal so the cursor is managed correctly by the game"
 }

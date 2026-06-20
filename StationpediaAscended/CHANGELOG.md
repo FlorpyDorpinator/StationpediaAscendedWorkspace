@@ -2,6 +2,11 @@
 
 All notable changes to Stationpedia Ascended will be documented in this file.
 
+## [0.8.7] - 2026-06-19
+
+### 🐛 Bug Fixes
+- **Station Notepad: closing the notepad removed the mouse cursor** — `Hide()` called `CursorManager.SetCursor(true)`, which force-locks/hides the cursor whenever the game is running, ignoring any other open UI. If the notepad was closed while another window (Stationpedia, the in-game menu, etc.) was still open, the mouse cursor and mouse control vanished. The window now implements `IModal` and registers/deregisters with `MouseModeController` (`AddModal`/`RemoveModal` + `Check()`) on open/close — exactly like native game windows — so the game restores the correct cursor and mouse-control state, re-locking to first-person only when nothing else needs the cursor.
+
 ## [0.8.6] - 2026-02-24
 
 ### 🐛 Bug Fixes

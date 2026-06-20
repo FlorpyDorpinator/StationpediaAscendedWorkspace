@@ -23,12 +23,17 @@ namespace StationpediaAscended.UI.StationPlanner
     /// Station Notepad - A note-taking text editor window for Stationeers
     /// Rebuilt from first principles with simple, functional UI
     /// </summary>
-    public class StationPlannerWindow : MonoBehaviour
+    public class StationPlannerWindow : MonoBehaviour, IModal
     {
         #region Singleton & State
-        
+
         public static StationPlannerWindow Instance { get; private set; }
         public static bool IsOpen => Instance != null && Instance._windowCanvas != null && Instance._windowCanvas.enabled;
+
+        // IModal: while this window is registered as an open modal, the game's
+        // MouseModeController keeps the cursor unlocked. Lets the game decide the
+        // correct cursor state instead of us forcing it.
+        public bool UnlockCursor => true;
         
         private Canvas _windowCanvas;
         private GameObject _windowPanel;
@@ -161,6 +166,9 @@ namespace StationpediaAscended.UI.StationPlanner
         {
             // Unsubscribe from scene loading events
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            // Safety: never leave a stale modal registered if torn down while open,
+            // which would otherwise leave the cursor stuck unlocked.
+            MouseModeController.RemoveModal(this);
         }
         
         /// <summary>
@@ -179,7 +187,8 @@ namespace StationpediaAscended.UI.StationPlanner
             if (IsOpen)
             {
                 KeyManager.SetInputState("StationNotepad", KeyInputState.Typing);
-                CursorManager.SetCursor(false);
+                MouseModeController.AddModal(this);
+                MouseModeController.Check();
             }
         }
         
@@ -1103,8 +1112,12 @@ namespace StationpediaAscended.UI.StationPlanner
             if (_windowCanvas != null)
             {
                 _windowCanvas.enabled = true;
-                CursorManager.SetCursor(false);
-                
+
+                // Register as an open modal and let the game set the cursor. This unlocks
+                // the cursor for the notepad while correctly accounting for any other open UI.
+                MouseModeController.AddModal(this);
+                MouseModeController.Check();
+
                 // Lock keyboard input to prevent game hotkeys/movement while notepad is open
                 KeyManager.SetInputState("StationNotepad", KeyInputState.Typing);
                 
@@ -1132,9 +1145,12 @@ namespace StationpediaAscended.UI.StationPlanner
                 
                 // Release keyboard input back to the game
                 KeyManager.RemoveInputState("StationNotepad");
-                
-                // Re-lock the cursor back to game mode
-                CursorManager.SetCursor(true);
+
+                // Deregister this modal and let the game recompute the cursor. The cursor
+                // re-locks to first-person ONLY if no other window (Stationpedia, in-game
+                // menu, etc.) still needs it - fixes the mouse vanishing on close.
+                MouseModeController.RemoveModal(this);
+                MouseModeController.Check();
             }
         }
         
